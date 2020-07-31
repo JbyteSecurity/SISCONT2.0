@@ -22,27 +22,27 @@ namespace Presentacion
 
         private void FrmProveedor_Load(object sender, EventArgs e)
         {
-            allSuppliers();
+            All();
         }
 
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            saveSupplier();
+            Save();
 
         }
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            deleteSupplier();
+            Destroy();
         }
 
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            getToTextBox();
+            GetToTextBox();
         }
 
-        private void saveSupplier()
+        private void Save()
         {
             string ruc, razonSocial;
             ruc = txtRuc.Text;
@@ -50,54 +50,54 @@ namespace Presentacion
             if (method)
             {
                 int id = Convert.ToInt32(dgvSuppliers.CurrentRow.Cells["ID"].Value);
-                if (proveedor.edit(id, ruc, razonSocial))
+                if (proveedor.Update(id, ruc, razonSocial))
                 {
                     MessageBox.Show("Proveedor Editado", "Proveedor .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    clearTextBox();
-                    allSuppliers();
+                    ClearTextBox();
+                    All();
                 }
                 else
                     MessageBox.Show("Proveedor NO Editado", "Proveedor .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                if (proveedor.save(ruc, razonSocial))
+                if (proveedor.Insert(ruc, razonSocial))
                 {
                     MessageBox.Show("Proveedor Agregado", "Proveedor .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    clearTextBox();
-                    allSuppliers();
+                    ClearTextBox();
+                    All();
                 }
                 else
                     MessageBox.Show("Proveedor NO Agregado", "Proveedor .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
-        private void clearTextBox()
+        private void ClearTextBox()
         {
             txtRuc.Text = null;
             txtRazonSocial.Text = null;
             this.ActiveControl = txtRuc;
         }
 
-        private void allSuppliers()
+        private void All()
         {
-            dgvSuppliers.DataSource = proveedor.allSuppliers();
+            dgvSuppliers.DataSource = proveedor.All();
         }
 
-        private void deleteSupplier()
+        private void Destroy()
         {
             int id = Convert.ToInt32(dgvSuppliers.CurrentRow.Cells["ID"].Value);
-            if (proveedor.delete(id))
+            if (proveedor.Destroy(id))
             {
                 MessageBox.Show("Proveedor Eliminado", "Proveedor .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                clearTextBox();
-                allSuppliers();
+                ClearTextBox();
+                All();
             }
             else
                 MessageBox.Show("Proveedor NO Eliminado", "Proveedor .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-        private void getToTextBox()
+        private void GetToTextBox()
         {
             if (dgvSuppliers.SelectedRows.Count > 0)
             {

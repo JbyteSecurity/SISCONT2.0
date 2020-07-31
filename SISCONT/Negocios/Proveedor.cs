@@ -10,33 +10,33 @@ namespace Negocios
     public class Proveedor
     {
         private DaoProveedor daoProveedor = new DaoProveedor();
-        public string getSupplierName(string ruc)
+        public string GetSupplierName(string ruc)
         {
             string razonSocial;
-            razonSocial = daoProveedor.show(ruc);
+            razonSocial = daoProveedor.Show(ruc);
             return razonSocial;
         }
 
-        public DataTable allSuppliers()
+        public DataTable All()
         {
-            return daoProveedor.all();
+            return daoProveedor.All();
         }
 
-        public bool save(string ruc, string razonSocial)
+        public bool Insert(string ruc, string razonSocial)
         {
-            daoProveedor.insert(ruc, razonSocial);
+            daoProveedor.Insert(ruc, razonSocial);
             return true;
         }
 
-        public bool edit(int id, string ruc, string razonSocial)
+        public bool Update(int id, string ruc, string razonSocial)
         {
-            daoProveedor.update(id, ruc, razonSocial);
+            daoProveedor.Update(id, ruc, razonSocial);
             return true;
         }
 
-        public bool delete(int id)
+        public bool Destroy(int id)
         {
-            daoProveedor.destroy(id);
+            daoProveedor.Destroy(id);
             return true;
         }
     }

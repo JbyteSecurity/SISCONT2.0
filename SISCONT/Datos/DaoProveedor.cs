@@ -14,7 +14,7 @@ namespace Datos
         private Conexion conexion = new Conexion();
         SqlCommand comando = new SqlCommand();
 
-        public string show(string ruc)
+        public string Show(string ruc)
         {
             SqlDataReader sqlDataReaderProvider;
             DataTable dataTableProvider = new DataTable("tblProveedores");
@@ -38,7 +38,7 @@ namespace Datos
                 return null;
         }
 
-        public DataTable all()
+        public DataTable All()
         {
             SqlDataReader sqlDataReader;
             DataTable dataTableSuppliers = new DataTable();
@@ -52,7 +52,7 @@ namespace Datos
 
         }
 
-        public void insert(string ruc, string razonSocial)
+        public void Insert(string ruc, string razonSocial)
         {
             comando.Connection = conexion.OpenConnection();
             comando.CommandText = "sp_insert_proveedor";
@@ -66,7 +66,7 @@ namespace Datos
             conexion.CloseConnection();
         }
 
-        public void update(int id, string ruc, string razonSocial)
+        public void Update(int id, string ruc, string razonSocial)
         {
             comando.Connection = conexion.OpenConnection();
             comando.CommandText = "sp_update_proveedor";
@@ -81,7 +81,7 @@ namespace Datos
             conexion.CloseConnection();
         }
 
-        public void destroy(int id)
+        public void Destroy(int id)
         {
             comando.Connection = conexion.OpenConnection();
             comando.CommandText = "sp_destroy_proveedor";

@@ -29,39 +29,39 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtBuscarProveedor = new System.Windows.Forms.TextBox();
             this.btnBuscarProveedor = new System.Windows.Forms.Button();
             this.testlabel = new System.Windows.Forms.Label();
-            this.btnGuardarVentas = new System.Windows.Forms.Button();
-            this.btnGuardarCompras = new System.Windows.Forms.Button();
             this.tabRegistros = new System.Windows.Forms.TabControl();
             this.tabCompras = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dgvRegistroCompras = new System.Windows.Forms.DataGridView();
-            this.tblRegistroComprasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dSCompras = new Presentacion.DSCompras();
+            this.spallcurrentmonthcomprasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dSRegistroCompras = new Presentacion.DSRegistroCompras();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnGuardarCompras = new System.Windows.Forms.Button();
             this.btnEliminarCompras = new System.Windows.Forms.Button();
             this.tabVentas = new System.Windows.Forms.TabPage();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnEliminarVentas = new System.Windows.Forms.Button();
+            this.btnGuardarVentas = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dgvRegistroVentas = new System.Windows.Forms.DataGridView();
+            this.spallmonthventasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dSRegistroVentas = new Presentacion.DSRegistroVentas();
+            this.sp_all_current_month_comprasTableAdapter = new Presentacion.DSRegistroComprasTableAdapters.sp_all_current_month_comprasTableAdapter();
+            this.sp_all_month_ventasTableAdapter = new Presentacion.DSRegistroVentasTableAdapters.sp_all_month_ventasTableAdapter();
+            this.ventasId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ventasMes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ventasNumeroRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ventasFechaEmision = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -84,7 +84,7 @@
             this.ventasDolares = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ventasIgvRetencion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ventasCuentaDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.destinoCuentaDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasCuentaDestinoDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ventasPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ventasReferenciaFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ventasReferenciaTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -96,7 +96,8 @@
             this.ventasDetraccionSoles = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ventasReferencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ventasObservacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tblRegistroComprasTableAdapter = new Presentacion.DSComprasTableAdapters.tblRegistroComprasTableAdapter();
+            this.btnGenerarTXT = new System.Windows.Forms.Button();
+            this.txtRutaTXT = new System.Windows.Forms.TextBox();
             this.comprasID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comprasMes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comprasNumeroRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -133,68 +134,32 @@
             this.BancarizacionBco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BancarizacionOperacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.tabRegistros.SuspendLayout();
             this.tabCompras.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistroCompras)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblRegistroComprasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dSCompras)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spallcurrentmonthcomprasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSRegistroCompras)).BeginInit();
             this.panel3.SuspendLayout();
             this.tabVentas.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistroVentas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spallmonthventasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSRegistroVentas)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.txtRutaTXT);
+            this.panel1.Controls.Add(this.btnGenerarTXT);
             this.panel1.Controls.Add(this.txtBuscarProveedor);
             this.panel1.Controls.Add(this.btnBuscarProveedor);
             this.panel1.Controls.Add(this.testlabel);
-            this.panel1.Controls.Add(this.btnGuardarVentas);
-            this.panel1.Controls.Add(this.btnGuardarCompras);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1101, 87);
+            this.panel1.Size = new System.Drawing.Size(1092, 87);
             this.panel1.TabIndex = 4;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1101, 87);
-            this.panel2.TabIndex = 2;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(140, 39);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 4;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(59, 36);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btnBuscarProveedor_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(255, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "label1";
             // 
             // txtBuscarProveedor
             // 
@@ -220,24 +185,6 @@
             this.testlabel.Size = new System.Drawing.Size(35, 13);
             this.testlabel.TabIndex = 2;
             this.testlabel.Text = "label1";
-            // 
-            // btnGuardarVentas
-            // 
-            this.btnGuardarVentas.Location = new System.Drawing.Point(857, 25);
-            this.btnGuardarVentas.Name = "btnGuardarVentas";
-            this.btnGuardarVentas.Size = new System.Drawing.Size(119, 23);
-            this.btnGuardarVentas.TabIndex = 1;
-            this.btnGuardarVentas.Text = "Guardar Ventas";
-            this.btnGuardarVentas.UseVisualStyleBackColor = true;
-            // 
-            // btnGuardarCompras
-            // 
-            this.btnGuardarCompras.Location = new System.Drawing.Point(721, 25);
-            this.btnGuardarCompras.Name = "btnGuardarCompras";
-            this.btnGuardarCompras.Size = new System.Drawing.Size(109, 23);
-            this.btnGuardarCompras.TabIndex = 0;
-            this.btnGuardarCompras.Text = "Guardar Compras";
-            this.btnGuardarCompras.UseVisualStyleBackColor = true;
             // 
             // tabRegistros
             // 
@@ -315,7 +262,7 @@
             this.BancarizacionFecha,
             this.BancarizacionBco,
             this.BancarizacionOperacion});
-            this.dgvRegistroCompras.DataSource = this.tblRegistroComprasBindingSource;
+            this.dgvRegistroCompras.DataSource = this.spallcurrentmonthcomprasBindingSource;
             this.dgvRegistroCompras.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvRegistroCompras.Location = new System.Drawing.Point(0, 0);
             this.dgvRegistroCompras.Name = "dgvRegistroCompras";
@@ -323,41 +270,42 @@
             this.dgvRegistroCompras.TabIndex = 0;
             this.dgvRegistroCompras.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegistroCompras_CellEndEdit);
             this.dgvRegistroCompras.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.CellValueChanged);
+            this.dgvRegistroCompras.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.dgvCompras_DefaultValuesNeeded);
             this.dgvRegistroCompras.TabIndexChanged += new System.EventHandler(this.tabIndexChangedEvent);
             this.dgvRegistroCompras.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvRegistroCompras_KeyDown);
             // 
-            // tblRegistroComprasBindingSource
+            // spallcurrentmonthcomprasBindingSource
             // 
-            this.tblRegistroComprasBindingSource.DataMember = "tblRegistroCompras";
-            this.tblRegistroComprasBindingSource.DataSource = this.dSCompras;
+            this.spallcurrentmonthcomprasBindingSource.DataMember = "sp_all_current_month_compras";
+            this.spallcurrentmonthcomprasBindingSource.DataSource = this.dSRegistroCompras;
             // 
-            // dSCompras
+            // dSRegistroCompras
             // 
-            this.dSCompras.DataSetName = "DSCompras";
-            this.dSCompras.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dSRegistroCompras.DataSetName = "DSRegistroCompras";
+            this.dSRegistroCompras.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panel3
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.Controls.Add(this.button3);
+            this.panel3.Controls.Add(this.btnGuardarCompras);
             this.panel3.Controls.Add(this.btnEliminarCompras);
             this.panel3.Location = new System.Drawing.Point(6, 476);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1076, 54);
             this.panel3.TabIndex = 3;
             // 
-            // button3
+            // btnGuardarCompras
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(15, 17);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(109, 23);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "Guardar Compras";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.btnGuardar_Click);
+            this.btnGuardarCompras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnGuardarCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarCompras.Location = new System.Drawing.Point(15, 17);
+            this.btnGuardarCompras.Name = "btnGuardarCompras";
+            this.btnGuardarCompras.Size = new System.Drawing.Size(109, 23);
+            this.btnGuardarCompras.TabIndex = 0;
+            this.btnGuardarCompras.Text = "Guardar";
+            this.btnGuardarCompras.UseVisualStyleBackColor = false;
+            this.btnGuardarCompras.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnEliminarCompras
             // 
@@ -368,7 +316,7 @@
             this.btnEliminarCompras.Name = "btnEliminarCompras";
             this.btnEliminarCompras.Size = new System.Drawing.Size(128, 23);
             this.btnEliminarCompras.TabIndex = 0;
-            this.btnEliminarCompras.Text = "Eliminar Compras";
+            this.btnEliminarCompras.Text = "Eliminar";
             this.btnEliminarCompras.UseVisualStyleBackColor = false;
             this.btnEliminarCompras.Click += new System.EventHandler(this.btnEliminarCompras_Click);
             // 
@@ -388,21 +336,37 @@
             // 
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel6.Controls.Add(this.button2);
+            this.panel6.Controls.Add(this.btnEliminarVentas);
+            this.panel6.Controls.Add(this.btnGuardarVentas);
             this.panel6.Location = new System.Drawing.Point(6, 476);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1076, 54);
             this.panel6.TabIndex = 4;
             // 
-            // button2
+            // btnEliminarVentas
             // 
-            this.button2.Location = new System.Drawing.Point(15, 17);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(119, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Guardar Ventas";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.btnGuardarVentas_Click);
+            this.btnEliminarVentas.BackColor = System.Drawing.Color.Red;
+            this.btnEliminarVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarVentas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnEliminarVentas.Location = new System.Drawing.Point(152, 17);
+            this.btnEliminarVentas.Name = "btnEliminarVentas";
+            this.btnEliminarVentas.Size = new System.Drawing.Size(128, 23);
+            this.btnEliminarVentas.TabIndex = 2;
+            this.btnEliminarVentas.Text = "Eliminar";
+            this.btnEliminarVentas.UseVisualStyleBackColor = false;
+            this.btnEliminarVentas.Click += new System.EventHandler(this.btnEliminarVentas_Click);
+            // 
+            // btnGuardarVentas
+            // 
+            this.btnGuardarVentas.BackColor = System.Drawing.Color.Lime;
+            this.btnGuardarVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarVentas.Location = new System.Drawing.Point(15, 17);
+            this.btnGuardarVentas.Name = "btnGuardarVentas";
+            this.btnGuardarVentas.Size = new System.Drawing.Size(119, 23);
+            this.btnGuardarVentas.TabIndex = 1;
+            this.btnGuardarVentas.Text = "Guardar";
+            this.btnGuardarVentas.UseVisualStyleBackColor = false;
+            this.btnGuardarVentas.Click += new System.EventHandler(this.btnGuardarVentas_Click);
             // 
             // panel5
             // 
@@ -417,8 +381,10 @@
             // 
             // dgvRegistroVentas
             // 
+            this.dgvRegistroVentas.AutoGenerateColumns = false;
             this.dgvRegistroVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRegistroVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ventasId,
             this.ventasMes,
             this.ventasNumeroRegistro,
             this.ventasFechaEmision,
@@ -441,7 +407,7 @@
             this.ventasDolares,
             this.ventasIgvRetencion,
             this.ventasCuentaDestino,
-            this.destinoCuentaDescripcion,
+            this.ventasCuentaDestinoDescripcion,
             this.ventasPago,
             this.ventasReferenciaFecha,
             this.ventasReferenciaTipo,
@@ -453,30 +419,62 @@
             this.ventasDetraccionSoles,
             this.ventasReferencia,
             this.ventasObservacion});
+            this.dgvRegistroVentas.DataSource = this.spallmonthventasBindingSource;
             this.dgvRegistroVentas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvRegistroVentas.Location = new System.Drawing.Point(0, 0);
             this.dgvRegistroVentas.Name = "dgvRegistroVentas";
             this.dgvRegistroVentas.Size = new System.Drawing.Size(1079, 456);
             this.dgvRegistroVentas.TabIndex = 1;
             this.dgvRegistroVentas.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegistroVentas_CellEndEdit);
+            this.dgvRegistroVentas.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.dgvVentas_DefaultValuesNeeded);
+            // 
+            // spallmonthventasBindingSource
+            // 
+            this.spallmonthventasBindingSource.DataMember = "sp_all_month_ventas";
+            this.spallmonthventasBindingSource.DataSource = this.dSRegistroVentas;
+            // 
+            // dSRegistroVentas
+            // 
+            this.dSRegistroVentas.DataSetName = "DSRegistroVentas";
+            this.dSRegistroVentas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sp_all_current_month_comprasTableAdapter
+            // 
+            this.sp_all_current_month_comprasTableAdapter.ClearBeforeFill = true;
+            // 
+            // sp_all_month_ventasTableAdapter
+            // 
+            this.sp_all_month_ventasTableAdapter.ClearBeforeFill = true;
+            // 
+            // ventasId
+            // 
+            this.ventasId.DataPropertyName = "idLibroVentas";
+            this.ventasId.HeaderText = "#";
+            this.ventasId.Name = "ventasId";
+            this.ventasId.ReadOnly = true;
+            this.ventasId.Width = 40;
             // 
             // ventasMes
             // 
+            this.ventasMes.DataPropertyName = "Mes";
             this.ventasMes.HeaderText = "Mes";
             this.ventasMes.Name = "ventasMes";
             // 
             // ventasNumeroRegistro
             // 
+            this.ventasNumeroRegistro.DataPropertyName = "NReg";
             this.ventasNumeroRegistro.HeaderText = "N° Registro";
             this.ventasNumeroRegistro.Name = "ventasNumeroRegistro";
             // 
             // ventasFechaEmision
             // 
+            this.ventasFechaEmision.DataPropertyName = "FechaEmision";
             this.ventasFechaEmision.HeaderText = "Fecha de Emisión";
             this.ventasFechaEmision.Name = "ventasFechaEmision";
             // 
             // ventasFechapago
             // 
+            this.ventasFechapago.DataPropertyName = "FechaPago";
             this.ventasFechapago.HeaderText = "Fecha de Pago";
             this.ventasFechapago.Name = "ventasFechapago";
             // 
@@ -489,152 +487,194 @@
             // 
             // ventasCdpSerie
             // 
+            this.ventasCdpSerie.DataPropertyName = "CSerie";
             this.ventasCdpSerie.HeaderText = "Comprobante Serie";
             this.ventasCdpSerie.Name = "ventasCdpSerie";
             // 
             // ventasCdpNumero
             // 
+            this.ventasCdpNumero.DataPropertyName = "CNDocumento";
             this.ventasCdpNumero.HeaderText = "Comprobante Número Documento";
             this.ventasCdpNumero.Name = "ventasCdpNumero";
             // 
             // ventasProveedorTipo
             // 
+            this.ventasProveedorTipo.DataPropertyName = "PTipo";
             this.ventasProveedorTipo.HeaderText = "Proveedor Tipo";
             this.ventasProveedorTipo.Name = "ventasProveedorTipo";
             // 
             // ventasProveedorNumero
             // 
+            this.ventasProveedorNumero.DataPropertyName = "PNumero";
             this.ventasProveedorNumero.HeaderText = "Proveedor Numero Documento";
             this.ventasProveedorNumero.Name = "ventasProveedorNumero";
             // 
             // ventasProveedorRazonSocial
             // 
+            this.ventasProveedorRazonSocial.DataPropertyName = "PNombreRazonSocial";
             this.ventasProveedorRazonSocial.HeaderText = "Proveedor Razón Social";
             this.ventasProveedorRazonSocial.Name = "ventasProveedorRazonSocial";
             // 
             // ventasCuenta
             // 
+            this.ventasCuenta.DataPropertyName = "Cuenta";
             this.ventasCuenta.HeaderText = "Cuenta";
             this.ventasCuenta.Name = "ventasCuenta";
             // 
             // ventasDescripcion
             // 
+            this.ventasDescripcion.DataPropertyName = "Descripcion";
             this.ventasDescripcion.HeaderText = "Descripción";
             this.ventasDescripcion.Name = "ventasDescripcion";
             // 
             // ventasValorExportacion
             // 
+            this.ventasValorExportacion.DataPropertyName = "ValorExportacion";
             this.ventasValorExportacion.HeaderText = "Valor de Exportación";
             this.ventasValorExportacion.Name = "ventasValorExportacion";
             // 
             // ventasBaseImponible
             // 
+            this.ventasBaseImponible.DataPropertyName = "ValorExportacion";
             this.ventasBaseImponible.HeaderText = "Base Imponible";
             this.ventasBaseImponible.Name = "ventasBaseImponible";
             // 
             // ventasImporteTotalExonerada
             // 
+            this.ventasImporteTotalExonerada.DataPropertyName = "ImporteTotalExonerada";
             this.ventasImporteTotalExonerada.HeaderText = "Importe Total Exonerada";
             this.ventasImporteTotalExonerada.Name = "ventasImporteTotalExonerada";
             // 
             // ventasImporteTotalInafecta
             // 
+            this.ventasImporteTotalInafecta.DataPropertyName = "ImporteTotalInafecta";
             this.ventasImporteTotalInafecta.HeaderText = "Importe Total Inafecta";
             this.ventasImporteTotalInafecta.Name = "ventasImporteTotalInafecta";
             // 
             // ventasIgv
             // 
+            this.ventasIgv.DataPropertyName = "IGV";
             this.ventasIgv.HeaderText = "IGV";
             this.ventasIgv.Name = "ventasIgv";
             // 
             // ventasImporteTotal
             // 
+            this.ventasImporteTotal.DataPropertyName = "ImporteTotal";
             this.ventasImporteTotal.HeaderText = "Importe Total";
             this.ventasImporteTotal.Name = "ventasImporteTotal";
             // 
             // ventasTipoCambio
             // 
+            this.ventasTipoCambio.DataPropertyName = "TC";
             this.ventasTipoCambio.HeaderText = "Tipo de Cambio";
             this.ventasTipoCambio.Name = "ventasTipoCambio";
             // 
             // ventasDolares
             // 
+            this.ventasDolares.DataPropertyName = "Dolares";
             this.ventasDolares.HeaderText = "Dólares";
             this.ventasDolares.Name = "ventasDolares";
             // 
             // ventasIgvRetencion
             // 
+            this.ventasIgvRetencion.DataPropertyName = "IgvRetencion";
             this.ventasIgvRetencion.HeaderText = "IGV Retención";
             this.ventasIgvRetencion.Name = "ventasIgvRetencion";
             // 
             // ventasCuentaDestino
             // 
+            this.ventasCuentaDestino.DataPropertyName = "CuentaDestino";
             this.ventasCuentaDestino.HeaderText = "Cuenta Destino";
             this.ventasCuentaDestino.Name = "ventasCuentaDestino";
             // 
-            // destinoCuentaDescripcion
+            // ventasCuentaDestinoDescripcion
             // 
-            this.destinoCuentaDescripcion.HeaderText = "Cuenta Destino Descripción";
-            this.destinoCuentaDescripcion.Name = "destinoCuentaDescripcion";
+            this.ventasCuentaDestinoDescripcion.DataPropertyName = "CuentaDestinoDescripcion";
+            this.ventasCuentaDestinoDescripcion.HeaderText = "Cuenta Destino Descripción";
+            this.ventasCuentaDestinoDescripcion.Name = "ventasCuentaDestinoDescripcion";
             // 
             // ventasPago
             // 
+            this.ventasPago.DataPropertyName = "Pago";
             this.ventasPago.HeaderText = "Pago";
             this.ventasPago.Name = "ventasPago";
             // 
             // ventasReferenciaFecha
             // 
+            this.ventasReferenciaFecha.DataPropertyName = "ReferenciaFecha";
             this.ventasReferenciaFecha.HeaderText = "Referencia Fecha";
             this.ventasReferenciaFecha.Name = "ventasReferenciaFecha";
             // 
             // ventasReferenciaTipo
             // 
+            this.ventasReferenciaTipo.DataPropertyName = "ReferenciaTipo";
             this.ventasReferenciaTipo.HeaderText = "Referencia Tipo";
             this.ventasReferenciaTipo.Name = "ventasReferenciaTipo";
             // 
             // ventasReferenciaSerie
             // 
+            this.ventasReferenciaSerie.DataPropertyName = "ReferenciaSerie";
             this.ventasReferenciaSerie.HeaderText = "Referencia Serie";
             this.ventasReferenciaSerie.Name = "ventasReferenciaSerie";
             // 
             // ventasReferenciaNumero
             // 
+            this.ventasReferenciaNumero.DataPropertyName = "ReferenciaNumeroDocumento";
             this.ventasReferenciaNumero.HeaderText = "Referencia Número";
             this.ventasReferenciaNumero.Name = "ventasReferenciaNumero";
             // 
             // ventasCodigo
             // 
+            this.ventasCodigo.DataPropertyName = "Codigo";
             this.ventasCodigo.HeaderText = "Código";
             this.ventasCodigo.Name = "ventasCodigo";
             // 
             // ventasConstanciaNumero
             // 
+            this.ventasConstanciaNumero.DataPropertyName = "ConstanciaNumero";
             this.ventasConstanciaNumero.HeaderText = "Constancia Número";
             this.ventasConstanciaNumero.Name = "ventasConstanciaNumero";
             // 
             // ventasConstanciaFechaPago
             // 
+            this.ventasConstanciaFechaPago.DataPropertyName = "ConstanciaFechaPago";
             this.ventasConstanciaFechaPago.HeaderText = "Constancia Fecha Pago";
             this.ventasConstanciaFechaPago.Name = "ventasConstanciaFechaPago";
             // 
             // ventasDetraccionSoles
             // 
+            this.ventasDetraccionSoles.DataPropertyName = "DetraccionSoles";
             this.ventasDetraccionSoles.HeaderText = "Detracción en Soles";
             this.ventasDetraccionSoles.Name = "ventasDetraccionSoles";
             // 
             // ventasReferencia
             // 
+            this.ventasReferencia.DataPropertyName = "Referencia";
             this.ventasReferencia.HeaderText = "Referencia";
             this.ventasReferencia.Name = "ventasReferencia";
             // 
             // ventasObservacion
             // 
+            this.ventasObservacion.DataPropertyName = "Observacion";
             this.ventasObservacion.HeaderText = "Observación";
             this.ventasObservacion.Name = "ventasObservacion";
             // 
-            // tblRegistroComprasTableAdapter
+            // btnGenerarTXT
             // 
-            this.tblRegistroComprasTableAdapter.ClearBeforeFill = true;
+            this.btnGenerarTXT.Location = new System.Drawing.Point(974, 32);
+            this.btnGenerarTXT.Name = "btnGenerarTXT";
+            this.btnGenerarTXT.Size = new System.Drawing.Size(92, 23);
+            this.btnGenerarTXT.TabIndex = 1;
+            this.btnGenerarTXT.Text = "Generar TXT";
+            this.btnGenerarTXT.UseVisualStyleBackColor = true;
+            this.btnGenerarTXT.Click += new System.EventHandler(this.btnGenerarTXT_Click);
+            // 
+            // txtRutaTXT
+            // 
+            this.txtRutaTXT.Location = new System.Drawing.Point(714, 32);
+            this.txtRutaTXT.Name = "txtRutaTXT";
+            this.txtRutaTXT.Size = new System.Drawing.Size(254, 20);
+            this.txtRutaTXT.TabIndex = 5;
             // 
             // comprasID
             // 
@@ -647,8 +687,8 @@
             // comprasMes
             // 
             this.comprasMes.DataPropertyName = "Mes";
-            dataGridViewCellStyle46.BackColor = System.Drawing.Color.Aqua;
-            this.comprasMes.DefaultCellStyle = dataGridViewCellStyle46;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Aqua;
+            this.comprasMes.DefaultCellStyle = dataGridViewCellStyle1;
             this.comprasMes.HeaderText = "Mes";
             this.comprasMes.Name = "comprasMes";
             this.comprasMes.Width = 40;
@@ -722,16 +762,16 @@
             // comprasCuenta
             // 
             this.comprasCuenta.DataPropertyName = "Cuenta";
-            dataGridViewCellStyle47.BackColor = System.Drawing.Color.Aqua;
-            this.comprasCuenta.DefaultCellStyle = dataGridViewCellStyle47;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Aqua;
+            this.comprasCuenta.DefaultCellStyle = dataGridViewCellStyle2;
             this.comprasCuenta.HeaderText = "Cuenta";
             this.comprasCuenta.Name = "comprasCuenta";
             // 
             // comprasDescripcion
             // 
             this.comprasDescripcion.DataPropertyName = "Descripcion";
-            dataGridViewCellStyle48.BackColor = System.Drawing.Color.Aqua;
-            this.comprasDescripcion.DefaultCellStyle = dataGridViewCellStyle48;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Aqua;
+            this.comprasDescripcion.DefaultCellStyle = dataGridViewCellStyle3;
             this.comprasDescripcion.HeaderText = "Descripción";
             this.comprasDescripcion.Name = "comprasDescripcion";
             // 
@@ -780,8 +820,8 @@
             // comprasConversionDolares
             // 
             this.comprasConversionDolares.DataPropertyName = "ConversionDolar";
-            dataGridViewCellStyle49.BackColor = System.Drawing.Color.Cyan;
-            this.comprasConversionDolares.DefaultCellStyle = dataGridViewCellStyle49;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Cyan;
+            this.comprasConversionDolares.DefaultCellStyle = dataGridViewCellStyle4;
             this.comprasConversionDolares.HeaderText = "Conversión Dólares (S/.)";
             this.comprasConversionDolares.Name = "comprasConversionDolares";
             this.comprasConversionDolares.ReadOnly = true;
@@ -795,40 +835,40 @@
             // comprasDestino
             // 
             this.comprasDestino.DataPropertyName = "Destino";
-            dataGridViewCellStyle50.BackColor = System.Drawing.Color.Aqua;
-            this.comprasDestino.DefaultCellStyle = dataGridViewCellStyle50;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Aqua;
+            this.comprasDestino.DefaultCellStyle = dataGridViewCellStyle5;
             this.comprasDestino.HeaderText = "Destino";
             this.comprasDestino.Name = "comprasDestino";
             // 
             // comprasDescripcionDestino
             // 
             this.comprasDescripcionDestino.DataPropertyName = "DescripcionDestino";
-            dataGridViewCellStyle51.BackColor = System.Drawing.Color.Aqua;
-            this.comprasDescripcionDestino.DefaultCellStyle = dataGridViewCellStyle51;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Aqua;
+            this.comprasDescripcionDestino.DefaultCellStyle = dataGridViewCellStyle6;
             this.comprasDescripcionDestino.HeaderText = "Descripción Destino";
             this.comprasDescripcionDestino.Name = "comprasDescripcionDestino";
             // 
             // comprasCuentaDestino
             // 
             this.comprasCuentaDestino.DataPropertyName = "CuentaDestino";
-            dataGridViewCellStyle52.BackColor = System.Drawing.Color.Aqua;
-            this.comprasCuentaDestino.DefaultCellStyle = dataGridViewCellStyle52;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Aqua;
+            this.comprasCuentaDestino.DefaultCellStyle = dataGridViewCellStyle7;
             this.comprasCuentaDestino.HeaderText = "Cuenta Destino";
             this.comprasCuentaDestino.Name = "comprasCuentaDestino";
             // 
             // comprasPago
             // 
             this.comprasPago.DataPropertyName = "Pgo";
-            dataGridViewCellStyle53.BackColor = System.Drawing.Color.Aqua;
-            this.comprasPago.DefaultCellStyle = dataGridViewCellStyle53;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Aqua;
+            this.comprasPago.DefaultCellStyle = dataGridViewCellStyle8;
             this.comprasPago.HeaderText = "Pago";
             this.comprasPago.Name = "comprasPago";
             // 
             // comprasCodigo
             // 
             this.comprasCodigo.DataPropertyName = "Codigo";
-            dataGridViewCellStyle54.BackColor = System.Drawing.Color.Aqua;
-            this.comprasCodigo.DefaultCellStyle = dataGridViewCellStyle54;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Aqua;
+            this.comprasCodigo.DefaultCellStyle = dataGridViewCellStyle9;
             this.comprasCodigo.HeaderText = "Código";
             this.comprasCodigo.Name = "comprasCodigo";
             // 
@@ -888,19 +928,19 @@
             this.Load += new System.EventHandler(this.FrmProgramaLibrosElectronicos_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.tabRegistros.ResumeLayout(false);
             this.tabCompras.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistroCompras)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblRegistroComprasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dSCompras)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spallcurrentmonthcomprasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSRegistroCompras)).EndInit();
             this.panel3.ResumeLayout(false);
             this.tabVentas.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistroVentas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spallmonthventasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSRegistroVentas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -908,27 +948,29 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtBuscarProveedor;
         private System.Windows.Forms.Button btnBuscarProveedor;
         private System.Windows.Forms.Label testlabel;
-        private System.Windows.Forms.Button btnGuardarVentas;
-        private System.Windows.Forms.Button btnGuardarCompras;
         private System.Windows.Forms.TabControl tabRegistros;
         private System.Windows.Forms.TabPage tabCompras;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataGridView dgvRegistroCompras;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnGuardarCompras;
         private System.Windows.Forms.Button btnEliminarCompras;
         private System.Windows.Forms.TabPage tabVentas;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnGuardarVentas;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.DataGridView dgvRegistroVentas;
+        private System.Windows.Forms.Button btnEliminarVentas;
+        private DSRegistroCompras dSRegistroCompras;
+        private System.Windows.Forms.BindingSource spallcurrentmonthcomprasBindingSource;
+        private DSRegistroComprasTableAdapters.sp_all_current_month_comprasTableAdapter sp_all_current_month_comprasTableAdapter;
+        private DSRegistroVentas dSRegistroVentas;
+        private System.Windows.Forms.BindingSource spallmonthventasBindingSource;
+        private DSRegistroVentasTableAdapters.sp_all_month_ventasTableAdapter sp_all_month_ventasTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ventasId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ventasMes;
         private System.Windows.Forms.DataGridViewTextBoxColumn ventasNumeroRegistro;
         private System.Windows.Forms.DataGridViewTextBoxColumn ventasFechaEmision;
@@ -951,7 +993,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ventasDolares;
         private System.Windows.Forms.DataGridViewTextBoxColumn ventasIgvRetencion;
         private System.Windows.Forms.DataGridViewTextBoxColumn ventasCuentaDestino;
-        private System.Windows.Forms.DataGridViewTextBoxColumn destinoCuentaDescripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ventasCuentaDestinoDescripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn ventasPago;
         private System.Windows.Forms.DataGridViewTextBoxColumn ventasReferenciaFecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn ventasReferenciaTipo;
@@ -963,9 +1005,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ventasDetraccionSoles;
         private System.Windows.Forms.DataGridViewTextBoxColumn ventasReferencia;
         private System.Windows.Forms.DataGridViewTextBoxColumn ventasObservacion;
-        private DSCompras dSCompras;
-        private System.Windows.Forms.BindingSource tblRegistroComprasBindingSource;
-        private DSComprasTableAdapters.tblRegistroComprasTableAdapter tblRegistroComprasTableAdapter;
+        private System.Windows.Forms.Button btnGenerarTXT;
+        private System.Windows.Forms.TextBox txtRutaTXT;
         private System.Windows.Forms.DataGridViewTextBoxColumn comprasID;
         private System.Windows.Forms.DataGridViewTextBoxColumn comprasMes;
         private System.Windows.Forms.DataGridViewTextBoxColumn comprasNumeroRegistro;

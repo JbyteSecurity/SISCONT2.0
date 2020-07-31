@@ -22,10 +22,10 @@ namespace Presentacion
 
         private void FrmDetraccion_Load(object sender, EventArgs e)
         {
-            index();
+            Index();
         }
 
-        private void save()
+        private void Insert()
         {
             int codigo;
             double monto, porcentaje;
@@ -36,29 +36,29 @@ namespace Presentacion
             if (edit)
             {
                 int id = Convert.ToInt32(dgvDetraccion.CurrentRow.Cells["id"].Value);
-                if (detraccion.update(id, codigo, monto, porcentaje))
+                if (detraccion.Update(id, codigo, monto, porcentaje))
                 {
                     MessageBox.Show("Detraccion Editada", "Detracción .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    clearTextBox();
-                    index();
+                    ClearTextBox();
+                    Index();
                 }
                 else
                     MessageBox.Show("Detracción no Editada", "Detracción .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                if (detraccion.insert(codigo, monto, porcentaje))
+                if (detraccion.Insert(codigo, monto, porcentaje))
                 {
                     MessageBox.Show("Detracción Agregado", "Detracción .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    clearTextBox();
-                    index();
+                    ClearTextBox();
+                    Index();
                 }
                 else
                     MessageBox.Show("Detracción no Agregado", "Detracción .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
-        private void clearTextBox()
+        private void ClearTextBox()
         {
             txtCodigo.Text = null;
             txtMonto.Text = null;
@@ -67,25 +67,25 @@ namespace Presentacion
             edit = false;
         }
 
-        private void index()
+        private void Index()
         {
-            dgvDetraccion.DataSource = detraccion.index();
+            dgvDetraccion.DataSource = detraccion.Index();
         }
 
-        private void destroy()
+        private void Destroy()
         {
             int id = Convert.ToInt32(dgvDetraccion.CurrentRow.Cells["id"].Value);
-            if (detraccion.destroy(id))
+            if (detraccion.Destroy(id))
             {
                 MessageBox.Show("Detracción eliminado", "Detracción .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                clearTextBox();
-                index();
+                ClearTextBox();
+                Index();
             }
             else
                 MessageBox.Show("Detracción no eliminado", "Detracción .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-        private void goToTextBox()
+        private void GoToTextBox()
         {
             if (dgvDetraccion.SelectedRows.Count > 0)
             {
@@ -100,22 +100,22 @@ namespace Presentacion
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            clearTextBox();
+            ClearTextBox();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            save();
+            Insert();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            destroy();
+            Destroy();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            goToTextBox();
+            GoToTextBox();
         }
     }
 }

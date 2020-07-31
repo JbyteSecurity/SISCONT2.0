@@ -14,7 +14,7 @@ namespace Datos
 
         SqlCommand comando = new SqlCommand();
 
-        public DataTable login(string usuario, string contrasenia)
+        public DataTable Login(string usuario, string contrasenia)
         {
             SqlDataReader sqlDataReaderProvider;
             DataTable dataTableProvider = new DataTable("tblUsuarios");

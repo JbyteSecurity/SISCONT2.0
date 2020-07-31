@@ -10,29 +10,29 @@ namespace Negocios
     {
         DaoDetraccion daoDetraccion = new DaoDetraccion();
 
-        public DataTable index()
+        public DataTable Index()
         {
-            return daoDetraccion.index();
+            return daoDetraccion.Index();
         }
 
-        public DataTable show(int codigo)
+        public DataTable Show(int codigo)
         {
-            return daoDetraccion.show(codigo);
+            return daoDetraccion.Show(codigo);
         }
 
-        public bool insert(int codigo, double monto, double porcentaje)
+        public bool Insert(int codigo, double monto, double porcentaje)
         {
-            return daoDetraccion.insert(codigo, monto, porcentaje);
+            return daoDetraccion.Insert(codigo, monto, porcentaje);
         }
 
-        public bool update(int id, int codigo, double monto, double porcentaje)
+        public bool Update(int id, int codigo, double monto, double porcentaje)
         {
-            return daoDetraccion.update(id, codigo, monto, porcentaje);
+            return daoDetraccion.Update(id, codigo, monto, porcentaje);
         }
 
-        public bool destroy(int id)
+        public bool Destroy(int id)
         {
-            return daoDetraccion.destroy(id);
+            return daoDetraccion.Destroy(id);
         }
     }
 }

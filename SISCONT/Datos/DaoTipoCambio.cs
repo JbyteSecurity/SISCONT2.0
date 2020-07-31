@@ -14,7 +14,7 @@ namespace Datos
         Conexion conexion = new Conexion();
         SqlCommand comando = new SqlCommand();
 
-        public DataTable all()
+        public DataTable All()
         {
             SqlDataReader sqlDataReader;
             DataTable dataTable = new DataTable();
@@ -27,7 +27,7 @@ namespace Datos
             return dataTable;
         }
 
-        public DataTable show(string fecha)
+        public DataTable Show(string fecha)
         {
             SqlDataReader sqlDataReader;
             DataTable dataTable = new DataTable();
@@ -47,7 +47,7 @@ namespace Datos
             return dataTable;
         }
 
-        public void insert(string fecha, double compra, double venta)
+        public void Insert(string fecha, double compra, double venta)
         {
             comando.Connection = conexion.OpenConnection();
             comando.CommandText = "sp_insert_tipo_cambio";
@@ -62,7 +62,7 @@ namespace Datos
             conexion.CloseConnection();
         }
 
-        public void update(int id, string fecha, double compra, double venta)
+        public void Update(int id, string fecha, double compra, double venta)
         {
             comando.Connection = conexion.OpenConnection();
             comando.CommandText = "sp_update_tipo_cambio";
@@ -78,7 +78,7 @@ namespace Datos
             conexion.CloseConnection();
         }
 
-        public void destroy(int id)
+        public void Destroy(int id)
         {
             comando.Connection = conexion.OpenConnection();
             comando.CommandText = "sp_delete_tipo_cambio";

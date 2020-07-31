@@ -11,10 +11,10 @@ namespace Negocios
     {
         private DaoUsuario daoUsuario = new DaoUsuario();
 
-        public DataTable inciarSesion(string usuario, string contrasenia)
+        public DataTable Login(string usuario, string contrasenia)
         {
             DataTable dataTableLogin = new DataTable();
-            dataTableLogin = daoUsuario.login(usuario, contrasenia);
+            dataTableLogin = daoUsuario.Login(usuario, contrasenia);
             return dataTableLogin;
         }
 

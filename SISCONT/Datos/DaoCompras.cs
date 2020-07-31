@@ -13,7 +13,7 @@ namespace Datos
         private Conexion conexion = new Conexion();
         SqlCommand comando = new SqlCommand();
 
-        public DataTable all()
+        public DataTable All()
         {
             SqlDataReader sqlDataReader;
             DataTable dataTable = new DataTable();
@@ -26,7 +26,7 @@ namespace Datos
             return dataTable;
         }
 
-        public DataTable allCurrentMonth()
+        public DataTable AllCurrentMonth()
         {
             SqlDataReader sqlDataReader;
             DataTable dataTable = new DataTable();
@@ -39,7 +39,7 @@ namespace Datos
             return dataTable;
         }
 
-        public void insert(
+        public void Insert(
             int mes, string nReg, string fechaEmision, string fechaPago, string cTipo, string cSerie, string cnDocumento,
             string pTipo, string pNumero, string pDocumento, string pRazonSocial, string cuenta, string descripcion, double baseImponible,
             double igv, double noGravada, double descuento, double importeTotal, double dolares, double tipoCambio, double percepcion, string destino,
@@ -96,7 +96,7 @@ namespace Datos
             conexion.CloseConnection();
         }
 
-        public void update(
+        public void Update(
             int id, int mes, string nReg, string fechaEmision, string fechaPago, string cTipo, string cSeire, string cnDocumento,
             string pTipo, string pNumero, string pDocumento, string pRazonSocial, string cuenta, string descripcion, double baseImponible,
             double igv, double noGravada, double descuento, double importeTotal, double dolares, double tipoCambio, double percepcion, string destino,
@@ -151,7 +151,7 @@ namespace Datos
             conexion.CloseConnection();
         }
 
-        public void destroy(int id)
+        public void Destroy(int id)
         {
             comando.Connection = conexion.OpenConnection();
             comando.CommandText = "sp_delete_compras";

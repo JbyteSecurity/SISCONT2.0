@@ -13,7 +13,7 @@ namespace Datos
         private Conexion conexion = new Conexion();
         SqlCommand comando = new SqlCommand();
 
-        public string showAcount(string codigo)
+        public string ShowAcount(string codigo)
         {
             SqlDataReader sqlDataReaderPlanContable;
             DataTable dataTableProvider = new DataTable("tblPlanContable");

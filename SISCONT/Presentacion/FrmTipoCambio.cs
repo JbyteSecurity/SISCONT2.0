@@ -22,31 +22,31 @@ namespace Presentacion
 
         private void FrmTipoCambio_Load(object sender, EventArgs e)
         {
-            all();
+            All();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            save();
+            Insert();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            destroy();
+            Destroy();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            getToTextBox();
+            GetToTextBox();
         }
 
         #region METHODS
-        private void all()
+        private void All()
         {
-            dgvTipoCambio.DataSource = tipoCambio.all();
+            dgvTipoCambio.DataSource = tipoCambio.All();
         }
 
-        private void clearText()
+        private void ClearText()
         {
             txtFecha.Text = null;
             txtCompra.Text = null;
@@ -54,7 +54,7 @@ namespace Presentacion
             edit = false;
         }
 
-        private void save()
+        private void Insert()
         {
             string fecha = txtFecha.Text;
             double compra = Convert.ToDouble(txtCompra.Text);
@@ -63,11 +63,11 @@ namespace Presentacion
             if (edit)
             {
                 int id = Convert.ToInt32(dgvTipoCambio.CurrentRow.Cells["ID"].Value);
-                if (tipoCambio.edit(id, fecha, compra, venta))
+                if (tipoCambio.Update(id, fecha, compra, venta))
                 {
                     MessageBox.Show("Tipo de Cambio Actulizado", "Tipo de Cambio .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    all();
-                    clearText();
+                    All();
+                    ClearText();
                 }
                 else
                     MessageBox.Show("Tipo de Cambio NO Actulizado", "Tipo de Cambio .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -75,15 +75,15 @@ namespace Presentacion
             else
             {
                 DataTable dataTableFecha = new DataTable();
-                dataTableFecha = tipoCambio.show(fecha);
+                dataTableFecha = tipoCambio.Show(fecha);
 
                 if (dataTableFecha.Rows.Count <= 0)
                 {
-                    if (tipoCambio.save(fecha, compra, venta))
+                    if (tipoCambio.Insert(fecha, compra, venta))
                     {
                         MessageBox.Show("Tipo de Cambio Guardado", "Tipo de Cambio .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        all();
-                        clearText();
+                        All();
+                        ClearText();
                     }
                     else
                         MessageBox.Show("Tipo de Cambio NO Guardado", "Tipo de Cambio .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -94,20 +94,20 @@ namespace Presentacion
             }
         }
 
-        private void destroy()
+        private void Destroy()
         {
             int id = Convert.ToInt32(dgvTipoCambio.CurrentRow.Cells["ID"].Value);
-            if (tipoCambio.delete(id))
+            if (tipoCambio.Destroy(id))
             {
                 MessageBox.Show("Tipo de Cambio Eliminado", "Proveedor .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                clearText();
-                all();
+                ClearText();
+                All();
             }
             else
                 MessageBox.Show("Tipo de Cambio NO Eliminado", "Proveedor .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-        private void getToTextBox()
+        private void GetToTextBox()
         {
             if (dgvTipoCambio.SelectedRows.Count > 0)
             {
@@ -123,7 +123,7 @@ namespace Presentacion
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            clearText();
+            ClearText();
         }
     }
 }

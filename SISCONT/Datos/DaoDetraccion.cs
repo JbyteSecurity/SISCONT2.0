@@ -14,7 +14,7 @@ namespace Datos
 
         SqlCommand sqlCommand = new SqlCommand();
 
-        public DataTable index()
+        public DataTable Index()
         {
             SqlDataReader sqlDataReader;
             DataTable dataTableDetraccion = new DataTable();
@@ -27,7 +27,7 @@ namespace Datos
             return dataTableDetraccion;
         }
 
-        public DataTable show(int codigo)
+        public DataTable Show(int codigo)
         {
             SqlDataReader sqlDataReader;
             DataTable dataTable = new DataTable();
@@ -48,7 +48,7 @@ namespace Datos
         }
 
 
-        public bool insert(int codigo, double monto, double porcentaje)
+        public bool Insert(int codigo, double monto, double porcentaje)
         {
             sqlCommand.Connection = conexion.OpenConnection();
             sqlCommand.CommandText = "sp_insert_detracciones";
@@ -69,7 +69,7 @@ namespace Datos
 
         }
 
-        public bool update(int id, int codigo, double monto, double porcentaje)
+        public bool Update(int id, int codigo, double monto, double porcentaje)
         {
             sqlCommand.Connection = conexion.OpenConnection();
             sqlCommand.CommandText = "sp_update_detracciones";
@@ -89,7 +89,7 @@ namespace Datos
             else return false;
         }
 
-        public bool destroy(int id)
+        public bool Destroy(int id)
         {
             sqlCommand.Connection = conexion.OpenConnection();
             sqlCommand.CommandText = "sp_delete_detracciones";

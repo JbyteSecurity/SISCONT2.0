@@ -13,7 +13,7 @@ namespace Datos
         private Conexion conexion = new Conexion();
 
         SqlCommand comando = new SqlCommand();
-        public DataTable allCdpTypes()
+        public DataTable AllCdpTypes()
         {
             SqlDataReader leer;
             DataTable dataTableCDPType = new DataTable();

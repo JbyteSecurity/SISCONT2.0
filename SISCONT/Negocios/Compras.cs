@@ -11,12 +11,12 @@ namespace Negocios
 
         private DaoCompras daoCompras = new DaoCompras();
 
-        public DataTable allCurrentMonth()
+        public DataTable AllCurrentMonth()
         {
-            return daoCompras.allCurrentMonth();
+            return daoCompras.AllCurrentMonth();
         }
 
-        public void save(
+        public void Insert(
             int mes, string nReg, string fechaEmision, string fechaPago, string cTipo, string cSeire, string cnDocumento,
             string pTipo, string pNumero, string pDocumento, string pRazonSocial, string cuenta, string descripcion, double baseImponible,
             double igv, double noGravada, double descuento, double importeTotal, double dolares, double tipoCambio, double percepcion, string destino,
@@ -24,7 +24,7 @@ namespace Negocios
             double constanciaMonto, string constanciaReferencia, string bancarizacionFecha, string bancarizacionBco, int bancarizacionOperacion, string usuario, double comprasConversionDolares
             )
         {
-            daoCompras.insert(
+            daoCompras.Insert(
                 mes,
                 nReg,
                 fechaEmision,
@@ -63,7 +63,7 @@ namespace Negocios
                 );
         }
 
-        public void update(
+        public void Update(
             int id, int mes, string nReg, string fechaEmision, string fechaPago, string cTipo, string cSeire, string cnDocumento,
             string pTipo, string pNumero, string pDocumento, string pRazonSocial, string cuenta, string descripcion, double baseImponible,
             double igv, double noGravada, double descuento, double importeTotal, double dolares, double tipoCambio, double percepcion, string destino,
@@ -72,7 +72,7 @@ namespace Negocios
             double comprasConversionDolares
             )
         {
-            daoCompras.update(
+            daoCompras.Update(
                 id,
                 mes,
                 nReg,
@@ -112,9 +112,9 @@ namespace Negocios
                 );
         }
 
-        public bool delete(int id)
+        public bool Destroy(int id)
         {
-            daoCompras.destroy(id);
+            daoCompras.Destroy(id);
             return true;
         }
     }

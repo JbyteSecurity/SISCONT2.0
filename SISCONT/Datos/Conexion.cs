@@ -11,7 +11,7 @@ namespace Datos
     class Conexion
     {
         #region Connection to SQL Server
-        private SqlConnection conexion = new SqlConnection("Data Source=198.12.230.10;Initial Catalog=SISCONT; User ID=procont; Password=Lampara1988");
+        readonly private SqlConnection conexion = new SqlConnection("Data Source=198.12.230.10;Initial Catalog=SISCONT; User ID=procont; Password=Lampara1988");
 
         public SqlConnection OpenConnection()
         {

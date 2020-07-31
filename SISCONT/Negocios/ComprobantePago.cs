@@ -9,10 +9,10 @@ namespace Negocios
     public class ComprobantePago
     {
         private DaoComprobantePago daoComprobantePago = new DaoComprobantePago();
-        public DataTable getAllCpdTypes()
+        public DataTable GetAllCpdTypes()
         {
             DataTable dataTableCDPTypes = new DataTable();
-            dataTableCDPTypes = daoComprobantePago.allCdpTypes();
+            dataTableCDPTypes = daoComprobantePago.AllCdpTypes();
             return dataTableCDPTypes;
         }
     }

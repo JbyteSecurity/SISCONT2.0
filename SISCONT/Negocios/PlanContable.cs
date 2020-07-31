@@ -9,10 +9,10 @@ namespace Negocios
     {
         private DaoPlanContable daoPlanContable = new DaoPlanContable();
 
-        public string getAcount(string codigo)
+        public string GetAcount(string codigo)
         {
             string cuenta;
-            cuenta = daoPlanContable.showAcount(codigo);
+            cuenta = daoPlanContable.ShowAcount(codigo);
             return cuenta;
         }
     }

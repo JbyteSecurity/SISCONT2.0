@@ -9,37 +9,35 @@ namespace Negocios
     public class TipoCambio
     {
         private DaoTipoCambio daoTipoCambio = new DaoTipoCambio();
-        public DataTable show(string fecha)
+        public DataTable Show(string fecha)
         {
             DataTable dataTable = new DataTable();
-            dataTable = daoTipoCambio.show(fecha);
+            dataTable = daoTipoCambio.Show(fecha);
             return dataTable;
         }
 
-        public DataTable all()
+        public DataTable All()
         {
-
             DataTable dataTableSuppliers = new DataTable();
-            dataTableSuppliers = daoTipoCambio.all(); ;
+            dataTableSuppliers = daoTipoCambio.All(); ;
             return dataTableSuppliers;
-
         }
 
-        public bool save(string fecha, double compra, double venta)
+        public bool Insert(string fecha, double compra, double venta)
         {
-            daoTipoCambio.insert(fecha, compra, venta);
+            daoTipoCambio.Insert(fecha, compra, venta);
             return true;
         }
 
-        public bool edit(int id, string fecha, double compra, double venta)
+        public bool Update(int id, string fecha, double compra, double venta)
         {
-            daoTipoCambio.update(id, fecha, compra, venta);
+            daoTipoCambio.Update(id, fecha, compra, venta);
             return true;
         }
 
-        public bool delete(int id)
+        public bool Destroy(int id)
         {
-            daoTipoCambio.destroy(id);
+            daoTipoCambio.Destroy(id);
             return true;
         }
     }

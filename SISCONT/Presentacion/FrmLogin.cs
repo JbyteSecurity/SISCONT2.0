@@ -29,15 +29,15 @@ namespace Presentacion
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            login();
+            Login();
         }
 
         private void EnterClick(object sender, KeyPressEventArgs e)
         {
-            login();
+            Login();
         }
 
-        private void login()
+        private void Login()
         {
             string user = txtUsuario.Text.ToLower();
             string contrasenia = txtContrasenia.Text;
@@ -48,7 +48,7 @@ namespace Presentacion
 
                 DataTable dataTableLogin = new DataTable();
 
-                dataTableLogin = usuario.inciarSesion(user, contrasenia);
+                dataTableLogin = usuario.Login(user, contrasenia);
 
                 if (dataTableLogin != null)
                 {
@@ -76,7 +76,7 @@ namespace Presentacion
                 if (txtUsuario.Text != "")
                 {
                     if (txtContrasenia.Text != "")
-                        login();
+                        Login();
                     else
                         txtContrasenia.Focus();
                 }
@@ -88,7 +88,7 @@ namespace Presentacion
             if (e.KeyCode.Equals(Keys.Enter))
             {
                 if (txtUsuario.Text != "" && txtContrasenia.Text != "")
-                    login();
+                    Login();
             }
         }
 

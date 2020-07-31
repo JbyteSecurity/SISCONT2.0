@@ -173,7 +173,7 @@
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.label1);
             this.Name = "FrmDetraccion";
-            this.Text = "FrmDetraccion";
+            this.Text = "Detracción";
             this.Load += new System.EventHandler(this.FrmDetraccion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetraccion)).EndInit();
             this.ResumeLayout(false);
