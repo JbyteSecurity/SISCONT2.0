@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30309.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentacion", "Presentacion\Presentacion.csproj", "{462075C6-FF3D-4587-83F1-20A17D3F3A23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datos", "Datos\Datos.csproj", "{A7D875FD-60D9-4E19-B8DE-854D80E985FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocios", "Negocios\Negocios.csproj", "{A336CFDC-2F8F-4C56-B578-A5378C4CA1E1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{462075C6-FF3D-4587-83F1-20A17D3F3A23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{462075C6-FF3D-4587-83F1-20A17D3F3A23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{462075C6-FF3D-4587-83F1-20A17D3F3A23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{462075C6-FF3D-4587-83F1-20A17D3F3A23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7D875FD-60D9-4E19-B8DE-854D80E985FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7D875FD-60D9-4E19-B8DE-854D80E985FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7D875FD-60D9-4E19-B8DE-854D80E985FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7D875FD-60D9-4E19-B8DE-854D80E985FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A336CFDC-2F8F-4C56-B578-A5378C4CA1E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A336CFDC-2F8F-4C56-B578-A5378C4CA1E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A336CFDC-2F8F-4C56-B578-A5378C4CA1E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A336CFDC-2F8F-4C56-B578-A5378C4CA1E1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C182F979-589B-462E-9B3A-EA7CFB752123}
+	EndGlobalSection
+EndGlobal
