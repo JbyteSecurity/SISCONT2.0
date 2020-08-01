@@ -39,6 +39,19 @@ namespace Datos
             return dataTable;
         }
 
+        public DataTable GetForTXT()
+        {
+            SqlDataReader sqlDataReader;
+            DataTable dataTable = new DataTable();
+            comando.Connection = conexion.OpenConnection();
+            comando.CommandText = "sp_generate_txt_compras";
+            comando.CommandType = CommandType.StoredProcedure;
+            sqlDataReader = comando.ExecuteReader();
+            dataTable.Load(sqlDataReader);
+            conexion.CloseConnection();
+            return dataTable;
+        }
+
         public void Insert(
             int mes, string nReg, string fechaEmision, string fechaPago, string cTipo, string cSerie, string cnDocumento,
             string pTipo, string pNumero, string pDocumento, string pRazonSocial, string cuenta, string descripcion, double baseImponible,

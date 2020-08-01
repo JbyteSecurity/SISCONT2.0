@@ -15,6 +15,7 @@ namespace Negocios
         {
             return daoCompras.AllCurrentMonth();
         }
+        public DataTable GetForTXT() { return daoCompras.GetForTXT(); }
 
         public void Insert(
             int mes, string nReg, string fechaEmision, string fechaPago, string cTipo, string cSeire, string cnDocumento,

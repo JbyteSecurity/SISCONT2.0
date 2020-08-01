@@ -391,7 +391,11 @@ namespace Presentacion
                             dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasConstanciaReferencia"].Value = "";
                     }
                     else
+                    {
                         MessageBox.Show("Ingrese un número entero (1 - 5)");
+                        dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasConstanciaReferencia"].Value = "";
+                    }
+                        
                     break;
             }
 
@@ -567,7 +571,7 @@ namespace Presentacion
         private void GenerateComprasTXT()
         {
             DataTable dataTable = new DataTable();
-            dataTable = compras.AllCurrentMonth();
+            dataTable = compras.GetForTXT();
             if (dataTable.Rows.Count > 0)
             {
 
@@ -578,7 +582,12 @@ namespace Presentacion
                 {
                     fileRoute = txtRutaTXT.Text;
 
-                    filename = fileRoute + "LERRRRRRRRRRRAAAAMM0008010000OIM1.txt";
+                    string pleLibroCompras = "LE";
+                    string pleRuc = "20602111602";
+                    string pleAnio = "2020";
+                    string pleMes = "03";
+
+                    filename = fileRoute + pleLibroCompras + pleRuc + pleAnio + pleMes + "00080100001111.txt";
 
                     if (File.Exists(filename))
                     {
@@ -601,74 +610,82 @@ namespace Presentacion
             StreamWriter fichero;
             fichero = File.CreateText(filename);
             for (int i = 0; i < dataTable.Rows.Count; i++) {
-                int txtComprasMes = Convert.ToInt32(dataTable.Rows[i]["Mes"].ToString());
-                string txtComprasNumeroRegistro = dataTable.Rows[i]["NReg"].ToString();
-                string txtComprasFechaEmision = dataTable.Rows[i]["FechaEmision"].ToString();
-                string txtComprasFechaPago = dataTable.Rows[i]["FechaPago"].ToString();
-                string txtComprasCdpTipo = dataTable.Rows[i]["CTipo"].ToString();
-                string txtComprasCdpSerie = dataTable.Rows[i]["CSerie"].ToString();
-                string txtComprasCdpNumeorDocumento = dataTable.Rows[i]["CNDocumento"].ToString();
-                string txtComprasProveedorTipo = dataTable.Rows[i]["PTipo"].ToString();
-                string txtComprasProveedorNumero = dataTable.Rows[i]["PNumero"].ToString();
-                string txtComprasProveedorDocumento = dataTable.Rows[i]["PDocumento"].ToString();
-                string txtComprasProveedorRazonSoccial = dataTable.Rows[i]["PNombreRazonSocial"].ToString();
-                string txtComprasCuenta = dataTable.Rows[i]["Cuenta"].ToString();
-                string txtComprasDescripcion = dataTable.Rows[i]["Descripcion"].ToString();
-                double txtComprasBaseImponible = Convert.ToDouble(dataTable.Rows[i]["BaseImponible"].ToString());
-                double txtComprasIgv = Convert.ToDouble(dataTable.Rows[i]["IGV"].ToString());
-                double txtComprasNoGravada = Convert.ToDouble(dataTable.Rows[i]["NoGravada"].ToString());
-                double txtComprasDescuento = Convert.ToDouble(dataTable.Rows[i]["Descuentos"].ToString());
-                double txtComprasImporteTotal = Convert.ToDouble(dataTable.Rows[i]["ImporteTotal"].ToString());
-                double txtComprasDolares = Convert.ToDouble(dataTable.Rows[i]["Dolares"].ToString());
-                double txtComprasTipoCambio = Convert.ToDouble(dataTable.Rows[i]["TipoCambio"].ToString());
-                double txtComprasPercepcion = Convert.ToDouble(dataTable.Rows[i]["Percepcion"].ToString());
-                string txtComprasDestino = dataTable.Rows[i]["Destino"].ToString();
-                string txtComprasDestinoDescripcion = dataTable.Rows[i]["DescripcionDestino"].ToString();
-                string txtComprasDestinoCuenta = dataTable.Rows[i]["CuentaDestino"].ToString();
-                string txtComprasPago = dataTable.Rows[i]["Pgo"].ToString();
-                string txtComprasCodigo =dataTable.Rows[i]["Codigo"].ToString();
-                string txtComprasConstanciaNumero = dataTable.Rows[i]["ConstanciaNumero"].ToString();
-                string txtComprasConstanciaFechaPago = dataTable.Rows[i]["ConstanciaFechaPago"].ToString();
-                double txtComprasConstanciaMonto = Convert.ToDouble(dataTable.Rows[i]["ConstanciaMonto"].ToString());
-                string txtComprasConstanciaReferencia = dataTable.Rows[i]["ConstanciaReferencia"].ToString();
-                string txtComprasBancarizacionFecha = dataTable.Rows[i]["BancarizacionFecha"].ToString();
-                string txtComprasBancarizacionBanco = dataTable.Rows[i]["BancarizacionBco"].ToString();
-                int txtComprasBancarizacionOperacion = Convert.ToInt32(dataTable.Rows[i]["Bancarizacionoperacion"].ToString());
+                string txtPlePeriodo = dataTable.Rows[i]["Periodo"].ToString();
+                string txtPleRegimen1 = dataTable.Rows[i]["Regimen1"].ToString();
+                string txtPleRegimen2 = dataTable.Rows[i]["Regimen2"].ToString();
+                string txtPleFechaEmision = dataTable.Rows[i]["FechaEmision"].ToString();
+                string txtPleFechaPago = dataTable.Rows[i]["FechaPago"].ToString();
+                string txtPleComprobanteTipo = dataTable.Rows[i]["ComprobanteTipo"].ToString();
+                string txtPleComprobanteSerie = dataTable.Rows[i]["ComprobanteSerie"].ToString();
+                string txtPleAnioEmisionAduana = dataTable.Rows[i]["AnioEmisionAduana"].ToString();
+                string txtPleCampo10 = dataTable.Rows[i]["Campo10"].ToString();
+                string txtPleProveedorTipo = dataTable.Rows[i]["ProveedorTipo"].ToString();
+                string txtPleProveedorNumero = dataTable.Rows[i]["ProveedorNumero"].ToString();
+                string txtPleProveedorNombre = dataTable.Rows[i]["ProveedorNombre"].ToString();
+                string txtPleBaseImponible = dataTable.Rows[i]["BaseImponible"].ToString();
+                string txtPleIGV = dataTable.Rows[i]["IGV"].ToString();
+                string txtPleBaseImponible2 = dataTable.Rows[i]["BaseImponible2"].ToString();
+                string txtPleIGV2 = dataTable.Rows[i]["IGV"].ToString();
+                string txtPleBaseImponible3 = dataTable.Rows[i]["BaseImponible3"].ToString();
+                string txtPleIGV3 = dataTable.Rows[i]["IGV"].ToString();
+                string txtPleNoGravada = dataTable.Rows[i]["NoGravada"].ToString();
+                string txtPleImpuestoImponible = dataTable.Rows[i]["ImpuestoImponible"].ToString();
+                string txtPleOtrosMontos = dataTable.Rows[i]["OtrosMontos"].ToString();
+                string txtPleImporteTotal = dataTable.Rows[i]["ImporteTotal"].ToString();
+                string txtPleCodigoMoneda = dataTable.Rows[i]["CodigoMoneda"].ToString();
+                string txtPleTipoCambio = dataTable.Rows[i]["TipoCambio"].ToString();
+                string txtPleConstanciaFechaPago = dataTable.Rows[i]["ConstanciaFechaPago"].ToString();
+                string txtPleConstanciaNumero = dataTable.Rows[i]["ConstanciaNumero"].ToString();
+                string txtPleMancaDetraccion = dataTable.Rows[i]["MancaDetraccion"].ToString();
+                string txtPleCalsificacionBienes = dataTable.Rows[i]["CalsificacionBienes"].ToString();
+                string txtPleIdentificacionContrato = dataTable.Rows[i]["IdentificacionContrato"].ToString();
+                string txtPleErrorTipo1 = dataTable.Rows[i]["ErrorTipo1"].ToString();
+                string txtPleErrorTipo2 = dataTable.Rows[i]["ErrorTipo2"].ToString();
+                string txtPleErrorTipo3 = dataTable.Rows[i]["ErrorTipo3"].ToString();
+                string txtPleErrorTipo4 = dataTable.Rows[i]["ErrorTipo4"].ToString();
+                string txtPleIdentificadorComprobante = dataTable.Rows[i]["IdentificadorComprobante"].ToString();
+                string txtPleEstadoIdentifica = dataTable.Rows[i]["EstadoIdentifica"].ToString();
+                string txtPleCampoLibre = dataTable.Rows[i]["CampoLibre"].ToString();
+
+                if (txtPleCampoLibre != "") txtPleCampoLibre = "|" + txtPleCampoLibre;
 
                 fichero.WriteLine(
-                    txtComprasMes + "|" +
-                    txtComprasNumeroRegistro + "|" +
-                    txtComprasFechaEmision + "|" +
-                    txtComprasFechaPago + "|" +
-                    txtComprasCdpTipo + "|" +
-                    txtComprasCdpSerie + "|" +
-                    txtComprasCdpNumeorDocumento + "|" +
-                    txtComprasProveedorTipo + "|" +
-                    txtComprasProveedorNumero + "|" +
-                    txtComprasProveedorDocumento + "|" +
-                    txtComprasProveedorRazonSoccial + "|" +
-                    txtComprasCuenta + "|" +
-                    txtComprasDescripcion + "|" +
-                    txtComprasBaseImponible + "|" +
-                    txtComprasIgv + "|" +
-                    txtComprasNoGravada + "|" +
-                    txtComprasDescuento + "|" +
-                    txtComprasImporteTotal + "|" +
-                    txtComprasDolares + "|" +
-                    txtComprasTipoCambio + "|" +
-                    txtComprasPercepcion + "|" +
-                    txtComprasDestino + "|" +
-                    txtComprasDestinoDescripcion + "|" +
-                    txtComprasDestinoCuenta + "|" +
-                    txtComprasPago + "|" +
-                    txtComprasCodigo + "|" +
-                    txtComprasConstanciaNumero + "|" +
-                    txtComprasConstanciaFechaPago + "|" +
-                    txtComprasConstanciaMonto + "|" +
-                    txtComprasConstanciaReferencia + "|" +
-                    txtComprasBancarizacionFecha + "|" +
-                    txtComprasBancarizacionBanco + "|" +
-                    txtComprasBancarizacionOperacion + "|"
+                    txtPlePeriodo + "|" +
+                    txtPleRegimen1 + "|" +
+                    txtPleRegimen2 + "|" +
+                    txtPleFechaEmision + "|" +
+                    txtPleFechaPago + "|" +
+                    txtPleComprobanteTipo + "|" +
+                    txtPleComprobanteSerie + "|" +
+                    txtPleAnioEmisionAduana + "|" +
+                    txtPleCampo10 + "|" +
+                    txtPleProveedorTipo + "|" +
+                    txtPleProveedorNumero + "|" +
+                    txtPleProveedorNombre + "|" +
+                    txtPleBaseImponible + "|" +
+                    txtPleIGV + "|" +
+                    txtPleBaseImponible2 + "|" +
+                    txtPleIGV2 + "|" +
+                    txtPleBaseImponible3 + "|" +
+                    txtPleIGV3 + "|" +
+                    txtPleNoGravada + "|" +
+                    txtPleImpuestoImponible + "|" +
+                    txtPleOtrosMontos + "|" +
+                    txtPleImporteTotal + "|" +
+                    txtPleCodigoMoneda + "|" +
+                    txtPleTipoCambio + "|" +
+                    txtPleConstanciaFechaPago + "|" +
+                    txtPleConstanciaNumero + "|" +
+                    txtPleMancaDetraccion + "|" +
+                    txtPleCalsificacionBienes + "|" +
+                    txtPleIdentificacionContrato + "|" +
+                    txtPleErrorTipo1 + "|" +
+                    txtPleErrorTipo2 + "|" +
+                    txtPleErrorTipo3 + "|" +
+                    txtPleErrorTipo4 + "|" +
+                    txtPleIdentificadorComprobante + "|" +
+                    txtPleEstadoIdentifica +
+                    txtPleCampoLibre
                     );
             }
             fichero.Close();
