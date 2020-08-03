@@ -52,7 +52,7 @@ namespace Datos
             return dataTable;
         }
 
-        public void Insert(
+        public bool Insert(
             int mes, string nReg, string fechaEmision, string fechaPago, string cTipo, string cSerie, string cnDocumento,
             string pTipo, string pNumero, string pDocumento, string pRazonSocial, string cuenta, string descripcion, double baseImponible,
             double igv, double noGravada, double descuento, double importeTotal, double dolares, double tipoCambio, double percepcion, string destino,
@@ -62,7 +62,7 @@ namespace Datos
             )
         {
             comando.Connection = conexion.OpenConnection();
-            comando.CommandText = "sp_insert_registro_compras";
+            comando.CommandText = "sp_insert_compras";
             comando.CommandType = CommandType.StoredProcedure;
 
             comando.Parameters.AddWithValue("@Mes", mes);
@@ -104,12 +104,16 @@ namespace Datos
             comando.Parameters.AddWithValue("@Usuario", usuario);
             comando.Parameters.AddWithValue("@ConversionDolar", conversionDolares);
 
-            comando.ExecuteNonQuery();
-            comando.Parameters.Clear();
-            conexion.CloseConnection();
+            if (comando.ExecuteNonQuery() > 0)
+            {
+                comando.Parameters.Clear();
+                conexion.CloseConnection();
+                return true;
+            }
+            return false;
         }
 
-        public void Update(
+        public bool Update(
             int id, int mes, string nReg, string fechaEmision, string fechaPago, string cTipo, string cSeire, string cnDocumento,
             string pTipo, string pNumero, string pDocumento, string pRazonSocial, string cuenta, string descripcion, double baseImponible,
             double igv, double noGravada, double descuento, double importeTotal, double dolares, double tipoCambio, double percepcion, string destino,
@@ -159,20 +163,28 @@ namespace Datos
             comando.Parameters.AddWithValue("@Usuario", usuario);
             comando.Parameters.AddWithValue("@ConversionDolar", conversionDolares);
 
-            comando.ExecuteNonQuery();
-            comando.Parameters.Clear();
-            conexion.CloseConnection();
+            if (comando.ExecuteNonQuery() > 0)
+            {
+                comando.Parameters.Clear();
+                conexion.CloseConnection();
+                return true;
+            }
+            return false;
         }
 
-        public void Destroy(int id)
+        public bool Destroy(int id)
         {
             comando.Connection = conexion.OpenConnection();
             comando.CommandText = "sp_delete_compras";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@id", id);
-            comando.ExecuteNonQuery();
-            comando.Parameters.Clear();
-            conexion.CloseConnection();
+            if (comando.ExecuteNonQuery() > 0)
+            {
+                comando.Parameters.Clear();
+                conexion.CloseConnection();
+                return true;
+            }
+            return false;
         }
     }
 }
