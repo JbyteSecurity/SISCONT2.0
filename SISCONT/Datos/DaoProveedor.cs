@@ -12,23 +12,23 @@ namespace Datos
     public class DaoProveedor
     {
         private Conexion conexion = new Conexion();
-        SqlCommand comando = new SqlCommand();
+        SqlCommand sqlCommand = new SqlCommand();
 
         public string Show(string ruc)
         {
             SqlDataReader sqlDataReaderProvider;
             DataTable dataTableProvider = new DataTable("tblProveedores");
 
-            comando.Connection = conexion.OpenConnection();
-            comando.CommandText = "sp_show_name_proveedor";
-            comando.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Connection = conexion.OpenConnection();
+            sqlCommand.CommandText = "sp_show_name_proveedor";
+            sqlCommand.CommandType = CommandType.StoredProcedure;
 
-            comando.Parameters.AddWithValue("@ruc", ruc);
+            sqlCommand.Parameters.AddWithValue("@ruc", ruc);
 
-            comando.ExecuteNonQuery();
-            sqlDataReaderProvider = comando.ExecuteReader();
+            sqlCommand.ExecuteNonQuery();
+            sqlDataReaderProvider = sqlCommand.ExecuteReader();
             dataTableProvider.Load(sqlDataReaderProvider);
-            comando.Parameters.Clear();
+            sqlCommand.Parameters.Clear();
 
             conexion.CloseConnection();
 
@@ -42,10 +42,10 @@ namespace Datos
         {
             SqlDataReader sqlDataReader;
             DataTable dataTableSuppliers = new DataTable();
-            comando.Connection = conexion.OpenConnection();
-            comando.CommandText = "sp_all_proveedor";
-            comando.CommandType = CommandType.StoredProcedure;
-            sqlDataReader = comando.ExecuteReader();
+            sqlCommand.Connection = conexion.OpenConnection();
+            sqlCommand.CommandText = "sp_all_proveedor";
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlDataReader = sqlCommand.ExecuteReader();
             dataTableSuppliers.Load(sqlDataReader);
             conexion.CloseConnection();
             return dataTableSuppliers;
@@ -54,41 +54,41 @@ namespace Datos
 
         public void Insert(string ruc, string razonSocial)
         {
-            comando.Connection = conexion.OpenConnection();
-            comando.CommandText = "sp_insert_proveedor";
-            comando.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Connection = conexion.OpenConnection();
+            sqlCommand.CommandText = "sp_insert_proveedor";
+            sqlCommand.CommandType = CommandType.StoredProcedure;
 
-            comando.Parameters.AddWithValue("@Ruc", ruc);
-            comando.Parameters.AddWithValue("@RazonSocial", razonSocial);
+            sqlCommand.Parameters.AddWithValue("@Ruc", ruc);
+            sqlCommand.Parameters.AddWithValue("@RazonSocial", razonSocial);
 
-            comando.ExecuteNonQuery();
-            comando.Parameters.Clear();
+            sqlCommand.ExecuteNonQuery();
+            sqlCommand.Parameters.Clear();
             conexion.CloseConnection();
         }
 
         public void Update(int id, string ruc, string razonSocial)
         {
-            comando.Connection = conexion.OpenConnection();
-            comando.CommandText = "sp_update_proveedor";
-            comando.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Connection = conexion.OpenConnection();
+            sqlCommand.CommandText = "sp_update_proveedor";
+            sqlCommand.CommandType = CommandType.StoredProcedure;
 
-            comando.Parameters.AddWithValue("@Id", id);
-            comando.Parameters.AddWithValue("@Ruc", ruc);
-            comando.Parameters.AddWithValue("@RazonSocial", razonSocial);
+            sqlCommand.Parameters.AddWithValue("@Id", id);
+            sqlCommand.Parameters.AddWithValue("@Ruc", ruc);
+            sqlCommand.Parameters.AddWithValue("@RazonSocial", razonSocial);
 
-            comando.ExecuteNonQuery();
-            comando.Parameters.Clear();
+            sqlCommand.ExecuteNonQuery();
+            sqlCommand.Parameters.Clear();
             conexion.CloseConnection();
         }
 
         public void Destroy(int id)
         {
-            comando.Connection = conexion.OpenConnection();
-            comando.CommandText = "sp_destroy_proveedor";
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@id", id);
-            comando.ExecuteNonQuery();
-            comando.Parameters.Clear();
+            sqlCommand.Connection = conexion.OpenConnection();
+            sqlCommand.CommandText = "sp_destroy_proveedor";
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Parameters.AddWithValue("@id", id);
+            sqlCommand.ExecuteNonQuery();
+            sqlCommand.Parameters.Clear();
             conexion.CloseConnection();
         }
     }

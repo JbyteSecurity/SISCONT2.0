@@ -27,6 +27,19 @@ namespace Datos
             return dataTableDetraccion;
         }
 
+        public DataTable GetForTXT()
+        {
+            SqlDataReader sqlDataReader;
+            DataTable dataTable = new DataTable();
+            sqlCommand.Connection = conexion.OpenConnection();
+            sqlCommand.CommandText = "sp_generate_txt_ventas";
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlDataReader = sqlCommand.ExecuteReader();
+            dataTable.Load(sqlDataReader);
+            conexion.CloseConnection();
+            return dataTable;
+        }
+
         public bool Insert(
             int mes, string numeroRegistro, string fechaEmision, string fechaPago, string cdpTipo, string cdpSerie,
             string cdpNumeroDocumento, string proveedorTipo, string proveedorNumero, string proveedorNombreRazonSocial,
@@ -39,6 +52,7 @@ namespace Datos
             sqlCommand.Connection = conexion.OpenConnection();
             sqlCommand.CommandText = "sp_insert_ventas";
             sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Parameters.Clear();
 
             sqlCommand.Parameters.AddWithValue("@Mes", mes);
             sqlCommand.Parameters.AddWithValue("@NReg", numeroRegistro);
@@ -97,6 +111,7 @@ namespace Datos
             sqlCommand.Connection = conexion.OpenConnection();
             sqlCommand.CommandText = "sp_update_ventas";
             sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Parameters.Clear();
 
             sqlCommand.Parameters.AddWithValue("@id", id);
             sqlCommand.Parameters.AddWithValue("@Mes", mes);
@@ -148,6 +163,7 @@ namespace Datos
             sqlCommand.Connection = conexion.OpenConnection();
             sqlCommand.CommandText = "sp_delete_ventas";
             sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Parameters.Clear();
             sqlCommand.Parameters.AddWithValue("@id", id);
             if (sqlCommand.ExecuteNonQuery() > 0)
             {

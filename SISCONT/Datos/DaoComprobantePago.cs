@@ -12,15 +12,15 @@ namespace Datos
     {
         private Conexion conexion = new Conexion();
 
-        SqlCommand comando = new SqlCommand();
+        SqlCommand sqlCommand = new SqlCommand();
         public DataTable AllCdpTypes()
         {
             SqlDataReader leer;
             DataTable dataTableCDPType = new DataTable();
-            comando.Connection = conexion.OpenConnection();
-            comando.CommandText = "sp_all_tipo_comprobante";
-            comando.CommandType = CommandType.StoredProcedure;
-            leer = comando.ExecuteReader();
+            sqlCommand.Connection = conexion.OpenConnection();
+            sqlCommand.CommandText = "sp_all_tipo_comprobante";
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            leer = sqlCommand.ExecuteReader();
             dataTableCDPType.Load(leer);
             conexion.CloseConnection();
             return dataTableCDPType;

@@ -11,23 +11,23 @@ namespace Datos
     public class DaoPlanContable
     {
         private Conexion conexion = new Conexion();
-        SqlCommand comando = new SqlCommand();
+        SqlCommand sqlCommand = new SqlCommand();
 
         public string ShowAcount(string codigo)
         {
             SqlDataReader sqlDataReaderPlanContable;
             DataTable dataTableProvider = new DataTable("tblPlanContable");
 
-            comando.Connection = conexion.OpenConnection();
-            comando.CommandText = "sp_show_name_cuenta";
-            comando.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Connection = conexion.OpenConnection();
+            sqlCommand.CommandText = "sp_show_name_cuenta";
+            sqlCommand.CommandType = CommandType.StoredProcedure;
 
-            comando.Parameters.AddWithValue("@codigo", codigo);
+            sqlCommand.Parameters.AddWithValue("@codigo", codigo);
 
-            comando.ExecuteNonQuery();
-            sqlDataReaderPlanContable = comando.ExecuteReader();
+            sqlCommand.ExecuteNonQuery();
+            sqlDataReaderPlanContable = sqlCommand.ExecuteReader();
             dataTableProvider.Load(sqlDataReaderPlanContable);
-            comando.Parameters.Clear();
+            sqlCommand.Parameters.Clear();
 
             conexion.CloseConnection();
 

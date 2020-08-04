@@ -12,24 +12,24 @@ namespace Datos
     {
         private Conexion conexion = new Conexion();
 
-        SqlCommand comando = new SqlCommand();
+        SqlCommand sqlCommand = new SqlCommand();
 
         public DataTable Login(string usuario, string contrasenia)
         {
             SqlDataReader sqlDataReaderProvider;
             DataTable dataTableProvider = new DataTable("tblUsuarios");
 
-            comando.Connection = conexion.OpenConnection();
-            comando.CommandText = "sp_login";
-            comando.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Connection = conexion.OpenConnection();
+            sqlCommand.CommandText = "sp_login";
+            sqlCommand.CommandType = CommandType.StoredProcedure;
 
-            comando.Parameters.AddWithValue("@Usuario", usuario);
-            comando.Parameters.AddWithValue("@Contrasenia", contrasenia);
+            sqlCommand.Parameters.AddWithValue("@Usuario", usuario);
+            sqlCommand.Parameters.AddWithValue("@Contrasenia", contrasenia);
 
-            comando.ExecuteNonQuery();
-            sqlDataReaderProvider = comando.ExecuteReader();
+            sqlCommand.ExecuteNonQuery();
+            sqlDataReaderProvider = sqlCommand.ExecuteReader();
             dataTableProvider.Load(sqlDataReaderProvider);
-            comando.Parameters.Clear();
+            sqlCommand.Parameters.Clear();
 
             conexion.CloseConnection();
 

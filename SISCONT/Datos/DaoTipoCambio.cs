@@ -12,16 +12,16 @@ namespace Datos
     public class DaoTipoCambio
     {
         Conexion conexion = new Conexion();
-        SqlCommand comando = new SqlCommand();
+        SqlCommand sqlCommand = new SqlCommand();
 
         public DataTable All()
         {
             SqlDataReader sqlDataReader;
             DataTable dataTable = new DataTable();
-            comando.Connection = conexion.OpenConnection();
-            comando.CommandText = "sp_all_tipo_cambio";
-            comando.CommandType = CommandType.StoredProcedure;
-            sqlDataReader = comando.ExecuteReader();
+            sqlCommand.Connection = conexion.OpenConnection();
+            sqlCommand.CommandText = "sp_all_tipo_cambio";
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlDataReader = sqlCommand.ExecuteReader();
             dataTable.Load(sqlDataReader);
             conexion.CloseConnection();
             return dataTable;
@@ -32,16 +32,16 @@ namespace Datos
             SqlDataReader sqlDataReader;
             DataTable dataTable = new DataTable();
 
-            comando.Connection = conexion.OpenConnection();
-            comando.CommandText = "sp_show_tipo_cambio";
-            comando.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Connection = conexion.OpenConnection();
+            sqlCommand.CommandText = "sp_show_tipo_cambio";
+            sqlCommand.CommandType = CommandType.StoredProcedure;
 
-            comando.Parameters.AddWithValue("@Fecha", Convert.ToDateTime(fecha));
+            sqlCommand.Parameters.AddWithValue("@Fecha", Convert.ToDateTime(fecha));
 
-            comando.ExecuteNonQuery();
-            sqlDataReader = comando.ExecuteReader();
+            sqlCommand.ExecuteNonQuery();
+            sqlDataReader = sqlCommand.ExecuteReader();
             dataTable.Load(sqlDataReader);
-            comando.Parameters.Clear();
+            sqlCommand.Parameters.Clear();
 
             conexion.CloseConnection();
             return dataTable;
@@ -49,45 +49,45 @@ namespace Datos
 
         public void Insert(string fecha, double compra, double venta)
         {
-            comando.Connection = conexion.OpenConnection();
-            comando.CommandText = "sp_insert_tipo_cambio";
-            comando.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Connection = conexion.OpenConnection();
+            sqlCommand.CommandText = "sp_insert_tipo_cambio";
+            sqlCommand.CommandType = CommandType.StoredProcedure;
 
-            comando.Parameters.AddWithValue("@Fecha", fecha);
-            comando.Parameters.AddWithValue("@Compra", compra);
-            comando.Parameters.AddWithValue("@Venta", venta);
+            sqlCommand.Parameters.AddWithValue("@Fecha", fecha);
+            sqlCommand.Parameters.AddWithValue("@Compra", compra);
+            sqlCommand.Parameters.AddWithValue("@Venta", venta);
 
-            comando.ExecuteNonQuery();
-            comando.Parameters.Clear();
+            sqlCommand.ExecuteNonQuery();
+            sqlCommand.Parameters.Clear();
             conexion.CloseConnection();
         }
 
         public void Update(int id, string fecha, double compra, double venta)
         {
-            comando.Connection = conexion.OpenConnection();
-            comando.CommandText = "sp_update_tipo_cambio";
-            comando.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Connection = conexion.OpenConnection();
+            sqlCommand.CommandText = "sp_update_tipo_cambio";
+            sqlCommand.CommandType = CommandType.StoredProcedure;
 
-            comando.Parameters.AddWithValue("@id", id);
-            comando.Parameters.AddWithValue("@Fecha", fecha);
-            comando.Parameters.AddWithValue("@Compra", compra);
-            comando.Parameters.AddWithValue("@Venta", venta);
+            sqlCommand.Parameters.AddWithValue("@id", id);
+            sqlCommand.Parameters.AddWithValue("@Fecha", fecha);
+            sqlCommand.Parameters.AddWithValue("@Compra", compra);
+            sqlCommand.Parameters.AddWithValue("@Venta", venta);
 
-            comando.ExecuteNonQuery();
-            comando.Parameters.Clear();
+            sqlCommand.ExecuteNonQuery();
+            sqlCommand.Parameters.Clear();
             conexion.CloseConnection();
         }
 
         public void Destroy(int id)
         {
-            comando.Connection = conexion.OpenConnection();
-            comando.CommandText = "sp_delete_tipo_cambio";
-            comando.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Connection = conexion.OpenConnection();
+            sqlCommand.CommandText = "sp_delete_tipo_cambio";
+            sqlCommand.CommandType = CommandType.StoredProcedure;
 
-            comando.Parameters.AddWithValue("@id", id);
+            sqlCommand.Parameters.AddWithValue("@id", id);
 
-            comando.ExecuteNonQuery();
-            comando.Parameters.Clear();
+            sqlCommand.ExecuteNonQuery();
+            sqlCommand.Parameters.Clear();
             conexion.CloseConnection();
         }
     }

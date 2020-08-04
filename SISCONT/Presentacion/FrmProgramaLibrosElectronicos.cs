@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -65,19 +66,19 @@ namespace Presentacion
                         int id = row.Cells["comprasID"].Value != DBNull.Value ? Convert.ToInt32(row.Cells["comprasID"].Value) : 0;
                         int comprasMes = row.Cells["comprasMes"].Value != DBNull.Value ? Convert.ToInt32(row.Cells["comprasMes"].Value) : 0;
 
-                        string comprasNumeroRegistro = row.Cells["comprasNumeroRegistro"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasNumeroRegistro"].Value) : null;
-                        string comprasFechaEmision = row.Cells["comprasFechaEmision"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasFechaEmision"].Value) : null;
+                        string comprasNumeroRegistro = row.Cells["comprasNumeroRegistro"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasNumeroRegistro"].Value) : "";
+                        string comprasFechaEmision = row.Cells["comprasFechaEmision"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasFechaEmision"].Value) : "";
                         string comprasFechaPago = row.Cells["comprasFechaPago"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasFechaPago"].Value) : "1900-01-01";
-                        string comprasCdpTipo = row.Cells["comprasCdpTipo"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasCdpTipo"].Value) : null;
-                        string comprasCdpSerie = row.Cells["comprasCdpSerie"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasCdpSerie"].Value) : null;
-                        string comprasCdpNumeroDocumento = row.Cells["comprasCdpNumeroDocumento"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasCdpNumeroDocumento"].Value) : null;
-                        string comprasProveedorTipo = row.Cells["comprasProveedorTipo"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasProveedorTipo"].Value) : null;
-                        string comprasProveedorNumeroDocumento = row.Cells["comprasProveedorNumeroDocumento"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasProveedorNumeroDocumento"].Value) : null;
-                        string comprasProveedorTipoDocumento = row.Cells["comprasProveedorTipoDocumento"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasProveedorTipoDocumento"].Value) : null;
+                        string comprasCdpTipo = row.Cells["comprasCdpTipo"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasCdpTipo"].Value) : "";
+                        string comprasCdpSerie = row.Cells["comprasCdpSerie"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasCdpSerie"].Value) : "";
+                        string comprasCdpNumeroDocumento = row.Cells["comprasCdpNumeroDocumento"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasCdpNumeroDocumento"].Value) : "";
+                        string comprasProveedorTipo = row.Cells["comprasProveedorTipo"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasProveedorTipo"].Value) : "";
+                        string comprasProveedorNumeroDocumento = row.Cells["comprasProveedorNumeroDocumento"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasProveedorNumeroDocumento"].Value) : "";
+                        string comprasProveedorTipoDocumento = row.Cells["comprasProveedorTipoDocumento"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasProveedorTipoDocumento"].Value) : "";
 
-                        string comprasProveedorRazonSocial = row.Cells["comprasProveedorRazonSocial"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasProveedorRazonSocial"].Value) : null;
-                        string comprasCuenta = row.Cells["comprasCuenta"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasCuenta"].Value) : null;
-                        string comprasDescripcion = row.Cells["comprasDescripcion"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasDescripcion"].Value) : null;
+                        string comprasProveedorRazonSocial = row.Cells["comprasProveedorRazonSocial"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasProveedorRazonSocial"].Value) : "";
+                        string comprasCuenta = row.Cells["comprasCuenta"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasCuenta"].Value) : "";
+                        string comprasDescripcion = row.Cells["comprasDescripcion"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasDescripcion"].Value) : "";
                         double comprasBaseImponible = row.Cells["comprasBaseImponible"].Value != DBNull.Value ? Convert.ToDouble(row.Cells["comprasBaseImponible"].Value) : 0;
                         double comprasIgv = row.Cells["comprasIgv"].Value != DBNull.Value ? Convert.ToDouble(row.Cells["comprasIgv"].Value) : 0;
                         double comprasNoGravada = row.Cells["comprasNoGravada"].Value != DBNull.Value ? Convert.ToDouble(row.Cells["comprasNoGravada"].Value) : 0;
@@ -87,20 +88,26 @@ namespace Presentacion
                         double comprasTipoCambio = row.Cells["comprasTipoCambio"].Value != DBNull.Value ? Convert.ToDouble(row.Cells["comprasTipoCambio"].Value) : 0;
 
                         double comprasPercepcion = row.Cells["comprasPercepcion"].Value != DBNull.Value ? Convert.ToDouble(row.Cells["comprasPercepcion"].Value) : 0;
-                        string comprasDestino = row.Cells["comprasDestino"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasDestino"].Value) : null;
-                        string comprasDescripcionDestino = row.Cells["comprasDescripcionDestino"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasDescripcionDestino"].Value) : null;
-                        string comprasCuentaDestino = row.Cells["comprasCuentaDestino"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasCuentaDestino"].Value) : null;
-                        string comprasPago = row.Cells["comprasPago"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasPago"].Value) : null;
-                        string comprasCodigo = row.Cells["comprasCodigo"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasCodigo"].Value) : null;
-                        string comprasConstanciaNumero = row.Cells["comprasConstanciaNumero"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasConstanciaNumero"].Value) : null;
-                        string comprasConstanciaFechaPago = row.Cells["comprasConstanciaFechaPago"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasConstanciaFechaPago"].Value) : null;
+                        string comprasDestino = row.Cells["comprasDestino"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasDestino"].Value) : "";
+                        string comprasDescripcionDestino = row.Cells["comprasDescripcionDestino"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasDescripcionDestino"].Value) : "";
+                        string comprasCuentaDestino = row.Cells["comprasCuentaDestino"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasCuentaDestino"].Value) : "";
+                        string comprasPago = row.Cells["comprasPago"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasPago"].Value) : "";
+                        string comprasCodigo = row.Cells["comprasCodigo"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasCodigo"].Value) : "";
+                        string comprasConstanciaNumero = row.Cells["comprasConstanciaNumero"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasConstanciaNumero"].Value) : "";
+                        string comprasConstanciaFechaPago = row.Cells["comprasConstanciaFechaPago"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasConstanciaFechaPago"].Value) : "1900-01-01";
                         double comprasConstanciaMonto = row.Cells["comprasConstanciaMonto"].Value != DBNull.Value ? Convert.ToDouble(row.Cells["comprasConstanciaMonto"].Value) : 0;
-                        string comprasConstanciaReferencia = row.Cells["comprasConstanciaReferencia"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasConstanciaReferencia"].Value) : null;
+                        string comprasConstanciaReferencia = row.Cells["comprasConstanciaReferencia"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasConstanciaReferencia"].Value) : "";
 
                         string BancarizacionFecha = row.Cells["BancarizacionFecha"].Value != DBNull.Value ? Convert.ToString(row.Cells["BancarizacionFecha"].Value) : "1900-01-01";
-                        string BancarizacionBco = row.Cells["BancarizacionBco"].Value != DBNull.Value ? Convert.ToString(row.Cells["BancarizacionBco"].Value) : null;
+                        string BancarizacionBco = row.Cells["BancarizacionBco"].Value != DBNull.Value ? Convert.ToString(row.Cells["BancarizacionBco"].Value) : "";
                         int BancarizacionOperacion = row.Cells["BancarizacionOperacion"].Value != DBNull.Value ? Convert.ToInt32(row.Cells["BancarizacionOperacion"].Value) : 0;
                         double comprasConversionDolares = row.Cells["comprasConversionDolares"].Value != DBNull.Value ? Convert.ToDouble(row.Cells["comprasConversionDolares"].Value) : 0;
+
+                        string ReferenciaFecha = row.Cells["ReferenciaFecha"].Value != DBNull.Value ? Convert.ToString(row.Cells["ReferenciaFecha"].Value) : "";
+                        string ReferenciaTipo = row.Cells["ReferenciaTipo"].Value != DBNull.Value ? Convert.ToString(row.Cells["ReferenciaTipo"].Value) : "";
+                        string ReferenciaSerie = row.Cells["ReferenciaSerie"].Value != DBNull.Value ? Convert.ToString(row.Cells["ReferenciaSerie"].Value) : "";
+                        string ReferenciaNumero = row.Cells["ReferenciaNumero"].Value != DBNull.Value ? Convert.ToString(row.Cells["ReferenciaNumero"].Value) : "";
+                        
 
                         string Usuario = "user02";
 
@@ -113,7 +120,8 @@ namespace Presentacion
                                 comprasBaseImponible, comprasIgv, comprasNoGravada, comprasDescuento, comprasImporteTotal, comprasDolares,
                                 comprasTipoCambio, comprasPercepcion, comprasDestino, comprasDescripcionDestino, comprasCuentaDestino, comprasPago,
                                 comprasCodigo, comprasConstanciaNumero, comprasConstanciaFechaPago, comprasConstanciaMonto, comprasConstanciaReferencia,
-                                BancarizacionFecha, BancarizacionBco, BancarizacionOperacion, Usuario, comprasConversionDolares
+                                BancarizacionFecha, BancarizacionBco, BancarizacionOperacion, ReferenciaFecha, ReferenciaTipo, ReferenciaSerie, ReferenciaNumero,
+                                Usuario, comprasConversionDolares
                             );
                         }
                         else
@@ -125,7 +133,7 @@ namespace Presentacion
                                 comprasBaseImponible, comprasIgv, comprasNoGravada, comprasDescuento, comprasImporteTotal, comprasDolares,
                                 comprasTipoCambio, comprasPercepcion, comprasDestino, comprasDescripcionDestino, comprasCuentaDestino, comprasPago,
                                 comprasCodigo, comprasConstanciaNumero, comprasConstanciaFechaPago, comprasConstanciaMonto, comprasConstanciaReferencia,
-                                BancarizacionFecha, BancarizacionBco, BancarizacionOperacion, Usuario, comprasConversionDolares
+                                BancarizacionFecha, BancarizacionBco, BancarizacionOperacion, ReferenciaFecha, ReferenciaTipo, ReferenciaSerie, ReferenciaNumero, Usuario, comprasConversionDolares
                                 );
                         }
                     }
@@ -149,43 +157,43 @@ namespace Presentacion
                     if (!string.IsNullOrEmpty(Convert.ToString(row.Cells["ventasMes"].Value)))
                     {
                         int ventasId = Convert.ToInt32(row.Cells["ventasId"].Value);
-                        int ventasMes = Convert.ToInt32(row.Cells["ventasMes"].Value);
-                        string ventasNumeroRegistro = Convert.ToString(row.Cells["ventasNumeroRegistro"].Value);
-                        string ventasFechaEmision = Convert.ToString(row.Cells["ventasFechaEmision"].Value);
-                        string ventasFechaPago = Convert.ToString(row.Cells["ventasFechaPago"].Value);
-                        string ventasCdpTipo = Convert.ToString(row.Cells["ventasCdpTipo"].Value);
-                        string ventasCdpSerie = Convert.ToString(row.Cells["ventasCdpSerie"].Value);
-                        string ventasCdpNumero = Convert.ToString(row.Cells["ventasCdpNumero"].Value);
-                        string ventasProveedorTipo = Convert.ToString(row.Cells["ventasProveedorTipo"].Value);
-                        string ventasProveedorNumero = Convert.ToString(row.Cells["ventasProveedorNumero"].Value);
-                        string ventasProveedorRazonSocial = Convert.ToString(row.Cells["ventasProveedorRazonSocial"].Value);
+                        int ventasMes = row.Cells["ventasMes"].Value != DBNull.Value ? Convert.ToInt32(row.Cells["ventasMes"].Value) : 0;
+                        string ventasNumeroRegistro = row.Cells["ventasNumeroRegistro"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasNumeroRegistro"].Value) : "";
+                        string ventasFechaEmision = row.Cells["ventasFechaEmision"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasFechaEmision"].Value) : "";
+                        string ventasFechaPago = row.Cells["ventasFechaPago"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasFechaPago"].Value) : "";
+                        string ventasCdpTipo = row.Cells["ventasCdpTipo"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasCdpTipo"].Value) : "";
+                        string ventasCdpSerie = row.Cells["ventasCdpSerie"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasCdpSerie"].Value) : "";
+                        string ventasCdpNumero = row.Cells["ventasCdpNumero"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasCdpNumero"].Value) : "";
+                        string ventasProveedorTipo = row.Cells["ventasProveedorTipo"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasProveedorTipo"].Value) : "";
+                        string ventasProveedorNumero = row.Cells["ventasProveedorNumero"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasProveedorNumero"].Value) : "";
+                        string ventasProveedorRazonSocial = row.Cells["ventasProveedorRazonSocial"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasProveedorRazonSocial"].Value) : "";
 
-                        string ventasCuenta = Convert.ToString(row.Cells["ventasCuenta"].Value);
-                        string ventasDescripcion = Convert.ToString(row.Cells["ventasDescripcion"].Value);
-                        double ventasValorExportacion = Convert.ToDouble(row.Cells["ventasValorExportacion"].Value);
-                        double ventasBaseImponible = Convert.ToDouble(row.Cells["ventasBaseImponible"].Value);
-                        double ventasImporteTotalExonerada = Convert.ToDouble(row.Cells["ventasImporteTotalExonerada"].Value);
-                        double ventasImporteTotalInafecta = Convert.ToDouble(row.Cells["ventasImporteTotalInafecta"].Value);
-                        double ventasIgv = Convert.ToDouble(row.Cells["ventasIgv"].Value);
-                        double ventasImporteTotal = Convert.ToDouble(row.Cells["ventasImporteTotal"].Value);
-                        double ventasTipoCambio = Convert.ToDouble(row.Cells["ventasTipoCambio"].Value);
-                        double ventasDolares = Convert.ToDouble(row.Cells["ventasDolares"].Value);
+                        string ventasCuenta = row.Cells["ventasCuenta"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasCuenta"].Value) : "";
+                        string ventasDescripcion = row.Cells["ventasDescripcion"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasDescripcion"].Value) : "";
+                        double ventasValorExportacion = row.Cells["ventasValorExportacion"].Value != DBNull.Value ? Convert.ToDouble(row.Cells["ventasValorExportacion"].Value) : 0;
+                        double ventasBaseImponible = row.Cells["ventasBaseImponible"].Value != DBNull.Value ? Convert.ToDouble(row.Cells["ventasBaseImponible"].Value) : 0;
+                        double ventasImporteTotalExonerada = row.Cells["ventasImporteTotalExonerada"].Value != DBNull.Value ? Convert.ToDouble(row.Cells["ventasImporteTotalExonerada"].Value) : 0;
+                        double ventasImporteTotalInafecta = row.Cells["ventasImporteTotalInafecta"].Value != DBNull.Value ? Convert.ToDouble(row.Cells["ventasImporteTotalInafecta"].Value) : 0;
+                        double ventasIgv = row.Cells["ventasIgv"].Value != DBNull.Value ? Convert.ToDouble(row.Cells["ventasIgv"].Value) : 0;
+                        double ventasImporteTotal = row.Cells["ventasImporteTotal"].Value != DBNull.Value ? Convert.ToDouble(row.Cells["ventasImporteTotal"].Value) : 0;
+                        double ventasTipoCambio = row.Cells["ventasTipoCambio"].Value != DBNull.Value ? Convert.ToDouble(row.Cells["ventasTipoCambio"].Value) : 0;
+                        double ventasDolares = row.Cells["ventasDolares"].Value != DBNull.Value ? Convert.ToDouble(row.Cells["ventasDolares"].Value) : 0;
 
-                        double ventasIgvRetencion = Convert.ToDouble(row.Cells["ventasIgvRetencion"].Value);
-                        string ventasCuentaDestino = Convert.ToString(row.Cells["ventasCuentaDestino"].Value);
-                        string ventasCuentaDestinoDescripcion = Convert.ToString(row.Cells["ventasCuentaDestinoDescripcion"].Value);
-                        string ventasPago = Convert.ToString(row.Cells["ventasPago"].Value);
-                        string ventasReferenciaFecha = Convert.ToString(row.Cells["ventasReferenciaFecha"].Value);
-                        string ventasReferenciaTipo = Convert.ToString(row.Cells["ventasReferenciaTipo"].Value);
-                        string ventasReferenciaSerie = Convert.ToString(row.Cells["ventasReferenciaSerie"].Value);
-                        string ventasReferenciaNumero = Convert.ToString(row.Cells["ventasReferenciaNumero"].Value);
-                        string ventasCodigo = Convert.ToString(row.Cells["ventasCodigo"].Value);
-                        string ventasConstanciaNumero = Convert.ToString(row.Cells["ventasConstanciaNumero"].Value);
-                        string ventasConstanciaFechaPago = Convert.ToString(row.Cells["ventasConstanciaFechaPago"].Value);
+                        double ventasIgvRetencion = row.Cells["ventasIgvRetencion"].Value != DBNull.Value ? Convert.ToDouble(row.Cells["ventasIgvRetencion"].Value) : 0;
+                        string ventasCuentaDestino = row.Cells["ventasCuentaDestino"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasCuentaDestino"].Value) : "";
+                        string ventasCuentaDestinoDescripcion = row.Cells["ventasCuentaDestinoDescripcion"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasCuentaDestinoDescripcion"].Value) : "";
+                        string ventasPago = row.Cells["ventasPago"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasPago"].Value) : "";
+                        string ventasReferenciaFecha = row.Cells["ventasReferenciaFecha"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasReferenciaFecha"].Value) : "";
+                        string ventasReferenciaTipo = row.Cells["ventasReferenciaTipo"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasReferenciaTipo"].Value) : "";
+                        string ventasReferenciaSerie = row.Cells["ventasReferenciaSerie"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasReferenciaSerie"].Value) : "";
+                        string ventasReferenciaNumero = row.Cells["ventasReferenciaNumero"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasReferenciaNumero"].Value) : "";
+                        string ventasCodigo = row.Cells["ventasCodigo"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasCodigo"].Value) : "";
+                        string ventasConstanciaNumero = row.Cells["ventasConstanciaNumero"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasConstanciaNumero"].Value) : "";
+                        string ventasConstanciaFechaPago = row.Cells["ventasConstanciaFechaPago"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasConstanciaFechaPago"].Value) : "";
 
-                        double ventasDetraccionSoles = Convert.ToDouble(row.Cells["ventasDetraccionSoles"].Value);
-                        string ventasReferencia = Convert.ToString(row.Cells["ventasReferencia"].Value);
-                        string ventasObservacion = Convert.ToString(row.Cells["ventasObservacion"].Value);
+                        double ventasDetraccionSoles = row.Cells["ventasDetraccionSoles"].Value != DBNull.Value ? Convert.ToDouble(row.Cells["ventasDetraccionSoles"].Value) : 0;
+                        string ventasReferencia = row.Cells["ventasReferencia"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasReferencia"].Value) : "";
+                        string ventasObservacion = row.Cells["ventasObservacion"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasObservacion"].Value) : "";
                         string ventasUSuario = "user02";
 
                         if (ventasId < 0)
@@ -258,12 +266,9 @@ namespace Presentacion
         {
             try
             {
-                if (fecha.Length == 10)
-                {
+                
                     DateTime.Parse(fecha);
                     return true;
-                }
-                return false;
             }
             catch
             {
@@ -399,7 +404,6 @@ namespace Presentacion
                         
                     break;
             }
-
         }
 
         private void dgvRegistroVentas_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -407,29 +411,36 @@ namespace Presentacion
             switch (e.ColumnIndex)
             {
                 case 3:
-                    string fecha, compra, venta;
+                    string fecha = null, compra = null, venta = null;
                     DataTable dataTableTipoCambio = new DataTable();
 
-                    fecha = dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasFechaEmision"].Value.ToString();
-
-                    dataTableTipoCambio = tipoCambio.Show(fecha);
-                    compra = dataTableTipoCambio.Rows[0]["Compra"].ToString();
-                    venta = dataTableTipoCambio.Rows[0]["Venta"].ToString();
-
-                    if (venta == null)
-                        MessageBox.Show("No se encontro un tipo de cambio para la fecha: " + fecha, "Tipo de Cambio .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    else
-                        dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasTipoCambio"].Value = venta;
+                    if (isDate(dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasFechaEmision"].Value.ToString()))
+                    {
+                        fecha = dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasFechaEmision"].Value.ToString().Substring(0, 10);
+                        dataTableTipoCambio = tipoCambio.Show(fecha);
+                        compra = dataTableTipoCambio.Rows[0]["Compra"].ToString();
+                        venta = dataTableTipoCambio.Rows[0]["Venta"].ToString();
+                        
+                        if (venta == null)
+                            MessageBox.Show("No se encontro un tipo de cambio para la fecha: " + fecha, "Tipo de Cambio .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        else
+                            dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasTipoCambio"].Value = venta;
+                    } else
+                        MessageBox.Show("(" + dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasFechaEmision"].Value.ToString() + ") No es una fecha valida \nIngrese una fecha válida con los siguientes formatos: \ndd/mm/yyyy o yyyy-mm-dd");
+                    
                     break;
                 case 9:
                     string ruc;
                     string razonSocial;
-                    ruc = dgvRegistroVentas.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
-                    razonSocial = proveedor.GetSupplierName(ruc);
-                    if (razonSocial == null)
-                        MessageBox.Show("No se encontro al proveedor con ruc: " + ruc, "Compras .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    else
-                        dgvRegistroVentas.Rows[e.RowIndex].Cells[e.ColumnIndex + 1].Value = razonSocial;
+                    if (dgvRegistroVentas.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != DBNull.Value) {
+                        ruc = dgvRegistroVentas.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+                        razonSocial = proveedor.GetSupplierName(ruc);
+
+                        if (razonSocial == null)
+                            MessageBox.Show("No se encontro al proveedor con ruc: " + ruc, "Compras .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        else
+                            dgvRegistroVentas.Rows[e.RowIndex].Cells[e.ColumnIndex + 1].Value = razonSocial;
+                    }
                     break;
                 case 18: // BaseImponible
                     double biImporteTotal = 0;
@@ -537,9 +548,9 @@ namespace Presentacion
         private void dgvCompras_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
         {
             e.Row.Cells["comprasID"].Value = GenerateID();
-            e.Row.DefaultCellStyle.Font = new Font(dgvRegistroCompras.Font, FontStyle.Bold);
+            e.Row.DefaultCellStyle.Font = new Font(dgvRegistroCompras.Font, FontStyle.Italic);
 
-            e.Row.Cells["comprasFechaEmision"].Value = DateTime.UtcNow.ToString("MM/dd/yyyy");
+            e.Row.Cells["comprasFechaEmision"].Value = DateTime.UtcNow.ToString("dd/MM/yyyy");
 
             e.Row.Cells["comprasProveedorTipo"].Value = "06";
         }
@@ -547,6 +558,9 @@ namespace Presentacion
         private void dgvVentas_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
         {
             e.Row.Cells["ventasId"].Value = GenerateID();
+            e.Row.DefaultCellStyle.Font = new Font(dgvRegistroVentas.Font, FontStyle.Italic);
+
+            e.Row.Cells["ventasFechaEmision"].Value = DateTime.UtcNow.ToString("dd/MM/yyyy");
         }
 
         private int GenerateID()
@@ -614,7 +628,7 @@ namespace Presentacion
         private void GenerateVentasTXT()
         {
             DataTable dataTable = new DataTable();
-            dataTable = compras.GetForTXT();
+            dataTable = ventas.GetForTXT();
             if (dataTable.Rows.Count > 0)
             {
 
@@ -631,6 +645,7 @@ namespace Presentacion
                     string pleMes = "03";
 
                     filename = fileRoute + pleLibroCompras + pleRuc + pleAnio + pleMes + "00140100001111.txt";
+
 
 
                     if (File.Exists(filename))
@@ -654,44 +669,50 @@ namespace Presentacion
             StreamWriter fichero;
             fichero = File.CreateText(filename);
             for (int i = 0; i < dataTable.Rows.Count; i++) {
-                string txtPlePeriodo = dataTable.Rows[i]["Periodo"].ToString();
-                string txtPleRegimen1 = dataTable.Rows[i]["Regimen1"].ToString();
-                string txtPleRegimen2 = dataTable.Rows[i]["Regimen2"].ToString();
-                string txtPleFechaEmision = dataTable.Rows[i]["FechaEmision"].ToString();
-                string txtPleFechaPago = dataTable.Rows[i]["FechaPago"].ToString();
-                string txtPleComprobanteTipo = dataTable.Rows[i]["ComprobanteTipo"].ToString();
-                string txtPleComprobanteSerie = dataTable.Rows[i]["ComprobanteSerie"].ToString();
-                string txtPleAnioEmisionAduana = dataTable.Rows[i]["AnioEmisionAduana"].ToString();
-                string txtPleCampo10 = dataTable.Rows[i]["Campo10"].ToString();
-                string txtPleProveedorTipo = dataTable.Rows[i]["ProveedorTipo"].ToString();
-                string txtPleProveedorNumero = dataTable.Rows[i]["ProveedorNumero"].ToString();
-                string txtPleProveedorNombre = dataTable.Rows[i]["ProveedorNombre"].ToString();
-                string txtPleBaseImponible = dataTable.Rows[i]["BaseImponible"].ToString();
-                string txtPleIGV = dataTable.Rows[i]["IGV"].ToString();
-                string txtPleBaseImponible2 = dataTable.Rows[i]["BaseImponible2"].ToString();
-                string txtPleIGV2 = dataTable.Rows[i]["IGV"].ToString();
-                string txtPleBaseImponible3 = dataTable.Rows[i]["BaseImponible3"].ToString();
-                string txtPleIGV3 = dataTable.Rows[i]["IGV"].ToString();
-                string txtPleNoGravada = dataTable.Rows[i]["NoGravada"].ToString();
-                string txtPleImpuestoImponible = dataTable.Rows[i]["ImpuestoImponible"].ToString();
-                string txtPleOtrosMontos = dataTable.Rows[i]["OtrosMontos"].ToString();
-                string txtPleImporteTotal = dataTable.Rows[i]["ImporteTotal"].ToString();
-                string txtPleCodigoMoneda = dataTable.Rows[i]["CodigoMoneda"].ToString();
-                string txtPleTipoCambio = dataTable.Rows[i]["TipoCambio"].ToString();
-                string txtPleConstanciaFechaPago = dataTable.Rows[i]["ConstanciaFechaPago"].ToString();
-                string txtPleConstanciaNumero = dataTable.Rows[i]["ConstanciaNumero"].ToString();
-                string txtPleMancaDetraccion = dataTable.Rows[i]["MancaDetraccion"].ToString();
-                string txtPleCalsificacionBienes = dataTable.Rows[i]["CalsificacionBienes"].ToString();
-                string txtPleIdentificacionContrato = dataTable.Rows[i]["IdentificacionContrato"].ToString();
-                string txtPleErrorTipo1 = dataTable.Rows[i]["ErrorTipo1"].ToString();
-                string txtPleErrorTipo2 = dataTable.Rows[i]["ErrorTipo2"].ToString();
-                string txtPleErrorTipo3 = dataTable.Rows[i]["ErrorTipo3"].ToString();
-                string txtPleErrorTipo4 = dataTable.Rows[i]["ErrorTipo4"].ToString();
-                string txtPleIdentificadorComprobante = dataTable.Rows[i]["IdentificadorComprobante"].ToString();
-                string txtPleEstadoIdentifica = dataTable.Rows[i]["EstadoIdentifica"].ToString();
-                string txtPleCampoLibre = dataTable.Rows[i]["CampoLibre"].ToString();
+                string txtPlePeriodo = dataTable.Rows[i]["Periodo"].ToString(); //Campo 01
+                string txtPleRegimen1 = dataTable.Rows[i]["Regimen1"].ToString(); //Campo 02
+                string txtPleRegimen2 = dataTable.Rows[i]["Regimen2"].ToString(); //Campo 03
+                string txtPleFechaEmision = dataTable.Rows[i]["FechaEmision"].ToString(); //Campo 04
+                string txtPleFechaPago = dataTable.Rows[i]["FechaPago"].ToString(); //Campo 05
+                string txtPleComprobanteTipo = dataTable.Rows[i]["ComprobanteTipo"].ToString(); //Campo 06
+                string txtPleComprobanteSerie = dataTable.Rows[i]["ComprobanteSerie"].ToString(); //Campo 07
+                string txtPleAnioEmisionAduana = dataTable.Rows[i]["AnioEmisionAduana"].ToString(); //Campo 08
+                string txtPleComprobanteNumero = dataTable.Rows[i]["ComprobanteNumero"].ToString(); //Campo 09
+                string txtPleCampo10 = dataTable.Rows[i]["Campo10"].ToString(); //Campo 10
+                int txtPleProveedorTipo = Convert.ToInt32(dataTable.Rows[i]["ProveedorTipo"].ToString()); //Campo 11
+                string txtPleProveedorNumero = dataTable.Rows[i]["ProveedorNumero"].ToString(); //Campo 12
+                string txtPleProveedorNombre = dataTable.Rows[i]["ProveedorNombre"].ToString(); //Campo 13
+                string txtPleBaseImponible = dataTable.Rows[i]["BaseImponible"].ToString(); //Campo 14
+                string txtPleIGV = dataTable.Rows[i]["IGV"].ToString(); //Campo 15
+                string txtPleBaseImponible2 = dataTable.Rows[i]["BaseImponible2"].ToString(); //Campo 16
+                string txtPleIGV2 = dataTable.Rows[i]["IGV2"].ToString(); //Campo 17
+                string txtPleBaseImponible3 = dataTable.Rows[i]["BaseImponible3"].ToString(); //Campo 18
+                string txtPleIGV3 = dataTable.Rows[i]["IGV3"].ToString(); //Campo 19
+                string txtPleNoGravada = dataTable.Rows[i]["NoGravada"].ToString(); //Campo 20
+                string txtPleImpuestoImponible = dataTable.Rows[i]["ImpuestoImponible"].ToString(); //Campo 21
+                string txtPleOtrosMontos = dataTable.Rows[i]["OtrosMontos"].ToString(); //Campo 22
+                string txtPleImporteTotal = dataTable.Rows[i]["ImporteTotal"].ToString(); //Campo 23
+                string txtPleCodigoMoneda = dataTable.Rows[i]["CodigoMoneda"].ToString(); //Campo 24
+                string txtPleTipoCambio = dataTable.Rows[i]["TipoCambio"].ToString(); //Campo 25
+                string txtPleConstanciaFechaPago = dataTable.Rows[i]["ConstanciaFechaPago"].ToString(); //Campo 26
+                string txtPleComprobanteTipoModifica = dataTable.Rows[i]["ComprobanteTipoModifica"].ToString(); //Campo 27
+                string txtPleComprobanteSerieModifica = dataTable.Rows[i]["ComprobanteSerieModifica"].ToString(); //Campo 28
+                string txtPleCodigoDependenciaAduanera = dataTable.Rows[i]["CodigoDependenciaAduanera"].ToString(); //Campo 29
+                string txtPleComprobanteNumeroModifica = dataTable.Rows[i]["ComprobanteNumeroModifica"].ToString(); //Campo 30
+                string txtPleFechaConstanciaDetraccion = dataTable.Rows[i]["FechaConstanciaDetraccion"].ToString(); //Campo 31
+                string txtPleConstanciaNumero = dataTable.Rows[i]["ConstanciaNumero"].ToString(); //Campo 32
+                string txtPleMancaDetraccion = dataTable.Rows[i]["MancaDetraccion"].ToString(); //Campo 33
+                string txtPleCalsificacionBienes = dataTable.Rows[i]["CalsificacionBienes"].ToString(); //Campo 34
+                string txtPleIdentificacionContrato = dataTable.Rows[i]["IdentificacionContrato"].ToString(); //Campo 35
+                string txtPleErrorTipo1 = dataTable.Rows[i]["ErrorTipo1"].ToString(); //Campo 36
+                string txtPleErrorTipo2 = dataTable.Rows[i]["ErrorTipo2"].ToString(); //Campo 37
+                string txtPleErrorTipo3 = dataTable.Rows[i]["ErrorTipo3"].ToString(); //Campo 38
+                string txtPleErrorTipo4 = dataTable.Rows[i]["ErrorTipo4"].ToString(); //Campo 39
+                string txtPleIdentificadorComprobante = dataTable.Rows[i]["IdentificadorComprobante"].ToString(); //Campo 40
+                string txtPleEstadoIdentifica = dataTable.Rows[i]["EstadoIdentifica"].ToString(); //Campo 41
+                string txtPleCampoLibre = dataTable.Rows[i]["CampoLibre"].ToString(); //Campo 42
 
-                if (txtPleCampoLibre != "") txtPleCampoLibre = "|" + txtPleCampoLibre;
+                //if (txtPleCampoLibre != "") txtPleCampoLibre = "|" + txtPleCampoLibre;
 
                 fichero.WriteLine(
                     txtPlePeriodo + "|" +
@@ -702,6 +723,7 @@ namespace Presentacion
                     txtPleComprobanteTipo + "|" +
                     txtPleComprobanteSerie + "|" +
                     txtPleAnioEmisionAduana + "|" +
+                    txtPleComprobanteNumero + "|" +
                     txtPleCampo10 + "|" +
                     txtPleProveedorTipo + "|" +
                     txtPleProveedorNumero + "|" +
@@ -719,6 +741,11 @@ namespace Presentacion
                     txtPleCodigoMoneda + "|" +
                     txtPleTipoCambio + "|" +
                     txtPleConstanciaFechaPago + "|" +
+                    txtPleComprobanteTipoModifica + "|" +
+                    txtPleComprobanteSerieModifica + "|" +
+                    txtPleCodigoDependenciaAduanera + "|" +
+                    txtPleComprobanteNumeroModifica + "|" +
+                    txtPleFechaConstanciaDetraccion + "|" +
                     txtPleConstanciaNumero + "|" +
                     txtPleMancaDetraccion + "|" +
                     txtPleCalsificacionBienes + "|" +
@@ -728,8 +755,8 @@ namespace Presentacion
                     txtPleErrorTipo3 + "|" +
                     txtPleErrorTipo4 + "|" +
                     txtPleIdentificadorComprobante + "|" +
-                    txtPleEstadoIdentifica +
-                    txtPleCampoLibre
+                    txtPleEstadoIdentifica + "|" +
+                    txtPleCampoLibre + "|"
                     );
             }
             fichero.Close();
@@ -777,7 +804,7 @@ namespace Presentacion
                 string txtPleEstadoIdentifica = dataTable.Rows[i]["EstadoIdentifica"].ToString();
                 string txtPleCampoLibre = dataTable.Rows[i]["CampoLibre"].ToString();
 
-                if (txtPleCampoLibre != "") txtPleCampoLibre = "|" + txtPleCampoLibre;
+                //if (txtPleCampoLibre != "") txtPleCampoLibre = "|" + txtPleCampoLibre;
 
                 fichero.WriteLine(
                     txtPlePeriodo + "|" +
@@ -813,8 +840,8 @@ namespace Presentacion
                     txtPleIdentificacionContrato + "|" +
                     txtPleErrorTipo1 + "|" +
                     txtPleIdentificadorComprobante + "|" +
-                    txtPleEstadoIdentifica +
-                    txtPleCampoLibre
+                    txtPleEstadoIdentifica + "|" +
+                    txtPleCampoLibre + "|"
                     );
             }
             fichero.Close();
