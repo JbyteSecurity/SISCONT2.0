@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Globalization;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocios;
 
@@ -590,6 +584,7 @@ namespace Presentacion
         private void btnGenerarTXT_Click(object sender, EventArgs e)
         {
             GenerateComprasTXT();
+            GenerateCompras82TXT();
             GenerateVentasTXT();
         }
 
@@ -616,7 +611,7 @@ namespace Presentacion
 
                     if (File.Exists(filename))
                     {
-                        DialogResult dialogResult = MessageBox.Show("Ya existe un erchivo con el mismo nombre", "Archivos txt .::. Info", MessageBoxButtons.YesNo);
+                        DialogResult dialogResult = MessageBox.Show("Ya existe un erchivo COMPRAS 8.1 con el mismo nombre", "Archivos txt .::. Info", MessageBoxButtons.YesNo);
                         if (dialogResult == DialogResult.Yes)
                         {
                             CreateComprasTXT(filename, dataTable);
@@ -655,7 +650,7 @@ namespace Presentacion
 
                     if (File.Exists(filename))
                     {
-                        DialogResult dialogResult = MessageBox.Show("Ya existe un erchivo con el mismo nombre", "Archivos txt .::. Info", MessageBoxButtons.YesNo);
+                        DialogResult dialogResult = MessageBox.Show("Ya existe un erchivo VENTAS con el mismo nombre", "Archivos txt .::. Info", MessageBoxButtons.YesNo);
                         if (dialogResult == DialogResult.Yes)
                         {
                             CreateVentasTXT(filename, dataTable);
@@ -663,6 +658,45 @@ namespace Presentacion
                     }
                     else
                         CreateVentasTXT(filename, dataTable);
+                }
+            }
+            else
+                MessageBox.Show("No se encontrarón datos para generar el TXT");
+        }
+
+        private void GenerateCompras82TXT()
+        {
+            DataTable dataTable = new DataTable();
+            dataTable = ventas.GetForTXT();
+            if (dataTable.Rows.Count > 0)
+            {
+
+                string fileRoute = null, filename;
+                if (String.IsNullOrEmpty(txtRutaTXT.Text))
+                    MessageBox.Show("Por favor ingresa la ruta a donde gurdar el TXT");
+                else
+                {
+                    fileRoute = txtRutaTXT.Text;
+
+                    string pleLibroCompras = "LE";
+                    string pleRuc = "20602111602";
+                    string pleAnio = "2020";
+                    string pleMes = "03";
+
+                    filename = fileRoute + pleLibroCompras + pleRuc + pleAnio + pleMes + "00080200001011.txt"; 
+
+
+
+                    if (File.Exists(filename))
+                    {
+                        DialogResult dialogResult = MessageBox.Show("Ya existe un erchivo COMPRAS 8.2 con el mismo nombre", "Archivos txt .::. Info", MessageBoxButtons.YesNo);
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            CreateCompras82TXT(filename, dataTable);
+                        }
+                    }
+                    else
+                        CreateCompras82TXT(filename, dataTable);
                 }
             }
             else
@@ -850,6 +884,14 @@ namespace Presentacion
                     txtPleCampoLibre
                     );
             }
+            fichero.Close();
+        }
+
+        private void CreateCompras82TXT(string filename = "LE2060211160220200300080200001011.txt", DataTable dataTable = null)
+        {
+            StreamWriter fichero;
+            fichero = File.CreateText(filename);
+            //fichero.WriteLine();
             fichero.Close();
         }
 
