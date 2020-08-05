@@ -160,13 +160,15 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.txtBuscarProveedor);
             this.panel1.Controls.Add(this.btnBuscarProveedor);
             this.panel1.Controls.Add(this.testlabel);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1092, 87);
+            this.panel1.Size = new System.Drawing.Size(1232, 87);
             this.panel1.TabIndex = 4;
             // 
             // panel2
@@ -176,7 +178,7 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.btnGenerarTXT);
             this.panel2.Controls.Add(this.btnCargarCarpeta);
-            this.panel2.Location = new System.Drawing.Point(647, 14);
+            this.panel2.Location = new System.Drawing.Point(787, 14);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(439, 54);
             this.panel2.TabIndex = 5;
@@ -256,7 +258,7 @@
             this.tabRegistros.Location = new System.Drawing.Point(12, 105);
             this.tabRegistros.Name = "tabRegistros";
             this.tabRegistros.SelectedIndex = 0;
-            this.tabRegistros.Size = new System.Drawing.Size(1096, 562);
+            this.tabRegistros.Size = new System.Drawing.Size(1232, 562);
             this.tabRegistros.TabIndex = 3;
             // 
             // tabCompras
@@ -266,7 +268,7 @@
             this.tabCompras.Location = new System.Drawing.Point(4, 22);
             this.tabCompras.Name = "tabCompras";
             this.tabCompras.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCompras.Size = new System.Drawing.Size(1088, 536);
+            this.tabCompras.Size = new System.Drawing.Size(1224, 536);
             this.tabCompras.TabIndex = 0;
             this.tabCompras.Text = "Compras";
             this.tabCompras.UseVisualStyleBackColor = true;
@@ -279,7 +281,7 @@
             this.panel4.Controls.Add(this.dgvRegistroCompras);
             this.panel4.Location = new System.Drawing.Point(6, 6);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1076, 464);
+            this.panel4.Size = new System.Drawing.Size(1212, 464);
             this.panel4.TabIndex = 4;
             // 
             // dgvRegistroCompras
@@ -332,7 +334,7 @@
             this.dgvRegistroCompras.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvRegistroCompras.Location = new System.Drawing.Point(0, 0);
             this.dgvRegistroCompras.Name = "dgvRegistroCompras";
-            this.dgvRegistroCompras.Size = new System.Drawing.Size(1076, 464);
+            this.dgvRegistroCompras.Size = new System.Drawing.Size(1212, 464);
             this.dgvRegistroCompras.TabIndex = 0;
             this.dgvRegistroCompras.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegistroCompras_CellEndEdit);
             this.dgvRegistroCompras.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.CellValueChanged);
@@ -358,7 +360,7 @@
             this.panel3.Controls.Add(this.btnEliminarCompras);
             this.panel3.Location = new System.Drawing.Point(6, 476);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1076, 54);
+            this.panel3.Size = new System.Drawing.Size(1212, 54);
             this.panel3.TabIndex = 3;
             // 
             // btnGuardarCompras
@@ -393,7 +395,7 @@
             this.tabVentas.Location = new System.Drawing.Point(4, 22);
             this.tabVentas.Name = "tabVentas";
             this.tabVentas.Padding = new System.Windows.Forms.Padding(3);
-            this.tabVentas.Size = new System.Drawing.Size(1088, 536);
+            this.tabVentas.Size = new System.Drawing.Size(1224, 536);
             this.tabVentas.TabIndex = 1;
             this.tabVentas.Text = "Ventas";
             this.tabVentas.UseVisualStyleBackColor = true;
@@ -406,7 +408,7 @@
             this.panel6.Controls.Add(this.btnGuardarVentas);
             this.panel6.Location = new System.Drawing.Point(6, 476);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1079, 54);
+            this.panel6.Size = new System.Drawing.Size(1215, 54);
             this.panel6.TabIndex = 4;
             // 
             // btnEliminarVentas
@@ -442,7 +444,7 @@
             this.panel5.Controls.Add(this.dgvRegistroVentas);
             this.panel5.Location = new System.Drawing.Point(3, 6);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1079, 456);
+            this.panel5.Size = new System.Drawing.Size(1215, 456);
             this.panel5.TabIndex = 2;
             // 
             // dgvRegistroVentas
@@ -491,7 +493,7 @@
             this.dgvRegistroVentas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvRegistroVentas.Location = new System.Drawing.Point(0, 0);
             this.dgvRegistroVentas.Name = "dgvRegistroVentas";
-            this.dgvRegistroVentas.Size = new System.Drawing.Size(1079, 456);
+            this.dgvRegistroVentas.Size = new System.Drawing.Size(1215, 456);
             this.dgvRegistroVentas.TabIndex = 1;
             this.dgvRegistroVentas.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegistroVentas_CellEndEdit);
             this.dgvRegistroVentas.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.dgvVentas_DefaultValuesNeeded);
@@ -999,7 +1001,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1120, 679);
+            this.ClientSize = new System.Drawing.Size(1256, 679);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabRegistros);
             this.Name = "FrmProgramaLibrosElectronicos";

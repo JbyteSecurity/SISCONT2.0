@@ -292,6 +292,8 @@ namespace Presentacion
                         dataTableTipoCambio = tipoCambio.Show(fecha);
                         compra = dataTableTipoCambio.Rows[0]["Compra"].ToString();
                         venta = dataTableTipoCambio.Rows[0]["Venta"].ToString();
+
+                        dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasFechaPago"].Value = fecha;
                     }
                     else
                         MessageBox.Show("(" + dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasFechaEmision"].Value.ToString() + ") No es una fecha valida \nIngrese una fecha válida con los siguientes formatos: \ndd/mm/yyyy o yyyy-mm-dd");
@@ -417,10 +419,13 @@ namespace Presentacion
                     if (isDate(dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasFechaEmision"].Value.ToString()))
                     {
                         fecha = dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasFechaEmision"].Value.ToString().Substring(0, 10);
+
                         dataTableTipoCambio = tipoCambio.Show(fecha);
                         compra = dataTableTipoCambio.Rows[0]["Compra"].ToString();
                         venta = dataTableTipoCambio.Rows[0]["Venta"].ToString();
-                        
+
+                        dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasFechaPago"].Value = fecha;
+
                         if (venta == null)
                             MessageBox.Show("No se encontro un tipo de cambio para la fecha: " + fecha, "Tipo de Cambio .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         else
@@ -768,41 +773,42 @@ namespace Presentacion
             fichero = File.CreateText(filename);
             for (int i = 0; i < dataTable.Rows.Count; i++)
             {
-                string txtPlePeriodo = dataTable.Rows[i]["Periodo"].ToString();
-                string txtPleRegimen1 = dataTable.Rows[i]["Regimen1"].ToString();
-                string txtPleRegimen2 = dataTable.Rows[i]["Regimen2"].ToString();
-                string txtPleFechaEmision = dataTable.Rows[i]["FechaEmision"].ToString();
-                string txtPleFechaPago = dataTable.Rows[i]["FechaPago"].ToString();
-                string txtPleComprobanteTipo = dataTable.Rows[i]["ComprobanteTipo"].ToString();
-                string txtPleComprobanteSerie = dataTable.Rows[i]["ComprobanteSerie"].ToString();
-                string ComprobanteNumero = dataTable.Rows[i]["ComprobanteNumero"].ToString();
-                string txtPleRegistroTicket = dataTable.Rows[i]["RegistroTicket"].ToString();
-                string txtPleProveedorTipo = dataTable.Rows[i]["ProveedorTipo"].ToString();
-                string txtPleProveedorNumero = dataTable.Rows[i]["ProveedorNumero"].ToString();
-                string txtPleProveedorNombre = dataTable.Rows[i]["ProveedorNombre"].ToString();
-                string txtPleValorExportacion = dataTable.Rows[i]["ValorExportacion"].ToString();
-                string txtPleBaseImponible = dataTable.Rows[i]["BaseImponible"].ToString();
-                string DocumentoBaseImponible = dataTable.Rows[i]["DocumentoBaseImponible"].ToString();
-                string txtPleIGV = dataTable.Rows[i]["IGV"].ToString();
-                string txtPleDescuentoIGV = dataTable.Rows[i]["DescuentoIGV"].ToString();
-                string txtPleImporteTotalExonerada = dataTable.Rows[i]["ImporteTotalExonerada"].ToString();
-                string txtPleImporteTotalInafecta = dataTable.Rows[i]["ImporteTotalInafecta"].ToString();
-                string txtPleISC = dataTable.Rows[i]["ISC"].ToString();
-                string txtPleBaseImponibleConIGVArroz = dataTable.Rows[i]["BaseImponibleConIGVArroz"].ToString();
-                string txtPleIVArrozPilado = dataTable.Rows[i]["IVArrozPilado"].ToString();
-                string txtPleOtrosMontos = dataTable.Rows[i]["OtrosMontos"].ToString();
-                string txtPleImporteTotal = dataTable.Rows[i]["ImporteTotal"].ToString();
-                string txtPleCodigoMoneda = dataTable.Rows[i]["CodigoMoneda"].ToString();
-                string txtPleTipoCambio = dataTable.Rows[i]["TipoCambio"].ToString();
-                string txtPleReferenciaFecha = dataTable.Rows[i]["ReferenciaFecha"].ToString();
-                string ComprobanteTipoModifica = dataTable.Rows[i]["ComprobanteTipoModifica"].ToString();
-                string ComprobanteSerieModifica = dataTable.Rows[i]["ComprobanteSerieModifica"].ToString();
-                string txtPleComprobanteNumeroModifica = dataTable.Rows[i]["ComprobanteNumeroModifica"].ToString();
-                string txtPleIdentificacionContrato = dataTable.Rows[i]["IdentificacionContrato"].ToString();
-                string txtPleErrorTipo1 = dataTable.Rows[i]["ErrorTipo1"].ToString();
-                string txtPleIdentificadorComprobante = dataTable.Rows[i]["IdentificadorComprobante"].ToString();
-                string txtPleEstadoIdentifica = dataTable.Rows[i]["EstadoIdentifica"].ToString();
-                string txtPleCampoLibre = dataTable.Rows[i]["CampoLibre"].ToString();
+                string txtPlePeriodo = dataTable.Rows[i]["Periodo"].ToString(); //Campo 01
+                string txtPleRegimen1 = dataTable.Rows[i]["Regimen1"].ToString(); //Campo 02
+                string txtPleRegimen2 = dataTable.Rows[i]["Regimen2"].ToString(); //Campo 03
+                string txtPleFechaEmision = dataTable.Rows[i]["FechaEmision"].ToString(); //Campo 04
+                string txtPleFechaPago = dataTable.Rows[i]["FechaPago"].ToString(); //Campo 05
+                string txtPleComprobanteTipo = dataTable.Rows[i]["ComprobanteTipo"].ToString(); //Campo 06
+                string txtPleComprobanteSerie = dataTable.Rows[i]["ComprobanteSerie"].ToString(); //Campo 07
+                string ComprobanteNumero = dataTable.Rows[i]["ComprobanteNumero"].ToString(); //Campo 08
+                string txtPleRegistroTicket = dataTable.Rows[i]["RegistroTicket"].ToString(); //Campo 09
+                string txtPleProveedorTipo = dataTable.Rows[i]["ProveedorTipo"].ToString(); //Campo 10
+                string txtPleProveedorNumero = dataTable.Rows[i]["ProveedorNumero"].ToString(); //Campo 11
+                string txtPleProveedorNombre = dataTable.Rows[i]["ProveedorNombre"].ToString(); //Campo 12
+                string txtPleValorExportacion = dataTable.Rows[i]["ValorExportacion"].ToString(); //Campo 13
+                string txtPleBaseImponible = dataTable.Rows[i]["BaseImponible"].ToString(); //Campo 14
+                string DocumentoBaseImponible = dataTable.Rows[i]["DocumentoBaseImponible"].ToString(); //Campo 15
+                string txtPleIGV = dataTable.Rows[i]["IGV"].ToString(); //Campo 16
+                string txtPleDescuentoIGV = dataTable.Rows[i]["DescuentoIGV"].ToString(); //Campo 17
+                string txtPleImporteTotalExonerada = dataTable.Rows[i]["ImporteTotalExonerada"].ToString(); //Campo 18
+                string txtPleImporteTotalInafecta = dataTable.Rows[i]["ImporteTotalInafecta"].ToString(); //Campo 19
+                string txtPleISC = dataTable.Rows[i]["ISC"].ToString(); //Campo 20
+                string txtPleBaseImponibleConIGVArroz = dataTable.Rows[i]["BaseImponibleConIGVArroz"].ToString(); //Campo 21
+                string txtPleIVArrozPilado = dataTable.Rows[i]["IVArrozPilado"].ToString(); //Campo 22
+                string txtPleOtrosMontos = dataTable.Rows[i]["OtrosMontos"].ToString(); //Campo 23
+                string txtPleImporteTotal = dataTable.Rows[i]["ImporteTotal"].ToString(); //Campo 24
+                string txtPleCodigoMoneda = dataTable.Rows[i]["CodigoMoneda"].ToString(); //Campo 25
+                string txtPleTipoCambio = dataTable.Rows[i]["TipoCambio"].ToString(); //Campo 26
+                if (txtPleCodigoMoneda == "") txtPleTipoCambio = "";
+                string txtPleReferenciaFecha = dataTable.Rows[i]["ReferenciaFecha"].ToString(); //Campo 27
+                string ComprobanteTipoModifica = dataTable.Rows[i]["ComprobanteTipoModifica"].ToString(); //Campo 28
+                string ComprobanteSerieModifica = dataTable.Rows[i]["ComprobanteSerieModifica"].ToString(); //Campo 29
+                string txtPleComprobanteNumeroModifica = dataTable.Rows[i]["ComprobanteNumeroModifica"].ToString(); //Campo 30
+                string txtPleIdentificacionContrato = dataTable.Rows[i]["IdentificacionContrato"].ToString(); //Campo 31
+                string txtPleErrorTipo1 = dataTable.Rows[i]["ErrorTipo1"].ToString(); //Campo 32
+                string txtPleIdentificadorComprobante = dataTable.Rows[i]["IdentificadorComprobante"].ToString(); //Campo 33
+                string txtPleEstadoIdentifica = dataTable.Rows[i]["EstadoIdentifica"].ToString(); //Campo 34
+                string txtPleCampoLibre = dataTable.Rows[i]["CampoLibre"].ToString(); //Campo 35
 
                 //if (txtPleCampoLibre != "") txtPleCampoLibre = "|" + txtPleCampoLibre;
 
@@ -841,7 +847,7 @@ namespace Presentacion
                     txtPleErrorTipo1 + "|" +
                     txtPleIdentificadorComprobante + "|" +
                     txtPleEstadoIdentifica + "|" +
-                    txtPleCampoLibre + "|"
+                    txtPleCampoLibre
                     );
             }
             fichero.Close();
