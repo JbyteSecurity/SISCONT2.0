@@ -47,6 +47,116 @@ namespace Presentacion
             SaveCompras();
         }
 
+        //MOSTRAR COMPRAS POR MES ACTUAL
+        private void FilterCompras()
+        {
+            int filtroMes = Convert.ToInt32(txtNombreMes.Text);
+            int filtroAnio = Convert.ToInt32(txtNombreAnio.Text);
+
+            DataTable dataTable = new DataTable();
+            dataTable = compras.AllByMonthFilter(filtroAnio, filtroMes);
+
+            dgvRegistroCompras.AutoGenerateColumns = false;
+
+            //dgvRegistroCompras.ColumnCount = 3;
+
+                this.comprasID.DataPropertyName = "idLibroCompras";
+                this.comprasMes.DataPropertyName = "Mes";
+                this.comprasNumeroRegistro.DataPropertyName = "NReg";
+                this.comprasFechaEmision.DataPropertyName = "FechaEmision";
+                this.comprasFechaPago.DataPropertyName = "FechaPago";
+                this.comprasCdpTipo.DataPropertyName = "CTipo";
+                this.comprasCdpSerie.DataPropertyName = "CSerie";
+                this.comprasCdpNumeroDocumento.DataPropertyName = "CNDocumento";
+                this.comprasProveedorTipo.DataPropertyName = "PTipo";
+                this.comprasProveedorNumeroDocumento.DataPropertyName = "PNumero";
+                this.comprasProveedorTipoDocumento.DataPropertyName = "PDocumento";
+                this.comprasProveedorRazonSocial.DataPropertyName = "PNombreRazonSocial";
+                this.comprasCuenta.DataPropertyName = "Cuenta";
+                this.comprasDescripcion.DataPropertyName = "Descripcion";
+                this.comprasBaseImponible.DataPropertyName = "BaseImponible";
+                this.comprasIgv.DataPropertyName = "IGV";
+                this.comprasNoGravada.DataPropertyName = "NoGravada";
+                this.comprasDescuento.DataPropertyName = "Descuentos";
+                this.comprasImporteTotal.DataPropertyName = "ImporteTotal";
+                this.comprasDolares.DataPropertyName = "Dolares";
+                this.comprasTipoCambio.DataPropertyName = "TipoCambio";
+                this.comprasConversionDolares.DataPropertyName = "ConversionDolar";
+                this.comprasPercepcion.DataPropertyName = "Percepcion";
+                this.comprasDestino.DataPropertyName = "Destino";
+                this.comprasDescripcionDestino.DataPropertyName = "DescripcionDestino";
+                this.comprasCuentaDestino.DataPropertyName = "CuentaDestino";
+                this.comprasPago.DataPropertyName = "Pgo";
+                this.comprasCodigo.DataPropertyName = "Codigo";
+                this.comprasConstanciaNumero.DataPropertyName = "ConstanciaNumero";
+                this.comprasConstanciaFechaPago.DataPropertyName = "ConstanciaFechaPago";
+                this.comprasConstanciaMonto.DataPropertyName = "ConstanciaMonto";
+                this.comprasConstanciaReferencia.DataPropertyName = "ConstanciaReferencia";
+                this.BancarizacionFecha.DataPropertyName = "BancarizacionFecha";
+                this.BancarizacionBco.DataPropertyName = "BancarizacionBco";
+                this.BancarizacionOperacion.DataPropertyName = "BancarizacionOperacion";
+                this.comprasReferenciaFecha.DataPropertyName = "ReferenciaFecha";
+                this.comprasReferenciaTipo.DataPropertyName = "ReferenciaTipo";
+                this.comprasReferenciaSerie.DataPropertyName = "ReferenciaSerie";
+                this.comprasReferenciaNumero.DataPropertyName = "ReferenciaNumero";
+
+
+            dgvRegistroCompras.DataSource = dataTable;
+        }
+
+        private void FilterVentas()
+        {
+            int filtroMes = Convert.ToInt32(txtNombreMes.Text);
+            int filtroAnio = Convert.ToInt32(txtNombreAnio.Text);
+
+            DataTable dataTable = new DataTable();
+            dataTable = ventas.AllByMonthFilter(filtroAnio, filtroMes);
+
+            dgvRegistroVentas.AutoGenerateColumns = false;
+
+            //dgvRegistroVentas.ColumnCount = 3;
+
+            for (int i = 0; i < dataTable.Rows.Count; i++)
+            {
+                this.ventasId.DataPropertyName = "idLibroVentas";
+                this.ventasMes.DataPropertyName = "Mes";
+                this.ventasNumeroRegistro.DataPropertyName = "NReg";
+                this.ventasFechaEmision.DataPropertyName = "FechaEmision";
+                this.ventasFechapago.DataPropertyName = "FechaPago";
+                this.ventasCdpTipo.DataPropertyName = "CTipo";
+                this.ventasCdpSerie.DataPropertyName = "CSerie";
+                this.ventasCdpNumero.DataPropertyName = "CNDocumento";
+                this.ventasProveedorTipo.DataPropertyName = "PTipo";
+                this.ventasProveedorNumero.DataPropertyName = "PNumero";
+                this.ventasProveedorRazonSocial.DataPropertyName = "PNombreRazonSocial";
+                this.ventasCuenta.DataPropertyName = "Cuenta";
+                this.ventasDescripcion.DataPropertyName = "Descripcion";
+                this.ventasValorExportacion.DataPropertyName = "ValorExportacion";
+                this.ventasBaseImponible.DataPropertyName = "BaseImponible";
+                this.ventasImporteTotalExonerada.DataPropertyName = "ImporteTotalExonerada";
+                this.ventasImporteTotalInafecta.DataPropertyName = "ImporteTotalInafecta";
+                this.ventasIgv.DataPropertyName = "IGV";
+                this.ventasImporteTotal.DataPropertyName = "ImporteTotal";
+                this.ventasTipoCambio.DataPropertyName = "TC";
+                this.ventasDolares.DataPropertyName = "Dolares";
+                this.ventasIgvRetencion.DataPropertyName = "IgvRetencion";
+                this.ventasCuentaDestino.DataPropertyName = "CuentaDestino";
+                this.ventasCuentaDestinoDescripcion.DataPropertyName = "CuentaDestinoDescripcion";
+                this.ventasPago.DataPropertyName = "Pago";
+                this.ventasReferenciaFecha.DataPropertyName = "ReferenciaFecha";
+                this.ventasReferenciaTipo.DataPropertyName = "ReferenciaTipo";
+                this.ventasReferenciaSerie.DataPropertyName = "ReferenciaSerie";
+                this.ventasReferenciaNumero.DataPropertyName = "ReferenciaNumeroDocumento";
+                this.ventasCodigo.DataPropertyName = "Codigo";
+                this.ventasConstanciaNumero.DataPropertyName = "ConstanciaNumero";
+                this.ventasConstanciaFechaPago.DataPropertyName = "ConstanciaFechaPago";
+                this.ventasDetraccionSoles.DataPropertyName = "DetraccionSoles";
+                this.ventasReferencia.DataPropertyName = "Referencia";
+                this.ventasObservacion.DataPropertyName = "Observacion";
+            }
+
+            dgvRegistroVentas.DataSource = dataTable;
+        }
 
         //GUARDAR Compras 
         private void SaveCompras()
@@ -97,10 +207,10 @@ namespace Presentacion
                         int BancarizacionOperacion = row.Cells["BancarizacionOperacion"].Value != DBNull.Value ? Convert.ToInt32(row.Cells["BancarizacionOperacion"].Value) : 0;
                         double comprasConversionDolares = row.Cells["comprasConversionDolares"].Value != DBNull.Value ? Convert.ToDouble(row.Cells["comprasConversionDolares"].Value) : 0;
 
-                        string ReferenciaFecha = row.Cells["ReferenciaFecha"].Value != DBNull.Value ? Convert.ToString(row.Cells["ReferenciaFecha"].Value) : "";
-                        string ReferenciaTipo = row.Cells["ReferenciaTipo"].Value != DBNull.Value ? Convert.ToString(row.Cells["ReferenciaTipo"].Value) : "";
-                        string ReferenciaSerie = row.Cells["ReferenciaSerie"].Value != DBNull.Value ? Convert.ToString(row.Cells["ReferenciaSerie"].Value) : "";
-                        string ReferenciaNumero = row.Cells["ReferenciaNumero"].Value != DBNull.Value ? Convert.ToString(row.Cells["ReferenciaNumero"].Value) : "";
+                        string ReferenciaFecha = row.Cells["comprasConstanciaFechaPago"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasReferenciaFecha"].Value) : "";
+                        string ReferenciaTipo = row.Cells["comprasReferenciaTipo"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasReferenciaTipo"].Value) : "";
+                        string ReferenciaSerie = row.Cells["comprasReferenciaSerie"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasReferenciaSerie"].Value) : "";
+                        string ReferenciaNumero = row.Cells["comprasReferenciaNumero"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasReferenciaNumero"].Value) : "";
                         
 
                         string Usuario = "user02";
@@ -260,9 +370,8 @@ namespace Presentacion
         {
             try
             {
-                
-                    DateTime.Parse(fecha);
-                    return true;
+                DateTime.Parse(fecha);
+                return true;
             }
             catch
             {
@@ -279,23 +388,26 @@ namespace Presentacion
                     string fecha = null, compra = null, venta = null;
                     DataTable dataTableTipoCambio = new DataTable();
 
-                    if (isDate(dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasFechaEmision"].Value.ToString()))
+                    if (dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasFechaEmision"].Value != DBNull.Value)
                     {
-                        fecha = dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasFechaEmision"].Value.ToString();
+                        if (isDate(dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasFechaEmision"].Value.ToString()))
+                        {
+                            fecha = dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasFechaEmision"].Value.ToString();
 
-                        dataTableTipoCambio = tipoCambio.Show(fecha);
-                        compra = dataTableTipoCambio.Rows[0]["Compra"].ToString();
-                        venta = dataTableTipoCambio.Rows[0]["Venta"].ToString();
+                            dataTableTipoCambio = tipoCambio.Show(fecha);
+                            compra = dataTableTipoCambio.Rows[0]["Compra"].ToString();
+                            venta = dataTableTipoCambio.Rows[0]["Venta"].ToString();
 
-                        dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasFechaPago"].Value = fecha;
+                            dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasFechaPago"].Value = fecha;
+                        }
+                        else
+                            MessageBox.Show("(" + dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasFechaEmision"].Value.ToString() + ") No es una fecha valida \nIngrese una fecha válida con los siguientes formatos: \ndd/mm/yyyy o yyyy-mm-dd");
+
+                        if (venta == null)
+                            MessageBox.Show("No se encontro un tipo de cambio para la fecha: " + fecha, "Tipo de Cambio .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        else
+                            dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasTipoCambio"].Value = venta;
                     }
-                    else
-                        MessageBox.Show("(" + dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasFechaEmision"].Value.ToString() + ") No es una fecha valida \nIngrese una fecha válida con los siguientes formatos: \ndd/mm/yyyy o yyyy-mm-dd");
-
-                    if (venta == null)
-                        MessageBox.Show("No se encontro un tipo de cambio para la fecha: " + fecha, "Tipo de Cambio .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    else
-                        dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasTipoCambio"].Value = venta;
                     break;
                 case 9:
                     string ruc;
@@ -583,15 +695,23 @@ namespace Presentacion
 
         private void btnGenerarTXT_Click(object sender, EventArgs e)
         {
-            GenerateComprasTXT();
-            GenerateCompras82TXT();
-            GenerateVentasTXT();
+            string pleNombreRuc = txtNombreRuc.Text;
+            string pleNombreAnio = txtNombreAnio.Text;
+            string pleNombreMes = txtNombreMes.Text;
+
+            if (pleNombreRuc != "" && pleNombreAnio != "" && pleNombreMes != "")
+            {
+                GenerateComprasTXT();
+                GenerateCompras82TXT();
+                GenerateVentasTXT();
+                MessageBox.Show("Archivos txt Crerados correctamente");
+            } else MessageBox.Show("Los compos RUC, Año y Mes son Obligatorios", "PLE .::. Generación de TXTs", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void GenerateComprasTXT()
         {
             DataTable dataTable = new DataTable();
-            dataTable = compras.GetForTXT();
+            dataTable = compras.GetForTXT(Convert.ToInt32(txtNombreAnio.Text), Convert.ToInt32(txtNombreMes.Text));
             if (dataTable.Rows.Count > 0)
             {
 
@@ -603,9 +723,9 @@ namespace Presentacion
                     fileRoute = txtRutaTXT.Text;
 
                     string pleLibroCompras = "LE";
-                    string pleRuc = "20602111602";
-                    string pleAnio = "2020";
-                    string pleMes = "03";
+                    string pleRuc = txtNombreRuc.Text;
+                    string pleAnio = txtNombreAnio.Text;
+                    string pleMes = txtNombreMes.Text.PadLeft(2, '0');
 
                     filename = fileRoute + pleLibroCompras + pleRuc + pleAnio + pleMes + "00080100001111.txt";
 
@@ -628,7 +748,7 @@ namespace Presentacion
         private void GenerateVentasTXT()
         {
             DataTable dataTable = new DataTable();
-            dataTable = ventas.GetForTXT();
+            dataTable = ventas.GetForTXT(Convert.ToInt32(txtNombreAnio.Text), Convert.ToInt32(txtNombreMes.Text));
             if (dataTable.Rows.Count > 0)
             {
 
@@ -640,9 +760,9 @@ namespace Presentacion
                     fileRoute = txtRutaTXT.Text;
 
                     string pleLibroCompras = "LE";
-                    string pleRuc = "20602111602";
-                    string pleAnio = "2020";
-                    string pleMes = "03";
+                    string pleRuc = txtNombreRuc.Text;
+                    string pleAnio = txtNombreAnio.Text;
+                    string pleMes = txtNombreMes.Text.PadLeft(2, '0');
 
                     filename = fileRoute + pleLibroCompras + pleRuc + pleAnio + pleMes + "00140100001111.txt";
 
@@ -666,41 +786,33 @@ namespace Presentacion
 
         private void GenerateCompras82TXT()
         {
-            DataTable dataTable = new DataTable();
-            dataTable = ventas.GetForTXT();
-            if (dataTable.Rows.Count > 0)
-            {
-
-                string fileRoute = null, filename;
-                if (String.IsNullOrEmpty(txtRutaTXT.Text))
-                    MessageBox.Show("Por favor ingresa la ruta a donde gurdar el TXT");
-                else
-                {
-                    fileRoute = txtRutaTXT.Text;
-
-                    string pleLibroCompras = "LE";
-                    string pleRuc = "20602111602";
-                    string pleAnio = "2020";
-                    string pleMes = "03";
-
-                    filename = fileRoute + pleLibroCompras + pleRuc + pleAnio + pleMes + "00080200001011.txt"; 
-
-
-
-                    if (File.Exists(filename))
-                    {
-                        DialogResult dialogResult = MessageBox.Show("Ya existe un erchivo COMPRAS 8.2 con el mismo nombre", "Archivos txt .::. Info", MessageBoxButtons.YesNo);
-                        if (dialogResult == DialogResult.Yes)
-                        {
-                            CreateCompras82TXT(filename, dataTable);
-                        }
-                    }
-                    else
-                        CreateCompras82TXT(filename, dataTable);
-                }
-            }
+            string fileRoute = null, filename;
+            if (String.IsNullOrEmpty(txtRutaTXT.Text))
+                MessageBox.Show("Por favor ingresa la ruta a donde gurdar el TXT");
             else
-                MessageBox.Show("No se encontrarón datos para generar el TXT");
+            {
+                fileRoute = txtRutaTXT.Text;
+
+                string pleLibroCompras = "LE";
+                string pleRuc = txtNombreRuc.Text;
+                string pleAnio = txtNombreAnio.Text;
+                string pleMes = txtNombreMes.Text.PadLeft(2, '0');
+
+                filename = fileRoute + pleLibroCompras + pleRuc + pleAnio + pleMes + "00080200001011.txt"; 
+
+
+
+                if (File.Exists(filename))
+                {
+                    DialogResult dialogResult = MessageBox.Show("Ya existe un erchivo COMPRAS 8.2 con el mismo nombre", "Archivos txt .::. Info", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        CreateCompras82TXT(filename);
+                    }
+                }
+                else
+                    CreateCompras82TXT(filename);
+                }
         }
 
         private void CreateComprasTXT(string filename, DataTable dataTable)
@@ -887,7 +999,7 @@ namespace Presentacion
             fichero.Close();
         }
 
-        private void CreateCompras82TXT(string filename = "LE2060211160220200300080200001011.txt", DataTable dataTable = null)
+        private void CreateCompras82TXT(string filename = "LE2060211160220200300080200001011.txt")
         {
             StreamWriter fichero;
             fichero = File.CreateText(filename);
@@ -905,6 +1017,17 @@ namespace Presentacion
                 TXTRoute = fbd.SelectedPath + "\\";
                 txtRutaTXT.Text = TXTRoute;
             }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (txtNombreMes.Text != "" && txtNombreAnio.Text != "")
+            {
+                FilterCompras();
+                FilterVentas();
+            }
+            else
+                MessageBox.Show("Ingrese un Año y un Mes para realizar el filtrado"); 
         }
     }
 }

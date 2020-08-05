@@ -12,7 +12,9 @@ namespace Negocios
 
         public DataTable allByMonth() { return daoVentas.AllByMonth(); }
 
-        public DataTable GetForTXT() { return daoVentas.GetForTXT(); }
+        public DataTable AllByMonthFilter(int anio, int mes) { return daoVentas.AllByMonthFilter(anio, mes); }
+
+        public DataTable GetForTXT(int anio, int mes) { return daoVentas.GetForTXT(anio, mes); }
 
         public bool Insert(
             int mes, string numeroRegistro, string fechaEmision, string fechaPago, string cdpTipo, string cdpSerie,

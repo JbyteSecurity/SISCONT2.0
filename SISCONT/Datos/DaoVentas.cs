@@ -19,7 +19,7 @@ namespace Datos
             SqlDataReader sqlDataReader;
             DataTable dataTableDetraccion = new DataTable();
             sqlCommand.Connection = conexion.OpenConnection();
-            sqlCommand.CommandText = "sp_all_month_ventas";
+            sqlCommand.CommandText = "";
             sqlCommand.CommandType = CommandType.StoredProcedure;
             sqlDataReader = sqlCommand.ExecuteReader();
             dataTableDetraccion.Load(sqlDataReader);
@@ -27,15 +27,43 @@ namespace Datos
             return dataTableDetraccion;
         }
 
-        public DataTable GetForTXT()
+        public DataTable AllByMonthFilter(int anio, int mes)
+        {
+            SqlDataReader sqlDataReader;
+            DataTable dataTable = new DataTable();
+
+            sqlCommand.Connection = conexion.OpenConnection();
+            sqlCommand.CommandText = "sp_all_month_ventas_filtro";
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+
+            sqlCommand.Parameters.AddWithValue("@Anio", anio);
+            sqlCommand.Parameters.AddWithValue("@Mes", mes);
+
+            sqlCommand.ExecuteNonQuery();
+            sqlDataReader = sqlCommand.ExecuteReader();
+            dataTable.Load(sqlDataReader);
+            sqlCommand.Parameters.Clear();
+
+            conexion.CloseConnection();
+            return dataTable;
+        }
+
+        public DataTable GetForTXT(int anio, int mes)
         {
             SqlDataReader sqlDataReader;
             DataTable dataTable = new DataTable();
             sqlCommand.Connection = conexion.OpenConnection();
             sqlCommand.CommandText = "sp_generate_txt_ventas";
             sqlCommand.CommandType = CommandType.StoredProcedure;
+
+            sqlCommand.Parameters.AddWithValue("@Anio", anio);
+            sqlCommand.Parameters.AddWithValue("@Mes", mes);
+
+            sqlCommand.ExecuteNonQuery();
             sqlDataReader = sqlCommand.ExecuteReader();
             dataTable.Load(sqlDataReader);
+            sqlCommand.Parameters.Clear();
+
             conexion.CloseConnection();
             return dataTable;
         }

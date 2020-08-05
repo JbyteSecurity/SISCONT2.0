@@ -141,7 +141,7 @@
             this.Controls.Add(this.txtRuc);
             this.Controls.Add(this.label1);
             this.Name = "FrmProveedor";
-            this.Text = "FrmProveedor";
+            this.Text = "Proveedor";
             this.Load += new System.EventHandler(this.FrmProveedor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSuppliers)).EndInit();
             this.ResumeLayout(false);

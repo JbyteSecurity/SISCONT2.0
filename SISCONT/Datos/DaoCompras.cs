@@ -39,15 +39,43 @@ namespace Datos
             return dataTable;
         }
 
-        public DataTable GetForTXT()
+        public DataTable AllByMonthFilter(int anio, int mes)
+        {
+            SqlDataReader sqlDataReader;
+            DataTable dataTable = new DataTable();
+
+            sqlCommand.Connection = conexion.OpenConnection();
+            sqlCommand.CommandText = "sp_all_current_month_compras_filter";
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+
+            sqlCommand.Parameters.AddWithValue("@Anio", anio);
+            sqlCommand.Parameters.AddWithValue("@Mes", mes);
+
+            sqlCommand.ExecuteNonQuery();
+            sqlDataReader = sqlCommand.ExecuteReader();
+            dataTable.Load(sqlDataReader);
+            sqlCommand.Parameters.Clear();
+
+            conexion.CloseConnection();
+            return dataTable;
+        }
+
+        public DataTable GetForTXT(int anio, int mes)
         {
             SqlDataReader sqlDataReader;
             DataTable dataTable = new DataTable();
             sqlCommand.Connection = conexion.OpenConnection();
             sqlCommand.CommandText = "sp_generate_txt_compras";
             sqlCommand.CommandType = CommandType.StoredProcedure;
+
+            sqlCommand.Parameters.AddWithValue("@Anio", anio);
+            sqlCommand.Parameters.AddWithValue("@Mes", mes);
+
+            sqlCommand.ExecuteNonQuery();
             sqlDataReader = sqlCommand.ExecuteReader();
             dataTable.Load(sqlDataReader);
+            sqlCommand.Parameters.Clear();
+
             conexion.CloseConnection();
             return dataTable;
         }

@@ -164,7 +164,7 @@
             this.Controls.Add(this.txtFecha);
             this.Controls.Add(this.label1);
             this.Name = "FrmTipoCambio";
-            this.Text = "FrmTipoCambio";
+            this.Text = "Tipo Cambio";
             this.Load += new System.EventHandler(this.FrmTipoCambio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTipoCambio)).EndInit();
             this.ResumeLayout(false);
