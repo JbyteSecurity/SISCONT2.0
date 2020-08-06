@@ -29,22 +29,40 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle58 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle59 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle60 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtRutaTXT = new System.Windows.Forms.TextBox();
             this.btnGenerarTXT = new System.Windows.Forms.Button();
             this.btnCargarCarpeta = new System.Windows.Forms.Button();
+            this.txtNombreMes = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtNombreRuc = new System.Windows.Forms.TextBox();
+            this.txtNombreAnio = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.tabRegistros = new System.Windows.Forms.TabControl();
             this.tabCompras = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -64,12 +82,42 @@
             this.dSRegistroVentas = new Presentacion.DSRegistroVentas();
             this.sp_all_current_month_comprasTableAdapter = new Presentacion.DSRegistroComprasTableAdapters.sp_all_current_month_comprasTableAdapter();
             this.sp_all_month_ventasTableAdapter = new Presentacion.DSRegistroVentasTableAdapters.sp_all_month_ventasTableAdapter();
-            this.txtNombreRuc = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtNombreMes = new System.Windows.Forms.TextBox();
-            this.txtNombreAnio = new System.Windows.Forms.TextBox();
+            this.ventasId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasMes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasNumeroRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasFechaEmision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasFechapago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasCdpTipo = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.ventasCdpSerie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasCdpNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasProveedorTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasProveedorNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasProveedorRazonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasValorExportacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasBaseImponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasImporteTotalExonerada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasImporteTotalInafecta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasIgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasImporteTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasTipoCambio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasDolares = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasDolaresConversion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasIgvRetencion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasCuentaDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasCuentaDestinoDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasReferenciaFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasReferenciaTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasReferenciaSerie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasReferenciaNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasConstanciaNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasConstanciaFechaPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasDetraccionSoles = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasReferencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasObservacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comprasID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comprasMes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comprasNumeroRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -109,41 +157,6 @@
             this.comprasReferenciaTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comprasReferenciaSerie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comprasReferenciaNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasMes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasNumeroRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasFechaEmision = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasFechapago = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasCdpTipo = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.ventasCdpSerie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasCdpNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasProveedorTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasProveedorNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasProveedorRazonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasValorExportacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasBaseImponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasImporteTotalExonerada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasImporteTotalInafecta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasIgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasImporteTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasTipoCambio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasDolares = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasIgvRetencion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasCuentaDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasCuentaDestinoDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasReferenciaFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasReferenciaTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasReferenciaSerie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasReferenciaNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasConstanciaNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasConstanciaFechaPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasDetraccionSoles = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasReferencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasObservacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabRegistros.SuspendLayout();
@@ -177,6 +190,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1240, 58);
             this.panel1.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(187, 5);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(27, 13);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Mes";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel2
             // 
@@ -215,6 +238,7 @@
             // btnCargarCarpeta
             // 
             this.btnCargarCarpeta.BackColor = System.Drawing.Color.Aqua;
+            this.btnCargarCarpeta.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.btnCargarCarpeta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCargarCarpeta.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnCargarCarpeta.Location = new System.Drawing.Point(170, 18);
@@ -226,6 +250,13 @@
             this.btnCargarCarpeta.UseVisualStyleBackColor = false;
             this.btnCargarCarpeta.Click += new System.EventHandler(this.btnCargarCarpeta_Click);
             // 
+            // txtNombreMes
+            // 
+            this.txtNombreMes.Location = new System.Drawing.Point(190, 20);
+            this.txtNombreMes.Name = "txtNombreMes";
+            this.txtNombreMes.Size = new System.Drawing.Size(68, 20);
+            this.txtNombreMes.TabIndex = 11;
+            // 
             // btnBuscar
             // 
             this.btnBuscar.Location = new System.Drawing.Point(264, 19);
@@ -235,6 +266,40 @@
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(113, 4);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(26, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Año";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtNombreRuc
+            // 
+            this.txtNombreRuc.Location = new System.Drawing.Point(10, 20);
+            this.txtNombreRuc.Name = "txtNombreRuc";
+            this.txtNombreRuc.Size = new System.Drawing.Size(100, 20);
+            this.txtNombreRuc.TabIndex = 7;
+            // 
+            // txtNombreAnio
+            // 
+            this.txtNombreAnio.Location = new System.Drawing.Point(116, 20);
+            this.txtNombreAnio.Name = "txtNombreAnio";
+            this.txtNombreAnio.Size = new System.Drawing.Size(68, 20);
+            this.txtNombreAnio.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 4);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(30, 13);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "RUC";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tabRegistros
             // 
@@ -462,6 +527,7 @@
             this.ventasImporteTotal,
             this.ventasTipoCambio,
             this.ventasDolares,
+            this.ventasDolaresConversion,
             this.ventasIgvRetencion,
             this.ventasCuentaDestino,
             this.ventasCuentaDestinoDescripcion,
@@ -504,56 +570,249 @@
             // 
             this.sp_all_month_ventasTableAdapter.ClearBeforeFill = true;
             // 
-            // txtNombreRuc
+            // ventasId
             // 
-            this.txtNombreRuc.Location = new System.Drawing.Point(10, 20);
-            this.txtNombreRuc.Name = "txtNombreRuc";
-            this.txtNombreRuc.Size = new System.Drawing.Size(100, 20);
-            this.txtNombreRuc.TabIndex = 7;
+            this.ventasId.DataPropertyName = "idLibroVentas";
+            this.ventasId.HeaderText = "#";
+            this.ventasId.Name = "ventasId";
+            this.ventasId.ReadOnly = true;
+            this.ventasId.Width = 40;
             // 
-            // label2
+            // ventasMes
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 4);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 13);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "RUC";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ventasMes.DataPropertyName = "Mes";
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.Aqua;
+            this.ventasMes.DefaultCellStyle = dataGridViewCellStyle11;
+            this.ventasMes.HeaderText = "Mes";
+            this.ventasMes.Name = "ventasMes";
             // 
-            // label3
+            // ventasNumeroRegistro
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(113, 4);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(26, 13);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Año";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ventasNumeroRegistro.DataPropertyName = "NReg";
+            this.ventasNumeroRegistro.HeaderText = "N° Registro";
+            this.ventasNumeroRegistro.Name = "ventasNumeroRegistro";
             // 
-            // label4
+            // ventasFechaEmision
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(187, 5);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(27, 13);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Mes";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ventasFechaEmision.DataPropertyName = "FechaEmision";
+            this.ventasFechaEmision.HeaderText = "Fecha de Emisión";
+            this.ventasFechaEmision.Name = "ventasFechaEmision";
             // 
-            // txtNombreMes
+            // ventasFechapago
             // 
-            this.txtNombreMes.Location = new System.Drawing.Point(190, 20);
-            this.txtNombreMes.Name = "txtNombreMes";
-            this.txtNombreMes.Size = new System.Drawing.Size(68, 20);
-            this.txtNombreMes.TabIndex = 11;
+            this.ventasFechapago.DataPropertyName = "FechaPago";
+            this.ventasFechapago.HeaderText = "Fecha de Pago";
+            this.ventasFechapago.Name = "ventasFechapago";
             // 
-            // txtNombreAnio
+            // ventasCdpTipo
             // 
-            this.txtNombreAnio.Location = new System.Drawing.Point(116, 20);
-            this.txtNombreAnio.Name = "txtNombreAnio";
-            this.txtNombreAnio.Size = new System.Drawing.Size(68, 20);
-            this.txtNombreAnio.TabIndex = 9;
+            this.ventasCdpTipo.DataPropertyName = "CTipo";
+            this.ventasCdpTipo.HeaderText = "Comprobante Tipo";
+            this.ventasCdpTipo.Name = "ventasCdpTipo";
+            this.ventasCdpTipo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ventasCdpTipo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // ventasCdpSerie
+            // 
+            this.ventasCdpSerie.DataPropertyName = "CSerie";
+            this.ventasCdpSerie.HeaderText = "Comprobante Serie";
+            this.ventasCdpSerie.Name = "ventasCdpSerie";
+            // 
+            // ventasCdpNumero
+            // 
+            this.ventasCdpNumero.DataPropertyName = "CNDocumento";
+            this.ventasCdpNumero.HeaderText = "Comprobante Número Documento";
+            this.ventasCdpNumero.Name = "ventasCdpNumero";
+            // 
+            // ventasProveedorTipo
+            // 
+            this.ventasProveedorTipo.DataPropertyName = "PTipo";
+            this.ventasProveedorTipo.HeaderText = "Proveedor Tipo";
+            this.ventasProveedorTipo.Name = "ventasProveedorTipo";
+            // 
+            // ventasProveedorNumero
+            // 
+            this.ventasProveedorNumero.DataPropertyName = "PNumero";
+            this.ventasProveedorNumero.HeaderText = "Proveedor Numero Documento";
+            this.ventasProveedorNumero.Name = "ventasProveedorNumero";
+            // 
+            // ventasProveedorRazonSocial
+            // 
+            this.ventasProveedorRazonSocial.DataPropertyName = "PNombreRazonSocial";
+            this.ventasProveedorRazonSocial.HeaderText = "Proveedor Razón Social";
+            this.ventasProveedorRazonSocial.Name = "ventasProveedorRazonSocial";
+            // 
+            // ventasCuenta
+            // 
+            this.ventasCuenta.DataPropertyName = "Cuenta";
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.Aqua;
+            this.ventasCuenta.DefaultCellStyle = dataGridViewCellStyle12;
+            this.ventasCuenta.HeaderText = "Cuenta";
+            this.ventasCuenta.Name = "ventasCuenta";
+            // 
+            // ventasDescripcion
+            // 
+            this.ventasDescripcion.DataPropertyName = "Descripcion";
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.Aqua;
+            this.ventasDescripcion.DefaultCellStyle = dataGridViewCellStyle13;
+            this.ventasDescripcion.HeaderText = "Descripción";
+            this.ventasDescripcion.Name = "ventasDescripcion";
+            // 
+            // ventasValorExportacion
+            // 
+            this.ventasValorExportacion.DataPropertyName = "ValorExportacion";
+            this.ventasValorExportacion.HeaderText = "Valor de Exportación";
+            this.ventasValorExportacion.Name = "ventasValorExportacion";
+            // 
+            // ventasBaseImponible
+            // 
+            this.ventasBaseImponible.DataPropertyName = "BaseImponible";
+            this.ventasBaseImponible.HeaderText = "Base Imponible";
+            this.ventasBaseImponible.Name = "ventasBaseImponible";
+            // 
+            // ventasImporteTotalExonerada
+            // 
+            this.ventasImporteTotalExonerada.DataPropertyName = "ImporteTotalExonerada";
+            this.ventasImporteTotalExonerada.HeaderText = "Importe Total Exonerada";
+            this.ventasImporteTotalExonerada.Name = "ventasImporteTotalExonerada";
+            // 
+            // ventasImporteTotalInafecta
+            // 
+            this.ventasImporteTotalInafecta.DataPropertyName = "ImporteTotalInafecta";
+            this.ventasImporteTotalInafecta.HeaderText = "Importe Total Inafecta";
+            this.ventasImporteTotalInafecta.Name = "ventasImporteTotalInafecta";
+            // 
+            // ventasIgv
+            // 
+            this.ventasIgv.DataPropertyName = "IGV";
+            this.ventasIgv.HeaderText = "IGV";
+            this.ventasIgv.Name = "ventasIgv";
+            // 
+            // ventasImporteTotal
+            // 
+            this.ventasImporteTotal.DataPropertyName = "ImporteTotal";
+            this.ventasImporteTotal.HeaderText = "Importe Total";
+            this.ventasImporteTotal.Name = "ventasImporteTotal";
+            // 
+            // ventasTipoCambio
+            // 
+            this.ventasTipoCambio.DataPropertyName = "TC";
+            this.ventasTipoCambio.HeaderText = "Tipo de Cambio";
+            this.ventasTipoCambio.Name = "ventasTipoCambio";
+            // 
+            // ventasDolares
+            // 
+            this.ventasDolares.DataPropertyName = "Dolares";
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.Aqua;
+            this.ventasDolares.DefaultCellStyle = dataGridViewCellStyle14;
+            this.ventasDolares.HeaderText = "Dólares";
+            this.ventasDolares.Name = "ventasDolares";
+            // 
+            // ventasDolaresConversion
+            // 
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.Aqua;
+            this.ventasDolaresConversion.DefaultCellStyle = dataGridViewCellStyle15;
+            this.ventasDolaresConversion.HeaderText = "Dolares Conversión";
+            this.ventasDolaresConversion.Name = "ventasDolaresConversion";
+            this.ventasDolaresConversion.ReadOnly = true;
+            // 
+            // ventasIgvRetencion
+            // 
+            this.ventasIgvRetencion.DataPropertyName = "IgvRetencion";
+            this.ventasIgvRetencion.HeaderText = "IGV Retención";
+            this.ventasIgvRetencion.Name = "ventasIgvRetencion";
+            // 
+            // ventasCuentaDestino
+            // 
+            this.ventasCuentaDestino.DataPropertyName = "CuentaDestino";
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.Aqua;
+            this.ventasCuentaDestino.DefaultCellStyle = dataGridViewCellStyle16;
+            this.ventasCuentaDestino.HeaderText = "Cuenta Destino";
+            this.ventasCuentaDestino.Name = "ventasCuentaDestino";
+            // 
+            // ventasCuentaDestinoDescripcion
+            // 
+            this.ventasCuentaDestinoDescripcion.DataPropertyName = "CuentaDestinoDescripcion";
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.Aqua;
+            this.ventasCuentaDestinoDescripcion.DefaultCellStyle = dataGridViewCellStyle17;
+            this.ventasCuentaDestinoDescripcion.HeaderText = "Cuenta Destino Descripción";
+            this.ventasCuentaDestinoDescripcion.Name = "ventasCuentaDestinoDescripcion";
+            // 
+            // ventasPago
+            // 
+            this.ventasPago.DataPropertyName = "Pago";
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.Aqua;
+            this.ventasPago.DefaultCellStyle = dataGridViewCellStyle18;
+            this.ventasPago.HeaderText = "Pago";
+            this.ventasPago.Name = "ventasPago";
+            // 
+            // ventasReferenciaFecha
+            // 
+            this.ventasReferenciaFecha.DataPropertyName = "ReferenciaFecha";
+            this.ventasReferenciaFecha.HeaderText = "Referencia Fecha";
+            this.ventasReferenciaFecha.Name = "ventasReferenciaFecha";
+            // 
+            // ventasReferenciaTipo
+            // 
+            this.ventasReferenciaTipo.DataPropertyName = "ReferenciaTipo";
+            this.ventasReferenciaTipo.HeaderText = "Referencia Tipo";
+            this.ventasReferenciaTipo.Name = "ventasReferenciaTipo";
+            // 
+            // ventasReferenciaSerie
+            // 
+            this.ventasReferenciaSerie.DataPropertyName = "ReferenciaSerie";
+            this.ventasReferenciaSerie.HeaderText = "Referencia Serie";
+            this.ventasReferenciaSerie.Name = "ventasReferenciaSerie";
+            // 
+            // ventasReferenciaNumero
+            // 
+            this.ventasReferenciaNumero.DataPropertyName = "ReferenciaNumeroDocumento";
+            this.ventasReferenciaNumero.HeaderText = "Referencia Número";
+            this.ventasReferenciaNumero.Name = "ventasReferenciaNumero";
+            // 
+            // ventasCodigo
+            // 
+            this.ventasCodigo.DataPropertyName = "Codigo";
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.Aqua;
+            this.ventasCodigo.DefaultCellStyle = dataGridViewCellStyle19;
+            this.ventasCodigo.HeaderText = "Código";
+            this.ventasCodigo.Name = "ventasCodigo";
+            // 
+            // ventasConstanciaNumero
+            // 
+            this.ventasConstanciaNumero.DataPropertyName = "ConstanciaNumero";
+            this.ventasConstanciaNumero.HeaderText = "Constancia Número";
+            this.ventasConstanciaNumero.Name = "ventasConstanciaNumero";
+            // 
+            // ventasConstanciaFechaPago
+            // 
+            this.ventasConstanciaFechaPago.DataPropertyName = "ConstanciaFechaPago";
+            this.ventasConstanciaFechaPago.HeaderText = "Constancia Fecha Pago";
+            this.ventasConstanciaFechaPago.Name = "ventasConstanciaFechaPago";
+            // 
+            // ventasDetraccionSoles
+            // 
+            this.ventasDetraccionSoles.DataPropertyName = "DetraccionSoles";
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.Aqua;
+            this.ventasDetraccionSoles.DefaultCellStyle = dataGridViewCellStyle20;
+            this.ventasDetraccionSoles.HeaderText = "Detracción en Soles";
+            this.ventasDetraccionSoles.Name = "ventasDetraccionSoles";
+            // 
+            // ventasReferencia
+            // 
+            this.ventasReferencia.DataPropertyName = "Referencia";
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.Aqua;
+            this.ventasReferencia.DefaultCellStyle = dataGridViewCellStyle21;
+            this.ventasReferencia.HeaderText = "Referencia";
+            this.ventasReferencia.Name = "ventasReferencia";
+            // 
+            // ventasObservacion
+            // 
+            this.ventasObservacion.DataPropertyName = "Observacion";
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.Aqua;
+            this.ventasObservacion.DefaultCellStyle = dataGridViewCellStyle22;
+            this.ventasObservacion.HeaderText = "Observación";
+            this.ventasObservacion.Name = "ventasObservacion";
             // 
             // comprasID
             // 
@@ -566,8 +825,8 @@
             // comprasMes
             // 
             this.comprasMes.DataPropertyName = "Mes";
-            dataGridViewCellStyle51.BackColor = System.Drawing.Color.Aqua;
-            this.comprasMes.DefaultCellStyle = dataGridViewCellStyle51;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Aqua;
+            this.comprasMes.DefaultCellStyle = dataGridViewCellStyle1;
             this.comprasMes.HeaderText = "Mes";
             this.comprasMes.Name = "comprasMes";
             this.comprasMes.Width = 40;
@@ -581,9 +840,9 @@
             // comprasFechaEmision
             // 
             this.comprasFechaEmision.DataPropertyName = "FechaEmision";
-            dataGridViewCellStyle52.Format = "d";
-            dataGridViewCellStyle52.NullValue = null;
-            this.comprasFechaEmision.DefaultCellStyle = dataGridViewCellStyle52;
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.comprasFechaEmision.DefaultCellStyle = dataGridViewCellStyle2;
             this.comprasFechaEmision.HeaderText = "Fecha de Emisión";
             this.comprasFechaEmision.Name = "comprasFechaEmision";
             this.comprasFechaEmision.Width = 80;
@@ -644,16 +903,16 @@
             // comprasCuenta
             // 
             this.comprasCuenta.DataPropertyName = "Cuenta";
-            dataGridViewCellStyle53.BackColor = System.Drawing.Color.Aqua;
-            this.comprasCuenta.DefaultCellStyle = dataGridViewCellStyle53;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Aqua;
+            this.comprasCuenta.DefaultCellStyle = dataGridViewCellStyle3;
             this.comprasCuenta.HeaderText = "Cuenta";
             this.comprasCuenta.Name = "comprasCuenta";
             // 
             // comprasDescripcion
             // 
             this.comprasDescripcion.DataPropertyName = "Descripcion";
-            dataGridViewCellStyle54.BackColor = System.Drawing.Color.Aqua;
-            this.comprasDescripcion.DefaultCellStyle = dataGridViewCellStyle54;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Aqua;
+            this.comprasDescripcion.DefaultCellStyle = dataGridViewCellStyle4;
             this.comprasDescripcion.HeaderText = "Descripción";
             this.comprasDescripcion.Name = "comprasDescripcion";
             // 
@@ -702,8 +961,8 @@
             // comprasConversionDolares
             // 
             this.comprasConversionDolares.DataPropertyName = "ConversionDolar";
-            dataGridViewCellStyle55.BackColor = System.Drawing.Color.Cyan;
-            this.comprasConversionDolares.DefaultCellStyle = dataGridViewCellStyle55;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Cyan;
+            this.comprasConversionDolares.DefaultCellStyle = dataGridViewCellStyle5;
             this.comprasConversionDolares.HeaderText = "Conversión Dólares (S/.)";
             this.comprasConversionDolares.Name = "comprasConversionDolares";
             this.comprasConversionDolares.ReadOnly = true;
@@ -717,40 +976,40 @@
             // comprasDestino
             // 
             this.comprasDestino.DataPropertyName = "Destino";
-            dataGridViewCellStyle56.BackColor = System.Drawing.Color.Aqua;
-            this.comprasDestino.DefaultCellStyle = dataGridViewCellStyle56;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Aqua;
+            this.comprasDestino.DefaultCellStyle = dataGridViewCellStyle6;
             this.comprasDestino.HeaderText = "Destino";
             this.comprasDestino.Name = "comprasDestino";
             // 
             // comprasDescripcionDestino
             // 
             this.comprasDescripcionDestino.DataPropertyName = "DescripcionDestino";
-            dataGridViewCellStyle57.BackColor = System.Drawing.Color.Aqua;
-            this.comprasDescripcionDestino.DefaultCellStyle = dataGridViewCellStyle57;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Aqua;
+            this.comprasDescripcionDestino.DefaultCellStyle = dataGridViewCellStyle7;
             this.comprasDescripcionDestino.HeaderText = "Descripción Destino";
             this.comprasDescripcionDestino.Name = "comprasDescripcionDestino";
             // 
             // comprasCuentaDestino
             // 
             this.comprasCuentaDestino.DataPropertyName = "CuentaDestino";
-            dataGridViewCellStyle58.BackColor = System.Drawing.Color.Aqua;
-            this.comprasCuentaDestino.DefaultCellStyle = dataGridViewCellStyle58;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Aqua;
+            this.comprasCuentaDestino.DefaultCellStyle = dataGridViewCellStyle8;
             this.comprasCuentaDestino.HeaderText = "Cuenta Destino";
             this.comprasCuentaDestino.Name = "comprasCuentaDestino";
             // 
             // comprasPago
             // 
             this.comprasPago.DataPropertyName = "Pgo";
-            dataGridViewCellStyle59.BackColor = System.Drawing.Color.Aqua;
-            this.comprasPago.DefaultCellStyle = dataGridViewCellStyle59;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Aqua;
+            this.comprasPago.DefaultCellStyle = dataGridViewCellStyle9;
             this.comprasPago.HeaderText = "Pago";
             this.comprasPago.Name = "comprasPago";
             // 
             // comprasCodigo
             // 
             this.comprasCodigo.DataPropertyName = "Codigo";
-            dataGridViewCellStyle60.BackColor = System.Drawing.Color.Aqua;
-            this.comprasCodigo.DefaultCellStyle = dataGridViewCellStyle60;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.Aqua;
+            this.comprasCodigo.DefaultCellStyle = dataGridViewCellStyle10;
             this.comprasCodigo.HeaderText = "Código";
             this.comprasCodigo.Name = "comprasCodigo";
             // 
@@ -822,220 +1081,6 @@
             this.comprasReferenciaNumero.HeaderText = "Referencia Numero";
             this.comprasReferenciaNumero.Name = "comprasReferenciaNumero";
             // 
-            // ventasId
-            // 
-            this.ventasId.DataPropertyName = "idLibroVentas";
-            this.ventasId.HeaderText = "#";
-            this.ventasId.Name = "ventasId";
-            this.ventasId.ReadOnly = true;
-            this.ventasId.Width = 40;
-            // 
-            // ventasMes
-            // 
-            this.ventasMes.DataPropertyName = "Mes";
-            this.ventasMes.HeaderText = "Mes";
-            this.ventasMes.Name = "ventasMes";
-            // 
-            // ventasNumeroRegistro
-            // 
-            this.ventasNumeroRegistro.DataPropertyName = "NReg";
-            this.ventasNumeroRegistro.HeaderText = "N° Registro";
-            this.ventasNumeroRegistro.Name = "ventasNumeroRegistro";
-            // 
-            // ventasFechaEmision
-            // 
-            this.ventasFechaEmision.DataPropertyName = "FechaEmision";
-            this.ventasFechaEmision.HeaderText = "Fecha de Emisión";
-            this.ventasFechaEmision.Name = "ventasFechaEmision";
-            // 
-            // ventasFechapago
-            // 
-            this.ventasFechapago.DataPropertyName = "FechaPago";
-            this.ventasFechapago.HeaderText = "Fecha de Pago";
-            this.ventasFechapago.Name = "ventasFechapago";
-            // 
-            // ventasCdpTipo
-            // 
-            this.ventasCdpTipo.DataPropertyName = "CTipo";
-            this.ventasCdpTipo.HeaderText = "Comprobante Tipo";
-            this.ventasCdpTipo.Name = "ventasCdpTipo";
-            this.ventasCdpTipo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ventasCdpTipo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // ventasCdpSerie
-            // 
-            this.ventasCdpSerie.DataPropertyName = "CSerie";
-            this.ventasCdpSerie.HeaderText = "Comprobante Serie";
-            this.ventasCdpSerie.Name = "ventasCdpSerie";
-            // 
-            // ventasCdpNumero
-            // 
-            this.ventasCdpNumero.DataPropertyName = "CNDocumento";
-            this.ventasCdpNumero.HeaderText = "Comprobante Número Documento";
-            this.ventasCdpNumero.Name = "ventasCdpNumero";
-            // 
-            // ventasProveedorTipo
-            // 
-            this.ventasProveedorTipo.DataPropertyName = "PTipo";
-            this.ventasProveedorTipo.HeaderText = "Proveedor Tipo";
-            this.ventasProveedorTipo.Name = "ventasProveedorTipo";
-            // 
-            // ventasProveedorNumero
-            // 
-            this.ventasProveedorNumero.DataPropertyName = "PNumero";
-            this.ventasProveedorNumero.HeaderText = "Proveedor Numero Documento";
-            this.ventasProveedorNumero.Name = "ventasProveedorNumero";
-            // 
-            // ventasProveedorRazonSocial
-            // 
-            this.ventasProveedorRazonSocial.DataPropertyName = "PNombreRazonSocial";
-            this.ventasProveedorRazonSocial.HeaderText = "Proveedor Razón Social";
-            this.ventasProveedorRazonSocial.Name = "ventasProveedorRazonSocial";
-            // 
-            // ventasCuenta
-            // 
-            this.ventasCuenta.DataPropertyName = "Cuenta";
-            this.ventasCuenta.HeaderText = "Cuenta";
-            this.ventasCuenta.Name = "ventasCuenta";
-            // 
-            // ventasDescripcion
-            // 
-            this.ventasDescripcion.DataPropertyName = "Descripcion";
-            this.ventasDescripcion.HeaderText = "Descripción";
-            this.ventasDescripcion.Name = "ventasDescripcion";
-            // 
-            // ventasValorExportacion
-            // 
-            this.ventasValorExportacion.DataPropertyName = "ValorExportacion";
-            this.ventasValorExportacion.HeaderText = "Valor de Exportación";
-            this.ventasValorExportacion.Name = "ventasValorExportacion";
-            // 
-            // ventasBaseImponible
-            // 
-            this.ventasBaseImponible.DataPropertyName = "BaseImponible";
-            this.ventasBaseImponible.HeaderText = "Base Imponible";
-            this.ventasBaseImponible.Name = "ventasBaseImponible";
-            // 
-            // ventasImporteTotalExonerada
-            // 
-            this.ventasImporteTotalExonerada.DataPropertyName = "ImporteTotalExonerada";
-            this.ventasImporteTotalExonerada.HeaderText = "Importe Total Exonerada";
-            this.ventasImporteTotalExonerada.Name = "ventasImporteTotalExonerada";
-            // 
-            // ventasImporteTotalInafecta
-            // 
-            this.ventasImporteTotalInafecta.DataPropertyName = "ImporteTotalInafecta";
-            this.ventasImporteTotalInafecta.HeaderText = "Importe Total Inafecta";
-            this.ventasImporteTotalInafecta.Name = "ventasImporteTotalInafecta";
-            // 
-            // ventasIgv
-            // 
-            this.ventasIgv.DataPropertyName = "IGV";
-            this.ventasIgv.HeaderText = "IGV";
-            this.ventasIgv.Name = "ventasIgv";
-            // 
-            // ventasImporteTotal
-            // 
-            this.ventasImporteTotal.DataPropertyName = "ImporteTotal";
-            this.ventasImporteTotal.HeaderText = "Importe Total";
-            this.ventasImporteTotal.Name = "ventasImporteTotal";
-            // 
-            // ventasTipoCambio
-            // 
-            this.ventasTipoCambio.DataPropertyName = "TC";
-            this.ventasTipoCambio.HeaderText = "Tipo de Cambio";
-            this.ventasTipoCambio.Name = "ventasTipoCambio";
-            // 
-            // ventasDolares
-            // 
-            this.ventasDolares.DataPropertyName = "Dolares";
-            this.ventasDolares.HeaderText = "Dólares";
-            this.ventasDolares.Name = "ventasDolares";
-            // 
-            // ventasIgvRetencion
-            // 
-            this.ventasIgvRetencion.DataPropertyName = "IgvRetencion";
-            this.ventasIgvRetencion.HeaderText = "IGV Retención";
-            this.ventasIgvRetencion.Name = "ventasIgvRetencion";
-            // 
-            // ventasCuentaDestino
-            // 
-            this.ventasCuentaDestino.DataPropertyName = "CuentaDestino";
-            this.ventasCuentaDestino.HeaderText = "Cuenta Destino";
-            this.ventasCuentaDestino.Name = "ventasCuentaDestino";
-            // 
-            // ventasCuentaDestinoDescripcion
-            // 
-            this.ventasCuentaDestinoDescripcion.DataPropertyName = "CuentaDestinoDescripcion";
-            this.ventasCuentaDestinoDescripcion.HeaderText = "Cuenta Destino Descripción";
-            this.ventasCuentaDestinoDescripcion.Name = "ventasCuentaDestinoDescripcion";
-            // 
-            // ventasPago
-            // 
-            this.ventasPago.DataPropertyName = "Pago";
-            this.ventasPago.HeaderText = "Pago";
-            this.ventasPago.Name = "ventasPago";
-            // 
-            // ventasReferenciaFecha
-            // 
-            this.ventasReferenciaFecha.DataPropertyName = "ReferenciaFecha";
-            this.ventasReferenciaFecha.HeaderText = "Referencia Fecha";
-            this.ventasReferenciaFecha.Name = "ventasReferenciaFecha";
-            // 
-            // ventasReferenciaTipo
-            // 
-            this.ventasReferenciaTipo.DataPropertyName = "ReferenciaTipo";
-            this.ventasReferenciaTipo.HeaderText = "Referencia Tipo";
-            this.ventasReferenciaTipo.Name = "ventasReferenciaTipo";
-            // 
-            // ventasReferenciaSerie
-            // 
-            this.ventasReferenciaSerie.DataPropertyName = "ReferenciaSerie";
-            this.ventasReferenciaSerie.HeaderText = "Referencia Serie";
-            this.ventasReferenciaSerie.Name = "ventasReferenciaSerie";
-            // 
-            // ventasReferenciaNumero
-            // 
-            this.ventasReferenciaNumero.DataPropertyName = "ReferenciaNumeroDocumento";
-            this.ventasReferenciaNumero.HeaderText = "Referencia Número";
-            this.ventasReferenciaNumero.Name = "ventasReferenciaNumero";
-            // 
-            // ventasCodigo
-            // 
-            this.ventasCodigo.DataPropertyName = "Codigo";
-            this.ventasCodigo.HeaderText = "Código";
-            this.ventasCodigo.Name = "ventasCodigo";
-            // 
-            // ventasConstanciaNumero
-            // 
-            this.ventasConstanciaNumero.DataPropertyName = "ConstanciaNumero";
-            this.ventasConstanciaNumero.HeaderText = "Constancia Número";
-            this.ventasConstanciaNumero.Name = "ventasConstanciaNumero";
-            // 
-            // ventasConstanciaFechaPago
-            // 
-            this.ventasConstanciaFechaPago.DataPropertyName = "ConstanciaFechaPago";
-            this.ventasConstanciaFechaPago.HeaderText = "Constancia Fecha Pago";
-            this.ventasConstanciaFechaPago.Name = "ventasConstanciaFechaPago";
-            // 
-            // ventasDetraccionSoles
-            // 
-            this.ventasDetraccionSoles.DataPropertyName = "DetraccionSoles";
-            this.ventasDetraccionSoles.HeaderText = "Detracción en Soles";
-            this.ventasDetraccionSoles.Name = "ventasDetraccionSoles";
-            // 
-            // ventasReferencia
-            // 
-            this.ventasReferencia.DataPropertyName = "Referencia";
-            this.ventasReferencia.HeaderText = "Referencia";
-            this.ventasReferencia.Name = "ventasReferencia";
-            // 
-            // ventasObservacion
-            // 
-            this.ventasObservacion.DataPropertyName = "Observacion";
-            this.ventasObservacion.HeaderText = "Observación";
-            this.ventasObservacion.Name = "ventasObservacion";
-            // 
             // FrmProgramaLibrosElectronicos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1100,6 +1145,42 @@
         private System.Windows.Forms.TextBox txtNombreRuc;
         private System.Windows.Forms.TextBox txtNombreMes;
         private System.Windows.Forms.TextBox txtNombreAnio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ventasId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ventasMes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ventasNumeroRegistro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ventasFechaEmision;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ventasFechapago;
+        private System.Windows.Forms.DataGridViewComboBoxColumn ventasCdpTipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ventasCdpSerie;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ventasCdpNumero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ventasProveedorTipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ventasProveedorNumero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ventasProveedorRazonSocial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ventasCuenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ventasDescripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ventasValorExportacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ventasBaseImponible;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ventasImporteTotalExonerada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ventasImporteTotalInafecta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ventasIgv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ventasImporteTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ventasTipoCambio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ventasDolares;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ventasDolaresConversion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ventasIgvRetencion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ventasCuentaDestino;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ventasCuentaDestinoDescripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ventasPago;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ventasReferenciaFecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ventasReferenciaTipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ventasReferenciaSerie;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ventasReferenciaNumero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ventasCodigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ventasConstanciaNumero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ventasConstanciaFechaPago;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ventasDetraccionSoles;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ventasReferencia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ventasObservacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn comprasID;
         private System.Windows.Forms.DataGridViewTextBoxColumn comprasMes;
         private System.Windows.Forms.DataGridViewTextBoxColumn comprasNumeroRegistro;
@@ -1139,40 +1220,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn comprasReferenciaTipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn comprasReferenciaSerie;
         private System.Windows.Forms.DataGridViewTextBoxColumn comprasReferenciaNumero;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ventasId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ventasMes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ventasNumeroRegistro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ventasFechaEmision;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ventasFechapago;
-        private System.Windows.Forms.DataGridViewComboBoxColumn ventasCdpTipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ventasCdpSerie;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ventasCdpNumero;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ventasProveedorTipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ventasProveedorNumero;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ventasProveedorRazonSocial;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ventasCuenta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ventasDescripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ventasValorExportacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ventasBaseImponible;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ventasImporteTotalExonerada;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ventasImporteTotalInafecta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ventasIgv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ventasImporteTotal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ventasTipoCambio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ventasDolares;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ventasIgvRetencion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ventasCuentaDestino;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ventasCuentaDestinoDescripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ventasPago;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ventasReferenciaFecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ventasReferenciaTipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ventasReferenciaSerie;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ventasReferenciaNumero;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ventasCodigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ventasConstanciaNumero;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ventasConstanciaFechaPago;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ventasDetraccionSoles;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ventasReferencia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ventasObservacion;
     }
 }

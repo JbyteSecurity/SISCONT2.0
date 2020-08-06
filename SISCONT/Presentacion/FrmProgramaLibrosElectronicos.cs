@@ -282,6 +282,7 @@ namespace Presentacion
                         double ventasImporteTotal = row.Cells["ventasImporteTotal"].Value != DBNull.Value ? Convert.ToDouble(row.Cells["ventasImporteTotal"].Value) : 0;
                         double ventasTipoCambio = row.Cells["ventasTipoCambio"].Value != DBNull.Value ? Convert.ToDouble(row.Cells["ventasTipoCambio"].Value) : 0;
                         double ventasDolares = row.Cells["ventasDolares"].Value != DBNull.Value ? Convert.ToDouble(row.Cells["ventasDolares"].Value) : 0;
+                        double ventasDolaresConversion = row.Cells["ventasDolaresConversion"].Value != DBNull.Value ? Convert.ToDouble(row.Cells["ventasDolaresConversion"].Value) : 0;
 
                         double ventasIgvRetencion = row.Cells["ventasIgvRetencion"].Value != DBNull.Value ? Convert.ToDouble(row.Cells["ventasIgvRetencion"].Value) : 0;
                         string ventasCuentaDestino = row.Cells["ventasCuentaDestino"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasCuentaDestino"].Value) : "";
@@ -395,29 +396,37 @@ namespace Presentacion
                             fecha = dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasFechaEmision"].Value.ToString();
 
                             dataTableTipoCambio = tipoCambio.Show(fecha);
-                            compra = dataTableTipoCambio.Rows[0]["Compra"].ToString();
-                            venta = dataTableTipoCambio.Rows[0]["Venta"].ToString();
+                            if (dataTableTipoCambio.Rows.Count > 0)
+                            {
+                                compra = dataTableTipoCambio.Rows[0]["Compra"].ToString();
+                                venta = dataTableTipoCambio.Rows[0]["Venta"].ToString();
 
-                            dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasFechaPago"].Value = fecha;
+
+                                dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasTipoCambio"].Value = venta;
+                            }
+                            else
+                                MessageBox.Show("No se encontro un tipo de cambio para la fecha: " + fecha, "Tipo de Cambio .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                           dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasFechaPago"].Value = fecha;
                         }
                         else
                             MessageBox.Show("(" + dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasFechaEmision"].Value.ToString() + ") No es una fecha valida \nIngrese una fecha válida con los siguientes formatos: \ndd/mm/yyyy o yyyy-mm-dd");
-
-                        if (venta == null)
-                            MessageBox.Show("No se encontro un tipo de cambio para la fecha: " + fecha, "Tipo de Cambio .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        else
-                            dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasTipoCambio"].Value = venta;
                     }
                     break;
                 case 9:
                     string ruc;
                     string razonSocial;
-                    ruc = dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasProveedorNumeroDocumento"].Value.ToString();
-                    razonSocial = proveedor.GetSupplierName(ruc);
-                    if (razonSocial == null)
-                        MessageBox.Show("No se encontro al proveedor con ruc: " + ruc, "Compras .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    else
-                        dgvRegistroCompras.Rows[e.RowIndex].Cells[e.ColumnIndex + 2].Value = razonSocial;
+                    if (dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasProveedorNumeroDocumento"].Value != DBNull.Value)
+                    {
+                        ruc = dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasProveedorNumeroDocumento"].Value.ToString();
+                        razonSocial = proveedor.GetSupplierName(ruc);
+                        if (razonSocial == null)
+                        {
+                            MessageBox.Show("No se encontro al proveedor con ruc: " + ruc, "Compras .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasProveedorNumeroDocumento"].Value = "";
+                        }
+                        else
+                            dgvRegistroCompras.Rows[e.RowIndex].Cells[e.ColumnIndex + 2].Value = razonSocial;
+                    }
                     break;
                 case 14:
                 case 16:
@@ -460,24 +469,30 @@ namespace Presentacion
                 case 19:
                     double tipoCambi = 0, dolares = 0;
 
-                    if (!String.IsNullOrEmpty(dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasDolares"].Value.ToString() as String))
-                        dolares = Convert.ToDouble(dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasDolares"].Value.ToString());
+                    if (dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasDolares"].Value != DBNull.Value)
+                    {
+                        if (!String.IsNullOrEmpty(dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasDolares"].Value.ToString() as String))
+                            dolares = Convert.ToDouble(dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasDolares"].Value.ToString());
 
-                    if (!String.IsNullOrEmpty(dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasTipoCambio"].Value.ToString() as String))
-                        tipoCambi = Convert.ToDouble(dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasTipoCambio"].Value.ToString());
+                        if (!String.IsNullOrEmpty(dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasTipoCambio"].Value.ToString() as String))
+                            tipoCambi = Convert.ToDouble(dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasTipoCambio"].Value.ToString());
 
-                    dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasConversionDolares"].Value = Math.Round((dolares * tipoCambi), 2);
+                        dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasConversionDolares"].Value = Math.Round((dolares * tipoCambi), 2);
+                    }
                     break;
                 case 12:
                 case 23:
                     string codigo;
                     string cuenta;
-                    codigo = dgvRegistroCompras.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
-                    cuenta = planContable.GetAcount(codigo);
-                    if (cuenta == null)
-                        MessageBox.Show("No se encontro una cuenta con código: " + codigo, "Compras .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    else
-                        dgvRegistroCompras.Rows[e.RowIndex].Cells[e.ColumnIndex + 1].Value = cuenta;
+                    if (dgvRegistroCompras.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != DBNull.Value)
+                    {
+                        codigo = dgvRegistroCompras.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+                        cuenta = planContable.GetAcount(codigo);
+                        if (cuenta == null)
+                            MessageBox.Show("No se encontro una cuenta con código: " + codigo, "Compras .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        else
+                            dgvRegistroCompras.Rows[e.RowIndex].Cells[e.ColumnIndex + 1].Value = cuenta;
+                    }
                     break;
                 case 27:
                     double comprasImporteTotal = 0;
