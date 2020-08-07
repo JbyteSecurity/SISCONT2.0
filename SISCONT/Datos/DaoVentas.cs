@@ -19,7 +19,7 @@ namespace Datos
             SqlDataReader sqlDataReader;
             DataTable dataTableDetraccion = new DataTable();
             sqlCommand.Connection = conexion.OpenConnection();
-            sqlCommand.CommandText = "";
+            sqlCommand.CommandText = "sp_all_month_ventas";
             sqlCommand.CommandType = CommandType.StoredProcedure;
             sqlDataReader = sqlCommand.ExecuteReader();
             dataTableDetraccion.Load(sqlDataReader);

@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -37,20 +41,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -66,9 +62,9 @@
             this.tabRegistros = new System.Windows.Forms.TabControl();
             this.tabCompras = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.dgvRegistroCompras = new System.Windows.Forms.DataGridView();
-            this.spallcurrentmonthcomprasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dSRegistroCompras = new Presentacion.DSRegistroCompras();
+            this.dgvRegistroCompras = new ADGV.AdvancedDataGridView();
+            this.bsComprasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dSCompras = new Presentacion.DSCompras();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnGuardarCompras = new System.Windows.Forms.Button();
             this.btnEliminarCompras = new System.Windows.Forms.Button();
@@ -78,10 +74,6 @@
             this.btnGuardarVentas = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dgvRegistroVentas = new System.Windows.Forms.DataGridView();
-            this.spallmonthventasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dSRegistroVentas = new Presentacion.DSRegistroVentas();
-            this.sp_all_current_month_comprasTableAdapter = new Presentacion.DSRegistroComprasTableAdapters.sp_all_current_month_comprasTableAdapter();
-            this.sp_all_month_ventasTableAdapter = new Presentacion.DSRegistroVentasTableAdapters.sp_all_month_ventasTableAdapter();
             this.ventasId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ventasMes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ventasNumeroRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -118,8 +110,8 @@
             this.ventasDetraccionSoles = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ventasReferencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ventasObservacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TAComprasTableAdapter = new Presentacion.DSComprasTableAdapters.sp_all_current_month_comprasTableAdapter();
             this.comprasID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comprasMes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comprasNumeroRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comprasFechaEmision = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comprasFechaPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -128,7 +120,6 @@
             this.comprasCdpNumeroDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comprasProveedorTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comprasProveedorNumeroDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comprasProveedorTipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comprasProveedorRazonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comprasCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comprasDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -143,8 +134,6 @@
             this.comprasPercepcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comprasDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comprasDescripcionDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comprasCuentaDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comprasPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comprasCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comprasConstanciaNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comprasConstanciaFechaPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -163,15 +152,13 @@
             this.tabCompras.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistroCompras)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spallcurrentmonthcomprasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dSRegistroCompras)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsComprasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSCompras)).BeginInit();
             this.panel3.SuspendLayout();
             this.tabVentas.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistroVentas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spallmonthventasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dSRegistroVentas)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -239,11 +226,12 @@
             // 
             this.btnCargarCarpeta.BackColor = System.Drawing.Color.Aqua;
             this.btnCargarCarpeta.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnCargarCarpeta.FlatAppearance.BorderSize = 0;
             this.btnCargarCarpeta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCargarCarpeta.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCargarCarpeta.Location = new System.Drawing.Point(170, 18);
+            this.btnCargarCarpeta.Location = new System.Drawing.Point(170, 16);
             this.btnCargarCarpeta.Name = "btnCargarCarpeta";
-            this.btnCargarCarpeta.Size = new System.Drawing.Size(34, 20);
+            this.btnCargarCarpeta.Size = new System.Drawing.Size(34, 25);
             this.btnCargarCarpeta.TabIndex = 6;
             this.btnCargarCarpeta.Text = "***";
             this.btnCargarCarpeta.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -339,12 +327,12 @@
             // 
             // dgvRegistroCompras
             // 
+            this.dgvRegistroCompras.AllowUserToDeleteRows = false;
             this.dgvRegistroCompras.AutoGenerateColumns = false;
-            this.dgvRegistroCompras.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.dgvRegistroCompras.AutoGenerateContextFilters = true;
             this.dgvRegistroCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRegistroCompras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.comprasID,
-            this.comprasMes,
             this.comprasNumeroRegistro,
             this.comprasFechaEmision,
             this.comprasFechaPago,
@@ -353,7 +341,6 @@
             this.comprasCdpNumeroDocumento,
             this.comprasProveedorTipo,
             this.comprasProveedorNumeroDocumento,
-            this.comprasProveedorTipoDocumento,
             this.comprasProveedorRazonSocial,
             this.comprasCuenta,
             this.comprasDescripcion,
@@ -368,8 +355,6 @@
             this.comprasPercepcion,
             this.comprasDestino,
             this.comprasDescripcionDestino,
-            this.comprasCuentaDestino,
-            this.comprasPago,
             this.comprasCodigo,
             this.comprasConstanciaNumero,
             this.comprasConstanciaFechaPago,
@@ -382,28 +367,29 @@
             this.comprasReferenciaTipo,
             this.comprasReferenciaSerie,
             this.comprasReferenciaNumero});
-            this.dgvRegistroCompras.DataSource = this.spallcurrentmonthcomprasBindingSource;
+            this.dgvRegistroCompras.DataSource = this.bsComprasBindingSource;
+            this.dgvRegistroCompras.DateWithTime = false;
             this.dgvRegistroCompras.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvRegistroCompras.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvRegistroCompras.Location = new System.Drawing.Point(0, 0);
             this.dgvRegistroCompras.Name = "dgvRegistroCompras";
             this.dgvRegistroCompras.Size = new System.Drawing.Size(1224, 504);
-            this.dgvRegistroCompras.TabIndex = 0;
+            this.dgvRegistroCompras.TabIndex = 13;
+            this.dgvRegistroCompras.TimeFilter = false;
+            this.dgvRegistroCompras.SortStringChanged += new System.EventHandler(this.sgvRegistroCompras_SortStringChanged);
+            this.dgvRegistroCompras.FilterStringChanged += new System.EventHandler(this.sgvRegistroCompras_FilterStringChanged);
             this.dgvRegistroCompras.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegistroCompras_CellEndEdit);
-            this.dgvRegistroCompras.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.CellValueChanged);
             this.dgvRegistroCompras.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.dgvCompras_DefaultValuesNeeded);
-            this.dgvRegistroCompras.TabIndexChanged += new System.EventHandler(this.tabIndexChangedEvent);
-            this.dgvRegistroCompras.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvRegistroCompras_KeyDown);
             // 
-            // spallcurrentmonthcomprasBindingSource
+            // bsComprasBindingSource
             // 
-            this.spallcurrentmonthcomprasBindingSource.DataMember = "sp_all_current_month_compras";
-            this.spallcurrentmonthcomprasBindingSource.DataSource = this.dSRegistroCompras;
+            this.bsComprasBindingSource.DataMember = "sp_all_current_month_compras";
+            this.bsComprasBindingSource.DataSource = this.dSCompras;
             // 
-            // dSRegistroCompras
+            // dSCompras
             // 
-            this.dSRegistroCompras.DataSetName = "DSRegistroCompras";
-            this.dSRegistroCompras.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dSCompras.DataSetName = "DSCompras";
+            this.dSCompras.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panel3
             // 
@@ -502,7 +488,6 @@
             // 
             // dgvRegistroVentas
             // 
-            this.dgvRegistroVentas.AutoGenerateColumns = false;
             this.dgvRegistroVentas.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvRegistroVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRegistroVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -542,7 +527,6 @@
             this.ventasDetraccionSoles,
             this.ventasReferencia,
             this.ventasObservacion});
-            this.dgvRegistroVentas.DataSource = this.spallmonthventasBindingSource;
             this.dgvRegistroVentas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvRegistroVentas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvRegistroVentas.Location = new System.Drawing.Point(0, 0);
@@ -551,24 +535,6 @@
             this.dgvRegistroVentas.TabIndex = 1;
             this.dgvRegistroVentas.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegistroVentas_CellEndEdit);
             this.dgvRegistroVentas.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.dgvVentas_DefaultValuesNeeded);
-            // 
-            // spallmonthventasBindingSource
-            // 
-            this.spallmonthventasBindingSource.DataMember = "sp_all_month_ventas";
-            this.spallmonthventasBindingSource.DataSource = this.dSRegistroVentas;
-            // 
-            // dSRegistroVentas
-            // 
-            this.dSRegistroVentas.DataSetName = "DSRegistroVentas";
-            this.dSRegistroVentas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sp_all_current_month_comprasTableAdapter
-            // 
-            this.sp_all_current_month_comprasTableAdapter.ClearBeforeFill = true;
-            // 
-            // sp_all_month_ventasTableAdapter
-            // 
-            this.sp_all_month_ventasTableAdapter.ClearBeforeFill = true;
             // 
             // ventasId
             // 
@@ -581,8 +547,8 @@
             // ventasMes
             // 
             this.ventasMes.DataPropertyName = "Mes";
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.Aqua;
-            this.ventasMes.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Aqua;
+            this.ventasMes.DefaultCellStyle = dataGridViewCellStyle7;
             this.ventasMes.HeaderText = "Mes";
             this.ventasMes.Name = "ventasMes";
             // 
@@ -645,16 +611,16 @@
             // ventasCuenta
             // 
             this.ventasCuenta.DataPropertyName = "Cuenta";
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.Aqua;
-            this.ventasCuenta.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Aqua;
+            this.ventasCuenta.DefaultCellStyle = dataGridViewCellStyle8;
             this.ventasCuenta.HeaderText = "Cuenta";
             this.ventasCuenta.Name = "ventasCuenta";
             // 
             // ventasDescripcion
             // 
             this.ventasDescripcion.DataPropertyName = "Descripcion";
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.Aqua;
-            this.ventasDescripcion.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Aqua;
+            this.ventasDescripcion.DefaultCellStyle = dataGridViewCellStyle9;
             this.ventasDescripcion.HeaderText = "Descripción";
             this.ventasDescripcion.Name = "ventasDescripcion";
             // 
@@ -703,15 +669,15 @@
             // ventasDolares
             // 
             this.ventasDolares.DataPropertyName = "Dolares";
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.Aqua;
-            this.ventasDolares.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.Aqua;
+            this.ventasDolares.DefaultCellStyle = dataGridViewCellStyle10;
             this.ventasDolares.HeaderText = "Dólares";
             this.ventasDolares.Name = "ventasDolares";
             // 
             // ventasDolaresConversion
             // 
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.Aqua;
-            this.ventasDolaresConversion.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.Aqua;
+            this.ventasDolaresConversion.DefaultCellStyle = dataGridViewCellStyle11;
             this.ventasDolaresConversion.HeaderText = "Dolares Conversión";
             this.ventasDolaresConversion.Name = "ventasDolaresConversion";
             this.ventasDolaresConversion.ReadOnly = true;
@@ -725,24 +691,24 @@
             // ventasCuentaDestino
             // 
             this.ventasCuentaDestino.DataPropertyName = "CuentaDestino";
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.Aqua;
-            this.ventasCuentaDestino.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.Aqua;
+            this.ventasCuentaDestino.DefaultCellStyle = dataGridViewCellStyle12;
             this.ventasCuentaDestino.HeaderText = "Cuenta Destino";
             this.ventasCuentaDestino.Name = "ventasCuentaDestino";
             // 
             // ventasCuentaDestinoDescripcion
             // 
             this.ventasCuentaDestinoDescripcion.DataPropertyName = "CuentaDestinoDescripcion";
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.Aqua;
-            this.ventasCuentaDestinoDescripcion.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.Aqua;
+            this.ventasCuentaDestinoDescripcion.DefaultCellStyle = dataGridViewCellStyle13;
             this.ventasCuentaDestinoDescripcion.HeaderText = "Cuenta Destino Descripción";
             this.ventasCuentaDestinoDescripcion.Name = "ventasCuentaDestinoDescripcion";
             // 
             // ventasPago
             // 
             this.ventasPago.DataPropertyName = "Pago";
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.Aqua;
-            this.ventasPago.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.Aqua;
+            this.ventasPago.DefaultCellStyle = dataGridViewCellStyle14;
             this.ventasPago.HeaderText = "Pago";
             this.ventasPago.Name = "ventasPago";
             // 
@@ -773,8 +739,8 @@
             // ventasCodigo
             // 
             this.ventasCodigo.DataPropertyName = "Codigo";
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.Aqua;
-            this.ventasCodigo.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.Aqua;
+            this.ventasCodigo.DefaultCellStyle = dataGridViewCellStyle15;
             this.ventasCodigo.HeaderText = "Código";
             this.ventasCodigo.Name = "ventasCodigo";
             // 
@@ -793,293 +759,338 @@
             // ventasDetraccionSoles
             // 
             this.ventasDetraccionSoles.DataPropertyName = "DetraccionSoles";
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.Aqua;
-            this.ventasDetraccionSoles.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.Aqua;
+            this.ventasDetraccionSoles.DefaultCellStyle = dataGridViewCellStyle16;
             this.ventasDetraccionSoles.HeaderText = "Detracción en Soles";
             this.ventasDetraccionSoles.Name = "ventasDetraccionSoles";
             // 
             // ventasReferencia
             // 
             this.ventasReferencia.DataPropertyName = "Referencia";
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.Aqua;
-            this.ventasReferencia.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.Aqua;
+            this.ventasReferencia.DefaultCellStyle = dataGridViewCellStyle17;
             this.ventasReferencia.HeaderText = "Referencia";
             this.ventasReferencia.Name = "ventasReferencia";
             // 
             // ventasObservacion
             // 
             this.ventasObservacion.DataPropertyName = "Observacion";
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.Aqua;
-            this.ventasObservacion.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.Aqua;
+            this.ventasObservacion.DefaultCellStyle = dataGridViewCellStyle18;
             this.ventasObservacion.HeaderText = "Observación";
             this.ventasObservacion.Name = "ventasObservacion";
+            // 
+            // TAComprasTableAdapter
+            // 
+            this.TAComprasTableAdapter.ClearBeforeFill = true;
             // 
             // comprasID
             // 
             this.comprasID.DataPropertyName = "idLibroCompras";
             this.comprasID.HeaderText = "#";
+            this.comprasID.MinimumWidth = 22;
             this.comprasID.Name = "comprasID";
             this.comprasID.ReadOnly = true;
+            this.comprasID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.comprasID.Width = 40;
-            // 
-            // comprasMes
-            // 
-            this.comprasMes.DataPropertyName = "Mes";
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Aqua;
-            this.comprasMes.DefaultCellStyle = dataGridViewCellStyle1;
-            this.comprasMes.HeaderText = "Mes";
-            this.comprasMes.Name = "comprasMes";
-            this.comprasMes.Width = 40;
             // 
             // comprasNumeroRegistro
             // 
             this.comprasNumeroRegistro.DataPropertyName = "NReg";
             this.comprasNumeroRegistro.HeaderText = "N° Registro";
+            this.comprasNumeroRegistro.MinimumWidth = 22;
             this.comprasNumeroRegistro.Name = "comprasNumeroRegistro";
+            this.comprasNumeroRegistro.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.comprasNumeroRegistro.Width = 50;
             // 
             // comprasFechaEmision
             // 
             this.comprasFechaEmision.DataPropertyName = "FechaEmision";
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = null;
-            this.comprasFechaEmision.DefaultCellStyle = dataGridViewCellStyle2;
             this.comprasFechaEmision.HeaderText = "Fecha de Emisión";
+            this.comprasFechaEmision.MinimumWidth = 22;
             this.comprasFechaEmision.Name = "comprasFechaEmision";
-            this.comprasFechaEmision.Width = 80;
+            this.comprasFechaEmision.ReadOnly = true;
+            this.comprasFechaEmision.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // comprasFechaPago
             // 
             this.comprasFechaPago.DataPropertyName = "FechaPago";
             this.comprasFechaPago.HeaderText = "Fecha de Pago";
+            this.comprasFechaPago.MinimumWidth = 22;
             this.comprasFechaPago.Name = "comprasFechaPago";
-            this.comprasFechaPago.Width = 80;
+            this.comprasFechaPago.ReadOnly = true;
+            this.comprasFechaPago.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // comprasCdpTipo
             // 
             this.comprasCdpTipo.DataPropertyName = "CTipo";
-            this.comprasCdpTipo.HeaderText = "Comprobante Tipo";
+            this.comprasCdpTipo.HeaderText = "Tipo Comprobante";
+            this.comprasCdpTipo.MinimumWidth = 22;
             this.comprasCdpTipo.Name = "comprasCdpTipo";
-            this.comprasCdpTipo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.comprasCdpTipo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.comprasCdpTipo.Width = 120;
+            this.comprasCdpTipo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // comprasCdpSerie
             // 
             this.comprasCdpSerie.DataPropertyName = "CSerie";
-            this.comprasCdpSerie.HeaderText = "Comprobante Serie";
+            this.comprasCdpSerie.HeaderText = "Serie Comprobante";
+            this.comprasCdpSerie.MinimumWidth = 22;
             this.comprasCdpSerie.Name = "comprasCdpSerie";
+            this.comprasCdpSerie.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.comprasCdpSerie.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // comprasCdpNumeroDocumento
             // 
             this.comprasCdpNumeroDocumento.DataPropertyName = "CNDocumento";
-            this.comprasCdpNumeroDocumento.HeaderText = "Comprobante Número Documento";
+            this.comprasCdpNumeroDocumento.HeaderText = "N° Doc Comprobante";
+            this.comprasCdpNumeroDocumento.MinimumWidth = 22;
             this.comprasCdpNumeroDocumento.Name = "comprasCdpNumeroDocumento";
+            this.comprasCdpNumeroDocumento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // comprasProveedorTipo
             // 
             this.comprasProveedorTipo.DataPropertyName = "PTipo";
-            this.comprasProveedorTipo.HeaderText = "Proveedor Tipo";
+            this.comprasProveedorTipo.HeaderText = "Tipo de Proveedor";
+            this.comprasProveedorTipo.MinimumWidth = 22;
             this.comprasProveedorTipo.Name = "comprasProveedorTipo";
+            this.comprasProveedorTipo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // comprasProveedorNumeroDocumento
             // 
             this.comprasProveedorNumeroDocumento.DataPropertyName = "PNumero";
-            this.comprasProveedorNumeroDocumento.HeaderText = "Proveedor Numero Documento";
+            this.comprasProveedorNumeroDocumento.HeaderText = "N° Doc Proveedor";
+            this.comprasProveedorNumeroDocumento.MinimumWidth = 22;
             this.comprasProveedorNumeroDocumento.Name = "comprasProveedorNumeroDocumento";
-            // 
-            // comprasProveedorTipoDocumento
-            // 
-            this.comprasProveedorTipoDocumento.DataPropertyName = "PDocumento";
-            this.comprasProveedorTipoDocumento.HeaderText = "Proveedor Tipo Documento";
-            this.comprasProveedorTipoDocumento.Name = "comprasProveedorTipoDocumento";
+            this.comprasProveedorNumeroDocumento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // comprasProveedorRazonSocial
             // 
             this.comprasProveedorRazonSocial.DataPropertyName = "PNombreRazonSocial";
-            this.comprasProveedorRazonSocial.HeaderText = "Proveedor Razón Social";
+            this.comprasProveedorRazonSocial.HeaderText = "Razón Social Proveedor";
+            this.comprasProveedorRazonSocial.MinimumWidth = 22;
             this.comprasProveedorRazonSocial.Name = "comprasProveedorRazonSocial";
-            this.comprasProveedorRazonSocial.Width = 200;
+            this.comprasProveedorRazonSocial.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // comprasCuenta
             // 
             this.comprasCuenta.DataPropertyName = "Cuenta";
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Aqua;
-            this.comprasCuenta.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Aqua;
+            this.comprasCuenta.DefaultCellStyle = dataGridViewCellStyle1;
             this.comprasCuenta.HeaderText = "Cuenta";
+            this.comprasCuenta.MinimumWidth = 22;
             this.comprasCuenta.Name = "comprasCuenta";
+            this.comprasCuenta.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // comprasDescripcion
             // 
             this.comprasDescripcion.DataPropertyName = "Descripcion";
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Aqua;
-            this.comprasDescripcion.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Aqua;
+            this.comprasDescripcion.DefaultCellStyle = dataGridViewCellStyle2;
             this.comprasDescripcion.HeaderText = "Descripción";
+            this.comprasDescripcion.MinimumWidth = 22;
             this.comprasDescripcion.Name = "comprasDescripcion";
+            this.comprasDescripcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // comprasBaseImponible
             // 
             this.comprasBaseImponible.DataPropertyName = "BaseImponible";
             this.comprasBaseImponible.HeaderText = "Base Imponible";
+            this.comprasBaseImponible.MinimumWidth = 22;
             this.comprasBaseImponible.Name = "comprasBaseImponible";
+            this.comprasBaseImponible.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // comprasIgv
             // 
             this.comprasIgv.DataPropertyName = "IGV";
             this.comprasIgv.HeaderText = "IGV";
+            this.comprasIgv.MinimumWidth = 22;
             this.comprasIgv.Name = "comprasIgv";
+            this.comprasIgv.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // comprasNoGravada
             // 
             this.comprasNoGravada.DataPropertyName = "NoGravada";
             this.comprasNoGravada.HeaderText = "No Gravada";
+            this.comprasNoGravada.MinimumWidth = 22;
             this.comprasNoGravada.Name = "comprasNoGravada";
+            this.comprasNoGravada.ReadOnly = true;
+            this.comprasNoGravada.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // comprasDescuento
             // 
             this.comprasDescuento.DataPropertyName = "Descuentos";
             this.comprasDescuento.HeaderText = "Descuento";
+            this.comprasDescuento.MinimumWidth = 22;
             this.comprasDescuento.Name = "comprasDescuento";
+            this.comprasDescuento.ReadOnly = true;
+            this.comprasDescuento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // comprasImporteTotal
             // 
             this.comprasImporteTotal.DataPropertyName = "ImporteTotal";
             this.comprasImporteTotal.HeaderText = "Importe Total";
+            this.comprasImporteTotal.MinimumWidth = 22;
             this.comprasImporteTotal.Name = "comprasImporteTotal";
+            this.comprasImporteTotal.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // comprasDolares
             // 
             this.comprasDolares.DataPropertyName = "Dolares";
-            this.comprasDolares.HeaderText = "Dolares";
+            this.comprasDolares.HeaderText = "Dólares";
+            this.comprasDolares.MinimumWidth = 22;
             this.comprasDolares.Name = "comprasDolares";
+            this.comprasDolares.ReadOnly = true;
+            this.comprasDolares.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // comprasTipoCambio
             // 
             this.comprasTipoCambio.DataPropertyName = "TipoCambio";
             this.comprasTipoCambio.HeaderText = "Tipo de Cambio";
+            this.comprasTipoCambio.MinimumWidth = 22;
             this.comprasTipoCambio.Name = "comprasTipoCambio";
+            this.comprasTipoCambio.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // comprasConversionDolares
             // 
             this.comprasConversionDolares.DataPropertyName = "ConversionDolar";
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Cyan;
-            this.comprasConversionDolares.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Aqua;
+            this.comprasConversionDolares.DefaultCellStyle = dataGridViewCellStyle3;
             this.comprasConversionDolares.HeaderText = "Conversión Dólares (S/.)";
+            this.comprasConversionDolares.MinimumWidth = 22;
             this.comprasConversionDolares.Name = "comprasConversionDolares";
             this.comprasConversionDolares.ReadOnly = true;
+            this.comprasConversionDolares.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // comprasPercepcion
             // 
             this.comprasPercepcion.DataPropertyName = "Percepcion";
             this.comprasPercepcion.HeaderText = "Percepción";
+            this.comprasPercepcion.MinimumWidth = 22;
             this.comprasPercepcion.Name = "comprasPercepcion";
+            this.comprasPercepcion.ReadOnly = true;
+            this.comprasPercepcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // comprasDestino
             // 
             this.comprasDestino.DataPropertyName = "Destino";
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Aqua;
-            this.comprasDestino.DefaultCellStyle = dataGridViewCellStyle6;
-            this.comprasDestino.HeaderText = "Destino";
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Aqua;
+            this.comprasDestino.DefaultCellStyle = dataGridViewCellStyle4;
+            this.comprasDestino.HeaderText = "Cuenta Destino";
+            this.comprasDestino.MinimumWidth = 22;
             this.comprasDestino.Name = "comprasDestino";
+            this.comprasDestino.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // comprasDescripcionDestino
             // 
             this.comprasDescripcionDestino.DataPropertyName = "DescripcionDestino";
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Aqua;
-            this.comprasDescripcionDestino.DefaultCellStyle = dataGridViewCellStyle7;
-            this.comprasDescripcionDestino.HeaderText = "Descripción Destino";
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Aqua;
+            this.comprasDescripcionDestino.DefaultCellStyle = dataGridViewCellStyle5;
+            this.comprasDescripcionDestino.HeaderText = "Cuenta Descripción";
+            this.comprasDescripcionDestino.MinimumWidth = 22;
             this.comprasDescripcionDestino.Name = "comprasDescripcionDestino";
-            // 
-            // comprasCuentaDestino
-            // 
-            this.comprasCuentaDestino.DataPropertyName = "CuentaDestino";
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Aqua;
-            this.comprasCuentaDestino.DefaultCellStyle = dataGridViewCellStyle8;
-            this.comprasCuentaDestino.HeaderText = "Cuenta Destino";
-            this.comprasCuentaDestino.Name = "comprasCuentaDestino";
-            // 
-            // comprasPago
-            // 
-            this.comprasPago.DataPropertyName = "Pgo";
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Aqua;
-            this.comprasPago.DefaultCellStyle = dataGridViewCellStyle9;
-            this.comprasPago.HeaderText = "Pago";
-            this.comprasPago.Name = "comprasPago";
+            this.comprasDescripcionDestino.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // comprasCodigo
             // 
             this.comprasCodigo.DataPropertyName = "Codigo";
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.Aqua;
-            this.comprasCodigo.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Aqua;
+            this.comprasCodigo.DefaultCellStyle = dataGridViewCellStyle6;
             this.comprasCodigo.HeaderText = "Código";
+            this.comprasCodigo.MinimumWidth = 22;
             this.comprasCodigo.Name = "comprasCodigo";
+            this.comprasCodigo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // comprasConstanciaNumero
             // 
             this.comprasConstanciaNumero.DataPropertyName = "ConstanciaNumero";
             this.comprasConstanciaNumero.HeaderText = "Constancia Número";
+            this.comprasConstanciaNumero.MinimumWidth = 22;
             this.comprasConstanciaNumero.Name = "comprasConstanciaNumero";
+            this.comprasConstanciaNumero.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // comprasConstanciaFechaPago
             // 
             this.comprasConstanciaFechaPago.DataPropertyName = "ConstanciaFechaPago";
-            this.comprasConstanciaFechaPago.HeaderText = "Constancia de Fecha de Pago";
+            this.comprasConstanciaFechaPago.HeaderText = "Constancia Fecha Pago";
+            this.comprasConstanciaFechaPago.MinimumWidth = 22;
             this.comprasConstanciaFechaPago.Name = "comprasConstanciaFechaPago";
-            this.comprasConstanciaFechaPago.Width = 80;
+            this.comprasConstanciaFechaPago.ReadOnly = true;
+            this.comprasConstanciaFechaPago.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // comprasConstanciaMonto
             // 
             this.comprasConstanciaMonto.DataPropertyName = "ConstanciaMonto";
             this.comprasConstanciaMonto.HeaderText = "Constancia Monto";
+            this.comprasConstanciaMonto.MinimumWidth = 22;
             this.comprasConstanciaMonto.Name = "comprasConstanciaMonto";
+            this.comprasConstanciaMonto.ReadOnly = true;
+            this.comprasConstanciaMonto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // comprasConstanciaReferencia
             // 
             this.comprasConstanciaReferencia.DataPropertyName = "ConstanciaReferencia";
             this.comprasConstanciaReferencia.HeaderText = "Constancia Referencia";
+            this.comprasConstanciaReferencia.MinimumWidth = 22;
             this.comprasConstanciaReferencia.Name = "comprasConstanciaReferencia";
+            this.comprasConstanciaReferencia.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // BancarizacionFecha
             // 
             this.BancarizacionFecha.DataPropertyName = "BancarizacionFecha";
-            this.BancarizacionFecha.HeaderText = "Bancarizacion Fecha";
+            this.BancarizacionFecha.HeaderText = "Bancarización Fecha";
+            this.BancarizacionFecha.MinimumWidth = 22;
             this.BancarizacionFecha.Name = "BancarizacionFecha";
-            this.BancarizacionFecha.Width = 80;
+            this.BancarizacionFecha.ReadOnly = true;
+            this.BancarizacionFecha.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // BancarizacionBco
             // 
             this.BancarizacionBco.DataPropertyName = "BancarizacionBco";
-            this.BancarizacionBco.HeaderText = "Bancarizacion Bco";
+            this.BancarizacionBco.HeaderText = "Bancarización Banco";
+            this.BancarizacionBco.MinimumWidth = 22;
             this.BancarizacionBco.Name = "BancarizacionBco";
+            this.BancarizacionBco.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // BancarizacionOperacion
             // 
             this.BancarizacionOperacion.DataPropertyName = "BancarizacionOperacion";
-            this.BancarizacionOperacion.HeaderText = "Bancarizacion Operacion";
+            this.BancarizacionOperacion.HeaderText = "Bancarización Operación";
+            this.BancarizacionOperacion.MinimumWidth = 22;
             this.BancarizacionOperacion.Name = "BancarizacionOperacion";
+            this.BancarizacionOperacion.ReadOnly = true;
+            this.BancarizacionOperacion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // comprasReferenciaFecha
             // 
             this.comprasReferenciaFecha.DataPropertyName = "ReferenciaFecha";
             this.comprasReferenciaFecha.HeaderText = "Referencia Fecha";
+            this.comprasReferenciaFecha.MinimumWidth = 22;
             this.comprasReferenciaFecha.Name = "comprasReferenciaFecha";
+            this.comprasReferenciaFecha.ReadOnly = true;
+            this.comprasReferenciaFecha.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // comprasReferenciaTipo
             // 
             this.comprasReferenciaTipo.DataPropertyName = "ReferenciaTipo";
             this.comprasReferenciaTipo.HeaderText = "Referencia Tipo";
+            this.comprasReferenciaTipo.MinimumWidth = 22;
             this.comprasReferenciaTipo.Name = "comprasReferenciaTipo";
+            this.comprasReferenciaTipo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // comprasReferenciaSerie
             // 
             this.comprasReferenciaSerie.DataPropertyName = "ReferenciaSerie";
             this.comprasReferenciaSerie.HeaderText = "Referencia Serie";
+            this.comprasReferenciaSerie.MinimumWidth = 22;
             this.comprasReferenciaSerie.Name = "comprasReferenciaSerie";
+            this.comprasReferenciaSerie.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // comprasReferenciaNumero
             // 
             this.comprasReferenciaNumero.DataPropertyName = "ReferenciaNumero";
-            this.comprasReferenciaNumero.HeaderText = "Referencia Numero";
+            this.comprasReferenciaNumero.HeaderText = "N° Referencia";
+            this.comprasReferenciaNumero.MinimumWidth = 22;
             this.comprasReferenciaNumero.Name = "comprasReferenciaNumero";
+            this.comprasReferenciaNumero.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // FrmProgramaLibrosElectronicos
             // 
@@ -1099,15 +1110,13 @@
             this.tabCompras.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistroCompras)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spallcurrentmonthcomprasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dSRegistroCompras)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsComprasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSCompras)).EndInit();
             this.panel3.ResumeLayout(false);
             this.tabVentas.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistroVentas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spallmonthventasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dSRegistroVentas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1119,7 +1128,6 @@
         private System.Windows.Forms.TabControl tabRegistros;
         private System.Windows.Forms.TabPage tabCompras;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.DataGridView dgvRegistroCompras;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnGuardarCompras;
         private System.Windows.Forms.Button btnEliminarCompras;
@@ -1129,12 +1137,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.DataGridView dgvRegistroVentas;
         private System.Windows.Forms.Button btnEliminarVentas;
-        private DSRegistroCompras dSRegistroCompras;
-        private System.Windows.Forms.BindingSource spallcurrentmonthcomprasBindingSource;
-        private DSRegistroComprasTableAdapters.sp_all_current_month_comprasTableAdapter sp_all_current_month_comprasTableAdapter;
-        private DSRegistroVentas dSRegistroVentas;
-        private System.Windows.Forms.BindingSource spallmonthventasBindingSource;
-        private DSRegistroVentasTableAdapters.sp_all_month_ventasTableAdapter sp_all_month_ventasTableAdapter;
         private System.Windows.Forms.Button btnGenerarTXT;
         private System.Windows.Forms.TextBox txtRutaTXT;
         private System.Windows.Forms.Button btnCargarCarpeta;
@@ -1181,8 +1183,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ventasDetraccionSoles;
         private System.Windows.Forms.DataGridViewTextBoxColumn ventasReferencia;
         private System.Windows.Forms.DataGridViewTextBoxColumn ventasObservacion;
+        private ADGV.AdvancedDataGridView dgvRegistroCompras;
+        private DSCompras dSCompras;
+        private System.Windows.Forms.BindingSource bsComprasBindingSource;
+        private DSComprasTableAdapters.sp_all_current_month_comprasTableAdapter TAComprasTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn comprasID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn comprasMes;
         private System.Windows.Forms.DataGridViewTextBoxColumn comprasNumeroRegistro;
         private System.Windows.Forms.DataGridViewTextBoxColumn comprasFechaEmision;
         private System.Windows.Forms.DataGridViewTextBoxColumn comprasFechaPago;
@@ -1191,7 +1196,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn comprasCdpNumeroDocumento;
         private System.Windows.Forms.DataGridViewTextBoxColumn comprasProveedorTipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn comprasProveedorNumeroDocumento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn comprasProveedorTipoDocumento;
         private System.Windows.Forms.DataGridViewTextBoxColumn comprasProveedorRazonSocial;
         private System.Windows.Forms.DataGridViewTextBoxColumn comprasCuenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn comprasDescripcion;
@@ -1206,8 +1210,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn comprasPercepcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn comprasDestino;
         private System.Windows.Forms.DataGridViewTextBoxColumn comprasDescripcionDestino;
-        private System.Windows.Forms.DataGridViewTextBoxColumn comprasCuentaDestino;
-        private System.Windows.Forms.DataGridViewTextBoxColumn comprasPago;
         private System.Windows.Forms.DataGridViewTextBoxColumn comprasCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn comprasConstanciaNumero;
         private System.Windows.Forms.DataGridViewTextBoxColumn comprasConstanciaFechaPago;

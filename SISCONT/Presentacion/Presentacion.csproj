@@ -51,6 +51,9 @@
     <StartupObject>Presentacion.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AdvancedDataGridView, Version=0.1.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ADGV.0.1.0.10\lib\net40\AdvancedDataGridView.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -64,15 +67,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DSRegistroCompras.Designer.cs">
+    <Compile Include="DSCompras.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DSRegistroCompras.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DSRegistroVentas.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DSRegistroVentas.xsd</DependentUpon>
+      <DependentUpon>DSCompras.xsd</DependentUpon>
     </Compile>
     <Compile Include="FrmDetraccion.cs">
       <SubType>Form</SubType>
@@ -140,28 +138,18 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="DSRegistroCompras.xsc">
-      <DependentUpon>DSRegistroCompras.xsd</DependentUpon>
+    <None Include="DSCompras.xsc">
+      <DependentUpon>DSCompras.xsd</DependentUpon>
     </None>
-    <None Include="DSRegistroCompras.xsd">
+    <None Include="DSCompras.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DSRegistroCompras.Designer.cs</LastGenOutput>
+      <LastGenOutput>DSCompras.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DSRegistroCompras.xss">
-      <DependentUpon>DSRegistroCompras.xsd</DependentUpon>
+    <None Include="DSCompras.xss">
+      <DependentUpon>DSCompras.xsd</DependentUpon>
     </None>
-    <None Include="DSRegistroVentas.xsc">
-      <DependentUpon>DSRegistroVentas.xsd</DependentUpon>
-    </None>
-    <None Include="DSRegistroVentas.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DSRegistroVentas.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DSRegistroVentas.xss">
-      <DependentUpon>DSRegistroVentas.xsd</DependentUpon>
-    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

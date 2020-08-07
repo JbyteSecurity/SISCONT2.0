@@ -7,12 +7,12 @@ C:\Users\Developers\Pictures\SISCONT\Negocios\obj\Debug\Negocios.csprojAssemblyR
 C:\Users\Developers\Pictures\SISCONT\Negocios\obj\Debug\Negocios.csproj.CopyComplete
 C:\Users\Developers\Pictures\SISCONT\Negocios\obj\Debug\Negocios.dll
 C:\Users\Developers\Pictures\SISCONT\Negocios\obj\Debug\Negocios.pdb
-C:\Users\Developers\Source\Repos\SISCONT2.0\SISCONT\Negocios\obj\Debug\Negocios.csprojAssemblyReference.cache
-C:\Users\Developers\Source\Repos\SISCONT2.0\SISCONT\Negocios\obj\Debug\Negocios.csproj.CoreCompileInputs.cache
 C:\Users\Developers\Source\Repos\SISCONT2.0\SISCONT\Negocios\bin\Debug\Negocios.dll
 C:\Users\Developers\Source\Repos\SISCONT2.0\SISCONT\Negocios\bin\Debug\Negocios.pdb
 C:\Users\Developers\Source\Repos\SISCONT2.0\SISCONT\Negocios\bin\Debug\Datos.dll
 C:\Users\Developers\Source\Repos\SISCONT2.0\SISCONT\Negocios\bin\Debug\Datos.pdb
+C:\Users\Developers\Source\Repos\SISCONT2.0\SISCONT\Negocios\obj\Debug\Negocios.csprojAssemblyReference.cache
+C:\Users\Developers\Source\Repos\SISCONT2.0\SISCONT\Negocios\obj\Debug\Negocios.csproj.CoreCompileInputs.cache
 C:\Users\Developers\Source\Repos\SISCONT2.0\SISCONT\Negocios\obj\Debug\Negocios.csproj.CopyComplete
 C:\Users\Developers\Source\Repos\SISCONT2.0\SISCONT\Negocios\obj\Debug\Negocios.dll
 C:\Users\Developers\Source\Repos\SISCONT2.0\SISCONT\Negocios\obj\Debug\Negocios.pdb

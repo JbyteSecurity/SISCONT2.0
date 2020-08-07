@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="DSRegistroCompras" targetNamespace="http://tempuri.org/DSRegistroCompras.xsd" xmlns:mstns="http://tempuri.org/DSRegistroCompras.xsd" xmlns="http://tempuri.org/DSRegistroCompras.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="DSCompras" targetNamespace="http://tempuri.org/DSCompras.xsd" xmlns:mstns="http://tempuri.org/DSCompras.xsd" xmlns="http://tempuri.org/DSCompras.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -41,6 +41,7 @@
               <Mapping SourceColumn="Descuentos" DataSetColumn="Descuentos" />
               <Mapping SourceColumn="ImporteTotal" DataSetColumn="ImporteTotal" />
               <Mapping SourceColumn="Dolares" DataSetColumn="Dolares" />
+              <Mapping SourceColumn="ConversionDolar" DataSetColumn="ConversionDolar" />
               <Mapping SourceColumn="TipoCambio" DataSetColumn="TipoCambio" />
               <Mapping SourceColumn="Percepcion" DataSetColumn="Percepcion" />
               <Mapping SourceColumn="Destino" DataSetColumn="Destino" />
@@ -55,10 +56,13 @@
               <Mapping SourceColumn="BancarizacionFecha" DataSetColumn="BancarizacionFecha" />
               <Mapping SourceColumn="BancarizacionBco" DataSetColumn="BancarizacionBco" />
               <Mapping SourceColumn="BancarizacionOperacion" DataSetColumn="BancarizacionOperacion" />
+              <Mapping SourceColumn="ReferenciaFecha" DataSetColumn="ReferenciaFecha" />
+              <Mapping SourceColumn="ReferenciaTipo" DataSetColumn="ReferenciaTipo" />
+              <Mapping SourceColumn="ReferenciaSerie" DataSetColumn="ReferenciaSerie" />
+              <Mapping SourceColumn="ReferenciaNumero" DataSetColumn="ReferenciaNumero" />
               <Mapping SourceColumn="Usuario" DataSetColumn="Usuario" />
               <Mapping SourceColumn="FechaRegistro" DataSetColumn="FechaRegistro" />
               <Mapping SourceColumn="FechaModificacion" DataSetColumn="FechaModificacion" />
-              <Mapping SourceColumn="ConversionDolar" DataSetColumn="ConversionDolar" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -67,7 +71,7 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="DSRegistroCompras" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DSRegistroCompras" msprop:Generator_UserDSName="DSRegistroCompras">
+  <xs:element name="DSCompras" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DSCompras" msprop:Generator_UserDSName="DSCompras">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="sp_all_current_month_compras" msprop:Generator_TableClassName="sp_all_current_month_comprasDataTable" msprop:Generator_TableVarName="tablesp_all_current_month_compras" msprop:Generator_TablePropName="sp_all_current_month_compras" msprop:Generator_RowDeletingName="sp_all_current_month_comprasRowDeleting" msprop:Generator_RowChangingName="sp_all_current_month_comprasRowChanging" msprop:Generator_RowEvHandlerName="sp_all_current_month_comprasRowChangeEventHandler" msprop:Generator_RowDeletedName="sp_all_current_month_comprasRowDeleted" msprop:Generator_UserTableName="sp_all_current_month_compras" msprop:Generator_RowChangedName="sp_all_current_month_comprasRowChanged" msprop:Generator_RowEvArgName="sp_all_current_month_comprasRowChangeEvent" msprop:Generator_RowClassName="sp_all_current_month_comprasRow">
@@ -82,20 +86,8 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="FechaEmision" msprop:Generator_ColumnVarNameInTable="columnFechaEmision" msprop:Generator_ColumnPropNameInRow="FechaEmision" msprop:Generator_ColumnPropNameInTable="FechaEmisionColumn" msprop:Generator_UserColumnName="FechaEmision" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="2147483647" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="FechaPago" msprop:Generator_ColumnVarNameInTable="columnFechaPago" msprop:Generator_ColumnPropNameInRow="FechaPago" msprop:Generator_ColumnPropNameInTable="FechaPagoColumn" msprop:Generator_UserColumnName="FechaPago" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="2147483647" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
+              <xs:element name="FechaEmision" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFechaEmision" msprop:Generator_ColumnPropNameInRow="FechaEmision" msprop:Generator_ColumnPropNameInTable="FechaEmisionColumn" msprop:Generator_UserColumnName="FechaEmision" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="FechaPago" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFechaPago" msprop:Generator_ColumnPropNameInRow="FechaPago" msprop:Generator_ColumnPropNameInTable="FechaPagoColumn" msprop:Generator_UserColumnName="FechaPago" type="xs:dateTime" minOccurs="0" />
               <xs:element name="CTipo" msprop:Generator_ColumnVarNameInTable="columnCTipo" msprop:Generator_ColumnPropNameInRow="CTipo" msprop:Generator_ColumnPropNameInTable="CTipoColumn" msprop:Generator_UserColumnName="CTipo" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -161,12 +153,13 @@
               </xs:element>
               <xs:element name="BaseImponible" msprop:Generator_ColumnVarNameInTable="columnBaseImponible" msprop:Generator_ColumnPropNameInRow="BaseImponible" msprop:Generator_ColumnPropNameInTable="BaseImponibleColumn" msprop:Generator_UserColumnName="BaseImponible" type="xs:decimal" minOccurs="0" />
               <xs:element name="IGV" msprop:Generator_ColumnVarNameInTable="columnIGV" msprop:Generator_ColumnPropNameInRow="IGV" msprop:Generator_ColumnPropNameInTable="IGVColumn" msprop:Generator_UserColumnName="IGV" type="xs:decimal" minOccurs="0" />
-              <xs:element name="NoGravada" msprop:Generator_ColumnVarNameInTable="columnNoGravada" msprop:Generator_ColumnPropNameInRow="NoGravada" msprop:Generator_ColumnPropNameInTable="NoGravadaColumn" msprop:Generator_UserColumnName="NoGravada" type="xs:decimal" minOccurs="0" />
-              <xs:element name="Descuentos" msprop:Generator_ColumnVarNameInTable="columnDescuentos" msprop:Generator_ColumnPropNameInRow="Descuentos" msprop:Generator_ColumnPropNameInTable="DescuentosColumn" msprop:Generator_UserColumnName="Descuentos" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NoGravada" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNoGravada" msprop:Generator_ColumnPropNameInRow="NoGravada" msprop:Generator_ColumnPropNameInTable="NoGravadaColumn" msprop:Generator_UserColumnName="NoGravada" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Descuentos" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDescuentos" msprop:Generator_ColumnPropNameInRow="Descuentos" msprop:Generator_ColumnPropNameInTable="DescuentosColumn" msprop:Generator_UserColumnName="Descuentos" type="xs:decimal" minOccurs="0" />
               <xs:element name="ImporteTotal" msprop:Generator_ColumnVarNameInTable="columnImporteTotal" msprop:Generator_ColumnPropNameInRow="ImporteTotal" msprop:Generator_ColumnPropNameInTable="ImporteTotalColumn" msprop:Generator_UserColumnName="ImporteTotal" type="xs:decimal" minOccurs="0" />
-              <xs:element name="Dolares" msprop:Generator_ColumnVarNameInTable="columnDolares" msprop:Generator_ColumnPropNameInRow="Dolares" msprop:Generator_ColumnPropNameInTable="DolaresColumn" msprop:Generator_UserColumnName="Dolares" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Dolares" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDolares" msprop:Generator_ColumnPropNameInRow="Dolares" msprop:Generator_ColumnPropNameInTable="DolaresColumn" msprop:Generator_UserColumnName="Dolares" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ConversionDolar" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnConversionDolar" msprop:Generator_ColumnPropNameInRow="ConversionDolar" msprop:Generator_ColumnPropNameInTable="ConversionDolarColumn" msprop:Generator_UserColumnName="ConversionDolar" type="xs:decimal" minOccurs="0" />
               <xs:element name="TipoCambio" msprop:Generator_ColumnVarNameInTable="columnTipoCambio" msprop:Generator_ColumnPropNameInRow="TipoCambio" msprop:Generator_ColumnPropNameInTable="TipoCambioColumn" msprop:Generator_UserColumnName="TipoCambio" type="xs:decimal" minOccurs="0" />
-              <xs:element name="Percepcion" msprop:Generator_ColumnVarNameInTable="columnPercepcion" msprop:Generator_ColumnPropNameInRow="Percepcion" msprop:Generator_ColumnPropNameInTable="PercepcionColumn" msprop:Generator_UserColumnName="Percepcion" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Percepcion" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPercepcion" msprop:Generator_ColumnPropNameInRow="Percepcion" msprop:Generator_ColumnPropNameInTable="PercepcionColumn" msprop:Generator_UserColumnName="Percepcion" type="xs:decimal" minOccurs="0" />
               <xs:element name="Destino" msprop:Generator_ColumnVarNameInTable="columnDestino" msprop:Generator_ColumnPropNameInRow="Destino" msprop:Generator_ColumnPropNameInTable="DestinoColumn" msprop:Generator_UserColumnName="Destino" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -209,8 +202,8 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="ConstanciaFechaPago" msprop:Generator_ColumnVarNameInTable="columnConstanciaFechaPago" msprop:Generator_ColumnPropNameInRow="ConstanciaFechaPago" msprop:Generator_ColumnPropNameInTable="ConstanciaFechaPagoColumn" msprop:Generator_UserColumnName="ConstanciaFechaPago" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="ConstanciaMonto" msprop:Generator_ColumnVarNameInTable="columnConstanciaMonto" msprop:Generator_ColumnPropNameInRow="ConstanciaMonto" msprop:Generator_ColumnPropNameInTable="ConstanciaMontoColumn" msprop:Generator_UserColumnName="ConstanciaMonto" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ConstanciaFechaPago" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnConstanciaFechaPago" msprop:Generator_ColumnPropNameInRow="ConstanciaFechaPago" msprop:Generator_ColumnPropNameInTable="ConstanciaFechaPagoColumn" msprop:Generator_UserColumnName="ConstanciaFechaPago" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ConstanciaMonto" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnConstanciaMonto" msprop:Generator_ColumnPropNameInRow="ConstanciaMonto" msprop:Generator_ColumnPropNameInTable="ConstanciaMontoColumn" msprop:Generator_UserColumnName="ConstanciaMonto" type="xs:decimal" minOccurs="0" />
               <xs:element name="ConstanciaReferencia" msprop:Generator_ColumnVarNameInTable="columnConstanciaReferencia" msprop:Generator_ColumnPropNameInRow="ConstanciaReferencia" msprop:Generator_ColumnPropNameInTable="ConstanciaReferenciaColumn" msprop:Generator_UserColumnName="ConstanciaReferencia" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -218,7 +211,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="BancarizacionFecha" msprop:Generator_ColumnVarNameInTable="columnBancarizacionFecha" msprop:Generator_ColumnPropNameInRow="BancarizacionFecha" msprop:Generator_ColumnPropNameInTable="BancarizacionFechaColumn" msprop:Generator_UserColumnName="BancarizacionFecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="BancarizacionFecha" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBancarizacionFecha" msprop:Generator_ColumnPropNameInRow="BancarizacionFecha" msprop:Generator_ColumnPropNameInTable="BancarizacionFechaColumn" msprop:Generator_UserColumnName="BancarizacionFecha" type="xs:dateTime" minOccurs="0" />
               <xs:element name="BancarizacionBco" msprop:Generator_ColumnVarNameInTable="columnBancarizacionBco" msprop:Generator_ColumnPropNameInRow="BancarizacionBco" msprop:Generator_ColumnPropNameInTable="BancarizacionBcoColumn" msprop:Generator_UserColumnName="BancarizacionBco" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -226,7 +219,29 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="BancarizacionOperacion" msprop:Generator_ColumnVarNameInTable="columnBancarizacionOperacion" msprop:Generator_ColumnPropNameInRow="BancarizacionOperacion" msprop:Generator_ColumnPropNameInTable="BancarizacionOperacionColumn" msprop:Generator_UserColumnName="BancarizacionOperacion" type="xs:int" minOccurs="0" />
+              <xs:element name="BancarizacionOperacion" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBancarizacionOperacion" msprop:Generator_ColumnPropNameInRow="BancarizacionOperacion" msprop:Generator_ColumnPropNameInTable="BancarizacionOperacionColumn" msprop:Generator_UserColumnName="BancarizacionOperacion" type="xs:int" minOccurs="0" />
+              <xs:element name="ReferenciaFecha" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnReferenciaFecha" msprop:Generator_ColumnPropNameInRow="ReferenciaFecha" msprop:Generator_ColumnPropNameInTable="ReferenciaFechaColumn" msprop:Generator_UserColumnName="ReferenciaFecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ReferenciaTipo" msprop:Generator_ColumnVarNameInTable="columnReferenciaTipo" msprop:Generator_ColumnPropNameInRow="ReferenciaTipo" msprop:Generator_ColumnPropNameInTable="ReferenciaTipoColumn" msprop:Generator_UserColumnName="ReferenciaTipo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ReferenciaSerie" msprop:Generator_ColumnVarNameInTable="columnReferenciaSerie" msprop:Generator_ColumnPropNameInRow="ReferenciaSerie" msprop:Generator_ColumnPropNameInTable="ReferenciaSerieColumn" msprop:Generator_UserColumnName="ReferenciaSerie" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ReferenciaNumero" msprop:Generator_ColumnVarNameInTable="columnReferenciaNumero" msprop:Generator_ColumnPropNameInRow="ReferenciaNumero" msprop:Generator_ColumnPropNameInTable="ReferenciaNumeroColumn" msprop:Generator_UserColumnName="ReferenciaNumero" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="Usuario" msprop:Generator_ColumnVarNameInTable="columnUsuario" msprop:Generator_ColumnPropNameInRow="Usuario" msprop:Generator_ColumnPropNameInTable="UsuarioColumn" msprop:Generator_UserColumnName="Usuario" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -236,7 +251,6 @@
               </xs:element>
               <xs:element name="FechaRegistro" msprop:Generator_ColumnVarNameInTable="columnFechaRegistro" msprop:Generator_ColumnPropNameInRow="FechaRegistro" msprop:Generator_ColumnPropNameInTable="FechaRegistroColumn" msprop:Generator_UserColumnName="FechaRegistro" type="xs:dateTime" minOccurs="0" />
               <xs:element name="FechaModificacion" msprop:Generator_ColumnVarNameInTable="columnFechaModificacion" msprop:Generator_ColumnPropNameInRow="FechaModificacion" msprop:Generator_ColumnPropNameInTable="FechaModificacionColumn" msprop:Generator_UserColumnName="FechaModificacion" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="ConversionDolar" msprop:Generator_ColumnVarNameInTable="columnConversionDolar" msprop:Generator_ColumnPropNameInRow="ConversionDolar" msprop:Generator_ColumnPropNameInTable="ConversionDolarColumn" msprop:Generator_UserColumnName="ConversionDolar" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
