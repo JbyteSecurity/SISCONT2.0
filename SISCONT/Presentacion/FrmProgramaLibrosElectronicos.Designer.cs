@@ -63,8 +63,6 @@
             this.tabCompras = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dgvRegistroCompras = new ADGV.AdvancedDataGridView();
-            this.bsComprasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dSCompras = new Presentacion.DSCompras();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnGuardarCompras = new System.Windows.Forms.Button();
             this.btnEliminarCompras = new System.Windows.Forms.Button();
@@ -110,7 +108,9 @@
             this.ventasDetraccionSoles = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ventasReferencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ventasObservacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TAComprasTableAdapter = new Presentacion.DSComprasTableAdapters.sp_all_current_month_comprasTableAdapter();
+            this.BSComprasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dSCompras = new Presentacion.DSCompras();
+            this.TAComprasTableAdapter = new Presentacion.DSComprasTableAdapters.tblRegistroComprasTableAdapter();
             this.comprasID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comprasNumeroRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comprasFechaEmision = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -134,6 +134,8 @@
             this.comprasPercepcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comprasDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comprasDescripcionDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comprasCuentaDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comprasCuentaDestinoDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comprasCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comprasConstanciaNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comprasConstanciaFechaPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -152,13 +154,13 @@
             this.tabCompras.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistroCompras)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsComprasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dSCompras)).BeginInit();
             this.panel3.SuspendLayout();
             this.tabVentas.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistroVentas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BSComprasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSCompras)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -175,7 +177,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(12, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1240, 58);
+            this.panel1.Size = new System.Drawing.Size(1260, 58);
             this.panel1.TabIndex = 4;
             // 
             // label4
@@ -194,7 +196,7 @@
             this.panel2.Controls.Add(this.txtRutaTXT);
             this.panel2.Controls.Add(this.btnGenerarTXT);
             this.panel2.Controls.Add(this.btnCargarCarpeta);
-            this.panel2.Location = new System.Drawing.Point(854, 0);
+            this.panel2.Location = new System.Drawing.Point(874, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(386, 58);
             this.panel2.TabIndex = 5;
@@ -229,9 +231,9 @@
             this.btnCargarCarpeta.FlatAppearance.BorderSize = 0;
             this.btnCargarCarpeta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCargarCarpeta.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCargarCarpeta.Location = new System.Drawing.Point(170, 16);
+            this.btnCargarCarpeta.Location = new System.Drawing.Point(170, 17);
             this.btnCargarCarpeta.Name = "btnCargarCarpeta";
-            this.btnCargarCarpeta.Size = new System.Drawing.Size(34, 25);
+            this.btnCargarCarpeta.Size = new System.Drawing.Size(34, 22);
             this.btnCargarCarpeta.TabIndex = 6;
             this.btnCargarCarpeta.Text = "***";
             this.btnCargarCarpeta.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -299,7 +301,7 @@
             this.tabRegistros.Location = new System.Drawing.Point(12, 65);
             this.tabRegistros.Name = "tabRegistros";
             this.tabRegistros.SelectedIndex = 0;
-            this.tabRegistros.Size = new System.Drawing.Size(1244, 602);
+            this.tabRegistros.Size = new System.Drawing.Size(1264, 610);
             this.tabRegistros.TabIndex = 3;
             // 
             // tabCompras
@@ -309,7 +311,7 @@
             this.tabCompras.Location = new System.Drawing.Point(4, 22);
             this.tabCompras.Name = "tabCompras";
             this.tabCompras.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCompras.Size = new System.Drawing.Size(1236, 576);
+            this.tabCompras.Size = new System.Drawing.Size(1256, 584);
             this.tabCompras.TabIndex = 0;
             this.tabCompras.Text = "Compras";
             this.tabCompras.UseVisualStyleBackColor = true;
@@ -322,13 +324,12 @@
             this.panel4.Controls.Add(this.dgvRegistroCompras);
             this.panel4.Location = new System.Drawing.Point(6, 6);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1224, 504);
+            this.panel4.Size = new System.Drawing.Size(1244, 512);
             this.panel4.TabIndex = 4;
             // 
             // dgvRegistroCompras
             // 
             this.dgvRegistroCompras.AllowUserToDeleteRows = false;
-            this.dgvRegistroCompras.AutoGenerateColumns = false;
             this.dgvRegistroCompras.AutoGenerateContextFilters = true;
             this.dgvRegistroCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRegistroCompras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -355,6 +356,8 @@
             this.comprasPercepcion,
             this.comprasDestino,
             this.comprasDescripcionDestino,
+            this.comprasCuentaDestino,
+            this.comprasCuentaDestinoDescripcion,
             this.comprasCodigo,
             this.comprasConstanciaNumero,
             this.comprasConstanciaFechaPago,
@@ -367,13 +370,12 @@
             this.comprasReferenciaTipo,
             this.comprasReferenciaSerie,
             this.comprasReferenciaNumero});
-            this.dgvRegistroCompras.DataSource = this.bsComprasBindingSource;
             this.dgvRegistroCompras.DateWithTime = false;
             this.dgvRegistroCompras.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvRegistroCompras.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvRegistroCompras.Location = new System.Drawing.Point(0, 0);
             this.dgvRegistroCompras.Name = "dgvRegistroCompras";
-            this.dgvRegistroCompras.Size = new System.Drawing.Size(1224, 504);
+            this.dgvRegistroCompras.Size = new System.Drawing.Size(1244, 512);
             this.dgvRegistroCompras.TabIndex = 13;
             this.dgvRegistroCompras.TimeFilter = false;
             this.dgvRegistroCompras.SortStringChanged += new System.EventHandler(this.sgvRegistroCompras_SortStringChanged);
@@ -381,25 +383,15 @@
             this.dgvRegistroCompras.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegistroCompras_CellEndEdit);
             this.dgvRegistroCompras.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.dgvCompras_DefaultValuesNeeded);
             // 
-            // bsComprasBindingSource
-            // 
-            this.bsComprasBindingSource.DataMember = "sp_all_current_month_compras";
-            this.bsComprasBindingSource.DataSource = this.dSCompras;
-            // 
-            // dSCompras
-            // 
-            this.dSCompras.DataSetName = "DSCompras";
-            this.dSCompras.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // panel3
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.btnGuardarCompras);
             this.panel3.Controls.Add(this.btnEliminarCompras);
-            this.panel3.Location = new System.Drawing.Point(6, 516);
+            this.panel3.Location = new System.Drawing.Point(6, 524);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1224, 54);
+            this.panel3.Size = new System.Drawing.Size(1244, 54);
             this.panel3.TabIndex = 3;
             // 
             // btnGuardarCompras
@@ -434,7 +426,7 @@
             this.tabVentas.Location = new System.Drawing.Point(4, 22);
             this.tabVentas.Name = "tabVentas";
             this.tabVentas.Padding = new System.Windows.Forms.Padding(3);
-            this.tabVentas.Size = new System.Drawing.Size(1236, 576);
+            this.tabVentas.Size = new System.Drawing.Size(1256, 584);
             this.tabVentas.TabIndex = 1;
             this.tabVentas.Text = "Ventas";
             this.tabVentas.UseVisualStyleBackColor = true;
@@ -445,9 +437,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.Controls.Add(this.btnEliminarVentas);
             this.panel6.Controls.Add(this.btnGuardarVentas);
-            this.panel6.Location = new System.Drawing.Point(6, 516);
+            this.panel6.Location = new System.Drawing.Point(6, 524);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1227, 54);
+            this.panel6.Size = new System.Drawing.Size(1247, 54);
             this.panel6.TabIndex = 4;
             // 
             // btnEliminarVentas
@@ -483,7 +475,7 @@
             this.panel5.Controls.Add(this.dgvRegistroVentas);
             this.panel5.Location = new System.Drawing.Point(3, 6);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1227, 496);
+            this.panel5.Size = new System.Drawing.Size(1247, 504);
             this.panel5.TabIndex = 2;
             // 
             // dgvRegistroVentas
@@ -531,7 +523,7 @@
             this.dgvRegistroVentas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvRegistroVentas.Location = new System.Drawing.Point(0, 0);
             this.dgvRegistroVentas.Name = "dgvRegistroVentas";
-            this.dgvRegistroVentas.Size = new System.Drawing.Size(1227, 496);
+            this.dgvRegistroVentas.Size = new System.Drawing.Size(1247, 504);
             this.dgvRegistroVentas.TabIndex = 1;
             this.dgvRegistroVentas.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegistroVentas_CellEndEdit);
             this.dgvRegistroVentas.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.dgvVentas_DefaultValuesNeeded);
@@ -780,13 +772,22 @@
             this.ventasObservacion.HeaderText = "Observación";
             this.ventasObservacion.Name = "ventasObservacion";
             // 
+            // BSComprasBindingSource
+            // 
+            this.BSComprasBindingSource.DataMember = "tblRegistroCompras";
+            this.BSComprasBindingSource.DataSource = this.dSCompras;
+            // 
+            // dSCompras
+            // 
+            this.dSCompras.DataSetName = "DSCompras";
+            this.dSCompras.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // TAComprasTableAdapter
             // 
             this.TAComprasTableAdapter.ClearBeforeFill = true;
             // 
             // comprasID
             // 
-            this.comprasID.DataPropertyName = "idLibroCompras";
             this.comprasID.HeaderText = "#";
             this.comprasID.MinimumWidth = 22;
             this.comprasID.Name = "comprasID";
@@ -796,34 +797,29 @@
             // 
             // comprasNumeroRegistro
             // 
-            this.comprasNumeroRegistro.DataPropertyName = "NReg";
             this.comprasNumeroRegistro.HeaderText = "N° Registro";
             this.comprasNumeroRegistro.MinimumWidth = 22;
             this.comprasNumeroRegistro.Name = "comprasNumeroRegistro";
+            this.comprasNumeroRegistro.ReadOnly = true;
             this.comprasNumeroRegistro.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.comprasNumeroRegistro.Width = 50;
             // 
             // comprasFechaEmision
             // 
-            this.comprasFechaEmision.DataPropertyName = "FechaEmision";
             this.comprasFechaEmision.HeaderText = "Fecha de Emisión";
             this.comprasFechaEmision.MinimumWidth = 22;
             this.comprasFechaEmision.Name = "comprasFechaEmision";
-            this.comprasFechaEmision.ReadOnly = true;
             this.comprasFechaEmision.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // comprasFechaPago
             // 
-            this.comprasFechaPago.DataPropertyName = "FechaPago";
             this.comprasFechaPago.HeaderText = "Fecha de Pago";
             this.comprasFechaPago.MinimumWidth = 22;
             this.comprasFechaPago.Name = "comprasFechaPago";
-            this.comprasFechaPago.ReadOnly = true;
             this.comprasFechaPago.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // comprasCdpTipo
             // 
-            this.comprasCdpTipo.DataPropertyName = "CTipo";
             this.comprasCdpTipo.HeaderText = "Tipo Comprobante";
             this.comprasCdpTipo.MinimumWidth = 22;
             this.comprasCdpTipo.Name = "comprasCdpTipo";
@@ -831,7 +827,6 @@
             // 
             // comprasCdpSerie
             // 
-            this.comprasCdpSerie.DataPropertyName = "CSerie";
             this.comprasCdpSerie.HeaderText = "Serie Comprobante";
             this.comprasCdpSerie.MinimumWidth = 22;
             this.comprasCdpSerie.Name = "comprasCdpSerie";
@@ -912,7 +907,6 @@
             this.comprasNoGravada.HeaderText = "No Gravada";
             this.comprasNoGravada.MinimumWidth = 22;
             this.comprasNoGravada.Name = "comprasNoGravada";
-            this.comprasNoGravada.ReadOnly = true;
             this.comprasNoGravada.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // comprasDescuento
@@ -921,7 +915,6 @@
             this.comprasDescuento.HeaderText = "Descuento";
             this.comprasDescuento.MinimumWidth = 22;
             this.comprasDescuento.Name = "comprasDescuento";
-            this.comprasDescuento.ReadOnly = true;
             this.comprasDescuento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // comprasImporteTotal
@@ -938,7 +931,6 @@
             this.comprasDolares.HeaderText = "Dólares";
             this.comprasDolares.MinimumWidth = 22;
             this.comprasDolares.Name = "comprasDolares";
-            this.comprasDolares.ReadOnly = true;
             this.comprasDolares.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // comprasTipoCambio
@@ -957,7 +949,6 @@
             this.comprasConversionDolares.HeaderText = "Conversión Dólares (S/.)";
             this.comprasConversionDolares.MinimumWidth = 22;
             this.comprasConversionDolares.Name = "comprasConversionDolares";
-            this.comprasConversionDolares.ReadOnly = true;
             this.comprasConversionDolares.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // comprasPercepcion
@@ -966,12 +957,11 @@
             this.comprasPercepcion.HeaderText = "Percepción";
             this.comprasPercepcion.MinimumWidth = 22;
             this.comprasPercepcion.Name = "comprasPercepcion";
-            this.comprasPercepcion.ReadOnly = true;
             this.comprasPercepcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // comprasDestino
             // 
-            this.comprasDestino.DataPropertyName = "Destino";
+            this.comprasDestino.DataPropertyName = "CuentaDestino";
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.Aqua;
             this.comprasDestino.DefaultCellStyle = dataGridViewCellStyle4;
             this.comprasDestino.HeaderText = "Cuenta Destino";
@@ -988,6 +978,21 @@
             this.comprasDescripcionDestino.MinimumWidth = 22;
             this.comprasDescripcionDestino.Name = "comprasDescripcionDestino";
             this.comprasDescripcionDestino.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // comprasCuentaDestino
+            // 
+            this.comprasCuentaDestino.DataPropertyName = "CuentaDestino";
+            this.comprasCuentaDestino.HeaderText = "Cuenta Destino";
+            this.comprasCuentaDestino.MinimumWidth = 22;
+            this.comprasCuentaDestino.Name = "comprasCuentaDestino";
+            this.comprasCuentaDestino.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // comprasCuentaDestinoDescripcion
+            // 
+            this.comprasCuentaDestinoDescripcion.HeaderText = "Cuenta Destino Descripción";
+            this.comprasCuentaDestinoDescripcion.MinimumWidth = 22;
+            this.comprasCuentaDestinoDescripcion.Name = "comprasCuentaDestinoDescripcion";
+            this.comprasCuentaDestinoDescripcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // comprasCodigo
             // 
@@ -1013,7 +1018,6 @@
             this.comprasConstanciaFechaPago.HeaderText = "Constancia Fecha Pago";
             this.comprasConstanciaFechaPago.MinimumWidth = 22;
             this.comprasConstanciaFechaPago.Name = "comprasConstanciaFechaPago";
-            this.comprasConstanciaFechaPago.ReadOnly = true;
             this.comprasConstanciaFechaPago.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // comprasConstanciaMonto
@@ -1022,7 +1026,6 @@
             this.comprasConstanciaMonto.HeaderText = "Constancia Monto";
             this.comprasConstanciaMonto.MinimumWidth = 22;
             this.comprasConstanciaMonto.Name = "comprasConstanciaMonto";
-            this.comprasConstanciaMonto.ReadOnly = true;
             this.comprasConstanciaMonto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // comprasConstanciaReferencia
@@ -1039,7 +1042,6 @@
             this.BancarizacionFecha.HeaderText = "Bancarización Fecha";
             this.BancarizacionFecha.MinimumWidth = 22;
             this.BancarizacionFecha.Name = "BancarizacionFecha";
-            this.BancarizacionFecha.ReadOnly = true;
             this.BancarizacionFecha.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // BancarizacionBco
@@ -1056,7 +1058,6 @@
             this.BancarizacionOperacion.HeaderText = "Bancarización Operación";
             this.BancarizacionOperacion.MinimumWidth = 22;
             this.BancarizacionOperacion.Name = "BancarizacionOperacion";
-            this.BancarizacionOperacion.ReadOnly = true;
             this.BancarizacionOperacion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // comprasReferenciaFecha
@@ -1065,7 +1066,6 @@
             this.comprasReferenciaFecha.HeaderText = "Referencia Fecha";
             this.comprasReferenciaFecha.MinimumWidth = 22;
             this.comprasReferenciaFecha.Name = "comprasReferenciaFecha";
-            this.comprasReferenciaFecha.ReadOnly = true;
             this.comprasReferenciaFecha.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // comprasReferenciaTipo
@@ -1096,7 +1096,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1256, 679);
+            this.ClientSize = new System.Drawing.Size(1276, 687);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabRegistros);
             this.Name = "FrmProgramaLibrosElectronicos";
@@ -1110,13 +1110,13 @@
             this.tabCompras.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistroCompras)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsComprasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dSCompras)).EndInit();
             this.panel3.ResumeLayout(false);
             this.tabVentas.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistroVentas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BSComprasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSCompras)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1185,8 +1185,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ventasObservacion;
         private ADGV.AdvancedDataGridView dgvRegistroCompras;
         private DSCompras dSCompras;
-        private System.Windows.Forms.BindingSource bsComprasBindingSource;
-        private DSComprasTableAdapters.sp_all_current_month_comprasTableAdapter TAComprasTableAdapter;
+        private System.Windows.Forms.BindingSource BSComprasBindingSource;
+        private DSComprasTableAdapters.tblRegistroComprasTableAdapter TAComprasTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn comprasID;
         private System.Windows.Forms.DataGridViewTextBoxColumn comprasNumeroRegistro;
         private System.Windows.Forms.DataGridViewTextBoxColumn comprasFechaEmision;
@@ -1210,6 +1210,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn comprasPercepcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn comprasDestino;
         private System.Windows.Forms.DataGridViewTextBoxColumn comprasDescripcionDestino;
+        private System.Windows.Forms.DataGridViewTextBoxColumn comprasCuentaDestino;
+        private System.Windows.Forms.DataGridViewTextBoxColumn comprasCuentaDestinoDescripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn comprasCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn comprasConstanciaNumero;
         private System.Windows.Forms.DataGridViewTextBoxColumn comprasConstanciaFechaPago;

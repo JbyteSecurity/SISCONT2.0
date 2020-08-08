@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
 
 namespace Datos
@@ -12,6 +7,7 @@ namespace Datos
     {
         private Conexion conexion = new Conexion();
         SqlCommand sqlCommand = new SqlCommand();
+        DataSet dataSet = new DataSet();
 
         public DataTable All()
         {
@@ -26,50 +22,70 @@ namespace Datos
             return dataTable;
         }
 
-        public DataTable AllCurrentMonth()
-        {
-            SqlDataReader sqlDataReader;
-            DataTable dataTable = new DataTable();
-            sqlCommand.Connection = conexion.OpenConnection();
-            sqlCommand.CommandText = "sp_all_current_month_compras";
-            sqlCommand.CommandType = CommandType.StoredProcedure;
-            sqlDataReader = sqlCommand.ExecuteReader();
-            dataTable.Load(sqlDataReader);
-            conexion.CloseConnection();
-            return dataTable;
-        }
-
-        //public DataSet AllCurrentMonth()
+        //public DataTable AllCurrentMonth()
         //{
-        //    DataSet dataSet = new DataSet();
-
+        //    SqlDataReader sqlDataReader;
+        //    DataTable dataTable = new DataTable();
+        //    sqlCommand.Connection = conexion.OpenConnection();
         //    sqlCommand.CommandText = "sp_all_current_month_compras";
         //    sqlCommand.CommandType = CommandType.StoredProcedure;
-
-        //    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
-        //    sqlDataAdapter.Fill(dataSet);
-        //    return dataSet;
+        //    sqlDataReader = sqlCommand.ExecuteReader();
+        //    dataTable.Load(sqlDataReader);
+        //    conexion.CloseConnection();
+        //    return dataTable;
         //}
 
-        public DataTable AllByMonthFilter(int anio, int mes)
+        public DataSet AllCurrentMonth()
         {
-            SqlDataReader sqlDataReader;
-            DataTable dataTable = new DataTable();
+            //SqlCommand sqlCommandMoth = new SqlCommand("sp_all_current_month_compras", conexion.OpenConnection());
 
+            sqlCommand.Connection = conexion.OpenConnection();
+            sqlCommand.CommandText = "sp_all_current_month_compras";
+
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+            sqlDataAdapter.SelectCommand = sqlCommand;
+            sqlDataAdapter.Fill(dataSet, "RegistroCompras");
+            return dataSet;
+        }
+
+        //public DataTable AllByMonthFilter(int anio, int mes)
+        //{
+        //    SqlDataReader sqlDataReader;
+        //    DataTable dataTable = new DataTable();
+
+        //    sqlCommand.Connection = conexion.OpenConnection();
+        //    sqlCommand.CommandText = "sp_all_current_month_compras_filter";
+        //    sqlCommand.CommandType = CommandType.StoredProcedure;
+
+        //    sqlCommand.Parameters.AddWithValue("@Anio", anio);
+        //    sqlCommand.Parameters.AddWithValue("@Mes", mes);
+
+        //    sqlCommand.ExecuteNonQuery();
+        //    sqlDataReader = sqlCommand.ExecuteReader();
+        //    dataTable.Load(sqlDataReader);
+        //    sqlCommand.Parameters.Clear();
+
+        //    conexion.CloseConnection();
+        //    return dataTable;
+        //}
+
+        public DataSet AllByMonthFilter(int anio, int mes)
+        {
             sqlCommand.Connection = conexion.OpenConnection();
             sqlCommand.CommandText = "sp_all_current_month_compras_filter";
             sqlCommand.CommandType = CommandType.StoredProcedure;
 
             sqlCommand.Parameters.AddWithValue("@Anio", anio);
             sqlCommand.Parameters.AddWithValue("@Mes", mes);
-
-            sqlCommand.ExecuteNonQuery();
-            sqlDataReader = sqlCommand.ExecuteReader();
-            dataTable.Load(sqlDataReader);
             sqlCommand.Parameters.Clear();
 
-            conexion.CloseConnection();
-            return dataTable;
+
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+            sqlDataAdapter.SelectCommand = sqlCommand;
+            sqlDataAdapter.Fill(dataSet, "RegistroComprasFiltro");
+            return dataSet;
         }
 
         public DataTable GetForTXT(int anio, int mes)

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Text;
+﻿using System.Data;
 using Datos;
 
 namespace Negocios
@@ -11,9 +8,11 @@ namespace Negocios
 
         private DaoCompras daoCompras = new DaoCompras();
 
-        public DataTable AllCurrentMonth() { return daoCompras.AllCurrentMonth(); }
+        //public DataTable AllCurrentMonth() { return daoCompras.AllCurrentMonth(); }
+        public DataSet AllCurrentMonth() { return daoCompras.AllCurrentMonth(); }
 
-        public DataTable AllByMonthFilter(int anio, int mes) { return daoCompras.AllByMonthFilter(anio, mes); }
+        //public DataTable AllByMonthFilter(int anio, int mes) { return daoCompras.AllByMonthFilter(anio, mes); }
+        public DataSet AllByMonthFilter(int anio, int mes) { return daoCompras.AllByMonthFilter(anio, mes); }
 
         public DataTable GetForTXT(int anio, int mes) { return daoCompras.GetForTXT(anio, mes); }
 
