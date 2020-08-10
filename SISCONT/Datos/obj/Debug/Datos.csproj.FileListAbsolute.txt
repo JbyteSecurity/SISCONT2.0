@@ -6,7 +6,6 @@ C:\Users\Developers\Pictures\SISCONT\Datos\obj\Debug\Datos.dll
 C:\Users\Developers\Pictures\SISCONT\Datos\obj\Debug\Datos.pdb
 C:\Users\Developers\Source\Repos\SISCONT2.0\SISCONT\Datos\bin\Debug\Datos.dll
 C:\Users\Developers\Source\Repos\SISCONT2.0\SISCONT\Datos\bin\Debug\Datos.pdb
-C:\Users\Developers\Source\Repos\SISCONT2.0\SISCONT\Datos\obj\Debug\Datos.csprojAssemblyReference.cache
 C:\Users\Developers\Source\Repos\SISCONT2.0\SISCONT\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
 C:\Users\Developers\Source\Repos\SISCONT2.0\SISCONT\Datos\obj\Debug\Datos.dll
 C:\Users\Developers\Source\Repos\SISCONT2.0\SISCONT\Datos\obj\Debug\Datos.pdb

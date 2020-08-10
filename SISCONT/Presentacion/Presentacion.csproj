@@ -72,6 +72,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSCompras.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DSVentas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSVentas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FrmDetraccion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +153,17 @@
     </None>
     <None Include="DSCompras.xss">
       <DependentUpon>DSCompras.xsd</DependentUpon>
+    </None>
+    <None Include="DSVentas.xsc">
+      <DependentUpon>DSVentas.xsd</DependentUpon>
+    </None>
+    <None Include="DSVentas.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSVentas.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DSVentas.xss">
+      <DependentUpon>DSVentas.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

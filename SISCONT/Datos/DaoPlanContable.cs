@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
 
 namespace Datos
@@ -15,9 +10,8 @@ namespace Datos
 
         public string ShowAcount(string codigo)
         {
-            SqlDataReader sqlDataReaderPlanContable;
-            DataTable dataTableProvider = new DataTable("tblPlanContable");
-
+            DataTable dataTable = new DataTable();
+            SqlDataReader sqlDataReader;
             sqlCommand.Connection = conexion.OpenConnection();
             sqlCommand.CommandText = "sp_show_name_cuenta";
             sqlCommand.CommandType = CommandType.StoredProcedure;
@@ -25,16 +19,37 @@ namespace Datos
             sqlCommand.Parameters.AddWithValue("@codigo", codigo);
 
             sqlCommand.ExecuteNonQuery();
-            sqlDataReaderPlanContable = sqlCommand.ExecuteReader();
-            dataTableProvider.Load(sqlDataReaderPlanContable);
+            sqlDataReader = sqlCommand.ExecuteReader();
+            dataTable.Load(sqlDataReader);
             sqlCommand.Parameters.Clear();
 
             conexion.CloseConnection();
 
-            if (dataTableProvider.Rows.Count > 0)
-                return dataTableProvider.Rows[0]["Cuenta"].ToString();
+            if (dataTable.Rows.Count > 0)
+                return dataTable.Rows[0]["Cuenta"].ToString();
             else
                 return null;
+        }
+
+        public DataTable ShowAcountFilter(string clasificacion)
+        {
+            DataTable dataTable = new DataTable();
+            SqlDataReader sqlDataReader;
+
+            sqlCommand.Connection = conexion.OpenConnection();
+            sqlCommand.CommandText = "sp_show_plan_filter";
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+
+            sqlCommand.Parameters.AddWithValue("@clasificacion", clasificacion);
+
+            sqlCommand.ExecuteNonQuery();
+            sqlDataReader = sqlCommand.ExecuteReader();
+            dataTable.Load(sqlDataReader);
+            sqlCommand.Parameters.Clear();
+
+            conexion.CloseConnection();
+
+            return dataTable;
         }
     }
 }

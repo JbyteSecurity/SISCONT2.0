@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 using Datos;
 
@@ -9,11 +10,8 @@ namespace Negocios
     {
         private DaoPlanContable daoPlanContable = new DaoPlanContable();
 
-        public string GetAcount(string codigo)
-        {
-            string cuenta;
-            cuenta = daoPlanContable.ShowAcount(codigo);
-            return cuenta;
-        }
+        public string GetAcount(string codigo) { return daoPlanContable.ShowAcount(codigo); }
+
+        public DataTable ShowAcountFilter(string clasificacion) { return daoPlanContable.ShowAcountFilter(clasificacion); }
     }
 }
