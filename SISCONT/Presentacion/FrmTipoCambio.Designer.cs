@@ -46,9 +46,9 @@
             // 
             this.btnNuevo.BackColor = System.Drawing.Color.Gray;
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnNuevo.Location = new System.Drawing.Point(529, 93);
+            this.btnNuevo.Location = new System.Drawing.Point(488, 93);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(198, 28);
+            this.btnNuevo.Size = new System.Drawing.Size(104, 23);
             this.btnNuevo.TabIndex = 22;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
@@ -56,9 +56,9 @@
             // 
             // txtVenta
             // 
-            this.txtVenta.Location = new System.Drawing.Point(529, 67);
+            this.txtVenta.Location = new System.Drawing.Point(488, 67);
             this.txtVenta.Name = "txtVenta";
-            this.txtVenta.Size = new System.Drawing.Size(198, 20);
+            this.txtVenta.Size = new System.Drawing.Size(104, 20);
             this.txtVenta.TabIndex = 21;
             // 
             // label3
@@ -99,9 +99,9 @@
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.Lime;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Location = new System.Drawing.Point(529, 127);
+            this.btnGuardar.Location = new System.Drawing.Point(488, 122);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(198, 51);
+            this.btnGuardar.Size = new System.Drawing.Size(104, 51);
             this.btnGuardar.TabIndex = 23;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -109,9 +109,9 @@
             // 
             // txtCompra
             // 
-            this.txtCompra.Location = new System.Drawing.Point(529, 41);
+            this.txtCompra.Location = new System.Drawing.Point(488, 41);
             this.txtCompra.Name = "txtCompra";
-            this.txtCompra.Size = new System.Drawing.Size(198, 20);
+            this.txtCompra.Size = new System.Drawing.Size(104, 20);
             this.txtCompra.TabIndex = 20;
             // 
             // label2
@@ -133,9 +133,9 @@
             // 
             // txtFecha
             // 
-            this.txtFecha.Location = new System.Drawing.Point(529, 12);
+            this.txtFecha.Location = new System.Drawing.Point(488, 12);
             this.txtFecha.Name = "txtFecha";
-            this.txtFecha.Size = new System.Drawing.Size(198, 20);
+            this.txtFecha.Size = new System.Drawing.Size(104, 20);
             this.txtFecha.TabIndex = 19;
             // 
             // label1
@@ -151,7 +151,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(763, 236);
+            this.ClientSize = new System.Drawing.Size(607, 236);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.txtVenta);
             this.Controls.Add(this.label3);

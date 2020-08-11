@@ -305,7 +305,7 @@ namespace Presentacion
                         string ventasCdpSerie = row.Cells["ventasCdpSerie"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasCdpSerie"].Value).ToUpper() : "";
                         string ventasCdpNumero = row.Cells["ventasCdpNumero"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasCdpNumero"].Value) : "";
                         string ventasProveedorTipo = row.Cells["ventasProveedorTipo"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasProveedorTipo"].Value) : "";
-                        string ventasProveedorNumero = row.Cells["ventasProveedorNumero"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasProveedorNumero"].Value) : "";
+                        string ventasProveedorNumero = row.Cells["ventasProveedorNumero"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasProveedorNumero"].Value).ToUpper() : "";
                         string ventasProveedorRazonSocial = row.Cells["ventasProveedorRazonSocial"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasProveedorRazonSocial"].Value) : "";
 
                         string ventasCuenta = row.Cells["ventasCuenta"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasCuenta"].Value) : "";
@@ -448,20 +448,35 @@ namespace Presentacion
                         }
                     }
                     break;
-                case 8:
-                    if (!String.IsNullOrEmpty(dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasProveedorNumeroDocumento"].Value.ToString() as string))
+
+                case 4:
+                    if (dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasCdpTipo"].Value != DBNull.Value)
                     {
-                        string ruc;
-                        string razonSocial;
-                        ruc = dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasProveedorNumeroDocumento"].Value.ToString();
-                        razonSocial = proveedor.GetSupplierName(ruc);
-                        if (razonSocial == null)
+                        if (String.IsNullOrEmpty(dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasCdpTipo"].Value.ToString() as String))
                         {
-                            dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasProveedorNumeroDocumento"].Value = "";
-                            MessageBox.Show("No se encontro al proveedor con ruc: " + ruc, "Compras .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            string comprasCDPTipo = dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasCdpTipo"].Value.ToString();
+                            if (comprasCDPTipo.Equals("07"))
+                                dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasCdpTipo"].Value = Convert.ToDouble(dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasCdpTipo"].Value) * (-1);
                         }
-                        else
-                            dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasProveedorRazonSocial"].Value = razonSocial;
+                    }
+                    break;
+                case 8:
+                    if (dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasProveedorNumeroDocumento"].Value != DBNull.Value)
+                    {
+                        if (!String.IsNullOrEmpty(dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasProveedorNumeroDocumento"].Value.ToString() as string))
+                        {
+                            string ruc;
+                            string razonSocial;
+                            ruc = dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasProveedorNumeroDocumento"].Value.ToString();
+                            razonSocial = proveedor.GetSupplierName(ruc);
+                            if (razonSocial == null)
+                            {
+                                dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasProveedorNumeroDocumento"].Value = "";
+                                MessageBox.Show("No se encontro al proveedor con ruc: " + ruc, "Compras .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                                dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasProveedorRazonSocial"].Value = razonSocial;
+                        }
                     }
                     break;
                 case 12:
@@ -470,7 +485,9 @@ namespace Presentacion
                     //Calculos de No BaseInmponible
                     if (dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasBaseImponible"].Value != DBNull.Value)
                     {
-                        double baseImponible = 0, descuento = 0, igv = 0, noGravada = 0;
+                        double baseImponible = 0, descuento = 0, igv = 0, noGravada = 0, negativo = 1;
+                        string comprasCDPTipo = dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasCdpTipo"].Value.ToString();
+                        if (comprasCDPTipo.Equals("07")) negativo = (-1);
 
                         if (!String.IsNullOrEmpty(dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasBaseImponible"].Value.ToString() as String))
                             baseImponible = Convert.ToDouble(dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasBaseImponible"].Value.ToString());
@@ -478,7 +495,7 @@ namespace Presentacion
                         if (!String.IsNullOrEmpty(dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasDescuento"].Value.ToString() as String))
                             descuento = Convert.ToDouble(dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasDescuento"].Value.ToString());
 
-                        dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasIgv"].Value = Math.Round((baseImponible + descuento) * 0.18, 2);
+                        dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasIgv"].Value = Math.Round(((baseImponible + descuento) * 0.18) * negativo, 2);
 
                         if (!String.IsNullOrEmpty(dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasIgv"].Value.ToString() as String))
                             igv = Convert.ToDouble(dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasIgv"].Value.ToString());
@@ -486,7 +503,8 @@ namespace Presentacion
                         if (!String.IsNullOrEmpty(dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasNoGravada"].Value.ToString() as String))
                             noGravada = Convert.ToDouble(dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasNoGravada"].Value.ToString());
 
-                        dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasImporteTotal"].Value = baseImponible + descuento + igv + noGravada;
+                        dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasImporteTotal"].Value = (baseImponible + descuento + igv + noGravada) *negativo;
+                        dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasBaseImponible"].Value = baseImponible * negativo;
                         double importe_total;
                         importe_total = Convert.ToDouble(dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasImporteTotal"].Value.ToString());
 
@@ -507,10 +525,13 @@ namespace Presentacion
                     break;
                 case 17: // Dolares
 
-                    if (dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasDolares"].Value != DBNull.Value)
+                    if (dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasDolares"].Value != DBNull.Value && Convert.ToDouble(dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasDolares"].Value) != 0)
                     {
                         
-                        double tipoCambi = 0, dolares = 0, descuento = 0, igv = 0, noGravada = 0;
+                        double tipoCambi = 0, dolares = 0, descuento = 0, igv = 0, noGravada = 0, negativo = 1;
+                        string comprasCDPTipo = dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasCdpTipo"].Value.ToString();
+                        if (comprasCDPTipo.Equals("07")) negativo = (-1);
+
                         if (!String.IsNullOrEmpty(dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasDolares"].Value.ToString() as String))
                             dolares = Convert.ToDouble(dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasDolares"].Value.ToString());
 
@@ -528,11 +549,11 @@ namespace Presentacion
                         double doBaseImponible = convertDolares / 1.18;
                         igv = doBaseImponible * 0.18;
 
-                        dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasBaseImponible"].Value = Math.Round(doBaseImponible, 2);
+                        dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasBaseImponible"].Value = Math.Round(doBaseImponible * negativo, 2);
 
-                        dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasIgv"].Value = Math.Round(igv, 2);
+                        dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasIgv"].Value = Math.Round(igv * negativo, 2);
 
-                        dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasImporteTotal"].Value = Math.Round(doBaseImponible + descuento + igv + noGravada, 2);
+                        dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasImporteTotal"].Value = Math.Round((doBaseImponible + descuento + igv + noGravada) * negativo, 2);
                     }
                     break;
                 case 10:
@@ -637,13 +658,16 @@ namespace Presentacion
                 case 17: // BaseImponible
                     if (dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasImporteTotal"].Value != DBNull.Value)
                     {
-                        double biImporteTotal = 0;
+                        double biImporteTotal = 0, negativo = 1;
+                        string ventasTipoCDP = dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasCdpTipo"].Value.ToString();
+                        if (ventasTipoCDP.Equals("07")) negativo = (-1);
+
                         if (String.IsNullOrEmpty(dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasImporteTotal"].Value.ToString()))
                             MessageBox.Show("Ingrese un Importe Total");
                         else
                             biImporteTotal = Convert.ToDouble(dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasImporteTotal"].Value.ToString());
 
-                        dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasBaseImponible"].Value = Math.Round((biImporteTotal / 1.18), 2);
+                        dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasBaseImponible"].Value = Math.Round((biImporteTotal / 1.18) * negativo, 2);
 
 
                         double igvImporteTotal = 0, igvBaseImponible = 0;
@@ -657,7 +681,8 @@ namespace Presentacion
                         else
                             igvBaseImponible = Convert.ToDouble(dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasBaseImponible"].Value.ToString());
 
-                        dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasIgv"].Value = Math.Round((igvImporteTotal - igvBaseImponible), 2);
+                        dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasIgv"].Value = Math.Round((igvImporteTotal - igvBaseImponible) * negativo, 2);
+                        dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasImporteTotal"].Value = igvImporteTotal * negativo;
                     }
                     break;
                 case 10:

@@ -1,0 +1,342 @@
+<html>
+<head>
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv='content-type' content='text/html; charset=iso-8859-1'>
+<title>sunat - tipo de cambio oficial</title>
+</head>
+
+
+
+
+<script language="javascript">
+
+function checksubmit(){
+    document.selectform.target='_self';
+  	document.selectform.accion.value='init';
+	if(document.selectform.mes.selectedindex == 0){
+		alert('por favor, seleccione el mes...');
+		document.selectform.mes.focus();
+		return
+	}
+	if(document.selectform.anho.selectedindex == 0){
+		alert('por favor, seleccione el a�o...');
+		document.selectform.anho.focus();
+		return
+	}	
+
+	document.selectform.submit();	
+}
+
+
+function descargasubmit() {
+    document.selectform.target='_blank';
+	document.selectform.accion.value='descarga';
+	document.selectform.submit();
+}
+
+function correo(){
+    document.selectform.target='_self';
+	if ( longitudmayor(document.selectform.email.value,0) ){
+      if ( !validacorreo(document.selectform.email.value) ){
+        alert("la cuenta de correo indicada no tiene un formato valido");
+        document.selectform.email.focus()
+      }else{
+	    document.selectform.accion.value='enviacorreo';
+	    document.selectform.submit();
+	  }
+    }
+}
+</script>
+
+<link href="/a/css/estilos2_0.css" type=text/css rel=stylesheet>
+<script language=javascript src="/a/js/js.js"></script>
+<body background="#ffffff">
+
+<form method="post" action=tcs01alias name="selectform" >
+<center>
+	<h3>agosto - 2020</h3>
+</center>
+<div align='center'><center>
+  <table border='0' cellpadding='0' cellspacing='0' width='81%' class="t1">
+    <tr>	
+      <td width='100%' align='center' colspan='12' class="ht">	  
+        tipo de cambio publicado al :
+      </td>
+    </tr>
+  </table>
+</center>
+</div>  
+<br>
+
+
+<div align='center'><center>
+ <table class=class="form-table" border='1' cellpadding='0' cellspacing='0' width='81%' >   
+  <tr>
+    <td class='beta' width='4%'  align='center' class="ht">d�a</td>
+    <td class='beta' width='10%' align='center' class="ht">compra</td>
+    <td class='beta' width='10%' align='center' class="ht">venta</td>
+    <td class='beta' width='4%'  align='center' class="ht">d�a</td>
+    <td class='beta' width='10%' align='center' class="ht">compra</td>
+    <td class='beta' width='10%' align='center' class="ht">venta</td>
+    <td class='beta' width='4%'  align='center' class="ht">d�a</td>
+    <td class='beta' width='10%' align='center' class="ht">compra</td>
+    <td class='beta' width='10%' align='center' class="ht">venta</td>
+    <td class='beta' width='4%'  align='center' class="ht">d�a</td>
+    <td class='beta' width='10%' align='center' class="ht">compra</td>
+    <td class='beta' width='10%' align='center' class="ht">venta</td>
+  </tr>
+
+  <tr>
+    
+
+    
+	  			
+        
+        <td width='4%' align='center' class="h3">
+		  <strong>1</strong>
+        </td>
+          
+        <td width='8%' align='center' class="tne10">
+          3.522
+        </td>
+          
+        <td width='8%' align='center' class="tne10">
+		  3.529
+        </td>
+        
+      			
+        
+        <td width='4%' align='center' class="h3">
+		  <strong>4</strong>
+        </td>
+          
+        <td width='8%' align='center' class="tne10">
+          3.538
+        </td>
+          
+        <td width='8%' align='center' class="tne10">
+		  3.543
+        </td>
+        
+      			
+        
+        <td width='4%' align='center' class="h3">
+		  <strong>5</strong>
+        </td>
+          
+        <td width='8%' align='center' class="tne10">
+          3.546
+        </td>
+          
+        <td width='8%' align='center' class="tne10">
+		  3.550
+        </td>
+        
+      			
+        
+        <td width='4%' align='center' class="h3">
+		  <strong>6</strong>
+        </td>
+          
+        <td width='8%' align='center' class="tne10">
+          3.545
+        </td>
+          
+        <td width='8%' align='center' class="tne10">
+		  3.550
+        </td>
+        
+      			
+        
+          </tr>
+          <tr>
+          
+        
+        <td width='4%' align='center' class="h3">
+		  <strong>7</strong>
+        </td>
+          
+        <td width='8%' align='center' class="tne10">
+          3.545
+        </td>
+          
+        <td width='8%' align='center' class="tne10">
+		  3.548
+        </td>
+        
+      			
+        
+        <td width='4%' align='center' class="h3">
+		  <strong>8</strong>
+        </td>
+          
+        <td width='8%' align='center' class="tne10">
+          3.547
+        </td>
+          
+        <td width='8%' align='center' class="tne10">
+		  3.551
+        </td>
+        
+      			
+        
+        <td width='4%' align='center' class="h3">
+		  <strong>11</strong>
+        </td>
+          
+        <td width='8%' align='center' class="tne10">
+          3.556
+        </td>
+          
+        <td width='8%' align='center' class="tne10">
+		  3.561
+        </td>
+        
+      
+    
+    
+ </table>
+</center>
+</div>
+<p>
+<div align='center'>
+<table border='0' cellpadding='0' cellspacing='0' width='81%'>
+ <tr>
+   <td width='100%' align='left' class="comm" height="35" >
+	   notas:<br>
+	   1.- el tipo de cambio publicado corresponde a la cotizaci�n  de cierre de la sbs del d�a anterior.<br>
+	   2.- en los d�as que no se cuente con tipo de cambio publicado, se deber� tomar el del d�a inmediato anterior.<br>
+	   3.- para efectos del impuesto a la renta, se deber� tomar el tipo de cambio de cierre, al 31 de diciembre del ejercicio correspondiente. para renta 2018, <a href="https://orientacion.sunat.gob.pe/index.php/empresas-menu/impuesto-a-la-renta-empresas/declaraciones-anuales-empresas/renta-anual-2018-empresas/7219-13-tipo-de-cambio">ingrese aqu�</a>.<br><br>
+   </td>
+ </tr>
+</table>
+</div> 
+         <input type="hidden" id="meselegido" name="meselegido" value="08" > 
+         <input type="hidden" id="anioelegido" name="anioelegido" value="2020" > 
+
+<div align='center'>
+<center>
+<table border='0' cellpadding='0' cellspacing='0' width='81%'>
+ <tr>
+   <td width='100%' align='center' class="ht" height="35" >
+  <div align="center">
+  <table border="0" cellpadding="0" cellspacing="0" width="28%">
+    <tr>
+      <td width="33%" align="center">
+             <select name="mes" size="1" class="lb">
+               <option value="mes">mes</option>
+               <option value="01">enero</option>
+               <option value="02">febrero</option>
+               <option value="03">marzo</option>
+               <option value="04">abril</option>
+               <option value="05">mayo</option>
+               <option value="06">junio</option>
+               <option value="07">julio</option>
+               <option value="08">agosto</option>
+               <option value="09">setiembre</option>
+               <option value="10">octubre</option>
+               <option value="11">noviembre</option>
+               <option value="12">diciembre</option>
+             </select>
+      </td>
+      <td width="34%">
+        <div align="left"><p>
+           <select name="anho" size="1" class="lb">
+             <option value='anho'>a�o</option>
+    		  
+                <option value= "2020"> 2020 </option>
+              
+                <option value= "2019"> 2019 </option>
+              
+                <option value= "2018"> 2018 </option>
+              
+                <option value= "2017"> 2017 </option>
+              
+                <option value= "2016"> 2016 </option>
+              
+                <option value= "2015"> 2015 </option>
+              
+                <option value= "2014"> 2014 </option>
+              
+                <option value= "2013"> 2013 </option>
+              
+                <option value= "2012"> 2012 </option>
+              
+                <option value= "2011"> 2011 </option>
+              
+                <option value= "2010"> 2010 </option>
+              
+                <option value= "2009"> 2009 </option>
+              
+                <option value= "2008"> 2008 </option>
+              
+                <option value= "2007"> 2007 </option>
+              
+                <option value= "2006"> 2006 </option>
+              
+                <option value= "2005"> 2005 </option>
+              
+                <option value= "2004"> 2004 </option>
+              
+                <option value= "2003"> 2003 </option>
+              
+                <option value= "2002"> 2002 </option>
+              
+                <option value= "2001"> 2001 </option>
+              
+                <option value= "2000"> 2000 </option>
+              
+                <option value= "1999"> 1999 </option>
+              
+                <option value= "1998"> 1998 </option>
+              
+                <option value= "1997"> 1997 </option>
+              
+                <option value= "1996"> 1996 </option>
+              
+                <option value= "1995"> 1995 </option>
+              
+           </select></p>
+        </div>
+      </td>
+      <td>
+        <div align="left"><p>
+          <input type="hidden" id="accion" name="accion" value="init" > 
+          <input type="button" value="consultar" class="button" name="b1" onclick="checksubmit()"></p>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+</td>
+</tr>
+</table>
+</center>
+</div>		
+<br>
+
+
+  <table border="0" cellpadding="0" cellspacing="0" width="81%" class="form-table" align="center">
+    <tr>
+		<td>
+		   <a href="javascript:descargasubmit()">
+				<img src="/a/imagenes/lupa.gif" border="0" align="absmiddle">
+				descargar
+		   </a>
+		</td>
+		<td>email:
+		<input type="text" id="email" name="email" size="30" maxlength="30" class="form-text" value="" >
+		<a href="javascript:correo()"><img src="/a/imagenes/email.gif" width="21" height="20" border="0"
+		   alt="enviar correo" align="absmiddle">&nbsp;enviar correo
+		</a>
+		</td>
+    </tr>
+  </table>
+
+
+</form> 
+<br>
+
+</body>
+
+</html>
