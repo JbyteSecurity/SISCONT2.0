@@ -69,11 +69,11 @@ namespace Datos
         }
 
         public bool Insert(
-            int mes, string numeroRegistro, string fechaEmision, string fechaPago, string cdpTipo, string cdpSerie,
+            string numeroRegistro, string fechaEmision, string fechaPago, string cdpTipo, string cdpSerie,
             string cdpNumeroDocumento, string proveedorTipo, string proveedorNumero, string proveedorNombreRazonSocial,
             string cuenta, string descripcion, double valorExportacion, double baseImponible, double importeTotalExonerada,
             double importeTotalInafecta, double igv, double importeTotal, double tipoCambio, double dolares, double igvRetencion,
-            string cuentaDestino, string cuentaDestinoDescripcion, string pago, string referenciaFecha, string referenciaTipo, string referenciaSerie, string referenciaNumeroDocumento,
+            string cuentaDestino, string cuentaDestinoDescripcion, string referenciaFecha, string referenciaTipo, string referenciaSerie, string referenciaNumeroDocumento,
             string codigo, string constanciaNumero, string constanciaFechaPago, double detraccionSoles, string referencia, string observacion, string usuario
             )
         {
@@ -82,7 +82,6 @@ namespace Datos
             sqlCommand.CommandType = CommandType.StoredProcedure;
             sqlCommand.Parameters.Clear();
 
-            sqlCommand.Parameters.AddWithValue("@Mes", mes);
             sqlCommand.Parameters.AddWithValue("@NReg", numeroRegistro);
             sqlCommand.Parameters.AddWithValue("@FechaEmision", fechaEmision);
             sqlCommand.Parameters.AddWithValue("@FechaPago", fechaPago);
@@ -105,7 +104,6 @@ namespace Datos
             sqlCommand.Parameters.AddWithValue("@IgvRetencion", igvRetencion);
             sqlCommand.Parameters.AddWithValue("@CuentaDestino", cuentaDestino);
             sqlCommand.Parameters.AddWithValue("@CuentaDestinoDescripcion", cuentaDestinoDescripcion);
-            sqlCommand.Parameters.AddWithValue("@Pago", pago);
             sqlCommand.Parameters.AddWithValue("@ReferenciaFecha", referenciaFecha);
             sqlCommand.Parameters.AddWithValue("@ReferenciaTipo", referenciaTipo);
             sqlCommand.Parameters.AddWithValue("@ReferenciaSerie", referenciaSerie);
@@ -128,11 +126,11 @@ namespace Datos
         }
 
         public bool Update(
-            int id, int mes, string numeroRegistro, string fechaEmision, string fechaPago, string cdpTipo, string cdpSerie,
+            int id, string numeroRegistro, string fechaEmision, string fechaPago, string cdpTipo, string cdpSerie,
             string cdpNumeroDocumento, string proveedorTipo, string proveedorNumero, string proveedorNombreRazonSocial,
             string cuenta, string descripcion, double valorExportacion, double baseImponible, double importeTotalExonerada,
             double importeTotalInafecta, double igv, double importeTotal, double tipoCambio, double dolares, double igvRetencion,
-            string cuentaDestino, string cuentaDestinoDescripcion, string pago, string referenciaFecha, string referenciaTipo, string referenciaSerie, string referenciaNumeroDocumento,
+            string cuentaDestino, string cuentaDestinoDescripcion, string referenciaFecha, string referenciaTipo, string referenciaSerie, string referenciaNumeroDocumento,
             string codigo, string constanciaNumero, string constanciaFechaPago, double detraccionSoles, string referencia, string observacion, string usuario
             )
         {
@@ -142,7 +140,6 @@ namespace Datos
             sqlCommand.Parameters.Clear();
 
             sqlCommand.Parameters.AddWithValue("@id", id);
-            sqlCommand.Parameters.AddWithValue("@Mes", mes);
             sqlCommand.Parameters.AddWithValue("@NReg", numeroRegistro);
             sqlCommand.Parameters.AddWithValue("@FechaEmision", fechaEmision);
             sqlCommand.Parameters.AddWithValue("@FechaPago", fechaPago);
@@ -165,7 +162,6 @@ namespace Datos
             sqlCommand.Parameters.AddWithValue("@IgvRetencion", igvRetencion);
             sqlCommand.Parameters.AddWithValue("@CuentaDestino", cuentaDestino);
             sqlCommand.Parameters.AddWithValue("@CuentaDestinoDescripcion", cuentaDestinoDescripcion);
-            sqlCommand.Parameters.AddWithValue("@Pago", pago);
             sqlCommand.Parameters.AddWithValue("@ReferenciaFecha", referenciaFecha);
             sqlCommand.Parameters.AddWithValue("@ReferenciaTipo", referenciaTipo);
             sqlCommand.Parameters.AddWithValue("@ReferenciaSerie", referenciaSerie);

@@ -34,7 +34,9 @@ namespace Presentacion
 
             FillComboTipoComprobante();
             FillComboCuentaDestino();
+
             removeColumnsCompras();
+            removeColumnsVentas();
 
             //this.dgvRegistroCompras.DataSource = this.BSComprasBindingSource;
 
@@ -286,7 +288,6 @@ namespace Presentacion
                     if (row.Cells["VentasFechaEmision"].Value != DBNull.Value)
                     {
                         int ventasId = Convert.ToInt32(row.Cells["ventasId"].Value);
-                        int ventasMes = row.Cells["ventasMes"].Value != DBNull.Value ? Convert.ToInt32(row.Cells["ventasMes"].Value) : 0;
                         string ventasNumeroRegistro = row.Cells["ventasNumeroRegistro"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasNumeroRegistro"].Value) : "";
                         string ventasFechaEmision = row.Cells["ventasFechaEmision"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasFechaEmision"].Value) : "";
                         string ventasFechaPago = row.Cells["ventasFechaPago"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasFechaPago"].Value) : "";
@@ -307,12 +308,11 @@ namespace Presentacion
                         double ventasImporteTotal = row.Cells["ventasImporteTotal"].Value != DBNull.Value ? Convert.ToDouble(row.Cells["ventasImporteTotal"].Value) : 0;
                         double ventasTipoCambio = row.Cells["ventasTipoCambio"].Value != DBNull.Value ? Convert.ToDouble(row.Cells["ventasTipoCambio"].Value) : 0;
                         double ventasDolares = row.Cells["ventasDolares"].Value != DBNull.Value ? Convert.ToDouble(row.Cells["ventasDolares"].Value) : 0;
-                        double ventasDolaresConversion = row.Cells["ventasDolaresConversion"].Value != DBNull.Value ? Convert.ToDouble(row.Cells["ventasDolaresConversion"].Value) : 0;
+                        //double ventasDolaresConversion = row.Cells["ventasDolaresConversion"].Value != DBNull.Value ? Convert.ToDouble(row.Cells["ventasDolaresConversion"].Value) : 0;
 
                         double ventasIgvRetencion = row.Cells["ventasIgvRetencion"].Value != DBNull.Value ? Convert.ToDouble(row.Cells["ventasIgvRetencion"].Value) : 0;
                         string ventasCuentaDestino = row.Cells["ventasCuentaDestino"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasCuentaDestino"].Value) : "";
                         string ventasCuentaDestinoDescripcion = row.Cells["ventasCuentaDestinoDescripcion"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasCuentaDestinoDescripcion"].Value) : "";
-                        string ventasPago = row.Cells["ventasPago"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasPago"].Value) : "";
                         string ventasReferenciaFecha = row.Cells["ventasReferenciaFecha"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasReferenciaFecha"].Value) : "";
                         string ventasReferenciaTipo = row.Cells["ventasReferenciaTipo"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasReferenciaTipo"].Value) : "";
                         string ventasReferenciaSerie = row.Cells["ventasReferenciaSerie"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasReferenciaSerie"].Value) : "";
@@ -329,20 +329,20 @@ namespace Presentacion
                         if (ventasId < 0)
                         {
                             ventas.Insert(
-                                ventasMes, ventasNumeroRegistro, ventasFechaEmision, ventasFechaPago, ventasCdpTipo, ventasCdpSerie, ventasCdpNumero, ventasProveedorTipo,
+                                ventasNumeroRegistro, ventasFechaEmision, ventasFechaPago, ventasCdpTipo, ventasCdpSerie, ventasCdpNumero, ventasProveedorTipo,
                                 ventasProveedorNumero, ventasProveedorRazonSocial, ventasCuenta, ventasDescripcion, ventasValorExportacion, ventasBaseImponible,
                                 ventasImporteTotalExonerada, ventasImporteTotalInafecta, ventasIgv, ventasImporteTotal, ventasTipoCambio, ventasDolares,
-                                ventasIgvRetencion, ventasCuentaDestino, ventasCuentaDestinoDescripcion, ventasPago, ventasReferenciaFecha, ventasReferenciaTipo, ventasReferenciaSerie,
+                                ventasIgvRetencion, ventasCuentaDestino, ventasCuentaDestinoDescripcion, ventasReferenciaFecha, ventasReferenciaTipo, ventasReferenciaSerie,
                                 ventasReferenciaNumero, ventasCodigo, ventasConstanciaNumero, ventasConstanciaFechaPago, ventasDetraccionSoles, ventasReferencia,
                                 ventasObservacion, ventasUSuario
                                 );
                         } else
                         {
                             ventas.Update(
-                                ventasId, ventasMes, ventasNumeroRegistro, ventasFechaEmision, ventasFechaPago, ventasCdpTipo, ventasCdpSerie, ventasCdpNumero, ventasProveedorTipo,
+                                ventasId, ventasNumeroRegistro, ventasFechaEmision, ventasFechaPago, ventasCdpTipo, ventasCdpSerie, ventasCdpNumero, ventasProveedorTipo,
                                 ventasProveedorNumero, ventasProveedorRazonSocial, ventasCuenta, ventasDescripcion, ventasValorExportacion, ventasBaseImponible,
                                 ventasImporteTotalExonerada, ventasImporteTotalInafecta, ventasIgv, ventasImporteTotal, ventasTipoCambio, ventasDolares,
-                                ventasIgvRetencion, ventasCuentaDestino, ventasCuentaDestinoDescripcion, ventasPago, ventasReferenciaFecha, ventasReferenciaTipo, ventasReferenciaSerie,
+                                ventasIgvRetencion, ventasCuentaDestino, ventasCuentaDestinoDescripcion, ventasReferenciaFecha, ventasReferenciaTipo, ventasReferenciaSerie,
                                 ventasReferenciaNumero, ventasCodigo, ventasConstanciaNumero, ventasConstanciaFechaPago, ventasDetraccionSoles, ventasReferencia,
                                 ventasObservacion, ventasUSuario
                                 );
@@ -456,7 +456,7 @@ namespace Presentacion
                     break;
                 case 12:
                 case 14:
-                case 16:
+                case 15:
                     //Calculos de No BaseInmponible
                     if (dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasBaseImponible"].Value != DBNull.Value)
                     {
@@ -527,7 +527,6 @@ namespace Presentacion
                     break;
                 case 10:
                 case 21:
-                    //case 23:
                     if (dgvRegistroCompras.Rows[e.RowIndex].Cells[e.RowIndex].Value != DBNull.Value)
                     {
                         if (!String.IsNullOrEmpty(dgvRegistroCompras.Rows[e.RowIndex].Cells[e.RowIndex].Value.ToString() as String))
@@ -581,103 +580,123 @@ namespace Presentacion
         {
             switch (e.ColumnIndex)
             {
-                case 3:
-                    string fecha = null, compra = null, venta = null;
-                    DataTable dataTableTipoCambio = new DataTable();
-
-                    if (isDate(dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasFechaEmision"].Value.ToString()))
+                case 2:
+                    if (dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasFechaEmision"].Value != DBNull.Value)
                     {
-                        fecha = dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasFechaEmision"].Value.ToString().Substring(0, 10);
+                        if (!String.IsNullOrEmpty(dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasFechaEmision"].Value.ToString() as String))
+                        {
+                            string fecha = null, compra = null, venta = null;
+                            DataTable dataTableTipoCambio = new DataTable();
 
-                        dataTableTipoCambio = tipoCambio.Show(fecha);
-                        compra = dataTableTipoCambio.Rows[0]["Compra"].ToString();
-                        venta = dataTableTipoCambio.Rows[0]["Venta"].ToString();
+                            if (isDate(dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasFechaEmision"].Value.ToString()))
+                            {
+                                fecha = dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasFechaEmision"].Value.ToString().Substring(0, 10);
 
-                        dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasFechaPago"].Value = fecha;
+                                dataTableTipoCambio = tipoCambio.Show(fecha);
+                                if (dataTableTipoCambio.Rows.Count > 0)
+                                {
+                                    compra = dataTableTipoCambio.Rows[0]["Compra"].ToString();
+                                    venta = dataTableTipoCambio.Rows[0]["Venta"].ToString();
 
-                        if (venta == null)
-                            MessageBox.Show("No se encontro un tipo de cambio para la fecha: " + fecha, "Tipo de Cambio .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        else
-                            dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasTipoCambio"].Value = venta;
-                    } else
-                        MessageBox.Show("(" + dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasFechaEmision"].Value.ToString() + ") No es una fecha valida \nIngrese una fecha válida con los siguientes formatos: \ndd/mm/yyyy o yyyy-mm-dd");
-                    
-                    break;
-                case 9:
-                    string ruc;
-                    string razonSocial;
-                    if (dgvRegistroVentas.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != DBNull.Value) {
-                        ruc = dgvRegistroVentas.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
-                        razonSocial = proveedor.GetSupplierName(ruc);
-
-                        if (razonSocial == null)
-                            MessageBox.Show("No se encontro al proveedor con ruc: " + ruc, "Compras .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        else
-                            dgvRegistroVentas.Rows[e.RowIndex].Cells[e.ColumnIndex + 1].Value = razonSocial;
+                                    dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasFechaPago"].Value = fecha;
+                                    dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasTipoCambio"].Value = venta;
+                                } else MessageBox.Show("No se encontro un tipo de cambio para la fecha: " + fecha, "Tipo de Cambio .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                                MessageBox.Show("(" + dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasFechaEmision"].Value.ToString() + ") No es una fecha valida \nIngrese una fecha válida con los siguientes formatos: \ndd/mm/yyyy o yyyy-mm-dd");
+                        }
                     }
                     break;
-                case 18: // BaseImponible
-                    double biImporteTotal = 0;
-                    if (String.IsNullOrEmpty(dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasImporteTotal"].Value.ToString()))
-                        MessageBox.Show("Ingrese un Importe Total");
-                    else
-                        biImporteTotal = Convert.ToDouble(dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasImporteTotal"].Value.ToString());
+                case 8:
+                    if (dgvRegistroVentas.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != DBNull.Value)
+                    {
+                        if (!String.IsNullOrEmpty(dgvRegistroVentas.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() as String))
+                        {
+                            string ruc;
+                            string razonSocial;
+                            ruc = dgvRegistroVentas.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+                            razonSocial = proveedor.GetSupplierName(ruc);
 
-                    dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasBaseImponible"].Value = Math.Round((biImporteTotal / 1.18), 2);
-                   
-
-                    double igvImporteTotal = 0, igvBaseImponible = 0;
-                    if (String.IsNullOrEmpty(dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasImporteTotal"].Value.ToString()))
-                        MessageBox.Show("Ingrese un Importe Total");
-                    else
-                        igvImporteTotal = Convert.ToDouble(dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasImporteTotal"].Value.ToString());
-
-                    if (String.IsNullOrEmpty(dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasBaseImponible"].Value.ToString()))
-                        MessageBox.Show("Ingrese una Base Imponible");
-                    else
-                        igvBaseImponible = Convert.ToDouble(dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasBaseImponible"].Value.ToString());
-
-                    dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasIgv"].Value = Math.Round((igvImporteTotal - igvBaseImponible), 2);
-
+                            if (razonSocial == null)
+                                MessageBox.Show("No se encontro al proveedor con ruc: " + ruc, "Compras .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            else
+                                dgvRegistroVentas.Rows[e.RowIndex].Cells[e.ColumnIndex + 1].Value = razonSocial;
+                        }
+                    }
                     break;
-                case 11:
-                case 22:
-                    string codigo;
-                    string cuenta;
-                    codigo = dgvRegistroVentas.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
-                    cuenta = planContable.GetAcount(codigo);
-                    if (cuenta == null)
-                        MessageBox.Show("No se encontro una cuenta con código: " + codigo, "Compras .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    else
-                        dgvRegistroVentas.Rows[e.RowIndex].Cells[e.ColumnIndex + 1].Value = cuenta;
+                case 17: // BaseImponible
+                    if (dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasImporteTotal"].Value != DBNull.Value)
+                    {
+                        double biImporteTotal = 0;
+                        if (String.IsNullOrEmpty(dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasImporteTotal"].Value.ToString()))
+                            MessageBox.Show("Ingrese un Importe Total");
+                        else
+                            biImporteTotal = Convert.ToDouble(dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasImporteTotal"].Value.ToString());
+
+                        dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasBaseImponible"].Value = Math.Round((biImporteTotal / 1.18), 2);
+
+
+                        double igvImporteTotal = 0, igvBaseImponible = 0;
+                        if (String.IsNullOrEmpty(dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasImporteTotal"].Value.ToString()))
+                            MessageBox.Show("Ingrese un Importe Total");
+                        else
+                            igvImporteTotal = Convert.ToDouble(dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasImporteTotal"].Value.ToString());
+
+                        if (String.IsNullOrEmpty(dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasBaseImponible"].Value.ToString()))
+                            MessageBox.Show("Ingrese una Base Imponible");
+                        else
+                            igvBaseImponible = Convert.ToDouble(dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasBaseImponible"].Value.ToString());
+
+                        dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasIgv"].Value = Math.Round((igvImporteTotal - igvBaseImponible), 2);
+                    }
+                    break;
+                case 10:
+                case 21:
+                    if (dgvRegistroVentas.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != DBNull.Value)
+                    {
+                        if (!String.IsNullOrEmpty(dgvRegistroVentas.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() as String))
+                        {
+                            string codigo;
+                            string cuenta;
+                            codigo = dgvRegistroVentas.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+                            cuenta = planContable.GetAcount(codigo);
+                            if (cuenta == null)
+                                MessageBox.Show("No se encontro una cuenta con código: " + codigo, "Compras .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            else
+                                dgvRegistroVentas.Rows[e.RowIndex].Cells[e.ColumnIndex + 1].Value = cuenta;
+                        }
+                    }
                     break;
                 case 29:
-                    double ventasImporteTotal = 0;
-                    int ventasCodigo = 0;
-
-                    if (String.IsNullOrEmpty(dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasImporteTotal"].Value.ToString() as String))
-                        MessageBox.Show("Ingrese un Importe Total");
-                    else
-                        ventasImporteTotal = Convert.ToDouble(dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasImporteTotal"].Value.ToString());
-
-                    if (String.IsNullOrEmpty(dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasCodigo"].Value.ToString() as String))
-                        MessageBox.Show("Ingrese un código");
-                    else
-                        ventasCodigo = Convert.ToInt32(dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasCodigo"].Value.ToString());
-
-                    DataTable dataTableDetraccion = new DataTable();
-                    dataTableDetraccion = detraccion.Show(ventasCodigo);
-                    if (dataTableDetraccion.Rows.Count > 0)
+                    if (dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasImporteTotal"].Value != DBNull.Value)
                     {
-                        double detraccionProcentaje = Convert.ToDouble(dataTableDetraccion.Rows[0]["porcentaje"].ToString());
-                        double detraccionMonto = Convert.ToDouble(dataTableDetraccion.Rows[0]["monto"].ToString());
-                        if (ventasImporteTotal > detraccionMonto)
-                            dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasReferencia"].Value = Math.Round(ventasImporteTotal * detraccionProcentaje, 2);
+                        double ventasImporteTotal = 0;
+                        int ventasCodigo = 0;
+
+                        if (String.IsNullOrEmpty(dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasImporteTotal"].Value.ToString() as String))
+                            MessageBox.Show("Ingrese un Importe Total");
                         else
-                            dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasReferencia"].Value = "";
+                            ventasImporteTotal = Convert.ToDouble(dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasImporteTotal"].Value.ToString());
+
+                        if (String.IsNullOrEmpty(dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasCodigo"].Value.ToString() as String))
+                            MessageBox.Show("Ingrese un código");
+                        else
+                            ventasCodigo = Convert.ToInt32(dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasCodigo"].Value.ToString());
+
+                        DataTable dataTableDetraccion = new DataTable();
+                        dataTableDetraccion = detraccion.Show(ventasCodigo);
+                        if (dataTableDetraccion.Rows.Count > 0)
+                        {
+                            double detraccionProcentaje = Convert.ToDouble(dataTableDetraccion.Rows[0]["porcentaje"].ToString());
+                            double detraccionMonto = Convert.ToDouble(dataTableDetraccion.Rows[0]["monto"].ToString());
+                            if (ventasImporteTotal > detraccionMonto)
+                                dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasReferencia"].Value = Math.Round(ventasImporteTotal * detraccionProcentaje, 2);
+                            else
+                                dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasReferencia"].Value = "";
+                        }
+                        else
+                            MessageBox.Show("Ingrese un número entero (1 - 5)");
                     }
-                    else
-                        MessageBox.Show("Ingrese un número entero (1 - 5)");
                     break;
             }
         }
@@ -721,6 +740,7 @@ namespace Presentacion
             e.Row.DefaultCellStyle.Font = new Font(dgvRegistroVentas.Font, FontStyle.Italic);
 
             e.Row.Cells["ventasFechaEmision"].Value = DateTime.UtcNow.ToString("dd/MM/yyyy");
+            e.Row.Cells["ventasProveedorTipo"].Value = "06";
         }
         
 
@@ -971,7 +991,7 @@ namespace Presentacion
             {
                 string txtPlePeriodo = dataTable.Rows[i]["Periodo"].ToString(); //Campo 01
                 string txtPleRegimen1 = dataTable.Rows[i]["Regimen1"].ToString(); //Campo 02
-                string txtPleRegimen2 = dataTable.Rows[i]["Regimen2"].ToString(); //Campo 03
+                string txtPleRegimen2 = dataTable.Rows[i]["Regimen2"].ToString().PadLeft(3, '0'); //Campo 03
                 string txtPleFechaEmision = dataTable.Rows[i]["FechaEmision"].ToString(); //Campo 04
                 string txtPleFechaPago = dataTable.Rows[i]["FechaPago"].ToString(); //Campo 05
                 string txtPleComprobanteTipo = dataTable.Rows[i]["ComprobanteTipo"].ToString(); //Campo 06
@@ -1011,7 +1031,7 @@ namespace Presentacion
                 fichero.WriteLine(
                     txtPlePeriodo + "|" +
                     txtPleRegimen1 + "|" +
-                    txtPleRegimen2 + "|" +
+                    "M" + txtPleRegimen2 + "|" +
                     txtPleFechaEmision + "|" +
                     txtPleFechaPago + "|" +
                     txtPleComprobanteTipo + "|" +
@@ -1143,6 +1163,47 @@ namespace Presentacion
             dgvRegistroCompras.Columns.Remove("ConversionDolarDataGridViewTextBoxColumn");
         }
 
+        private void removeColumnsVentas()
+        {
+            dgvRegistroVentas.Columns.Remove("idLibroVentasDataGridViewTextBoxColumn");
+            dgvRegistroVentas.Columns.Remove("dataGridViewTextBoxColumn5");
+            dgvRegistroVentas.Columns.Remove("dataGridViewTextBoxColumn6");
+            dgvRegistroVentas.Columns.Remove("dataGridViewTextBoxColumn7");
+            dgvRegistroVentas.Columns.Remove("fechaPagoDataGridViewTextBoxColumn1");
+            dgvRegistroVentas.Columns.Remove("cTipoDataGridViewTextBoxColumn1");
+            dgvRegistroVentas.Columns.Remove("cSerieDataGridViewTextBoxColumn1");
+            dgvRegistroVentas.Columns.Remove("cNDocumentoDataGridViewTextBoxColumn1");
+            dgvRegistroVentas.Columns.Remove("pTipoDataGridViewTextBoxColumn1");
+            dgvRegistroVentas.Columns.Remove("pNumeroDataGridViewTextBoxColumn1");
+            dgvRegistroVentas.Columns.Remove("pNombreRazonSocialDataGridViewTextBoxColumn1");
+            dgvRegistroVentas.Columns.Remove("cuentaDataGridViewTextBoxColumn1");
+            dgvRegistroVentas.Columns.Remove("descripcionDataGridViewTextBoxColumn1");
+            dgvRegistroVentas.Columns.Remove("valorExportacionDataGridViewTextBoxColumn");
+            dgvRegistroVentas.Columns.Remove("baseImponibleDataGridViewTextBoxColumn1");
+            dgvRegistroVentas.Columns.Remove("importeTotalExoneradaDataGridViewTextBoxColumn");
+            dgvRegistroVentas.Columns.Remove("importeTotalInafectaDataGridViewTextBoxColumn");
+            dgvRegistroVentas.Columns.Remove("iGVDataGridViewTextBoxColumn1");
+            dgvRegistroVentas.Columns.Remove("importeTotalDataGridViewTextBoxColumn1");
+            dgvRegistroVentas.Columns.Remove("tCDataGridViewTextBoxColumn");
+            dgvRegistroVentas.Columns.Remove("dolaresDataGridViewTextBoxColumn1");
+            dgvRegistroVentas.Columns.Remove("igvRetencionDataGridViewTextBoxColumn");
+            dgvRegistroVentas.Columns.Remove("cuentaDestinoDataGridViewTextBoxColumn1");
+            dgvRegistroVentas.Columns.Remove("pagoDataGridViewTextBoxColumn");
+            dgvRegistroVentas.Columns.Remove("referenciaFechaDataGridViewTextBoxColumn1");
+            dgvRegistroVentas.Columns.Remove("referenciaTipoDataGridViewTextBoxColumn1");
+            dgvRegistroVentas.Columns.Remove("referenciaSerieDataGridViewTextBoxColumn1");
+            dgvRegistroVentas.Columns.Remove("referenciaNumeroDocumentoDataGridViewTextBoxColumn");
+            dgvRegistroVentas.Columns.Remove("codigoDataGridViewTextBoxColumn1");
+            dgvRegistroVentas.Columns.Remove("constanciaNumeroDataGridViewTextBoxColumn1");
+            dgvRegistroVentas.Columns.Remove("constanciaFechaPagoDataGridViewTextBoxColumn1");
+            dgvRegistroVentas.Columns.Remove("detraccionSolesDataGridViewTextBoxColumn");
+            dgvRegistroVentas.Columns.Remove("referenciaDataGridViewTextBoxColumn");
+            dgvRegistroVentas.Columns.Remove("observacionDataGridViewTextBoxColumn");
+            dgvRegistroVentas.Columns.Remove("usuarioDataGridViewTextBoxColumn1");
+            dgvRegistroVentas.Columns.Remove("fechaRegistroDataGridViewTextBoxColumn1");
+            dgvRegistroVentas.Columns.Remove("fechaModificacionDataGridViewTextBoxColumn1");
+            dgvRegistroVentas.Columns.Remove("cuentaDestinoDescripcionDataGridViewTextBoxColumn");
+        }
         private void fillCurrentMonthToolStripButton_Click(object sender, EventArgs e)
         {
             try
