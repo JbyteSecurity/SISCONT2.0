@@ -71,10 +71,14 @@ namespace Presentacion
                 int filtroAnio = Convert.ToInt32(txtNombreAnio.Text);
 
                 this.TAComprasTableAdapter.FillByYearAndMonth(this.dSCompras.tblRegistroCompras, filtroMes, filtroAnio);
+                dgvRegistroCompras.ReadOnly = true;
                 //bindingSourceCompras.DataSource = compras.AllByMonthFilter(filtroAnio, filtroMes).Tables["RegistroComprasFiltro"].DefaultView;
             }
             else
+            {
                 this.TAComprasTableAdapter.FillCurrentMonth(this.dSCompras.tblRegistroCompras);
+                dgvRegistroCompras.ReadOnly = false;
+            }
             #region FillData other option
             //bindingSourceCompras.DataSource = compras.AllCurrentMonth().Tables["RegistroCompras"].DefaultView;
 
@@ -135,9 +139,13 @@ namespace Presentacion
                 int filtroAnio = Convert.ToInt32(txtNombreAnio.Text);
                 //dataTable = ventas.AllByMonthFilter(filtroAnio, filtroMes);
                 this.TAVentasTableAdapter.FillByYearAndMonth(this.dSVentas.tblRegistroVentas, filtroMes, filtroAnio);
-            } else
+                dgvRegistroVentas.ReadOnly = true;
+            }
+            else
+            {
                 this.TAVentasTableAdapter.FillCurrentMonth(this.dSVentas.tblRegistroVentas);
-
+                dgvRegistroVentas.ReadOnly = false;
+            }
             #region Other option FIll Data
             //dataTable = ventas.allByMonth();
 
@@ -667,35 +675,36 @@ namespace Presentacion
                         }
                     }
                     break;
-                case 29:
+                case 27:
                     if (dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasImporteTotal"].Value != DBNull.Value)
                     {
-                        double ventasImporteTotal = 0;
-                        int ventasCodigo = 0;
+                        if (!String.IsNullOrEmpty(dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasCodigo"].Value.ToString() as String))
+                        {
+                            double ventasImporteTotal = 0;
+                            int ventasCodigo = 0;
 
-                        if (String.IsNullOrEmpty(dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasImporteTotal"].Value.ToString() as String))
-                            MessageBox.Show("Ingrese un Importe Total");
-                        else
-                            ventasImporteTotal = Convert.ToDouble(dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasImporteTotal"].Value.ToString());
-
-                        if (String.IsNullOrEmpty(dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasCodigo"].Value.ToString() as String))
-                            MessageBox.Show("Ingrese un código");
-                        else
                             ventasCodigo = Convert.ToInt32(dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasCodigo"].Value.ToString());
 
-                        DataTable dataTableDetraccion = new DataTable();
-                        dataTableDetraccion = detraccion.Show(ventasCodigo);
-                        if (dataTableDetraccion.Rows.Count > 0)
-                        {
-                            double detraccionProcentaje = Convert.ToDouble(dataTableDetraccion.Rows[0]["porcentaje"].ToString());
-                            double detraccionMonto = Convert.ToDouble(dataTableDetraccion.Rows[0]["monto"].ToString());
-                            if (ventasImporteTotal > detraccionMonto)
-                                dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasReferencia"].Value = Math.Round(ventasImporteTotal * detraccionProcentaje, 2);
+                            if (String.IsNullOrEmpty(dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasImporteTotal"].Value.ToString() as String))
+                                MessageBox.Show("Ingrese un Importe Total");
                             else
-                                dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasReferencia"].Value = "";
+                                ventasImporteTotal = Convert.ToDouble(dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasImporteTotal"].Value.ToString());
+
+
+                            DataTable dataTableDetraccion = new DataTable();
+                            dataTableDetraccion = detraccion.Show(ventasCodigo);
+                            if (dataTableDetraccion.Rows.Count > 0)
+                            {
+                                double detraccionProcentaje = Convert.ToDouble(dataTableDetraccion.Rows[0]["porcentaje"].ToString());
+                                double detraccionMonto = Convert.ToDouble(dataTableDetraccion.Rows[0]["monto"].ToString());
+                                if (ventasImporteTotal > detraccionMonto)
+                                    dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasReferencia"].Value = Math.Round(ventasImporteTotal * detraccionProcentaje, 2);
+                                else
+                                    dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasReferencia"].Value = "";
+                            }
+                            else
+                                MessageBox.Show("Ingrese un número entero (1 - 5)");
                         }
-                        else
-                            MessageBox.Show("Ingrese un número entero (1 - 5)");
                     }
                     break;
             }
@@ -1217,5 +1226,10 @@ namespace Presentacion
 
         }
 
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            FillDataGridViewCompras();
+            FillDataGridViewVentas();
+        }
     }
 }

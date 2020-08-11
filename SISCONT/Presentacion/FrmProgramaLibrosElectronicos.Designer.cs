@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -140,10 +140,6 @@
             this.btnGuardarVentas = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dgvRegistroVentas = new ADGV.AdvancedDataGridView();
-            this.BSVentasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dSVentas = new Presentacion.DSVentas();
-            this.TAComprasTableAdapter = new Presentacion.DSComprasTableAdapters.tblRegistroComprasTableAdapter();
-            this.TAVentasTableAdapter = new Presentacion.DSVentasTableAdapters.tblRegistroVentasTableAdapter();
             this.ventasID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ventasNumeroRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ventasFechaEmision = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -215,6 +211,11 @@
             this.fechaRegistroDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaModificacionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cuentaDestinoDescripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BSVentasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dSVentas = new Presentacion.DSVentas();
+            this.TAComprasTableAdapter = new Presentacion.DSComprasTableAdapters.tblRegistroComprasTableAdapter();
+            this.TAVentasTableAdapter = new Presentacion.DSVentasTableAdapters.tblRegistroVentasTableAdapter();
+            this.btnActualizar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabRegistros.SuspendLayout();
@@ -236,6 +237,7 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.btnActualizar);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.txtNombreMes);
@@ -246,13 +248,13 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(12, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1260, 58);
+            this.panel1.Size = new System.Drawing.Size(1260, 55);
             this.panel1.TabIndex = 4;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(187, 5);
+            this.label4.Location = new System.Drawing.Point(323, 4);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(27, 13);
             this.label4.TabIndex = 12;
@@ -267,7 +269,7 @@
             this.panel2.Controls.Add(this.btnCargarCarpeta);
             this.panel2.Location = new System.Drawing.Point(874, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(386, 58);
+            this.panel2.Size = new System.Drawing.Size(386, 52);
             this.panel2.TabIndex = 5;
             // 
             // txtRutaTXT
@@ -281,7 +283,8 @@
             // 
             // btnGenerarTXT
             // 
-            this.btnGenerarTXT.BackColor = System.Drawing.Color.Teal;
+            this.btnGenerarTXT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnGenerarTXT.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnGenerarTXT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerarTXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerarTXT.ForeColor = System.Drawing.SystemColors.Control;
@@ -311,14 +314,14 @@
             // 
             // txtNombreMes
             // 
-            this.txtNombreMes.Location = new System.Drawing.Point(190, 20);
+            this.txtNombreMes.Location = new System.Drawing.Point(326, 19);
             this.txtNombreMes.Name = "txtNombreMes";
             this.txtNombreMes.Size = new System.Drawing.Size(68, 20);
             this.txtNombreMes.TabIndex = 11;
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(264, 19);
+            this.btnBuscar.Location = new System.Drawing.Point(400, 18);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(86, 22);
             this.btnBuscar.TabIndex = 3;
@@ -329,7 +332,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(113, 4);
+            this.label3.Location = new System.Drawing.Point(249, 3);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(26, 13);
             this.label3.TabIndex = 10;
@@ -338,14 +341,14 @@
             // 
             // txtNombreRuc
             // 
-            this.txtNombreRuc.Location = new System.Drawing.Point(10, 20);
+            this.txtNombreRuc.Location = new System.Drawing.Point(146, 19);
             this.txtNombreRuc.Name = "txtNombreRuc";
             this.txtNombreRuc.Size = new System.Drawing.Size(100, 20);
             this.txtNombreRuc.TabIndex = 7;
             // 
             // txtNombreAnio
             // 
-            this.txtNombreAnio.Location = new System.Drawing.Point(116, 20);
+            this.txtNombreAnio.Location = new System.Drawing.Point(252, 19);
             this.txtNombreAnio.Name = "txtNombreAnio";
             this.txtNombreAnio.Size = new System.Drawing.Size(68, 20);
             this.txtNombreAnio.TabIndex = 9;
@@ -353,7 +356,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 4);
+            this.label2.Location = new System.Drawing.Point(143, 3);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(30, 13);
             this.label2.TabIndex = 8;
@@ -393,7 +396,7 @@
             this.panel4.Controls.Add(this.dgvRegistroCompras);
             this.panel4.Location = new System.Drawing.Point(6, 6);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1244, 512);
+            this.panel4.Size = new System.Drawing.Size(1244, 526);
             this.panel4.TabIndex = 4;
             // 
             // dgvRegistroCompras
@@ -487,7 +490,7 @@
             this.dgvRegistroCompras.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvRegistroCompras.Location = new System.Drawing.Point(0, 0);
             this.dgvRegistroCompras.Name = "dgvRegistroCompras";
-            this.dgvRegistroCompras.Size = new System.Drawing.Size(1244, 512);
+            this.dgvRegistroCompras.Size = new System.Drawing.Size(1244, 526);
             this.dgvRegistroCompras.TabIndex = 13;
             this.dgvRegistroCompras.TimeFilter = false;
             this.dgvRegistroCompras.SortStringChanged += new System.EventHandler(this.sgvRegistroCompras_SortStringChanged);
@@ -589,8 +592,8 @@
             // comprasCuenta
             // 
             this.comprasCuenta.DataPropertyName = "Cuenta";
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.Aqua;
-            this.comprasCuenta.DefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.Aqua;
+            this.comprasCuenta.DefaultCellStyle = dataGridViewCellStyle13;
             this.comprasCuenta.HeaderText = "Cuenta";
             this.comprasCuenta.MinimumWidth = 22;
             this.comprasCuenta.Name = "comprasCuenta";
@@ -600,8 +603,8 @@
             // comprasDescripcion
             // 
             this.comprasDescripcion.DataPropertyName = "Descripcion";
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.Aqua;
-            this.comprasDescripcion.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.Aqua;
+            this.comprasDescripcion.DefaultCellStyle = dataGridViewCellStyle14;
             this.comprasDescripcion.HeaderText = "Descripción";
             this.comprasDescripcion.MinimumWidth = 22;
             this.comprasDescripcion.Name = "comprasDescripcion";
@@ -673,8 +676,8 @@
             // comprasConversionDolares
             // 
             this.comprasConversionDolares.DataPropertyName = "ConversionDolar";
-            dataGridViewCellStyle27.BackColor = System.Drawing.Color.Aqua;
-            this.comprasConversionDolares.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.Aqua;
+            this.comprasConversionDolares.DefaultCellStyle = dataGridViewCellStyle15;
             this.comprasConversionDolares.HeaderText = "Conversión Dólares (S/.)";
             this.comprasConversionDolares.MinimumWidth = 22;
             this.comprasConversionDolares.Name = "comprasConversionDolares";
@@ -693,8 +696,8 @@
             // comprasDestino
             // 
             this.comprasDestino.DataPropertyName = "Destino";
-            dataGridViewCellStyle28.BackColor = System.Drawing.Color.Aqua;
-            this.comprasDestino.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.Aqua;
+            this.comprasDestino.DefaultCellStyle = dataGridViewCellStyle16;
             this.comprasDestino.HeaderText = "Destino";
             this.comprasDestino.MinimumWidth = 22;
             this.comprasDestino.Name = "comprasDestino";
@@ -704,8 +707,8 @@
             // comprasDescripcionDestino
             // 
             this.comprasDescripcionDestino.DataPropertyName = "DescripcionDestino";
-            dataGridViewCellStyle29.BackColor = System.Drawing.Color.Aqua;
-            this.comprasDescripcionDestino.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.Aqua;
+            this.comprasDescripcionDestino.DefaultCellStyle = dataGridViewCellStyle17;
             this.comprasDescripcionDestino.HeaderText = "Descripción";
             this.comprasDescripcionDestino.MinimumWidth = 22;
             this.comprasDescripcionDestino.Name = "comprasDescripcionDestino";
@@ -724,8 +727,8 @@
             // comprasCodigo
             // 
             this.comprasCodigo.DataPropertyName = "Codigo";
-            dataGridViewCellStyle30.BackColor = System.Drawing.Color.Aqua;
-            this.comprasCodigo.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.Aqua;
+            this.comprasCodigo.DefaultCellStyle = dataGridViewCellStyle18;
             this.comprasCodigo.HeaderText = "Código";
             this.comprasCodigo.MinimumWidth = 22;
             this.comprasCodigo.Name = "comprasCodigo";
@@ -1175,18 +1178,19 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.btnGuardarCompras);
             this.panel3.Controls.Add(this.btnEliminarCompras);
-            this.panel3.Location = new System.Drawing.Point(6, 524);
+            this.panel3.Location = new System.Drawing.Point(3, 538);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1244, 54);
+            this.panel3.Size = new System.Drawing.Size(1244, 40);
             this.panel3.TabIndex = 3;
             // 
             // btnGuardarCompras
             // 
             this.btnGuardarCompras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnGuardarCompras.FlatAppearance.BorderColor = System.Drawing.Color.Green;
             this.btnGuardarCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarCompras.Location = new System.Drawing.Point(15, 17);
+            this.btnGuardarCompras.Location = new System.Drawing.Point(3, 3);
             this.btnGuardarCompras.Name = "btnGuardarCompras";
-            this.btnGuardarCompras.Size = new System.Drawing.Size(109, 23);
+            this.btnGuardarCompras.Size = new System.Drawing.Size(109, 34);
             this.btnGuardarCompras.TabIndex = 0;
             this.btnGuardarCompras.Text = "Guardar";
             this.btnGuardarCompras.UseVisualStyleBackColor = false;
@@ -1195,11 +1199,12 @@
             // btnEliminarCompras
             // 
             this.btnEliminarCompras.BackColor = System.Drawing.Color.Red;
+            this.btnEliminarCompras.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
             this.btnEliminarCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarCompras.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEliminarCompras.Location = new System.Drawing.Point(142, 17);
+            this.btnEliminarCompras.Location = new System.Drawing.Point(139, 3);
             this.btnEliminarCompras.Name = "btnEliminarCompras";
-            this.btnEliminarCompras.Size = new System.Drawing.Size(128, 23);
+            this.btnEliminarCompras.Size = new System.Drawing.Size(73, 34);
             this.btnEliminarCompras.TabIndex = 0;
             this.btnEliminarCompras.Text = "Eliminar";
             this.btnEliminarCompras.UseVisualStyleBackColor = false;
@@ -1223,19 +1228,20 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.Controls.Add(this.btnEliminarVentas);
             this.panel6.Controls.Add(this.btnGuardarVentas);
-            this.panel6.Location = new System.Drawing.Point(6, 524);
+            this.panel6.Location = new System.Drawing.Point(3, 537);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1247, 54);
+            this.panel6.Size = new System.Drawing.Size(1247, 41);
             this.panel6.TabIndex = 4;
             // 
             // btnEliminarVentas
             // 
             this.btnEliminarVentas.BackColor = System.Drawing.Color.Red;
+            this.btnEliminarVentas.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
             this.btnEliminarVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarVentas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEliminarVentas.Location = new System.Drawing.Point(152, 17);
+            this.btnEliminarVentas.Location = new System.Drawing.Point(139, 4);
             this.btnEliminarVentas.Name = "btnEliminarVentas";
-            this.btnEliminarVentas.Size = new System.Drawing.Size(128, 23);
+            this.btnEliminarVentas.Size = new System.Drawing.Size(71, 34);
             this.btnEliminarVentas.TabIndex = 2;
             this.btnEliminarVentas.Text = "Eliminar";
             this.btnEliminarVentas.UseVisualStyleBackColor = false;
@@ -1244,10 +1250,11 @@
             // btnGuardarVentas
             // 
             this.btnGuardarVentas.BackColor = System.Drawing.Color.Lime;
+            this.btnGuardarVentas.FlatAppearance.BorderColor = System.Drawing.Color.Green;
             this.btnGuardarVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarVentas.Location = new System.Drawing.Point(15, 17);
+            this.btnGuardarVentas.Location = new System.Drawing.Point(3, 3);
             this.btnGuardarVentas.Name = "btnGuardarVentas";
-            this.btnGuardarVentas.Size = new System.Drawing.Size(119, 23);
+            this.btnGuardarVentas.Size = new System.Drawing.Size(108, 34);
             this.btnGuardarVentas.TabIndex = 1;
             this.btnGuardarVentas.Text = "Guardar";
             this.btnGuardarVentas.UseVisualStyleBackColor = false;
@@ -1261,7 +1268,7 @@
             this.panel5.Controls.Add(this.dgvRegistroVentas);
             this.panel5.Location = new System.Drawing.Point(3, 6);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1247, 504);
+            this.panel5.Size = new System.Drawing.Size(1247, 528);
             this.panel5.TabIndex = 2;
             // 
             // dgvRegistroVentas
@@ -1347,29 +1354,11 @@
             this.dgvRegistroVentas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvRegistroVentas.Location = new System.Drawing.Point(0, 0);
             this.dgvRegistroVentas.Name = "dgvRegistroVentas";
-            this.dgvRegistroVentas.Size = new System.Drawing.Size(1247, 504);
+            this.dgvRegistroVentas.Size = new System.Drawing.Size(1247, 528);
             this.dgvRegistroVentas.TabIndex = 2;
             this.dgvRegistroVentas.TimeFilter = false;
             this.dgvRegistroVentas.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegistroVentas_CellEndEdit);
             this.dgvRegistroVentas.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.dgvRegistroVentas_DefaultValueNeeded);
-            // 
-            // BSVentasBindingSource
-            // 
-            this.BSVentasBindingSource.DataMember = "tblRegistroVentas";
-            this.BSVentasBindingSource.DataSource = this.dSVentas;
-            // 
-            // dSVentas
-            // 
-            this.dSVentas.DataSetName = "DSVentas";
-            this.dSVentas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // TAComprasTableAdapter
-            // 
-            this.TAComprasTableAdapter.ClearBeforeFill = true;
-            // 
-            // TAVentasTableAdapter
-            // 
-            this.TAVentasTableAdapter.ClearBeforeFill = true;
             // 
             // ventasID
             // 
@@ -1969,6 +1958,37 @@
             this.cuentaDestinoDescripcionDataGridViewTextBoxColumn.Name = "cuentaDestinoDescripcionDataGridViewTextBoxColumn";
             this.cuentaDestinoDescripcionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
+            // BSVentasBindingSource
+            // 
+            this.BSVentasBindingSource.DataMember = "tblRegistroVentas";
+            this.BSVentasBindingSource.DataSource = this.dSVentas;
+            // 
+            // dSVentas
+            // 
+            this.dSVentas.DataSetName = "DSVentas";
+            this.dSVentas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // TAComprasTableAdapter
+            // 
+            this.TAComprasTableAdapter.ClearBeforeFill = true;
+            // 
+            // TAVentasTableAdapter
+            // 
+            this.TAVentasTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.BackColor = System.Drawing.Color.Aqua;
+            this.btnActualizar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.Location = new System.Drawing.Point(10, 6);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(86, 34);
+            this.btnActualizar.TabIndex = 13;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
             // FrmProgramaLibrosElectronicos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2186,5 +2206,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaRegistroDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaModificacionDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn cuentaDestinoDescripcionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnActualizar;
     }
 }
