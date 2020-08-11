@@ -71,7 +71,9 @@ namespace Presentacion
                 int filtroAnio = Convert.ToInt32(txtNombreAnio.Text);
 
                 this.TAComprasTableAdapter.FillByYearAndMonth(this.dSCompras.tblRegistroCompras, filtroMes, filtroAnio);
+                if (Convert.ToString(filtroMes) != DateTime.UtcNow.ToString("MM"))
                 dgvRegistroCompras.ReadOnly = true;
+
                 //bindingSourceCompras.DataSource = compras.AllByMonthFilter(filtroAnio, filtroMes).Tables["RegistroComprasFiltro"].DefaultView;
             }
             else
@@ -537,7 +539,7 @@ namespace Presentacion
                 case 21:
                     if (dgvRegistroCompras.Rows[e.RowIndex].Cells[e.RowIndex].Value != DBNull.Value)
                     {
-                        if (!String.IsNullOrEmpty(dgvRegistroCompras.Rows[e.RowIndex].Cells[e.RowIndex].Value.ToString() as String))
+                        if (!String.IsNullOrEmpty(dgvRegistroCompras.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString()))
                         {
                             string codigo = dgvRegistroCompras.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
                             string cuenta = planContable.GetAcount(codigo);

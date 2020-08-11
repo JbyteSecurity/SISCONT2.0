@@ -23,6 +23,7 @@ namespace Presentacion
         private void FrmTipoCambio_Load(object sender, EventArgs e)
         {
             All();
+            txtFecha.Text = DateTime.UtcNow.ToString("dd/MM/yyyy");
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
