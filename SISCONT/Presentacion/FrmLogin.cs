@@ -42,10 +42,12 @@ namespace Presentacion
             string user = txtUsuario.Text.ToLower();
             string contrasenia = txtContrasenia.Text;
 
-            if (!user.Equals("") && !contrasenia.Equals(""))
+            if (user != "" && contrasenia != "")
             {
 
                 DataTable dataTableLogin = new DataTable();
+
+                contrasenia = usuario.GetSHA1(contrasenia);
 
                 dataTableLogin = usuario.Login(user, contrasenia);
 

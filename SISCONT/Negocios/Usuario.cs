@@ -11,7 +11,7 @@ namespace Negocios
     {
         private DaoUsuario daoUsuario = new DaoUsuario();
 
-        public DataTable Login(string usuario, string contrasenia) { return daoUsuario.Login(usuario, GetSHA1(contrasenia)); }
+        public DataTable Login(string usuario, string contrasenia) { return daoUsuario.Login(usuario, contrasenia); }
 
         public string GetSHA1(String password)
         {

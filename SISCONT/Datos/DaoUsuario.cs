@@ -80,7 +80,7 @@ namespace Datos
             sqlCommand.CommandType = CommandType.StoredProcedure;
 
             sqlCommand.Parameters.AddWithValue("@Usuario", usuario);
-            sqlCommand.Parameters.AddWithValue("@Contrasenia", GetSHA1(contrasenia));
+            sqlCommand.Parameters.AddWithValue("@Contrasenia", contrasenia);
             sqlCommand.Parameters.AddWithValue("@Nombre", nombre);
             sqlCommand.Parameters.AddWithValue("@Correo", correo);
             sqlCommand.Parameters.AddWithValue("@Telefono", telefono);
@@ -104,7 +104,7 @@ namespace Datos
 
             sqlCommand.Parameters.AddWithValue("@idUsuario", id);
             sqlCommand.Parameters.AddWithValue("@Usuario", usuario);
-            sqlCommand.Parameters.AddWithValue("@Contrasenia", GetSHA1(contrasenia));
+            sqlCommand.Parameters.AddWithValue("@Contrasenia", contrasenia);
             sqlCommand.Parameters.AddWithValue("@Nombre", nombre);
             sqlCommand.Parameters.AddWithValue("@Correo", correo);
             sqlCommand.Parameters.AddWithValue("@Telefono", telefono);
@@ -136,19 +136,6 @@ namespace Datos
             }
             else
                 return false;
-        }
-
-        public string GetSHA1(String password)
-        {
-            SHA1 sha1 = SHA1CryptoServiceProvider.Create();
-            Byte[] textOriginal = ASCIIEncoding.Default.GetBytes(password);
-            Byte[] hash = sha1.ComputeHash(textOriginal);
-            StringBuilder cadena = new StringBuilder();
-            foreach (byte i in hash)
-            {
-                cadena.AppendFormat("{0:x2}", i);
-            }
-            return cadena.ToString();
         }
     }
 }
