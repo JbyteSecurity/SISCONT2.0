@@ -11,12 +11,7 @@ namespace Negocios
     {
         private DaoUsuario daoUsuario = new DaoUsuario();
 
-        public DataTable Login(string usuario, string contrasenia)
-        {
-            DataTable dataTableLogin = new DataTable();
-            dataTableLogin = daoUsuario.Login(usuario, contrasenia);
-            return dataTableLogin;
-        }
+        public DataTable Login(string usuario, string contrasenia) { return daoUsuario.Login(usuario, GetSHA1(contrasenia)); }
 
         public string GetSHA1(String password)
         {
@@ -30,5 +25,20 @@ namespace Negocios
             }
             return cadena.ToString();
         }
+
+        public DataTable All() { return daoUsuario.All(); }
+
+        public DataTable Show(string usuario) { return daoUsuario.Show(usuario); }
+
+        public bool Insert(string usuario, string contrasenia, string nombre, string correo, string telefono, int rolId) {
+            return daoUsuario.Insert(usuario, GetSHA1(contrasenia), nombre, correo, telefono, rolId);
+        }
+
+        public bool Update(int id, string usuario, string contrasenia, string nombre, string correo, string telefono, int rolId)
+        {
+            return daoUsuario.Update(id, usuario, GetSHA1(contrasenia), nombre, correo, telefono, rolId);
+        }
+
+        public bool Destroy(int id) { return daoUsuario.Destroy(id); }
     }
 }

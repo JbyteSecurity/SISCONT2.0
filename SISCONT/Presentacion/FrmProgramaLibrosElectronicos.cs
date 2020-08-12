@@ -42,6 +42,10 @@ namespace Presentacion
 
             txtNombreAnio.Text = DateTime.UtcNow.ToString("yyyy");
             txtNombreMes.Text = DateTime.UtcNow.ToString("MM");
+
+            dgvRegistroCompras.RowHeadersVisible = false;
+            dgvRegistroCompras.DefaultCellStyle.Font = new Font("Calibri", 10, FontStyle.Regular);
+            dgvRegistroCompras.ColumnHeadersDefaultCellStyle.Font = new Font("Calibri", 10, FontStyle.Regular);
         }
 
         private void cellContentClickEvent(object sender, DataGridViewCellEventArgs e)
@@ -430,18 +434,28 @@ namespace Presentacion
                             {
                                 fecha = dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasFechaEmision"].Value.ToString();
 
-                                dataTableTipoCambio = tipoCambio.Show(fecha);
-                                if (dataTableTipoCambio.Rows.Count > 0)
+                                if (DateTime.Parse(fecha) <= DateTime.Parse(DateTime.UtcNow.ToString("dd/MM/yyyy")))
                                 {
-                                    compra = dataTableTipoCambio.Rows[0]["Compra"].ToString();
-                                    venta = dataTableTipoCambio.Rows[0]["Venta"].ToString();
+                                    dataTableTipoCambio = tipoCambio.Show(fecha);
+                                    if (dataTableTipoCambio.Rows.Count > 0)
+                                    {
+                                        compra = dataTableTipoCambio.Rows[0]["Compra"].ToString();
+                                        venta = dataTableTipoCambio.Rows[0]["Venta"].ToString();
 
 
-                                    dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasTipoCambio"].Value = venta;
+                                        dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasTipoCambio"].Value = venta;
+                                        dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasFechaPago"].Value = fecha;
+                                    }
+                                    else
+                                        MessageBox.Show("No se encontro un tipo de cambio para la fecha: " + fecha, "Tipo de Cambio .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 }
                                 else
-                                    MessageBox.Show("No se encontro un tipo de cambio para la fecha: " + fecha, "Tipo de Cambio .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasFechaPago"].Value = fecha;
+                                {
+                                    MessageBox.Show("No se aceptan Fechas Futuras");
+                                    dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasFechaPago"].Value = "";
+                                    dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasFechaEmision"].Value = "";
+                                    dgvRegistroCompras.CurrentCell = dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasFechaEmision"];
+                                }
                             }
                             else
                                 MessageBox.Show("(" + dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasFechaEmision"].Value.ToString() + ") No es una fecha valida \nIngrese una fecha válida con los siguientes formatos: \ndd/mm/yyyy o yyyy-mm-dd");
@@ -616,6 +630,7 @@ namespace Presentacion
                     {
                         if (!String.IsNullOrEmpty(dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasFechaEmision"].Value.ToString() as String))
                         {
+                            
                             string fecha = null, compra = null, venta = null;
                             DataTable dataTableTipoCambio = new DataTable();
 
@@ -623,18 +638,29 @@ namespace Presentacion
                             {
                                 fecha = dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasFechaEmision"].Value.ToString().Substring(0, 10);
 
-                                dataTableTipoCambio = tipoCambio.Show(fecha);
-                                if (dataTableTipoCambio.Rows.Count > 0)
+                                if (DateTime.Parse(fecha) <= DateTime.Parse(DateTime.UtcNow.ToString("dd/MM/yyyy")))
                                 {
-                                    compra = dataTableTipoCambio.Rows[0]["Compra"].ToString();
-                                    venta = dataTableTipoCambio.Rows[0]["Venta"].ToString();
 
-                                    dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasFechaPago"].Value = fecha;
-                                    dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasTipoCambio"].Value = venta;
-                                } else MessageBox.Show("No se encontro un tipo de cambio para la fecha: " + fecha, "Tipo de Cambio .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    dataTableTipoCambio = tipoCambio.Show(fecha);
+                                    if (dataTableTipoCambio.Rows.Count > 0)
+                                    {
+                                        compra = dataTableTipoCambio.Rows[0]["Compra"].ToString();
+                                        venta = dataTableTipoCambio.Rows[0]["Venta"].ToString();
+
+                                        dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasFechaPago"].Value = fecha;
+                                        dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasTipoCambio"].Value = venta;
+                                    }
+                                    else MessageBox.Show("No se encontro un tipo de cambio para la fecha: " + fecha, "Tipo de Cambio .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                                else
+                                {
+                                    MessageBox.Show("No se aceptan Fechas Futuras");
+                                    dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasFechaPago"].Value = "";
+                                    dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasFechaEmision"].Value = "";
+                                    dgvRegistroVentas.CurrentCell = dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasFechaEmision"];
+                                }
                             }
-                            else
-                                MessageBox.Show("(" + dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasFechaEmision"].Value.ToString() + ") No es una fecha valida \nIngrese una fecha válida con los siguientes formatos: \ndd/mm/yyyy o yyyy-mm-dd");
+                            else MessageBox.Show("(" + dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasFechaEmision"].Value.ToString() + ") No es una fecha valida \nIngrese una fecha válida con los siguientes formatos: \ndd/mm/yyyy o yyyy-mm-dd");
                         }
                     }
                     break;
@@ -746,13 +772,16 @@ namespace Presentacion
         private void Destroy()
         {
             int id = Convert.ToInt32(dgvRegistroCompras.CurrentRow.Cells["comprasID"].Value);
-            if (compras.Destroy(id))
+            DialogResult DialogResultDestroy = MessageBox.Show("¿Realmente quieres eliminar está compra?", "Compras .::. Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (DialogResultDestroy == DialogResult.Yes)
             {
-                MessageBox.Show("Compra Eliminada", "Compras .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                FillDataGridViewCompras();
+                if (compras.Destroy(id))
+                {
+                    FillDataGridViewCompras();
+                }
+                else
+                    MessageBox.Show("Compra NO Eliminada", "Compras .::. Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else
-                MessageBox.Show("Compra NO Eliminada", "Compras .::. Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
 
@@ -810,7 +839,7 @@ namespace Presentacion
                 GenerateComprasTXT();
                 GenerateCompras82TXT();
                 GenerateVentasTXT();
-                MessageBox.Show("Archivos txt Crerados correctamente");
+                //MessageBox.Show("Archivos txt Crerados correctamente");
             } else MessageBox.Show("Los compos RUC, Año y Mes son Obligatorios", "PLE .::. Generación de TXTs", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -928,7 +957,7 @@ namespace Presentacion
             for (int i = 0; i < dataTable.Rows.Count; i++) {
                 string txtPlePeriodo = dataTable.Rows[i]["Periodo"].ToString(); //Campo 01
                 string txtPleRegimen1 = dataTable.Rows[i]["Regimen1"].ToString(); //Campo 02
-                string txtPleRegimen2 = dataTable.Rows[i]["Regimen2"].ToString(); //Campo 03
+                string txtPleRegimen2 = dataTable.Rows[i]["Regimen2"].ToString().PadLeft(3, '0'); //Campo 03
                 string txtPleFechaEmision = dataTable.Rows[i]["FechaEmision"].ToString(); //Campo 04
                 string txtPleFechaPago = dataTable.Rows[i]["FechaPago"].ToString(); //Campo 05
                 string txtPleComprobanteTipo = dataTable.Rows[i]["ComprobanteTipo"].ToString(); //Campo 06
@@ -974,7 +1003,7 @@ namespace Presentacion
                 fichero.WriteLine(
                     txtPlePeriodo + "|" +
                     txtPleRegimen1 + "|" +
-                    txtPleRegimen2 + "|" +
+                    "M" + txtPleRegimen2 + "|" +
                     txtPleFechaEmision + "|" +
                     txtPleFechaPago + "|" +
                     txtPleComprobanteTipo + "|" +
@@ -1257,6 +1286,29 @@ namespace Presentacion
         {
             FillDataGridViewCompras();
             FillDataGridViewVentas();
+        }
+
+        private void dgvRegistroCompras_KeyDown(object sender, KeyEventArgs e)
+        {
+            float fontSize = dgvRegistroCompras.DefaultCellStyle.Font.Size;
+            float fontHeaderSize = dgvRegistroCompras.ColumnHeadersDefaultCellStyle.Font.Size;
+
+            if (e.KeyCode == Keys.Add)//Control con '+'
+            {
+                dgvRegistroCompras.DefaultCellStyle.Font = new Font("Tahoma", fontSize + 1, FontStyle.Regular);
+                dgvRegistroCompras.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", fontHeaderSize + 1, FontStyle.Bold);
+            }
+            else if (e.KeyCode == Keys.Subtract)//Control con '-'
+            {
+                dgvRegistroCompras.DefaultCellStyle.Font = new Font("Tahoma", fontSize - 1, FontStyle.Regular);
+                dgvRegistroCompras.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", fontHeaderSize - 1, FontStyle.Bold);
+            }
+        }
+
+        private void btnAgregarFila_Click(object sender, EventArgs e)
+        {
+            dgvRegistroCompras.Rows[dgvRegistroCompras.Rows.Count - 1].Cells[0].Value = dgvRegistroCompras.Rows.Count;
+            dgvRegistroCompras.Rows.Add();
         }
     }
 }

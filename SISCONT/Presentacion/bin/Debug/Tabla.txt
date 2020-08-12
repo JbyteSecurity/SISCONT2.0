@@ -120,6 +120,20 @@
 		  3.561
         </td>
         
+      			
+        
+        <td width='4%' align='center' class="h3">
+		  <strong>12</strong>
+        </td>
+          
+        <td width='8%' align='center' class="tne10">
+          3.560
+        </td>
+          
+        <td width='8%' align='center' class="tne10">
+		  3.563
+        </td>
+        
       
     
     

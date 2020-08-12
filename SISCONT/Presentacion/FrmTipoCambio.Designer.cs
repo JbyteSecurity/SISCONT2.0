@@ -46,9 +46,9 @@
             // 
             this.btnNuevo.BackColor = System.Drawing.Color.Gray;
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnNuevo.Location = new System.Drawing.Point(488, 93);
+            this.btnNuevo.Location = new System.Drawing.Point(13, 93);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(104, 23);
+            this.btnNuevo.Size = new System.Drawing.Size(58, 23);
             this.btnNuevo.TabIndex = 22;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
@@ -56,7 +56,7 @@
             // 
             // txtVenta
             // 
-            this.txtVenta.Location = new System.Drawing.Point(488, 67);
+            this.txtVenta.Location = new System.Drawing.Point(62, 67);
             this.txtVenta.Name = "txtVenta";
             this.txtVenta.Size = new System.Drawing.Size(104, 20);
             this.txtVenta.TabIndex = 21;
@@ -64,7 +64,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(436, 67);
+            this.label3.Location = new System.Drawing.Point(10, 67);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 29;
@@ -74,7 +74,7 @@
             // 
             this.btnEditar.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Location = new System.Drawing.Point(350, 200);
+            this.btnEditar.Location = new System.Drawing.Point(429, 179);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 23);
             this.btnEditar.TabIndex = 25;
@@ -87,7 +87,7 @@
             this.btnEliminar.BackColor = System.Drawing.Color.Red;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnEliminar.Location = new System.Drawing.Point(269, 200);
+            this.btnEliminar.Location = new System.Drawing.Point(510, 179);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 24;
@@ -99,9 +99,9 @@
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.Lime;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Location = new System.Drawing.Point(488, 122);
+            this.btnGuardar.Location = new System.Drawing.Point(77, 93);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(104, 51);
+            this.btnGuardar.Size = new System.Drawing.Size(89, 23);
             this.btnGuardar.TabIndex = 23;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -109,7 +109,7 @@
             // 
             // txtCompra
             // 
-            this.txtCompra.Location = new System.Drawing.Point(488, 41);
+            this.txtCompra.Location = new System.Drawing.Point(62, 41);
             this.txtCompra.Name = "txtCompra";
             this.txtCompra.Size = new System.Drawing.Size(104, 20);
             this.txtCompra.TabIndex = 20;
@@ -117,7 +117,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(436, 41);
+            this.label2.Location = new System.Drawing.Point(10, 41);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 28;
@@ -126,14 +126,14 @@
             // dgvTipoCambio
             // 
             this.dgvTipoCambio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTipoCambio.Location = new System.Drawing.Point(12, 12);
+            this.dgvTipoCambio.Location = new System.Drawing.Point(172, 12);
             this.dgvTipoCambio.Name = "dgvTipoCambio";
-            this.dgvTipoCambio.Size = new System.Drawing.Size(413, 182);
+            this.dgvTipoCambio.Size = new System.Drawing.Size(413, 161);
             this.dgvTipoCambio.TabIndex = 26;
             // 
             // txtFecha
             // 
-            this.txtFecha.Location = new System.Drawing.Point(488, 12);
+            this.txtFecha.Location = new System.Drawing.Point(62, 12);
             this.txtFecha.Name = "txtFecha";
             this.txtFecha.Size = new System.Drawing.Size(104, 20);
             this.txtFecha.TabIndex = 19;
@@ -141,7 +141,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(436, 15);
+            this.label1.Location = new System.Drawing.Point(10, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 13);
             this.label1.TabIndex = 27;
@@ -151,7 +151,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(607, 236);
+            this.ClientSize = new System.Drawing.Size(600, 215);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.txtVenta);
             this.Controls.Add(this.label3);

@@ -11,34 +11,28 @@ namespace Negocios
         private DaoTipoCambio daoTipoCambio = new DaoTipoCambio();
         public DataTable Show(string fecha)
         {
-            DataTable dataTable = new DataTable();
-            dataTable = daoTipoCambio.Show(fecha);
-            return dataTable;
+            return daoTipoCambio.Show(fecha);
         }
 
         public DataTable All()
         {
-            DataTable dataTableSuppliers = new DataTable();
-            dataTableSuppliers = daoTipoCambio.All(); ;
-            return dataTableSuppliers;
+            return daoTipoCambio.All();
         }
 
         public bool Insert(string fecha, double compra, double venta)
         {
-            daoTipoCambio.Insert(fecha, compra, venta);
-            return true;
+            return daoTipoCambio.Insert(fecha, compra, venta);
         }
 
         public bool Update(int id, string fecha, double compra, double venta)
         {
-            daoTipoCambio.Update(id, fecha, compra, venta);
-            return true;
+            
+            return daoTipoCambio.Update(id, fecha, compra, venta);
         }
 
         public bool Destroy(int id)
         {
-            daoTipoCambio.Destroy(id);
-            return true;
+            return daoTipoCambio.Destroy(id);
         }
     }
 }

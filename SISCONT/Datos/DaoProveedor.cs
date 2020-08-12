@@ -52,7 +52,7 @@ namespace Datos
 
         }
 
-        public void Insert(string ruc, string razonSocial)
+        public bool Insert(string ruc, string razonSocial)
         {
             sqlCommand.Connection = conexion.OpenConnection();
             sqlCommand.CommandText = "sp_insert_proveedor";
@@ -61,12 +61,16 @@ namespace Datos
             sqlCommand.Parameters.AddWithValue("@Ruc", ruc);
             sqlCommand.Parameters.AddWithValue("@RazonSocial", razonSocial);
 
-            sqlCommand.ExecuteNonQuery();
-            sqlCommand.Parameters.Clear();
-            conexion.CloseConnection();
+            if(sqlCommand.ExecuteNonQuery() > 0)
+            {
+                sqlCommand.Parameters.Clear();
+                conexion.CloseConnection();
+                return true;
+            } return false;
+            
         }
 
-        public void Update(int id, string ruc, string razonSocial)
+        public bool Update(int id, string ruc, string razonSocial)
         {
             sqlCommand.Connection = conexion.OpenConnection();
             sqlCommand.CommandText = "sp_update_proveedor";
@@ -76,20 +80,28 @@ namespace Datos
             sqlCommand.Parameters.AddWithValue("@Ruc", ruc);
             sqlCommand.Parameters.AddWithValue("@RazonSocial", razonSocial);
 
-            sqlCommand.ExecuteNonQuery();
-            sqlCommand.Parameters.Clear();
-            conexion.CloseConnection();
+            if (sqlCommand.ExecuteNonQuery() > 0)
+            {
+                sqlCommand.Parameters.Clear();
+                conexion.CloseConnection();
+                return true;
+            }
+            return false;
         }
 
-        public void Destroy(int id)
+        public bool Destroy(int id)
         {
             sqlCommand.Connection = conexion.OpenConnection();
             sqlCommand.CommandText = "sp_destroy_proveedor";
             sqlCommand.CommandType = CommandType.StoredProcedure;
             sqlCommand.Parameters.AddWithValue("@id", id);
-            sqlCommand.ExecuteNonQuery();
-            sqlCommand.Parameters.Clear();
-            conexion.CloseConnection();
+            if (sqlCommand.ExecuteNonQuery() > 0)
+            {
+                sqlCommand.Parameters.Clear();
+                conexion.CloseConnection();
+                return true;
+            }
+            return false;
         }
     }
 }

@@ -24,20 +24,18 @@ namespace Negocios
 
         public bool Insert(string ruc, string razonSocial)
         {
-            daoProveedor.Insert(ruc, razonSocial);
-            return true;
+            
+            return daoProveedor.Insert(ruc, razonSocial);
         }
 
         public bool Update(int id, string ruc, string razonSocial)
         {
-            daoProveedor.Update(id, ruc, razonSocial);
-            return true;
+            return daoProveedor.Update(id, ruc, razonSocial);
         }
 
         public bool Destroy(int id)
         {
-            daoProveedor.Destroy(id);
-            return true;
+            return daoProveedor.Destroy(id);
         }
     }
 }

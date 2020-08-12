@@ -52,92 +52,6 @@
             this.tabCompras = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dgvRegistroCompras = new ADGV.AdvancedDataGridView();
-            this.BSComprasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dSCompras = new Presentacion.DSCompras();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.btnGuardarCompras = new System.Windows.Forms.Button();
-            this.btnEliminarCompras = new System.Windows.Forms.Button();
-            this.tabVentas = new System.Windows.Forms.TabPage();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.btnEliminarVentas = new System.Windows.Forms.Button();
-            this.btnGuardarVentas = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.dgvRegistroVentas = new ADGV.AdvancedDataGridView();
-            this.BSVentasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dSVentas = new Presentacion.DSVentas();
-            this.TAComprasTableAdapter = new Presentacion.DSComprasTableAdapters.tblRegistroComprasTableAdapter();
-            this.TAVentasTableAdapter = new Presentacion.DSVentasTableAdapters.tblRegistroVentasTableAdapter();
-            this.ventasID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasNumeroRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasFechaEmision = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasFechaPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasCdpTipo = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.ventasCdpSerie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasCdpNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasProveedorTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasProveedorNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasProveedorRazonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasValorExportacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasBaseImponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasImporteTotalExonerada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasImporteTotalInafecta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasIgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasImporteTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasTipoCambio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasDolares = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasIgvRetencion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasCuentaDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasCuentaDestinoDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasReferenciaFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasReferenciaTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasReferenciaSerie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasReferenciaNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasConstanciaNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasConstanciaFechaPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasDetraccionSoles = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasReferencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventasObservacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idLibroVentasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaPagoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cTipoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cSerieDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cNDocumentoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pTipoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pNumeroDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pNombreRazonSocialDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cuentaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorExportacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.baseImponibleDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.importeTotalExoneradaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.importeTotalInafectaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iGVDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.importeTotalDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dolaresDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.igvRetencionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cuentaDestinoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pagoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.referenciaFechaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.referenciaTipoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.referenciaSerieDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.referenciaNumeroDocumentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.constanciaNumeroDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.constanciaFechaPagoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.detraccionSolesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.referenciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.observacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuarioDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaRegistroDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaModificacionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cuentaDestinoDescripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comprasID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comprasNumeroRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comprasFechaEmision = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -216,6 +130,93 @@
             this.usuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaRegistroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaModificacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BSComprasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dSCompras = new Presentacion.DSCompras();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnGuardarCompras = new System.Windows.Forms.Button();
+            this.btnEliminarCompras = new System.Windows.Forms.Button();
+            this.tabVentas = new System.Windows.Forms.TabPage();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.btnEliminarVentas = new System.Windows.Forms.Button();
+            this.btnGuardarVentas = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.dgvRegistroVentas = new ADGV.AdvancedDataGridView();
+            this.ventasID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasNumeroRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasFechaEmision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasFechaPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasCdpTipo = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.ventasCdpSerie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasCdpNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasProveedorTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasProveedorNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasProveedorRazonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasValorExportacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasBaseImponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasImporteTotalExonerada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasImporteTotalInafecta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasIgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasImporteTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasTipoCambio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasDolares = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasIgvRetencion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasCuentaDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasCuentaDestinoDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasReferenciaFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasReferenciaTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasReferenciaSerie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasReferenciaNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasConstanciaNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasConstanciaFechaPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasDetraccionSoles = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasReferencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventasObservacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idLibroVentasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaPagoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cTipoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cSerieDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cNDocumentoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pTipoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pNumeroDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pNombreRazonSocialDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cuentaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorExportacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.baseImponibleDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.importeTotalExoneradaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.importeTotalInafectaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iGVDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.importeTotalDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dolaresDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.igvRetencionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cuentaDestinoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pagoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.referenciaFechaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.referenciaTipoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.referenciaSerieDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.referenciaNumeroDocumentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.constanciaNumeroDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.constanciaFechaPagoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detraccionSolesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.referenciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.observacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuarioDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaRegistroDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaModificacionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cuentaDestinoDescripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BSVentasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dSVentas = new Presentacion.DSVentas();
+            this.TAComprasTableAdapter = new Presentacion.DSComprasTableAdapters.tblRegistroComprasTableAdapter();
+            this.TAVentasTableAdapter = new Presentacion.DSVentasTableAdapters.tblRegistroVentasTableAdapter();
+            this.btnAgregarFila = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabRegistros.SuspendLayout();
@@ -510,826 +511,7 @@
             this.dgvRegistroCompras.FilterStringChanged += new System.EventHandler(this.sgvRegistroCompras_FilterStringChanged);
             this.dgvRegistroCompras.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegistroCompras_CellEndEdit);
             this.dgvRegistroCompras.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.dgvCompras_DefaultValuesNeeded);
-            // 
-            // BSComprasBindingSource
-            // 
-            this.BSComprasBindingSource.DataMember = "tblRegistroCompras";
-            this.BSComprasBindingSource.DataSource = this.dSCompras;
-            // 
-            // dSCompras
-            // 
-            this.dSCompras.DataSetName = "DSCompras";
-            this.dSCompras.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // panel3
-            // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.Controls.Add(this.btnGuardarCompras);
-            this.panel3.Controls.Add(this.btnEliminarCompras);
-            this.panel3.Location = new System.Drawing.Point(3, 538);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1244, 40);
-            this.panel3.TabIndex = 3;
-            // 
-            // btnGuardarCompras
-            // 
-            this.btnGuardarCompras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnGuardarCompras.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.btnGuardarCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarCompras.Location = new System.Drawing.Point(3, 3);
-            this.btnGuardarCompras.Name = "btnGuardarCompras";
-            this.btnGuardarCompras.Size = new System.Drawing.Size(109, 34);
-            this.btnGuardarCompras.TabIndex = 0;
-            this.btnGuardarCompras.Text = "Guardar";
-            this.btnGuardarCompras.UseVisualStyleBackColor = false;
-            this.btnGuardarCompras.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnEliminarCompras
-            // 
-            this.btnEliminarCompras.BackColor = System.Drawing.Color.Red;
-            this.btnEliminarCompras.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
-            this.btnEliminarCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarCompras.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEliminarCompras.Location = new System.Drawing.Point(139, 3);
-            this.btnEliminarCompras.Name = "btnEliminarCompras";
-            this.btnEliminarCompras.Size = new System.Drawing.Size(73, 34);
-            this.btnEliminarCompras.TabIndex = 0;
-            this.btnEliminarCompras.Text = "Eliminar";
-            this.btnEliminarCompras.UseVisualStyleBackColor = false;
-            this.btnEliminarCompras.Click += new System.EventHandler(this.btnEliminarCompras_Click);
-            // 
-            // tabVentas
-            // 
-            this.tabVentas.Controls.Add(this.panel6);
-            this.tabVentas.Controls.Add(this.panel5);
-            this.tabVentas.Location = new System.Drawing.Point(4, 22);
-            this.tabVentas.Name = "tabVentas";
-            this.tabVentas.Padding = new System.Windows.Forms.Padding(3);
-            this.tabVentas.Size = new System.Drawing.Size(1256, 584);
-            this.tabVentas.TabIndex = 1;
-            this.tabVentas.Text = "Ventas";
-            this.tabVentas.UseVisualStyleBackColor = true;
-            // 
-            // panel6
-            // 
-            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel6.Controls.Add(this.btnEliminarVentas);
-            this.panel6.Controls.Add(this.btnGuardarVentas);
-            this.panel6.Location = new System.Drawing.Point(3, 537);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1247, 41);
-            this.panel6.TabIndex = 4;
-            // 
-            // btnEliminarVentas
-            // 
-            this.btnEliminarVentas.BackColor = System.Drawing.Color.Red;
-            this.btnEliminarVentas.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
-            this.btnEliminarVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarVentas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEliminarVentas.Location = new System.Drawing.Point(127, 3);
-            this.btnEliminarVentas.Name = "btnEliminarVentas";
-            this.btnEliminarVentas.Size = new System.Drawing.Size(71, 34);
-            this.btnEliminarVentas.TabIndex = 2;
-            this.btnEliminarVentas.Text = "Eliminar";
-            this.btnEliminarVentas.UseVisualStyleBackColor = false;
-            this.btnEliminarVentas.Click += new System.EventHandler(this.btnEliminarVentas_Click);
-            // 
-            // btnGuardarVentas
-            // 
-            this.btnGuardarVentas.BackColor = System.Drawing.Color.Lime;
-            this.btnGuardarVentas.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.btnGuardarVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarVentas.Location = new System.Drawing.Point(3, 3);
-            this.btnGuardarVentas.Name = "btnGuardarVentas";
-            this.btnGuardarVentas.Size = new System.Drawing.Size(108, 34);
-            this.btnGuardarVentas.TabIndex = 1;
-            this.btnGuardarVentas.Text = "Guardar";
-            this.btnGuardarVentas.UseVisualStyleBackColor = false;
-            this.btnGuardarVentas.Click += new System.EventHandler(this.btnGuardarVentas_Click);
-            // 
-            // panel5
-            // 
-            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel5.Controls.Add(this.dgvRegistroVentas);
-            this.panel5.Location = new System.Drawing.Point(3, 6);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1247, 528);
-            this.panel5.TabIndex = 2;
-            // 
-            // dgvRegistroVentas
-            // 
-            this.dgvRegistroVentas.AutoGenerateColumns = false;
-            this.dgvRegistroVentas.AutoGenerateContextFilters = true;
-            this.dgvRegistroVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRegistroVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ventasID,
-            this.ventasNumeroRegistro,
-            this.ventasFechaEmision,
-            this.ventasFechaPago,
-            this.ventasCdpTipo,
-            this.ventasCdpSerie,
-            this.ventasCdpNumero,
-            this.ventasProveedorTipo,
-            this.ventasProveedorNumero,
-            this.ventasProveedorRazonSocial,
-            this.ventasCuenta,
-            this.ventasDescripcion,
-            this.ventasValorExportacion,
-            this.ventasBaseImponible,
-            this.ventasImporteTotalExonerada,
-            this.ventasImporteTotalInafecta,
-            this.ventasIgv,
-            this.ventasImporteTotal,
-            this.ventasTipoCambio,
-            this.ventasDolares,
-            this.ventasIgvRetencion,
-            this.ventasCuentaDestino,
-            this.ventasCuentaDestinoDescripcion,
-            this.ventasReferenciaFecha,
-            this.ventasReferenciaTipo,
-            this.ventasReferenciaSerie,
-            this.ventasReferenciaNumero,
-            this.ventasCodigo,
-            this.ventasConstanciaNumero,
-            this.ventasConstanciaFechaPago,
-            this.ventasDetraccionSoles,
-            this.ventasReferencia,
-            this.ventasObservacion,
-            this.idLibroVentasDataGridViewTextBoxColumn,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.fechaPagoDataGridViewTextBoxColumn1,
-            this.cTipoDataGridViewTextBoxColumn1,
-            this.cSerieDataGridViewTextBoxColumn1,
-            this.cNDocumentoDataGridViewTextBoxColumn1,
-            this.pTipoDataGridViewTextBoxColumn1,
-            this.pNumeroDataGridViewTextBoxColumn1,
-            this.pNombreRazonSocialDataGridViewTextBoxColumn1,
-            this.cuentaDataGridViewTextBoxColumn1,
-            this.descripcionDataGridViewTextBoxColumn1,
-            this.valorExportacionDataGridViewTextBoxColumn,
-            this.baseImponibleDataGridViewTextBoxColumn1,
-            this.importeTotalExoneradaDataGridViewTextBoxColumn,
-            this.importeTotalInafectaDataGridViewTextBoxColumn,
-            this.iGVDataGridViewTextBoxColumn1,
-            this.importeTotalDataGridViewTextBoxColumn1,
-            this.tCDataGridViewTextBoxColumn,
-            this.dolaresDataGridViewTextBoxColumn1,
-            this.igvRetencionDataGridViewTextBoxColumn,
-            this.cuentaDestinoDataGridViewTextBoxColumn1,
-            this.pagoDataGridViewTextBoxColumn,
-            this.referenciaFechaDataGridViewTextBoxColumn1,
-            this.referenciaTipoDataGridViewTextBoxColumn1,
-            this.referenciaSerieDataGridViewTextBoxColumn1,
-            this.referenciaNumeroDocumentoDataGridViewTextBoxColumn,
-            this.codigoDataGridViewTextBoxColumn1,
-            this.constanciaNumeroDataGridViewTextBoxColumn1,
-            this.constanciaFechaPagoDataGridViewTextBoxColumn1,
-            this.detraccionSolesDataGridViewTextBoxColumn,
-            this.referenciaDataGridViewTextBoxColumn,
-            this.observacionDataGridViewTextBoxColumn,
-            this.usuarioDataGridViewTextBoxColumn1,
-            this.fechaRegistroDataGridViewTextBoxColumn1,
-            this.fechaModificacionDataGridViewTextBoxColumn1,
-            this.cuentaDestinoDescripcionDataGridViewTextBoxColumn});
-            this.dgvRegistroVentas.DataSource = this.BSVentasBindingSource;
-            this.dgvRegistroVentas.DateWithTime = false;
-            this.dgvRegistroVentas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvRegistroVentas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dgvRegistroVentas.Location = new System.Drawing.Point(0, 0);
-            this.dgvRegistroVentas.Name = "dgvRegistroVentas";
-            this.dgvRegistroVentas.Size = new System.Drawing.Size(1247, 528);
-            this.dgvRegistroVentas.TabIndex = 2;
-            this.dgvRegistroVentas.TimeFilter = false;
-            this.dgvRegistroVentas.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegistroVentas_CellEndEdit);
-            this.dgvRegistroVentas.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.dgvRegistroVentas_DefaultValueNeeded);
-            // 
-            // BSVentasBindingSource
-            // 
-            this.BSVentasBindingSource.DataMember = "tblRegistroVentas";
-            this.BSVentasBindingSource.DataSource = this.dSVentas;
-            // 
-            // dSVentas
-            // 
-            this.dSVentas.DataSetName = "DSVentas";
-            this.dSVentas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // TAComprasTableAdapter
-            // 
-            this.TAComprasTableAdapter.ClearBeforeFill = true;
-            // 
-            // TAVentasTableAdapter
-            // 
-            this.TAVentasTableAdapter.ClearBeforeFill = true;
-            // 
-            // ventasID
-            // 
-            this.ventasID.DataPropertyName = "idLibroVentas";
-            this.ventasID.HeaderText = "#";
-            this.ventasID.MinimumWidth = 22;
-            this.ventasID.Name = "ventasID";
-            this.ventasID.ReadOnly = true;
-            this.ventasID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ventasID.Width = 50;
-            // 
-            // ventasNumeroRegistro
-            // 
-            this.ventasNumeroRegistro.DataPropertyName = "NReg";
-            this.ventasNumeroRegistro.HeaderText = "N° Reg";
-            this.ventasNumeroRegistro.MinimumWidth = 22;
-            this.ventasNumeroRegistro.Name = "ventasNumeroRegistro";
-            this.ventasNumeroRegistro.ReadOnly = true;
-            this.ventasNumeroRegistro.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ventasNumeroRegistro.Visible = false;
-            this.ventasNumeroRegistro.Width = 40;
-            // 
-            // ventasFechaEmision
-            // 
-            this.ventasFechaEmision.DataPropertyName = "FechaEmision";
-            this.ventasFechaEmision.HeaderText = "Fecha Emisión";
-            this.ventasFechaEmision.MinimumWidth = 22;
-            this.ventasFechaEmision.Name = "ventasFechaEmision";
-            this.ventasFechaEmision.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ventasFechaEmision.Width = 70;
-            // 
-            // ventasFechaPago
-            // 
-            this.ventasFechaPago.DataPropertyName = "FechaPago";
-            this.ventasFechaPago.HeaderText = "Fecha Pago";
-            this.ventasFechaPago.MinimumWidth = 22;
-            this.ventasFechaPago.Name = "ventasFechaPago";
-            this.ventasFechaPago.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ventasFechaPago.Width = 70;
-            // 
-            // ventasCdpTipo
-            // 
-            this.ventasCdpTipo.DataPropertyName = "CTipo";
-            this.ventasCdpTipo.HeaderText = "CDP Tipo";
-            this.ventasCdpTipo.MinimumWidth = 22;
-            this.ventasCdpTipo.Name = "ventasCdpTipo";
-            this.ventasCdpTipo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // ventasCdpSerie
-            // 
-            this.ventasCdpSerie.DataPropertyName = "CSerie";
-            this.ventasCdpSerie.HeaderText = "CDP Serie";
-            this.ventasCdpSerie.MinimumWidth = 22;
-            this.ventasCdpSerie.Name = "ventasCdpSerie";
-            this.ventasCdpSerie.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ventasCdpSerie.Width = 50;
-            // 
-            // ventasCdpNumero
-            // 
-            this.ventasCdpNumero.DataPropertyName = "CNDocumento";
-            this.ventasCdpNumero.HeaderText = "CDP N°";
-            this.ventasCdpNumero.MinimumWidth = 22;
-            this.ventasCdpNumero.Name = "ventasCdpNumero";
-            this.ventasCdpNumero.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ventasCdpNumero.Width = 50;
-            // 
-            // ventasProveedorTipo
-            // 
-            this.ventasProveedorTipo.DataPropertyName = "PTipo";
-            this.ventasProveedorTipo.HeaderText = "Tipo Proveedor";
-            this.ventasProveedorTipo.MinimumWidth = 22;
-            this.ventasProveedorTipo.Name = "ventasProveedorTipo";
-            this.ventasProveedorTipo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ventasProveedorTipo.Width = 40;
-            // 
-            // ventasProveedorNumero
-            // 
-            this.ventasProveedorNumero.DataPropertyName = "PNumero";
-            this.ventasProveedorNumero.HeaderText = "N° Proveedor";
-            this.ventasProveedorNumero.MinimumWidth = 22;
-            this.ventasProveedorNumero.Name = "ventasProveedorNumero";
-            this.ventasProveedorNumero.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ventasProveedorNumero.Width = 70;
-            // 
-            // ventasProveedorRazonSocial
-            // 
-            this.ventasProveedorRazonSocial.DataPropertyName = "PNombreRazonSocial";
-            this.ventasProveedorRazonSocial.HeaderText = "Razón Social Proveedor";
-            this.ventasProveedorRazonSocial.MinimumWidth = 22;
-            this.ventasProveedorRazonSocial.Name = "ventasProveedorRazonSocial";
-            this.ventasProveedorRazonSocial.ReadOnly = true;
-            this.ventasProveedorRazonSocial.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // ventasCuenta
-            // 
-            this.ventasCuenta.DataPropertyName = "Cuenta";
-            this.ventasCuenta.HeaderText = "Cuenta";
-            this.ventasCuenta.MinimumWidth = 22;
-            this.ventasCuenta.Name = "ventasCuenta";
-            this.ventasCuenta.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ventasCuenta.Width = 50;
-            // 
-            // ventasDescripcion
-            // 
-            this.ventasDescripcion.DataPropertyName = "Descripcion";
-            this.ventasDescripcion.HeaderText = "Descripción";
-            this.ventasDescripcion.MinimumWidth = 22;
-            this.ventasDescripcion.Name = "ventasDescripcion";
-            this.ventasDescripcion.ReadOnly = true;
-            this.ventasDescripcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // ventasValorExportacion
-            // 
-            this.ventasValorExportacion.DataPropertyName = "ValorExportacion";
-            this.ventasValorExportacion.HeaderText = "Valor Exportación";
-            this.ventasValorExportacion.MinimumWidth = 22;
-            this.ventasValorExportacion.Name = "ventasValorExportacion";
-            this.ventasValorExportacion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ventasValorExportacion.Width = 60;
-            // 
-            // ventasBaseImponible
-            // 
-            this.ventasBaseImponible.DataPropertyName = "BaseImponible";
-            this.ventasBaseImponible.HeaderText = "Base Imponible";
-            this.ventasBaseImponible.MinimumWidth = 22;
-            this.ventasBaseImponible.Name = "ventasBaseImponible";
-            this.ventasBaseImponible.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ventasBaseImponible.Width = 60;
-            // 
-            // ventasImporteTotalExonerada
-            // 
-            this.ventasImporteTotalExonerada.DataPropertyName = "ImporteTotalExonerada";
-            this.ventasImporteTotalExonerada.HeaderText = "Importe Total Exonerada";
-            this.ventasImporteTotalExonerada.MinimumWidth = 22;
-            this.ventasImporteTotalExonerada.Name = "ventasImporteTotalExonerada";
-            this.ventasImporteTotalExonerada.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ventasImporteTotalExonerada.Width = 60;
-            // 
-            // ventasImporteTotalInafecta
-            // 
-            this.ventasImporteTotalInafecta.DataPropertyName = "ImporteTotalInafecta";
-            this.ventasImporteTotalInafecta.HeaderText = "Importe Total Inafecta";
-            this.ventasImporteTotalInafecta.MinimumWidth = 22;
-            this.ventasImporteTotalInafecta.Name = "ventasImporteTotalInafecta";
-            this.ventasImporteTotalInafecta.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ventasImporteTotalInafecta.Width = 60;
-            // 
-            // ventasIgv
-            // 
-            this.ventasIgv.DataPropertyName = "IGV";
-            this.ventasIgv.HeaderText = "IGV";
-            this.ventasIgv.MinimumWidth = 22;
-            this.ventasIgv.Name = "ventasIgv";
-            this.ventasIgv.ReadOnly = true;
-            this.ventasIgv.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ventasIgv.Width = 60;
-            // 
-            // ventasImporteTotal
-            // 
-            this.ventasImporteTotal.DataPropertyName = "ImporteTotal";
-            this.ventasImporteTotal.HeaderText = "Importe Total";
-            this.ventasImporteTotal.MinimumWidth = 22;
-            this.ventasImporteTotal.Name = "ventasImporteTotal";
-            this.ventasImporteTotal.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ventasImporteTotal.Width = 60;
-            // 
-            // ventasTipoCambio
-            // 
-            this.ventasTipoCambio.DataPropertyName = "TC";
-            this.ventasTipoCambio.HeaderText = "Tipo Cambio";
-            this.ventasTipoCambio.MinimumWidth = 22;
-            this.ventasTipoCambio.Name = "ventasTipoCambio";
-            this.ventasTipoCambio.ReadOnly = true;
-            this.ventasTipoCambio.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ventasTipoCambio.Width = 60;
-            // 
-            // ventasDolares
-            // 
-            this.ventasDolares.DataPropertyName = "Dolares";
-            this.ventasDolares.HeaderText = "Dólares";
-            this.ventasDolares.MinimumWidth = 22;
-            this.ventasDolares.Name = "ventasDolares";
-            this.ventasDolares.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ventasDolares.Width = 60;
-            // 
-            // ventasIgvRetencion
-            // 
-            this.ventasIgvRetencion.DataPropertyName = "IgvRetencion";
-            this.ventasIgvRetencion.HeaderText = "IGV Retención";
-            this.ventasIgvRetencion.MinimumWidth = 22;
-            this.ventasIgvRetencion.Name = "ventasIgvRetencion";
-            this.ventasIgvRetencion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ventasIgvRetencion.Width = 60;
-            // 
-            // ventasCuentaDestino
-            // 
-            this.ventasCuentaDestino.DataPropertyName = "CuentaDestino";
-            this.ventasCuentaDestino.HeaderText = "Cuenta Destino";
-            this.ventasCuentaDestino.MinimumWidth = 22;
-            this.ventasCuentaDestino.Name = "ventasCuentaDestino";
-            this.ventasCuentaDestino.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ventasCuentaDestino.Width = 60;
-            // 
-            // ventasCuentaDestinoDescripcion
-            // 
-            this.ventasCuentaDestinoDescripcion.DataPropertyName = "CuentaDestinoDescripcion";
-            this.ventasCuentaDestinoDescripcion.HeaderText = "Destino Descripción";
-            this.ventasCuentaDestinoDescripcion.MinimumWidth = 22;
-            this.ventasCuentaDestinoDescripcion.Name = "ventasCuentaDestinoDescripcion";
-            this.ventasCuentaDestinoDescripcion.ReadOnly = true;
-            this.ventasCuentaDestinoDescripcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // ventasReferenciaFecha
-            // 
-            this.ventasReferenciaFecha.DataPropertyName = "ReferenciaFecha";
-            this.ventasReferenciaFecha.HeaderText = "Fecha Referencia";
-            this.ventasReferenciaFecha.MinimumWidth = 22;
-            this.ventasReferenciaFecha.Name = "ventasReferenciaFecha";
-            this.ventasReferenciaFecha.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ventasReferenciaFecha.Width = 70;
-            // 
-            // ventasReferenciaTipo
-            // 
-            this.ventasReferenciaTipo.DataPropertyName = "ReferenciaTipo";
-            this.ventasReferenciaTipo.HeaderText = "Tipo Referencia";
-            this.ventasReferenciaTipo.MinimumWidth = 22;
-            this.ventasReferenciaTipo.Name = "ventasReferenciaTipo";
-            this.ventasReferenciaTipo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // ventasReferenciaSerie
-            // 
-            this.ventasReferenciaSerie.DataPropertyName = "ReferenciaSerie";
-            this.ventasReferenciaSerie.HeaderText = "Serie Referencia";
-            this.ventasReferenciaSerie.MinimumWidth = 22;
-            this.ventasReferenciaSerie.Name = "ventasReferenciaSerie";
-            this.ventasReferenciaSerie.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ventasReferenciaSerie.Width = 60;
-            // 
-            // ventasReferenciaNumero
-            // 
-            this.ventasReferenciaNumero.DataPropertyName = "ReferenciaNumeroDocumento";
-            this.ventasReferenciaNumero.HeaderText = "N° Referencia";
-            this.ventasReferenciaNumero.MinimumWidth = 22;
-            this.ventasReferenciaNumero.Name = "ventasReferenciaNumero";
-            this.ventasReferenciaNumero.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ventasReferenciaNumero.Width = 60;
-            // 
-            // ventasCodigo
-            // 
-            this.ventasCodigo.DataPropertyName = "Codigo";
-            this.ventasCodigo.HeaderText = "Código";
-            this.ventasCodigo.MinimumWidth = 22;
-            this.ventasCodigo.Name = "ventasCodigo";
-            this.ventasCodigo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ventasCodigo.Width = 30;
-            // 
-            // ventasConstanciaNumero
-            // 
-            this.ventasConstanciaNumero.DataPropertyName = "ConstanciaNumero";
-            this.ventasConstanciaNumero.HeaderText = "N° Constancia";
-            this.ventasConstanciaNumero.MinimumWidth = 22;
-            this.ventasConstanciaNumero.Name = "ventasConstanciaNumero";
-            this.ventasConstanciaNumero.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ventasConstanciaNumero.Width = 60;
-            // 
-            // ventasConstanciaFechaPago
-            // 
-            this.ventasConstanciaFechaPago.DataPropertyName = "ConstanciaFechaPago";
-            this.ventasConstanciaFechaPago.HeaderText = "Constancia Fecha Pago";
-            this.ventasConstanciaFechaPago.MinimumWidth = 22;
-            this.ventasConstanciaFechaPago.Name = "ventasConstanciaFechaPago";
-            this.ventasConstanciaFechaPago.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ventasConstanciaFechaPago.Width = 70;
-            // 
-            // ventasDetraccionSoles
-            // 
-            this.ventasDetraccionSoles.DataPropertyName = "DetraccionSoles";
-            this.ventasDetraccionSoles.HeaderText = "Detracción Soles";
-            this.ventasDetraccionSoles.MinimumWidth = 22;
-            this.ventasDetraccionSoles.Name = "ventasDetraccionSoles";
-            this.ventasDetraccionSoles.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ventasDetraccionSoles.Width = 60;
-            // 
-            // ventasReferencia
-            // 
-            this.ventasReferencia.DataPropertyName = "Referencia";
-            this.ventasReferencia.HeaderText = "Monto Referencial";
-            this.ventasReferencia.MinimumWidth = 22;
-            this.ventasReferencia.Name = "ventasReferencia";
-            this.ventasReferencia.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ventasReferencia.Width = 60;
-            // 
-            // ventasObservacion
-            // 
-            this.ventasObservacion.DataPropertyName = "Observacion";
-            this.ventasObservacion.HeaderText = "Observación";
-            this.ventasObservacion.MinimumWidth = 22;
-            this.ventasObservacion.Name = "ventasObservacion";
-            this.ventasObservacion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // idLibroVentasDataGridViewTextBoxColumn
-            // 
-            this.idLibroVentasDataGridViewTextBoxColumn.DataPropertyName = "idLibroVentas";
-            this.idLibroVentasDataGridViewTextBoxColumn.HeaderText = "idLibroVentas";
-            this.idLibroVentasDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.idLibroVentasDataGridViewTextBoxColumn.Name = "idLibroVentasDataGridViewTextBoxColumn";
-            this.idLibroVentasDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idLibroVentasDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Mes";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Mes";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "NReg";
-            this.dataGridViewTextBoxColumn6.HeaderText = "NReg";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "FechaEmision";
-            this.dataGridViewTextBoxColumn7.HeaderText = "FechaEmision";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // fechaPagoDataGridViewTextBoxColumn1
-            // 
-            this.fechaPagoDataGridViewTextBoxColumn1.DataPropertyName = "FechaPago";
-            this.fechaPagoDataGridViewTextBoxColumn1.HeaderText = "FechaPago";
-            this.fechaPagoDataGridViewTextBoxColumn1.MinimumWidth = 22;
-            this.fechaPagoDataGridViewTextBoxColumn1.Name = "fechaPagoDataGridViewTextBoxColumn1";
-            this.fechaPagoDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // cTipoDataGridViewTextBoxColumn1
-            // 
-            this.cTipoDataGridViewTextBoxColumn1.DataPropertyName = "CTipo";
-            this.cTipoDataGridViewTextBoxColumn1.HeaderText = "CTipo";
-            this.cTipoDataGridViewTextBoxColumn1.MinimumWidth = 22;
-            this.cTipoDataGridViewTextBoxColumn1.Name = "cTipoDataGridViewTextBoxColumn1";
-            this.cTipoDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // cSerieDataGridViewTextBoxColumn1
-            // 
-            this.cSerieDataGridViewTextBoxColumn1.DataPropertyName = "CSerie";
-            this.cSerieDataGridViewTextBoxColumn1.HeaderText = "CSerie";
-            this.cSerieDataGridViewTextBoxColumn1.MinimumWidth = 22;
-            this.cSerieDataGridViewTextBoxColumn1.Name = "cSerieDataGridViewTextBoxColumn1";
-            this.cSerieDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // cNDocumentoDataGridViewTextBoxColumn1
-            // 
-            this.cNDocumentoDataGridViewTextBoxColumn1.DataPropertyName = "CNDocumento";
-            this.cNDocumentoDataGridViewTextBoxColumn1.HeaderText = "CNDocumento";
-            this.cNDocumentoDataGridViewTextBoxColumn1.MinimumWidth = 22;
-            this.cNDocumentoDataGridViewTextBoxColumn1.Name = "cNDocumentoDataGridViewTextBoxColumn1";
-            this.cNDocumentoDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // pTipoDataGridViewTextBoxColumn1
-            // 
-            this.pTipoDataGridViewTextBoxColumn1.DataPropertyName = "PTipo";
-            this.pTipoDataGridViewTextBoxColumn1.HeaderText = "PTipo";
-            this.pTipoDataGridViewTextBoxColumn1.MinimumWidth = 22;
-            this.pTipoDataGridViewTextBoxColumn1.Name = "pTipoDataGridViewTextBoxColumn1";
-            this.pTipoDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // pNumeroDataGridViewTextBoxColumn1
-            // 
-            this.pNumeroDataGridViewTextBoxColumn1.DataPropertyName = "PNumero";
-            this.pNumeroDataGridViewTextBoxColumn1.HeaderText = "PNumero";
-            this.pNumeroDataGridViewTextBoxColumn1.MinimumWidth = 22;
-            this.pNumeroDataGridViewTextBoxColumn1.Name = "pNumeroDataGridViewTextBoxColumn1";
-            this.pNumeroDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // pNombreRazonSocialDataGridViewTextBoxColumn1
-            // 
-            this.pNombreRazonSocialDataGridViewTextBoxColumn1.DataPropertyName = "PNombreRazonSocial";
-            this.pNombreRazonSocialDataGridViewTextBoxColumn1.HeaderText = "PNombreRazonSocial";
-            this.pNombreRazonSocialDataGridViewTextBoxColumn1.MinimumWidth = 22;
-            this.pNombreRazonSocialDataGridViewTextBoxColumn1.Name = "pNombreRazonSocialDataGridViewTextBoxColumn1";
-            this.pNombreRazonSocialDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // cuentaDataGridViewTextBoxColumn1
-            // 
-            this.cuentaDataGridViewTextBoxColumn1.DataPropertyName = "Cuenta";
-            this.cuentaDataGridViewTextBoxColumn1.HeaderText = "Cuenta";
-            this.cuentaDataGridViewTextBoxColumn1.MinimumWidth = 22;
-            this.cuentaDataGridViewTextBoxColumn1.Name = "cuentaDataGridViewTextBoxColumn1";
-            this.cuentaDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // descripcionDataGridViewTextBoxColumn1
-            // 
-            this.descripcionDataGridViewTextBoxColumn1.DataPropertyName = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn1.HeaderText = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn1.MinimumWidth = 22;
-            this.descripcionDataGridViewTextBoxColumn1.Name = "descripcionDataGridViewTextBoxColumn1";
-            this.descripcionDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // valorExportacionDataGridViewTextBoxColumn
-            // 
-            this.valorExportacionDataGridViewTextBoxColumn.DataPropertyName = "ValorExportacion";
-            this.valorExportacionDataGridViewTextBoxColumn.HeaderText = "ValorExportacion";
-            this.valorExportacionDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.valorExportacionDataGridViewTextBoxColumn.Name = "valorExportacionDataGridViewTextBoxColumn";
-            this.valorExportacionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // baseImponibleDataGridViewTextBoxColumn1
-            // 
-            this.baseImponibleDataGridViewTextBoxColumn1.DataPropertyName = "BaseImponible";
-            this.baseImponibleDataGridViewTextBoxColumn1.HeaderText = "BaseImponible";
-            this.baseImponibleDataGridViewTextBoxColumn1.MinimumWidth = 22;
-            this.baseImponibleDataGridViewTextBoxColumn1.Name = "baseImponibleDataGridViewTextBoxColumn1";
-            this.baseImponibleDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // importeTotalExoneradaDataGridViewTextBoxColumn
-            // 
-            this.importeTotalExoneradaDataGridViewTextBoxColumn.DataPropertyName = "ImporteTotalExonerada";
-            this.importeTotalExoneradaDataGridViewTextBoxColumn.HeaderText = "ImporteTotalExonerada";
-            this.importeTotalExoneradaDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.importeTotalExoneradaDataGridViewTextBoxColumn.Name = "importeTotalExoneradaDataGridViewTextBoxColumn";
-            this.importeTotalExoneradaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // importeTotalInafectaDataGridViewTextBoxColumn
-            // 
-            this.importeTotalInafectaDataGridViewTextBoxColumn.DataPropertyName = "ImporteTotalInafecta";
-            this.importeTotalInafectaDataGridViewTextBoxColumn.HeaderText = "ImporteTotalInafecta";
-            this.importeTotalInafectaDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.importeTotalInafectaDataGridViewTextBoxColumn.Name = "importeTotalInafectaDataGridViewTextBoxColumn";
-            this.importeTotalInafectaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // iGVDataGridViewTextBoxColumn1
-            // 
-            this.iGVDataGridViewTextBoxColumn1.DataPropertyName = "IGV";
-            this.iGVDataGridViewTextBoxColumn1.HeaderText = "IGV";
-            this.iGVDataGridViewTextBoxColumn1.MinimumWidth = 22;
-            this.iGVDataGridViewTextBoxColumn1.Name = "iGVDataGridViewTextBoxColumn1";
-            this.iGVDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // importeTotalDataGridViewTextBoxColumn1
-            // 
-            this.importeTotalDataGridViewTextBoxColumn1.DataPropertyName = "ImporteTotal";
-            this.importeTotalDataGridViewTextBoxColumn1.HeaderText = "ImporteTotal";
-            this.importeTotalDataGridViewTextBoxColumn1.MinimumWidth = 22;
-            this.importeTotalDataGridViewTextBoxColumn1.Name = "importeTotalDataGridViewTextBoxColumn1";
-            this.importeTotalDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // tCDataGridViewTextBoxColumn
-            // 
-            this.tCDataGridViewTextBoxColumn.DataPropertyName = "TC";
-            this.tCDataGridViewTextBoxColumn.HeaderText = "TC";
-            this.tCDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.tCDataGridViewTextBoxColumn.Name = "tCDataGridViewTextBoxColumn";
-            this.tCDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dolaresDataGridViewTextBoxColumn1
-            // 
-            this.dolaresDataGridViewTextBoxColumn1.DataPropertyName = "Dolares";
-            this.dolaresDataGridViewTextBoxColumn1.HeaderText = "Dolares";
-            this.dolaresDataGridViewTextBoxColumn1.MinimumWidth = 22;
-            this.dolaresDataGridViewTextBoxColumn1.Name = "dolaresDataGridViewTextBoxColumn1";
-            this.dolaresDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // igvRetencionDataGridViewTextBoxColumn
-            // 
-            this.igvRetencionDataGridViewTextBoxColumn.DataPropertyName = "IgvRetencion";
-            this.igvRetencionDataGridViewTextBoxColumn.HeaderText = "IgvRetencion";
-            this.igvRetencionDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.igvRetencionDataGridViewTextBoxColumn.Name = "igvRetencionDataGridViewTextBoxColumn";
-            this.igvRetencionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // cuentaDestinoDataGridViewTextBoxColumn1
-            // 
-            this.cuentaDestinoDataGridViewTextBoxColumn1.DataPropertyName = "CuentaDestino";
-            this.cuentaDestinoDataGridViewTextBoxColumn1.HeaderText = "CuentaDestino";
-            this.cuentaDestinoDataGridViewTextBoxColumn1.MinimumWidth = 22;
-            this.cuentaDestinoDataGridViewTextBoxColumn1.Name = "cuentaDestinoDataGridViewTextBoxColumn1";
-            this.cuentaDestinoDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // pagoDataGridViewTextBoxColumn
-            // 
-            this.pagoDataGridViewTextBoxColumn.DataPropertyName = "Pago";
-            this.pagoDataGridViewTextBoxColumn.HeaderText = "Pago";
-            this.pagoDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.pagoDataGridViewTextBoxColumn.Name = "pagoDataGridViewTextBoxColumn";
-            this.pagoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // referenciaFechaDataGridViewTextBoxColumn1
-            // 
-            this.referenciaFechaDataGridViewTextBoxColumn1.DataPropertyName = "ReferenciaFecha";
-            this.referenciaFechaDataGridViewTextBoxColumn1.HeaderText = "ReferenciaFecha";
-            this.referenciaFechaDataGridViewTextBoxColumn1.MinimumWidth = 22;
-            this.referenciaFechaDataGridViewTextBoxColumn1.Name = "referenciaFechaDataGridViewTextBoxColumn1";
-            this.referenciaFechaDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // referenciaTipoDataGridViewTextBoxColumn1
-            // 
-            this.referenciaTipoDataGridViewTextBoxColumn1.DataPropertyName = "ReferenciaTipo";
-            this.referenciaTipoDataGridViewTextBoxColumn1.HeaderText = "ReferenciaTipo";
-            this.referenciaTipoDataGridViewTextBoxColumn1.MinimumWidth = 22;
-            this.referenciaTipoDataGridViewTextBoxColumn1.Name = "referenciaTipoDataGridViewTextBoxColumn1";
-            this.referenciaTipoDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // referenciaSerieDataGridViewTextBoxColumn1
-            // 
-            this.referenciaSerieDataGridViewTextBoxColumn1.DataPropertyName = "ReferenciaSerie";
-            this.referenciaSerieDataGridViewTextBoxColumn1.HeaderText = "ReferenciaSerie";
-            this.referenciaSerieDataGridViewTextBoxColumn1.MinimumWidth = 22;
-            this.referenciaSerieDataGridViewTextBoxColumn1.Name = "referenciaSerieDataGridViewTextBoxColumn1";
-            this.referenciaSerieDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // referenciaNumeroDocumentoDataGridViewTextBoxColumn
-            // 
-            this.referenciaNumeroDocumentoDataGridViewTextBoxColumn.DataPropertyName = "ReferenciaNumeroDocumento";
-            this.referenciaNumeroDocumentoDataGridViewTextBoxColumn.HeaderText = "ReferenciaNumeroDocumento";
-            this.referenciaNumeroDocumentoDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.referenciaNumeroDocumentoDataGridViewTextBoxColumn.Name = "referenciaNumeroDocumentoDataGridViewTextBoxColumn";
-            this.referenciaNumeroDocumentoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // codigoDataGridViewTextBoxColumn1
-            // 
-            this.codigoDataGridViewTextBoxColumn1.DataPropertyName = "Codigo";
-            this.codigoDataGridViewTextBoxColumn1.HeaderText = "Codigo";
-            this.codigoDataGridViewTextBoxColumn1.MinimumWidth = 22;
-            this.codigoDataGridViewTextBoxColumn1.Name = "codigoDataGridViewTextBoxColumn1";
-            this.codigoDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // constanciaNumeroDataGridViewTextBoxColumn1
-            // 
-            this.constanciaNumeroDataGridViewTextBoxColumn1.DataPropertyName = "ConstanciaNumero";
-            this.constanciaNumeroDataGridViewTextBoxColumn1.HeaderText = "ConstanciaNumero";
-            this.constanciaNumeroDataGridViewTextBoxColumn1.MinimumWidth = 22;
-            this.constanciaNumeroDataGridViewTextBoxColumn1.Name = "constanciaNumeroDataGridViewTextBoxColumn1";
-            this.constanciaNumeroDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // constanciaFechaPagoDataGridViewTextBoxColumn1
-            // 
-            this.constanciaFechaPagoDataGridViewTextBoxColumn1.DataPropertyName = "ConstanciaFechaPago";
-            this.constanciaFechaPagoDataGridViewTextBoxColumn1.HeaderText = "ConstanciaFechaPago";
-            this.constanciaFechaPagoDataGridViewTextBoxColumn1.MinimumWidth = 22;
-            this.constanciaFechaPagoDataGridViewTextBoxColumn1.Name = "constanciaFechaPagoDataGridViewTextBoxColumn1";
-            this.constanciaFechaPagoDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // detraccionSolesDataGridViewTextBoxColumn
-            // 
-            this.detraccionSolesDataGridViewTextBoxColumn.DataPropertyName = "DetraccionSoles";
-            this.detraccionSolesDataGridViewTextBoxColumn.HeaderText = "DetraccionSoles";
-            this.detraccionSolesDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.detraccionSolesDataGridViewTextBoxColumn.Name = "detraccionSolesDataGridViewTextBoxColumn";
-            this.detraccionSolesDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // referenciaDataGridViewTextBoxColumn
-            // 
-            this.referenciaDataGridViewTextBoxColumn.DataPropertyName = "Referencia";
-            this.referenciaDataGridViewTextBoxColumn.HeaderText = "Referencia";
-            this.referenciaDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.referenciaDataGridViewTextBoxColumn.Name = "referenciaDataGridViewTextBoxColumn";
-            this.referenciaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // observacionDataGridViewTextBoxColumn
-            // 
-            this.observacionDataGridViewTextBoxColumn.DataPropertyName = "Observacion";
-            this.observacionDataGridViewTextBoxColumn.HeaderText = "Observacion";
-            this.observacionDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.observacionDataGridViewTextBoxColumn.Name = "observacionDataGridViewTextBoxColumn";
-            this.observacionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // usuarioDataGridViewTextBoxColumn1
-            // 
-            this.usuarioDataGridViewTextBoxColumn1.DataPropertyName = "Usuario";
-            this.usuarioDataGridViewTextBoxColumn1.HeaderText = "Usuario";
-            this.usuarioDataGridViewTextBoxColumn1.MinimumWidth = 22;
-            this.usuarioDataGridViewTextBoxColumn1.Name = "usuarioDataGridViewTextBoxColumn1";
-            this.usuarioDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // fechaRegistroDataGridViewTextBoxColumn1
-            // 
-            this.fechaRegistroDataGridViewTextBoxColumn1.DataPropertyName = "FechaRegistro";
-            this.fechaRegistroDataGridViewTextBoxColumn1.HeaderText = "FechaRegistro";
-            this.fechaRegistroDataGridViewTextBoxColumn1.MinimumWidth = 22;
-            this.fechaRegistroDataGridViewTextBoxColumn1.Name = "fechaRegistroDataGridViewTextBoxColumn1";
-            this.fechaRegistroDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // fechaModificacionDataGridViewTextBoxColumn1
-            // 
-            this.fechaModificacionDataGridViewTextBoxColumn1.DataPropertyName = "FechaModificacion";
-            this.fechaModificacionDataGridViewTextBoxColumn1.HeaderText = "FechaModificacion";
-            this.fechaModificacionDataGridViewTextBoxColumn1.MinimumWidth = 22;
-            this.fechaModificacionDataGridViewTextBoxColumn1.Name = "fechaModificacionDataGridViewTextBoxColumn1";
-            this.fechaModificacionDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // cuentaDestinoDescripcionDataGridViewTextBoxColumn
-            // 
-            this.cuentaDestinoDescripcionDataGridViewTextBoxColumn.DataPropertyName = "CuentaDestinoDescripcion";
-            this.cuentaDestinoDescripcionDataGridViewTextBoxColumn.HeaderText = "CuentaDestinoDescripcion";
-            this.cuentaDestinoDescripcionDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.cuentaDestinoDescripcionDataGridViewTextBoxColumn.Name = "cuentaDestinoDescripcionDataGridViewTextBoxColumn";
-            this.cuentaDestinoDescripcionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.dgvRegistroCompras.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvRegistroCompras_KeyDown);
             // 
             // comprasID
             // 
@@ -2004,6 +1186,837 @@
             this.fechaModificacionDataGridViewTextBoxColumn.Name = "fechaModificacionDataGridViewTextBoxColumn";
             this.fechaModificacionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
+            // BSComprasBindingSource
+            // 
+            this.BSComprasBindingSource.DataMember = "tblRegistroCompras";
+            this.BSComprasBindingSource.DataSource = this.dSCompras;
+            // 
+            // dSCompras
+            // 
+            this.dSCompras.DataSetName = "DSCompras";
+            this.dSCompras.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.Controls.Add(this.btnAgregarFila);
+            this.panel3.Controls.Add(this.btnGuardarCompras);
+            this.panel3.Controls.Add(this.btnEliminarCompras);
+            this.panel3.Location = new System.Drawing.Point(3, 538);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1244, 40);
+            this.panel3.TabIndex = 3;
+            // 
+            // btnGuardarCompras
+            // 
+            this.btnGuardarCompras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnGuardarCompras.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btnGuardarCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarCompras.Location = new System.Drawing.Point(3, 3);
+            this.btnGuardarCompras.Name = "btnGuardarCompras";
+            this.btnGuardarCompras.Size = new System.Drawing.Size(109, 34);
+            this.btnGuardarCompras.TabIndex = 0;
+            this.btnGuardarCompras.Text = "Guardar";
+            this.btnGuardarCompras.UseVisualStyleBackColor = false;
+            this.btnGuardarCompras.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnEliminarCompras
+            // 
+            this.btnEliminarCompras.BackColor = System.Drawing.Color.Red;
+            this.btnEliminarCompras.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
+            this.btnEliminarCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarCompras.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnEliminarCompras.Location = new System.Drawing.Point(210, 3);
+            this.btnEliminarCompras.Name = "btnEliminarCompras";
+            this.btnEliminarCompras.Size = new System.Drawing.Size(73, 34);
+            this.btnEliminarCompras.TabIndex = 0;
+            this.btnEliminarCompras.Text = "Eliminar";
+            this.btnEliminarCompras.UseVisualStyleBackColor = false;
+            this.btnEliminarCompras.Click += new System.EventHandler(this.btnEliminarCompras_Click);
+            // 
+            // tabVentas
+            // 
+            this.tabVentas.Controls.Add(this.panel6);
+            this.tabVentas.Controls.Add(this.panel5);
+            this.tabVentas.Location = new System.Drawing.Point(4, 22);
+            this.tabVentas.Name = "tabVentas";
+            this.tabVentas.Padding = new System.Windows.Forms.Padding(3);
+            this.tabVentas.Size = new System.Drawing.Size(1256, 584);
+            this.tabVentas.TabIndex = 1;
+            this.tabVentas.Text = "Ventas";
+            this.tabVentas.UseVisualStyleBackColor = true;
+            // 
+            // panel6
+            // 
+            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel6.Controls.Add(this.btnEliminarVentas);
+            this.panel6.Controls.Add(this.btnGuardarVentas);
+            this.panel6.Location = new System.Drawing.Point(3, 537);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1247, 41);
+            this.panel6.TabIndex = 4;
+            // 
+            // btnEliminarVentas
+            // 
+            this.btnEliminarVentas.BackColor = System.Drawing.Color.Red;
+            this.btnEliminarVentas.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
+            this.btnEliminarVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarVentas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnEliminarVentas.Location = new System.Drawing.Point(127, 3);
+            this.btnEliminarVentas.Name = "btnEliminarVentas";
+            this.btnEliminarVentas.Size = new System.Drawing.Size(71, 34);
+            this.btnEliminarVentas.TabIndex = 2;
+            this.btnEliminarVentas.Text = "Eliminar";
+            this.btnEliminarVentas.UseVisualStyleBackColor = false;
+            this.btnEliminarVentas.Click += new System.EventHandler(this.btnEliminarVentas_Click);
+            // 
+            // btnGuardarVentas
+            // 
+            this.btnGuardarVentas.BackColor = System.Drawing.Color.Lime;
+            this.btnGuardarVentas.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btnGuardarVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarVentas.Location = new System.Drawing.Point(3, 3);
+            this.btnGuardarVentas.Name = "btnGuardarVentas";
+            this.btnGuardarVentas.Size = new System.Drawing.Size(108, 34);
+            this.btnGuardarVentas.TabIndex = 1;
+            this.btnGuardarVentas.Text = "Guardar";
+            this.btnGuardarVentas.UseVisualStyleBackColor = false;
+            this.btnGuardarVentas.Click += new System.EventHandler(this.btnGuardarVentas_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel5.Controls.Add(this.dgvRegistroVentas);
+            this.panel5.Location = new System.Drawing.Point(3, 6);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1247, 528);
+            this.panel5.TabIndex = 2;
+            // 
+            // dgvRegistroVentas
+            // 
+            this.dgvRegistroVentas.AutoGenerateColumns = false;
+            this.dgvRegistroVentas.AutoGenerateContextFilters = true;
+            this.dgvRegistroVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRegistroVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ventasID,
+            this.ventasNumeroRegistro,
+            this.ventasFechaEmision,
+            this.ventasFechaPago,
+            this.ventasCdpTipo,
+            this.ventasCdpSerie,
+            this.ventasCdpNumero,
+            this.ventasProveedorTipo,
+            this.ventasProveedorNumero,
+            this.ventasProveedorRazonSocial,
+            this.ventasCuenta,
+            this.ventasDescripcion,
+            this.ventasValorExportacion,
+            this.ventasBaseImponible,
+            this.ventasImporteTotalExonerada,
+            this.ventasImporteTotalInafecta,
+            this.ventasIgv,
+            this.ventasImporteTotal,
+            this.ventasTipoCambio,
+            this.ventasDolares,
+            this.ventasIgvRetencion,
+            this.ventasCuentaDestino,
+            this.ventasCuentaDestinoDescripcion,
+            this.ventasReferenciaFecha,
+            this.ventasReferenciaTipo,
+            this.ventasReferenciaSerie,
+            this.ventasReferenciaNumero,
+            this.ventasCodigo,
+            this.ventasConstanciaNumero,
+            this.ventasConstanciaFechaPago,
+            this.ventasDetraccionSoles,
+            this.ventasReferencia,
+            this.ventasObservacion,
+            this.idLibroVentasDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.fechaPagoDataGridViewTextBoxColumn1,
+            this.cTipoDataGridViewTextBoxColumn1,
+            this.cSerieDataGridViewTextBoxColumn1,
+            this.cNDocumentoDataGridViewTextBoxColumn1,
+            this.pTipoDataGridViewTextBoxColumn1,
+            this.pNumeroDataGridViewTextBoxColumn1,
+            this.pNombreRazonSocialDataGridViewTextBoxColumn1,
+            this.cuentaDataGridViewTextBoxColumn1,
+            this.descripcionDataGridViewTextBoxColumn1,
+            this.valorExportacionDataGridViewTextBoxColumn,
+            this.baseImponibleDataGridViewTextBoxColumn1,
+            this.importeTotalExoneradaDataGridViewTextBoxColumn,
+            this.importeTotalInafectaDataGridViewTextBoxColumn,
+            this.iGVDataGridViewTextBoxColumn1,
+            this.importeTotalDataGridViewTextBoxColumn1,
+            this.tCDataGridViewTextBoxColumn,
+            this.dolaresDataGridViewTextBoxColumn1,
+            this.igvRetencionDataGridViewTextBoxColumn,
+            this.cuentaDestinoDataGridViewTextBoxColumn1,
+            this.pagoDataGridViewTextBoxColumn,
+            this.referenciaFechaDataGridViewTextBoxColumn1,
+            this.referenciaTipoDataGridViewTextBoxColumn1,
+            this.referenciaSerieDataGridViewTextBoxColumn1,
+            this.referenciaNumeroDocumentoDataGridViewTextBoxColumn,
+            this.codigoDataGridViewTextBoxColumn1,
+            this.constanciaNumeroDataGridViewTextBoxColumn1,
+            this.constanciaFechaPagoDataGridViewTextBoxColumn1,
+            this.detraccionSolesDataGridViewTextBoxColumn,
+            this.referenciaDataGridViewTextBoxColumn,
+            this.observacionDataGridViewTextBoxColumn,
+            this.usuarioDataGridViewTextBoxColumn1,
+            this.fechaRegistroDataGridViewTextBoxColumn1,
+            this.fechaModificacionDataGridViewTextBoxColumn1,
+            this.cuentaDestinoDescripcionDataGridViewTextBoxColumn});
+            this.dgvRegistroVentas.DataSource = this.BSVentasBindingSource;
+            this.dgvRegistroVentas.DateWithTime = false;
+            this.dgvRegistroVentas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvRegistroVentas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.dgvRegistroVentas.Location = new System.Drawing.Point(0, 0);
+            this.dgvRegistroVentas.Name = "dgvRegistroVentas";
+            this.dgvRegistroVentas.Size = new System.Drawing.Size(1247, 528);
+            this.dgvRegistroVentas.TabIndex = 2;
+            this.dgvRegistroVentas.TimeFilter = false;
+            this.dgvRegistroVentas.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegistroVentas_CellEndEdit);
+            this.dgvRegistroVentas.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.dgvRegistroVentas_DefaultValueNeeded);
+            // 
+            // ventasID
+            // 
+            this.ventasID.DataPropertyName = "idLibroVentas";
+            this.ventasID.HeaderText = "#";
+            this.ventasID.MinimumWidth = 22;
+            this.ventasID.Name = "ventasID";
+            this.ventasID.ReadOnly = true;
+            this.ventasID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ventasID.Width = 50;
+            // 
+            // ventasNumeroRegistro
+            // 
+            this.ventasNumeroRegistro.DataPropertyName = "NReg";
+            this.ventasNumeroRegistro.HeaderText = "N° Reg";
+            this.ventasNumeroRegistro.MinimumWidth = 22;
+            this.ventasNumeroRegistro.Name = "ventasNumeroRegistro";
+            this.ventasNumeroRegistro.ReadOnly = true;
+            this.ventasNumeroRegistro.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ventasNumeroRegistro.Visible = false;
+            this.ventasNumeroRegistro.Width = 40;
+            // 
+            // ventasFechaEmision
+            // 
+            this.ventasFechaEmision.DataPropertyName = "FechaEmision";
+            this.ventasFechaEmision.HeaderText = "Fecha Emisión";
+            this.ventasFechaEmision.MinimumWidth = 22;
+            this.ventasFechaEmision.Name = "ventasFechaEmision";
+            this.ventasFechaEmision.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ventasFechaEmision.Width = 70;
+            // 
+            // ventasFechaPago
+            // 
+            this.ventasFechaPago.DataPropertyName = "FechaPago";
+            this.ventasFechaPago.HeaderText = "Fecha Pago";
+            this.ventasFechaPago.MinimumWidth = 22;
+            this.ventasFechaPago.Name = "ventasFechaPago";
+            this.ventasFechaPago.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ventasFechaPago.Width = 70;
+            // 
+            // ventasCdpTipo
+            // 
+            this.ventasCdpTipo.DataPropertyName = "CTipo";
+            this.ventasCdpTipo.HeaderText = "CDP Tipo";
+            this.ventasCdpTipo.MinimumWidth = 22;
+            this.ventasCdpTipo.Name = "ventasCdpTipo";
+            this.ventasCdpTipo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // ventasCdpSerie
+            // 
+            this.ventasCdpSerie.DataPropertyName = "CSerie";
+            this.ventasCdpSerie.HeaderText = "CDP Serie";
+            this.ventasCdpSerie.MinimumWidth = 22;
+            this.ventasCdpSerie.Name = "ventasCdpSerie";
+            this.ventasCdpSerie.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ventasCdpSerie.Width = 50;
+            // 
+            // ventasCdpNumero
+            // 
+            this.ventasCdpNumero.DataPropertyName = "CNDocumento";
+            this.ventasCdpNumero.HeaderText = "CDP N°";
+            this.ventasCdpNumero.MinimumWidth = 22;
+            this.ventasCdpNumero.Name = "ventasCdpNumero";
+            this.ventasCdpNumero.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ventasCdpNumero.Width = 50;
+            // 
+            // ventasProveedorTipo
+            // 
+            this.ventasProveedorTipo.DataPropertyName = "PTipo";
+            this.ventasProveedorTipo.HeaderText = "Tipo Proveedor";
+            this.ventasProveedorTipo.MinimumWidth = 22;
+            this.ventasProveedorTipo.Name = "ventasProveedorTipo";
+            this.ventasProveedorTipo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ventasProveedorTipo.Width = 40;
+            // 
+            // ventasProveedorNumero
+            // 
+            this.ventasProveedorNumero.DataPropertyName = "PNumero";
+            this.ventasProveedorNumero.HeaderText = "N° Proveedor";
+            this.ventasProveedorNumero.MinimumWidth = 22;
+            this.ventasProveedorNumero.Name = "ventasProveedorNumero";
+            this.ventasProveedorNumero.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ventasProveedorNumero.Width = 70;
+            // 
+            // ventasProveedorRazonSocial
+            // 
+            this.ventasProveedorRazonSocial.DataPropertyName = "PNombreRazonSocial";
+            this.ventasProveedorRazonSocial.HeaderText = "Razón Social Proveedor";
+            this.ventasProveedorRazonSocial.MinimumWidth = 22;
+            this.ventasProveedorRazonSocial.Name = "ventasProveedorRazonSocial";
+            this.ventasProveedorRazonSocial.ReadOnly = true;
+            this.ventasProveedorRazonSocial.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // ventasCuenta
+            // 
+            this.ventasCuenta.DataPropertyName = "Cuenta";
+            this.ventasCuenta.HeaderText = "Cuenta";
+            this.ventasCuenta.MinimumWidth = 22;
+            this.ventasCuenta.Name = "ventasCuenta";
+            this.ventasCuenta.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ventasCuenta.Width = 50;
+            // 
+            // ventasDescripcion
+            // 
+            this.ventasDescripcion.DataPropertyName = "Descripcion";
+            this.ventasDescripcion.HeaderText = "Descripción";
+            this.ventasDescripcion.MinimumWidth = 22;
+            this.ventasDescripcion.Name = "ventasDescripcion";
+            this.ventasDescripcion.ReadOnly = true;
+            this.ventasDescripcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // ventasValorExportacion
+            // 
+            this.ventasValorExportacion.DataPropertyName = "ValorExportacion";
+            this.ventasValorExportacion.HeaderText = "Valor Exportación";
+            this.ventasValorExportacion.MinimumWidth = 22;
+            this.ventasValorExportacion.Name = "ventasValorExportacion";
+            this.ventasValorExportacion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ventasValorExportacion.Width = 60;
+            // 
+            // ventasBaseImponible
+            // 
+            this.ventasBaseImponible.DataPropertyName = "BaseImponible";
+            this.ventasBaseImponible.HeaderText = "Base Imponible";
+            this.ventasBaseImponible.MinimumWidth = 22;
+            this.ventasBaseImponible.Name = "ventasBaseImponible";
+            this.ventasBaseImponible.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ventasBaseImponible.Width = 60;
+            // 
+            // ventasImporteTotalExonerada
+            // 
+            this.ventasImporteTotalExonerada.DataPropertyName = "ImporteTotalExonerada";
+            this.ventasImporteTotalExonerada.HeaderText = "Importe Total Exonerada";
+            this.ventasImporteTotalExonerada.MinimumWidth = 22;
+            this.ventasImporteTotalExonerada.Name = "ventasImporteTotalExonerada";
+            this.ventasImporteTotalExonerada.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ventasImporteTotalExonerada.Width = 60;
+            // 
+            // ventasImporteTotalInafecta
+            // 
+            this.ventasImporteTotalInafecta.DataPropertyName = "ImporteTotalInafecta";
+            this.ventasImporteTotalInafecta.HeaderText = "Importe Total Inafecta";
+            this.ventasImporteTotalInafecta.MinimumWidth = 22;
+            this.ventasImporteTotalInafecta.Name = "ventasImporteTotalInafecta";
+            this.ventasImporteTotalInafecta.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ventasImporteTotalInafecta.Width = 60;
+            // 
+            // ventasIgv
+            // 
+            this.ventasIgv.DataPropertyName = "IGV";
+            this.ventasIgv.HeaderText = "IGV";
+            this.ventasIgv.MinimumWidth = 22;
+            this.ventasIgv.Name = "ventasIgv";
+            this.ventasIgv.ReadOnly = true;
+            this.ventasIgv.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ventasIgv.Width = 60;
+            // 
+            // ventasImporteTotal
+            // 
+            this.ventasImporteTotal.DataPropertyName = "ImporteTotal";
+            this.ventasImporteTotal.HeaderText = "Importe Total";
+            this.ventasImporteTotal.MinimumWidth = 22;
+            this.ventasImporteTotal.Name = "ventasImporteTotal";
+            this.ventasImporteTotal.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ventasImporteTotal.Width = 60;
+            // 
+            // ventasTipoCambio
+            // 
+            this.ventasTipoCambio.DataPropertyName = "TC";
+            this.ventasTipoCambio.HeaderText = "Tipo Cambio";
+            this.ventasTipoCambio.MinimumWidth = 22;
+            this.ventasTipoCambio.Name = "ventasTipoCambio";
+            this.ventasTipoCambio.ReadOnly = true;
+            this.ventasTipoCambio.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ventasTipoCambio.Width = 60;
+            // 
+            // ventasDolares
+            // 
+            this.ventasDolares.DataPropertyName = "Dolares";
+            this.ventasDolares.HeaderText = "Dólares";
+            this.ventasDolares.MinimumWidth = 22;
+            this.ventasDolares.Name = "ventasDolares";
+            this.ventasDolares.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ventasDolares.Width = 60;
+            // 
+            // ventasIgvRetencion
+            // 
+            this.ventasIgvRetencion.DataPropertyName = "IgvRetencion";
+            this.ventasIgvRetencion.HeaderText = "IGV Retención";
+            this.ventasIgvRetencion.MinimumWidth = 22;
+            this.ventasIgvRetencion.Name = "ventasIgvRetencion";
+            this.ventasIgvRetencion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ventasIgvRetencion.Width = 60;
+            // 
+            // ventasCuentaDestino
+            // 
+            this.ventasCuentaDestino.DataPropertyName = "CuentaDestino";
+            this.ventasCuentaDestino.HeaderText = "Cuenta Destino";
+            this.ventasCuentaDestino.MinimumWidth = 22;
+            this.ventasCuentaDestino.Name = "ventasCuentaDestino";
+            this.ventasCuentaDestino.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ventasCuentaDestino.Width = 60;
+            // 
+            // ventasCuentaDestinoDescripcion
+            // 
+            this.ventasCuentaDestinoDescripcion.DataPropertyName = "CuentaDestinoDescripcion";
+            this.ventasCuentaDestinoDescripcion.HeaderText = "Destino Descripción";
+            this.ventasCuentaDestinoDescripcion.MinimumWidth = 22;
+            this.ventasCuentaDestinoDescripcion.Name = "ventasCuentaDestinoDescripcion";
+            this.ventasCuentaDestinoDescripcion.ReadOnly = true;
+            this.ventasCuentaDestinoDescripcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // ventasReferenciaFecha
+            // 
+            this.ventasReferenciaFecha.DataPropertyName = "ReferenciaFecha";
+            this.ventasReferenciaFecha.HeaderText = "Fecha Referencia";
+            this.ventasReferenciaFecha.MinimumWidth = 22;
+            this.ventasReferenciaFecha.Name = "ventasReferenciaFecha";
+            this.ventasReferenciaFecha.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ventasReferenciaFecha.Width = 70;
+            // 
+            // ventasReferenciaTipo
+            // 
+            this.ventasReferenciaTipo.DataPropertyName = "ReferenciaTipo";
+            this.ventasReferenciaTipo.HeaderText = "Tipo Referencia";
+            this.ventasReferenciaTipo.MinimumWidth = 22;
+            this.ventasReferenciaTipo.Name = "ventasReferenciaTipo";
+            this.ventasReferenciaTipo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // ventasReferenciaSerie
+            // 
+            this.ventasReferenciaSerie.DataPropertyName = "ReferenciaSerie";
+            this.ventasReferenciaSerie.HeaderText = "Serie Referencia";
+            this.ventasReferenciaSerie.MinimumWidth = 22;
+            this.ventasReferenciaSerie.Name = "ventasReferenciaSerie";
+            this.ventasReferenciaSerie.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ventasReferenciaSerie.Width = 60;
+            // 
+            // ventasReferenciaNumero
+            // 
+            this.ventasReferenciaNumero.DataPropertyName = "ReferenciaNumeroDocumento";
+            this.ventasReferenciaNumero.HeaderText = "N° Referencia";
+            this.ventasReferenciaNumero.MinimumWidth = 22;
+            this.ventasReferenciaNumero.Name = "ventasReferenciaNumero";
+            this.ventasReferenciaNumero.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ventasReferenciaNumero.Width = 60;
+            // 
+            // ventasCodigo
+            // 
+            this.ventasCodigo.DataPropertyName = "Codigo";
+            this.ventasCodigo.HeaderText = "Código";
+            this.ventasCodigo.MinimumWidth = 22;
+            this.ventasCodigo.Name = "ventasCodigo";
+            this.ventasCodigo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ventasCodigo.Width = 30;
+            // 
+            // ventasConstanciaNumero
+            // 
+            this.ventasConstanciaNumero.DataPropertyName = "ConstanciaNumero";
+            this.ventasConstanciaNumero.HeaderText = "N° Constancia";
+            this.ventasConstanciaNumero.MinimumWidth = 22;
+            this.ventasConstanciaNumero.Name = "ventasConstanciaNumero";
+            this.ventasConstanciaNumero.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ventasConstanciaNumero.Width = 60;
+            // 
+            // ventasConstanciaFechaPago
+            // 
+            this.ventasConstanciaFechaPago.DataPropertyName = "ConstanciaFechaPago";
+            this.ventasConstanciaFechaPago.HeaderText = "Constancia Fecha Pago";
+            this.ventasConstanciaFechaPago.MinimumWidth = 22;
+            this.ventasConstanciaFechaPago.Name = "ventasConstanciaFechaPago";
+            this.ventasConstanciaFechaPago.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ventasConstanciaFechaPago.Width = 70;
+            // 
+            // ventasDetraccionSoles
+            // 
+            this.ventasDetraccionSoles.DataPropertyName = "DetraccionSoles";
+            this.ventasDetraccionSoles.HeaderText = "Detracción Soles";
+            this.ventasDetraccionSoles.MinimumWidth = 22;
+            this.ventasDetraccionSoles.Name = "ventasDetraccionSoles";
+            this.ventasDetraccionSoles.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ventasDetraccionSoles.Width = 60;
+            // 
+            // ventasReferencia
+            // 
+            this.ventasReferencia.DataPropertyName = "Referencia";
+            this.ventasReferencia.HeaderText = "Monto Referencial";
+            this.ventasReferencia.MinimumWidth = 22;
+            this.ventasReferencia.Name = "ventasReferencia";
+            this.ventasReferencia.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ventasReferencia.Width = 60;
+            // 
+            // ventasObservacion
+            // 
+            this.ventasObservacion.DataPropertyName = "Observacion";
+            this.ventasObservacion.HeaderText = "Observación";
+            this.ventasObservacion.MinimumWidth = 22;
+            this.ventasObservacion.Name = "ventasObservacion";
+            this.ventasObservacion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // idLibroVentasDataGridViewTextBoxColumn
+            // 
+            this.idLibroVentasDataGridViewTextBoxColumn.DataPropertyName = "idLibroVentas";
+            this.idLibroVentasDataGridViewTextBoxColumn.HeaderText = "idLibroVentas";
+            this.idLibroVentasDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idLibroVentasDataGridViewTextBoxColumn.Name = "idLibroVentasDataGridViewTextBoxColumn";
+            this.idLibroVentasDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idLibroVentasDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Mes";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Mes";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "NReg";
+            this.dataGridViewTextBoxColumn6.HeaderText = "NReg";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "FechaEmision";
+            this.dataGridViewTextBoxColumn7.HeaderText = "FechaEmision";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // fechaPagoDataGridViewTextBoxColumn1
+            // 
+            this.fechaPagoDataGridViewTextBoxColumn1.DataPropertyName = "FechaPago";
+            this.fechaPagoDataGridViewTextBoxColumn1.HeaderText = "FechaPago";
+            this.fechaPagoDataGridViewTextBoxColumn1.MinimumWidth = 22;
+            this.fechaPagoDataGridViewTextBoxColumn1.Name = "fechaPagoDataGridViewTextBoxColumn1";
+            this.fechaPagoDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // cTipoDataGridViewTextBoxColumn1
+            // 
+            this.cTipoDataGridViewTextBoxColumn1.DataPropertyName = "CTipo";
+            this.cTipoDataGridViewTextBoxColumn1.HeaderText = "CTipo";
+            this.cTipoDataGridViewTextBoxColumn1.MinimumWidth = 22;
+            this.cTipoDataGridViewTextBoxColumn1.Name = "cTipoDataGridViewTextBoxColumn1";
+            this.cTipoDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // cSerieDataGridViewTextBoxColumn1
+            // 
+            this.cSerieDataGridViewTextBoxColumn1.DataPropertyName = "CSerie";
+            this.cSerieDataGridViewTextBoxColumn1.HeaderText = "CSerie";
+            this.cSerieDataGridViewTextBoxColumn1.MinimumWidth = 22;
+            this.cSerieDataGridViewTextBoxColumn1.Name = "cSerieDataGridViewTextBoxColumn1";
+            this.cSerieDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // cNDocumentoDataGridViewTextBoxColumn1
+            // 
+            this.cNDocumentoDataGridViewTextBoxColumn1.DataPropertyName = "CNDocumento";
+            this.cNDocumentoDataGridViewTextBoxColumn1.HeaderText = "CNDocumento";
+            this.cNDocumentoDataGridViewTextBoxColumn1.MinimumWidth = 22;
+            this.cNDocumentoDataGridViewTextBoxColumn1.Name = "cNDocumentoDataGridViewTextBoxColumn1";
+            this.cNDocumentoDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // pTipoDataGridViewTextBoxColumn1
+            // 
+            this.pTipoDataGridViewTextBoxColumn1.DataPropertyName = "PTipo";
+            this.pTipoDataGridViewTextBoxColumn1.HeaderText = "PTipo";
+            this.pTipoDataGridViewTextBoxColumn1.MinimumWidth = 22;
+            this.pTipoDataGridViewTextBoxColumn1.Name = "pTipoDataGridViewTextBoxColumn1";
+            this.pTipoDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // pNumeroDataGridViewTextBoxColumn1
+            // 
+            this.pNumeroDataGridViewTextBoxColumn1.DataPropertyName = "PNumero";
+            this.pNumeroDataGridViewTextBoxColumn1.HeaderText = "PNumero";
+            this.pNumeroDataGridViewTextBoxColumn1.MinimumWidth = 22;
+            this.pNumeroDataGridViewTextBoxColumn1.Name = "pNumeroDataGridViewTextBoxColumn1";
+            this.pNumeroDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // pNombreRazonSocialDataGridViewTextBoxColumn1
+            // 
+            this.pNombreRazonSocialDataGridViewTextBoxColumn1.DataPropertyName = "PNombreRazonSocial";
+            this.pNombreRazonSocialDataGridViewTextBoxColumn1.HeaderText = "PNombreRazonSocial";
+            this.pNombreRazonSocialDataGridViewTextBoxColumn1.MinimumWidth = 22;
+            this.pNombreRazonSocialDataGridViewTextBoxColumn1.Name = "pNombreRazonSocialDataGridViewTextBoxColumn1";
+            this.pNombreRazonSocialDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // cuentaDataGridViewTextBoxColumn1
+            // 
+            this.cuentaDataGridViewTextBoxColumn1.DataPropertyName = "Cuenta";
+            this.cuentaDataGridViewTextBoxColumn1.HeaderText = "Cuenta";
+            this.cuentaDataGridViewTextBoxColumn1.MinimumWidth = 22;
+            this.cuentaDataGridViewTextBoxColumn1.Name = "cuentaDataGridViewTextBoxColumn1";
+            this.cuentaDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // descripcionDataGridViewTextBoxColumn1
+            // 
+            this.descripcionDataGridViewTextBoxColumn1.DataPropertyName = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn1.HeaderText = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn1.MinimumWidth = 22;
+            this.descripcionDataGridViewTextBoxColumn1.Name = "descripcionDataGridViewTextBoxColumn1";
+            this.descripcionDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // valorExportacionDataGridViewTextBoxColumn
+            // 
+            this.valorExportacionDataGridViewTextBoxColumn.DataPropertyName = "ValorExportacion";
+            this.valorExportacionDataGridViewTextBoxColumn.HeaderText = "ValorExportacion";
+            this.valorExportacionDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.valorExportacionDataGridViewTextBoxColumn.Name = "valorExportacionDataGridViewTextBoxColumn";
+            this.valorExportacionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // baseImponibleDataGridViewTextBoxColumn1
+            // 
+            this.baseImponibleDataGridViewTextBoxColumn1.DataPropertyName = "BaseImponible";
+            this.baseImponibleDataGridViewTextBoxColumn1.HeaderText = "BaseImponible";
+            this.baseImponibleDataGridViewTextBoxColumn1.MinimumWidth = 22;
+            this.baseImponibleDataGridViewTextBoxColumn1.Name = "baseImponibleDataGridViewTextBoxColumn1";
+            this.baseImponibleDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // importeTotalExoneradaDataGridViewTextBoxColumn
+            // 
+            this.importeTotalExoneradaDataGridViewTextBoxColumn.DataPropertyName = "ImporteTotalExonerada";
+            this.importeTotalExoneradaDataGridViewTextBoxColumn.HeaderText = "ImporteTotalExonerada";
+            this.importeTotalExoneradaDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.importeTotalExoneradaDataGridViewTextBoxColumn.Name = "importeTotalExoneradaDataGridViewTextBoxColumn";
+            this.importeTotalExoneradaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // importeTotalInafectaDataGridViewTextBoxColumn
+            // 
+            this.importeTotalInafectaDataGridViewTextBoxColumn.DataPropertyName = "ImporteTotalInafecta";
+            this.importeTotalInafectaDataGridViewTextBoxColumn.HeaderText = "ImporteTotalInafecta";
+            this.importeTotalInafectaDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.importeTotalInafectaDataGridViewTextBoxColumn.Name = "importeTotalInafectaDataGridViewTextBoxColumn";
+            this.importeTotalInafectaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // iGVDataGridViewTextBoxColumn1
+            // 
+            this.iGVDataGridViewTextBoxColumn1.DataPropertyName = "IGV";
+            this.iGVDataGridViewTextBoxColumn1.HeaderText = "IGV";
+            this.iGVDataGridViewTextBoxColumn1.MinimumWidth = 22;
+            this.iGVDataGridViewTextBoxColumn1.Name = "iGVDataGridViewTextBoxColumn1";
+            this.iGVDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // importeTotalDataGridViewTextBoxColumn1
+            // 
+            this.importeTotalDataGridViewTextBoxColumn1.DataPropertyName = "ImporteTotal";
+            this.importeTotalDataGridViewTextBoxColumn1.HeaderText = "ImporteTotal";
+            this.importeTotalDataGridViewTextBoxColumn1.MinimumWidth = 22;
+            this.importeTotalDataGridViewTextBoxColumn1.Name = "importeTotalDataGridViewTextBoxColumn1";
+            this.importeTotalDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // tCDataGridViewTextBoxColumn
+            // 
+            this.tCDataGridViewTextBoxColumn.DataPropertyName = "TC";
+            this.tCDataGridViewTextBoxColumn.HeaderText = "TC";
+            this.tCDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.tCDataGridViewTextBoxColumn.Name = "tCDataGridViewTextBoxColumn";
+            this.tCDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dolaresDataGridViewTextBoxColumn1
+            // 
+            this.dolaresDataGridViewTextBoxColumn1.DataPropertyName = "Dolares";
+            this.dolaresDataGridViewTextBoxColumn1.HeaderText = "Dolares";
+            this.dolaresDataGridViewTextBoxColumn1.MinimumWidth = 22;
+            this.dolaresDataGridViewTextBoxColumn1.Name = "dolaresDataGridViewTextBoxColumn1";
+            this.dolaresDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // igvRetencionDataGridViewTextBoxColumn
+            // 
+            this.igvRetencionDataGridViewTextBoxColumn.DataPropertyName = "IgvRetencion";
+            this.igvRetencionDataGridViewTextBoxColumn.HeaderText = "IgvRetencion";
+            this.igvRetencionDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.igvRetencionDataGridViewTextBoxColumn.Name = "igvRetencionDataGridViewTextBoxColumn";
+            this.igvRetencionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // cuentaDestinoDataGridViewTextBoxColumn1
+            // 
+            this.cuentaDestinoDataGridViewTextBoxColumn1.DataPropertyName = "CuentaDestino";
+            this.cuentaDestinoDataGridViewTextBoxColumn1.HeaderText = "CuentaDestino";
+            this.cuentaDestinoDataGridViewTextBoxColumn1.MinimumWidth = 22;
+            this.cuentaDestinoDataGridViewTextBoxColumn1.Name = "cuentaDestinoDataGridViewTextBoxColumn1";
+            this.cuentaDestinoDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // pagoDataGridViewTextBoxColumn
+            // 
+            this.pagoDataGridViewTextBoxColumn.DataPropertyName = "Pago";
+            this.pagoDataGridViewTextBoxColumn.HeaderText = "Pago";
+            this.pagoDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.pagoDataGridViewTextBoxColumn.Name = "pagoDataGridViewTextBoxColumn";
+            this.pagoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // referenciaFechaDataGridViewTextBoxColumn1
+            // 
+            this.referenciaFechaDataGridViewTextBoxColumn1.DataPropertyName = "ReferenciaFecha";
+            this.referenciaFechaDataGridViewTextBoxColumn1.HeaderText = "ReferenciaFecha";
+            this.referenciaFechaDataGridViewTextBoxColumn1.MinimumWidth = 22;
+            this.referenciaFechaDataGridViewTextBoxColumn1.Name = "referenciaFechaDataGridViewTextBoxColumn1";
+            this.referenciaFechaDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // referenciaTipoDataGridViewTextBoxColumn1
+            // 
+            this.referenciaTipoDataGridViewTextBoxColumn1.DataPropertyName = "ReferenciaTipo";
+            this.referenciaTipoDataGridViewTextBoxColumn1.HeaderText = "ReferenciaTipo";
+            this.referenciaTipoDataGridViewTextBoxColumn1.MinimumWidth = 22;
+            this.referenciaTipoDataGridViewTextBoxColumn1.Name = "referenciaTipoDataGridViewTextBoxColumn1";
+            this.referenciaTipoDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // referenciaSerieDataGridViewTextBoxColumn1
+            // 
+            this.referenciaSerieDataGridViewTextBoxColumn1.DataPropertyName = "ReferenciaSerie";
+            this.referenciaSerieDataGridViewTextBoxColumn1.HeaderText = "ReferenciaSerie";
+            this.referenciaSerieDataGridViewTextBoxColumn1.MinimumWidth = 22;
+            this.referenciaSerieDataGridViewTextBoxColumn1.Name = "referenciaSerieDataGridViewTextBoxColumn1";
+            this.referenciaSerieDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // referenciaNumeroDocumentoDataGridViewTextBoxColumn
+            // 
+            this.referenciaNumeroDocumentoDataGridViewTextBoxColumn.DataPropertyName = "ReferenciaNumeroDocumento";
+            this.referenciaNumeroDocumentoDataGridViewTextBoxColumn.HeaderText = "ReferenciaNumeroDocumento";
+            this.referenciaNumeroDocumentoDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.referenciaNumeroDocumentoDataGridViewTextBoxColumn.Name = "referenciaNumeroDocumentoDataGridViewTextBoxColumn";
+            this.referenciaNumeroDocumentoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // codigoDataGridViewTextBoxColumn1
+            // 
+            this.codigoDataGridViewTextBoxColumn1.DataPropertyName = "Codigo";
+            this.codigoDataGridViewTextBoxColumn1.HeaderText = "Codigo";
+            this.codigoDataGridViewTextBoxColumn1.MinimumWidth = 22;
+            this.codigoDataGridViewTextBoxColumn1.Name = "codigoDataGridViewTextBoxColumn1";
+            this.codigoDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // constanciaNumeroDataGridViewTextBoxColumn1
+            // 
+            this.constanciaNumeroDataGridViewTextBoxColumn1.DataPropertyName = "ConstanciaNumero";
+            this.constanciaNumeroDataGridViewTextBoxColumn1.HeaderText = "ConstanciaNumero";
+            this.constanciaNumeroDataGridViewTextBoxColumn1.MinimumWidth = 22;
+            this.constanciaNumeroDataGridViewTextBoxColumn1.Name = "constanciaNumeroDataGridViewTextBoxColumn1";
+            this.constanciaNumeroDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // constanciaFechaPagoDataGridViewTextBoxColumn1
+            // 
+            this.constanciaFechaPagoDataGridViewTextBoxColumn1.DataPropertyName = "ConstanciaFechaPago";
+            this.constanciaFechaPagoDataGridViewTextBoxColumn1.HeaderText = "ConstanciaFechaPago";
+            this.constanciaFechaPagoDataGridViewTextBoxColumn1.MinimumWidth = 22;
+            this.constanciaFechaPagoDataGridViewTextBoxColumn1.Name = "constanciaFechaPagoDataGridViewTextBoxColumn1";
+            this.constanciaFechaPagoDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // detraccionSolesDataGridViewTextBoxColumn
+            // 
+            this.detraccionSolesDataGridViewTextBoxColumn.DataPropertyName = "DetraccionSoles";
+            this.detraccionSolesDataGridViewTextBoxColumn.HeaderText = "DetraccionSoles";
+            this.detraccionSolesDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.detraccionSolesDataGridViewTextBoxColumn.Name = "detraccionSolesDataGridViewTextBoxColumn";
+            this.detraccionSolesDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // referenciaDataGridViewTextBoxColumn
+            // 
+            this.referenciaDataGridViewTextBoxColumn.DataPropertyName = "Referencia";
+            this.referenciaDataGridViewTextBoxColumn.HeaderText = "Referencia";
+            this.referenciaDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.referenciaDataGridViewTextBoxColumn.Name = "referenciaDataGridViewTextBoxColumn";
+            this.referenciaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // observacionDataGridViewTextBoxColumn
+            // 
+            this.observacionDataGridViewTextBoxColumn.DataPropertyName = "Observacion";
+            this.observacionDataGridViewTextBoxColumn.HeaderText = "Observacion";
+            this.observacionDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.observacionDataGridViewTextBoxColumn.Name = "observacionDataGridViewTextBoxColumn";
+            this.observacionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // usuarioDataGridViewTextBoxColumn1
+            // 
+            this.usuarioDataGridViewTextBoxColumn1.DataPropertyName = "Usuario";
+            this.usuarioDataGridViewTextBoxColumn1.HeaderText = "Usuario";
+            this.usuarioDataGridViewTextBoxColumn1.MinimumWidth = 22;
+            this.usuarioDataGridViewTextBoxColumn1.Name = "usuarioDataGridViewTextBoxColumn1";
+            this.usuarioDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // fechaRegistroDataGridViewTextBoxColumn1
+            // 
+            this.fechaRegistroDataGridViewTextBoxColumn1.DataPropertyName = "FechaRegistro";
+            this.fechaRegistroDataGridViewTextBoxColumn1.HeaderText = "FechaRegistro";
+            this.fechaRegistroDataGridViewTextBoxColumn1.MinimumWidth = 22;
+            this.fechaRegistroDataGridViewTextBoxColumn1.Name = "fechaRegistroDataGridViewTextBoxColumn1";
+            this.fechaRegistroDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // fechaModificacionDataGridViewTextBoxColumn1
+            // 
+            this.fechaModificacionDataGridViewTextBoxColumn1.DataPropertyName = "FechaModificacion";
+            this.fechaModificacionDataGridViewTextBoxColumn1.HeaderText = "FechaModificacion";
+            this.fechaModificacionDataGridViewTextBoxColumn1.MinimumWidth = 22;
+            this.fechaModificacionDataGridViewTextBoxColumn1.Name = "fechaModificacionDataGridViewTextBoxColumn1";
+            this.fechaModificacionDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // cuentaDestinoDescripcionDataGridViewTextBoxColumn
+            // 
+            this.cuentaDestinoDescripcionDataGridViewTextBoxColumn.DataPropertyName = "CuentaDestinoDescripcion";
+            this.cuentaDestinoDescripcionDataGridViewTextBoxColumn.HeaderText = "CuentaDestinoDescripcion";
+            this.cuentaDestinoDescripcionDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.cuentaDestinoDescripcionDataGridViewTextBoxColumn.Name = "cuentaDestinoDescripcionDataGridViewTextBoxColumn";
+            this.cuentaDestinoDescripcionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // BSVentasBindingSource
+            // 
+            this.BSVentasBindingSource.DataMember = "tblRegistroVentas";
+            this.BSVentasBindingSource.DataSource = this.dSVentas;
+            // 
+            // dSVentas
+            // 
+            this.dSVentas.DataSetName = "DSVentas";
+            this.dSVentas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // TAComprasTableAdapter
+            // 
+            this.TAComprasTableAdapter.ClearBeforeFill = true;
+            // 
+            // TAVentasTableAdapter
+            // 
+            this.TAVentasTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnAgregarFila
+            // 
+            this.btnAgregarFila.Location = new System.Drawing.Point(118, 3);
+            this.btnAgregarFila.Name = "btnAgregarFila";
+            this.btnAgregarFila.Size = new System.Drawing.Size(86, 34);
+            this.btnAgregarFila.TabIndex = 14;
+            this.btnAgregarFila.Text = "+ Fila";
+            this.btnAgregarFila.UseVisualStyleBackColor = true;
+            this.btnAgregarFila.Click += new System.EventHandler(this.btnAgregarFila_Click);
+            // 
             // FrmProgramaLibrosElectronicos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2222,5 +2235,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn usuarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaRegistroDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaModificacionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnAgregarFila;
     }
 }

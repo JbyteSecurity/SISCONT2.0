@@ -42,3 +42,4 @@ C:\Users\Developers\Source\Repos\SISCONT2.0\SISCONT\Presentacion\obj\Debug\Prese
 C:\Users\Developers\Source\Repos\SISCONT2.0\SISCONT\Presentacion\obj\Debug\Presentacion.csproj.CopyComplete
 C:\Users\Developers\Source\Repos\SISCONT2.0\SISCONT\Presentacion\obj\Debug\Presentacion.exe
 C:\Users\Developers\Source\Repos\SISCONT2.0\SISCONT\Presentacion\obj\Debug\Presentacion.pdb
+C:\Users\Developers\Source\Repos\SISCONT2.0\SISCONT\Presentacion\obj\Debug\Presentacion.FrmUsuario.resources

@@ -47,6 +47,7 @@
     <Compile Include="DaoDetraccion.cs" />
     <Compile Include="DaoPlanContable.cs" />
     <Compile Include="DaoProveedor.cs" />
+    <Compile Include="DaoRol.cs" />
     <Compile Include="DaoTipoCambio.cs" />
     <Compile Include="DaoUsuario.cs" />
     <Compile Include="DaoVentas.cs" />

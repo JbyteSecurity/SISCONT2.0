@@ -43,7 +43,7 @@ namespace Datos
             return dataTable;
         }
 
-        public void Insert(string fecha, double compra, double venta)
+        public bool Insert(string fecha, double compra, double venta)
         {
             sqlCommand.Connection = conexion.OpenConnection();
             sqlCommand.CommandText = "sp_insert_tipo_cambio";
@@ -53,12 +53,17 @@ namespace Datos
             sqlCommand.Parameters.AddWithValue("@Compra", compra);
             sqlCommand.Parameters.AddWithValue("@Venta", venta);
 
-            sqlCommand.ExecuteNonQuery();
-            sqlCommand.Parameters.Clear();
-            conexion.CloseConnection();
+            if (sqlCommand.ExecuteNonQuery() > 0)
+            {
+                sqlCommand.Parameters.Clear();
+                conexion.CloseConnection();
+                return true;
+            }
+            else
+                return false;
         }
 
-        public void Update(int id, string fecha, double compra, double venta)
+        public bool Update(int id, string fecha, double compra, double venta)
         {
             sqlCommand.Connection = conexion.OpenConnection();
             sqlCommand.CommandText = "sp_update_tipo_cambio";
@@ -69,12 +74,17 @@ namespace Datos
             sqlCommand.Parameters.AddWithValue("@Compra", compra);
             sqlCommand.Parameters.AddWithValue("@Venta", venta);
 
-            sqlCommand.ExecuteNonQuery();
-            sqlCommand.Parameters.Clear();
-            conexion.CloseConnection();
+            if (sqlCommand.ExecuteNonQuery() > 0)
+            {
+                sqlCommand.Parameters.Clear();
+                conexion.CloseConnection();
+                return true;
+            }
+            else
+                return false;
         }
 
-        public void Destroy(int id)
+        public bool Destroy(int id)
         {
             sqlCommand.Connection = conexion.OpenConnection();
             sqlCommand.CommandText = "sp_delete_tipo_cambio";
@@ -82,9 +92,14 @@ namespace Datos
 
             sqlCommand.Parameters.AddWithValue("@id", id);
 
-            sqlCommand.ExecuteNonQuery();
-            sqlCommand.Parameters.Clear();
-            conexion.CloseConnection();
+            if (sqlCommand.ExecuteNonQuery() > 0)
+            {
+                sqlCommand.Parameters.Clear();
+                conexion.CloseConnection();
+                return true;
+            }
+            else
+                return false;
         }
     }
 }
