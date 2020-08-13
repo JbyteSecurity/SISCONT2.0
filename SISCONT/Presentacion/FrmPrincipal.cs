@@ -17,6 +17,8 @@ namespace Presentacion
     public partial class FrmPrincipal : Form
     {
         TipoCambio tipoCambio = new TipoCambio();
+
+        public string username, nombreUsuario;
         public FrmPrincipal()
         {
             InitializeComponent();
@@ -26,6 +28,7 @@ namespace Presentacion
         {
             getDolarTypeChange();
             NetworkState();
+            UsuarioToolStripMenuItem.Text = nombreUsuario;
         }
 
         private void menuItemProveedores_Click(object sender, EventArgs e)
@@ -43,6 +46,7 @@ namespace Presentacion
             frmProgramaLibrosElectronicos.MdiParent = this;
             frmProgramaLibrosElectronicos.Dock = DockStyle.Fill;
             ///frmProgramaLibrosElectronicos.Text = "SISCONT - " + this.MdiChildren;
+            frmProgramaLibrosElectronicos.username = username;
             frmProgramaLibrosElectronicos.Show();
         }
         private void tipoDeCambioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -50,13 +54,6 @@ namespace Presentacion
             FrmTipoCambio frmTipoCambio = new FrmTipoCambio();
             frmTipoCambio.MdiParent = this;
             frmTipoCambio.Show();
-        }
-
-        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            FrmLogin frmLogin = new FrmLogin();
-            frmLogin.Show();
         }
 
         private void detracciónToolStripMenuItem_Click(object sender, EventArgs e)
@@ -162,6 +159,18 @@ namespace Presentacion
             FrmRol frmRol = new FrmRol();
             frmRol.MdiParent = this;
             frmRol.Show();
+        }
+
+        private void salirToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+            FrmLogin frmLogin = new FrmLogin();
+            frmLogin.Show();
+        }
+
+        private void UsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

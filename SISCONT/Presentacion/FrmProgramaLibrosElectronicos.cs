@@ -23,6 +23,8 @@ namespace Presentacion
 
         BindingSource bindingSourceCompras = new BindingSource();
         DataTable dataTableCompras = new DataTable();
+
+        public string username;
         public FrmProgramaLibrosElectronicos()
         {
             InitializeComponent();
@@ -56,6 +58,7 @@ namespace Presentacion
             dgvRegistroVentas.DefaultCellStyle.Font = new Font("Tahoma", 8, FontStyle.Regular);
             dgvRegistroVentas.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 8, FontStyle.Regular);
             lblPeriodoActual.Text = "Periodo Actual: " + DateTime.UtcNow.ToString("MMMM") + " " + DateTime.UtcNow.ToString("yyyy");
+            //lblPeriodoActual.Text = username;
         }
 
         private void cellContentClickEvent(object sender, DataGridViewCellEventArgs e)
@@ -265,7 +268,7 @@ namespace Presentacion
                         string comprasObservacion = row.Cells["comprasObservacion"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasObservacion"].Value) : "";
 
 
-                        string Usuario = "user02";
+                        string Usuario = username;
 
                         if (id < 0)
                         {
@@ -350,7 +353,7 @@ namespace Presentacion
                         double ventasDetraccionSoles = row.Cells["ventasDetraccionSoles"].Value != DBNull.Value ? Convert.ToDouble(row.Cells["ventasDetraccionSoles"].Value) : 0;
                         string ventasReferencia = row.Cells["ventasReferencia"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasReferencia"].Value) : "";
                         string ventasObservacion = row.Cells["ventasObservacion"].Value != DBNull.Value ? Convert.ToString(row.Cells["ventasObservacion"].Value) : "";
-                        string ventasUSuario = "user02";
+                        string ventasUSuario = username;
 
                         if (ventasId < 0)
                         {

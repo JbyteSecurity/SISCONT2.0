@@ -38,9 +38,11 @@
             this.mantenimientoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.rolesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.permisosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.UsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ssPrincipal = new System.Windows.Forms.StatusStrip();
             this.tssConexion = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             this.ssPrincipal.SuspendLayout();
             this.SuspendLayout();
@@ -51,7 +53,8 @@
             this.toolStripMenuItem1,
             this.mantenimientoToolStripMenuItem,
             this.usuariosToolStripMenuItem,
-            this.salirToolStripMenuItem});
+            this.toolStripMenuItem2,
+            this.UsuarioToolStripMenuItem});
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
             this.mainMenu.Size = new System.Drawing.Size(1382, 24);
@@ -126,12 +129,13 @@
             this.permisosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.permisosToolStripMenuItem.Text = "Permisos";
             // 
-            // salirToolStripMenuItem
+            // UsuarioToolStripMenuItem
             // 
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
-            this.salirToolStripMenuItem.Text = "Salir";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            this.UsuarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.salirToolStripMenuItem});
+            this.UsuarioToolStripMenuItem.Name = "UsuarioToolStripMenuItem";
+            this.UsuarioToolStripMenuItem.Size = new System.Drawing.Size(12, 20);
+            this.UsuarioToolStripMenuItem.Click += new System.EventHandler(this.UsuarioToolStripMenuItem_Click);
             // 
             // ssPrincipal
             // 
@@ -147,6 +151,19 @@
             // 
             this.tssConexion.Name = "tssConexion";
             this.tssConexion.Size = new System.Drawing.Size(0, 17);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(22, 20);
+            this.toolStripMenuItem2.Text = "|";
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click_1);
             // 
             // FrmPrincipal
             // 
@@ -177,7 +194,7 @@
         private System.Windows.Forms.ToolStripMenuItem mantenimientoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuItemProveedores;
         private System.Windows.Forms.ToolStripMenuItem tipoDeCambioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem UsuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem detracciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mantenimientoToolStripMenuItem1;
@@ -185,6 +202,8 @@
         private System.Windows.Forms.ToolStripMenuItem permisosToolStripMenuItem;
         private System.Windows.Forms.StatusStrip ssPrincipal;
         private System.Windows.Forms.ToolStripStatusLabel tssConexion;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
     }
 }
 
