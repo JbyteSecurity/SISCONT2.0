@@ -156,5 +156,12 @@ namespace Presentacion
             WebRequest = null;
             tssConexion.Text = Estado;
         }
+
+        private void rolesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmRol frmRol = new FrmRol();
+            frmRol.MdiParent = this;
+            frmRol.Show();
+        }
     }
 }

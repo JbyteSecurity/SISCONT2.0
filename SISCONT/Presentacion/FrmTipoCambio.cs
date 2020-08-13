@@ -97,14 +97,19 @@ namespace Presentacion
         private void Destroy()
         {
             int id = Convert.ToInt32(dgvTipoCambio.CurrentRow.Cells["ID"].Value);
-            if (tipoCambio.Destroy(id))
+
+            DialogResult dialogResult = MessageBox.Show("¿Realmente quieres eliminar este Tipo de Cambio?", "Proveedor .::. Info", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (dialogResult == DialogResult.Yes)
             {
-                MessageBox.Show("Tipo de Cambio Eliminado", "Proveedor .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                ClearText();
-                All();
+                if (tipoCambio.Destroy(id))
+                {
+                    ClearText();
+                    All();
+                }
+                else
+                    MessageBox.Show("Tipo de Cambio NO Eliminado", "Proveedor .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else
-                MessageBox.Show("Tipo de Cambio NO Eliminado", "Proveedor .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void GetToTextBox()

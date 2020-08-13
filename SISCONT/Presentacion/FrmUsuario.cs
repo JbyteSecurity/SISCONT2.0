@@ -59,7 +59,7 @@ namespace Presentacion
             string telefono = txtTelefono.Text;
             string contrasenia = txtContrasenia.Text;
             string contraseniaConfirma = txtContraseniaConfirma.Text;
-            int rolID = cboRol.SelectedIndex;
+            int rolID = (int)cboRol.SelectedValue;
 
             if (edit)
             {
@@ -74,8 +74,12 @@ namespace Presentacion
                     }
                     else
                         MessageBox.Show("Usuario NO Actulizado", "Usuario .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                } else
+                }
+                else
+                {
+                    txtContrasenia.Focus();
                     MessageBox.Show("Las contraseñas no coinciden", "Usuario .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             else
             {
@@ -113,7 +117,7 @@ namespace Presentacion
                 txtCorreo.Text = dgvUsuarios.CurrentRow.Cells["Correo"].Value.ToString();
                 txtTelefono.Text = dgvUsuarios.CurrentRow.Cells["Telefono"].Value.ToString();
                 txtUsuario.Text = dgvUsuarios.CurrentRow.Cells["Usuario"].Value.ToString();
-                cboRol.SelectedIndex = rolIdRow;
+                cboRol.SelectedValue = rolIdRow;
                 //cboRol.SelectedItem = dgvUsuarios.CurrentRow.Cells["Rol"].Value.ToString();
             }
             else
@@ -123,14 +127,17 @@ namespace Presentacion
         private void Destroy()
         {
             int id = Convert.ToInt32(dgvUsuarios.CurrentRow.Cells["ID"].Value);
-            if (usuario.Destroy(id))
+            DialogResult dialogResult = MessageBox.Show("¿Realmente quieres elminar este Usuario?", "Usuario .::. Info", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (dialogResult == DialogResult.Yes)
             {
-                MessageBox.Show("Usuario Eliminado", "Usuario .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                ClearText();
-                All();
+                if (usuario.Destroy(id))
+                {
+                    ClearText();
+                    All();
+                }
+                else
+                    MessageBox.Show("Usuario NO Eliminado", "Usuario .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else
-                MessageBox.Show("Usuario NO Eliminado", "Usuario .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void FillComboRol()

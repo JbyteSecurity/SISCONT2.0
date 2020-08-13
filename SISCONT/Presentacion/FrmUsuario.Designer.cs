@@ -76,7 +76,7 @@
             this.txtNombre.Location = new System.Drawing.Point(117, 6);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(130, 20);
-            this.txtNombre.TabIndex = 2;
+            this.txtNombre.TabIndex = 1;
             // 
             // btnGuardar
             // 
@@ -86,7 +86,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(117, 189);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(130, 23);
-            this.btnGuardar.TabIndex = 3;
+            this.btnGuardar.TabIndex = 8;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -96,7 +96,7 @@
             this.txtCorreo.Location = new System.Drawing.Point(117, 58);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(130, 20);
-            this.txtCorreo.TabIndex = 5;
+            this.txtCorreo.TabIndex = 3;
             // 
             // label2
             // 
@@ -112,7 +112,7 @@
             this.txtTelefono.Location = new System.Drawing.Point(117, 32);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(130, 20);
-            this.txtTelefono.TabIndex = 7;
+            this.txtTelefono.TabIndex = 2;
             // 
             // label3
             // 
@@ -128,7 +128,7 @@
             this.txtUsuario.Location = new System.Drawing.Point(117, 84);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(130, 20);
-            this.txtUsuario.TabIndex = 9;
+            this.txtUsuario.TabIndex = 4;
             // 
             // label4
             // 
@@ -143,8 +143,9 @@
             // 
             this.txtContrasenia.Location = new System.Drawing.Point(117, 110);
             this.txtContrasenia.Name = "txtContrasenia";
+            this.txtContrasenia.PasswordChar = '*';
             this.txtContrasenia.Size = new System.Drawing.Size(130, 20);
-            this.txtContrasenia.TabIndex = 11;
+            this.txtContrasenia.TabIndex = 5;
             // 
             // label5
             // 
@@ -170,14 +171,15 @@
             this.cboRol.Location = new System.Drawing.Point(117, 162);
             this.cboRol.Name = "cboRol";
             this.cboRol.Size = new System.Drawing.Size(130, 21);
-            this.cboRol.TabIndex = 13;
+            this.cboRol.TabIndex = 7;
             // 
             // txtContraseniaConfirma
             // 
             this.txtContraseniaConfirma.Location = new System.Drawing.Point(117, 136);
             this.txtContraseniaConfirma.Name = "txtContraseniaConfirma";
+            this.txtContraseniaConfirma.PasswordChar = '*';
             this.txtContraseniaConfirma.Size = new System.Drawing.Size(130, 20);
-            this.txtContraseniaConfirma.TabIndex = 15;
+            this.txtContraseniaConfirma.TabIndex = 6;
             // 
             // label7
             // 
@@ -196,7 +198,7 @@
             this.btnNuevo.Location = new System.Drawing.Point(11, 189);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 23);
-            this.btnNuevo.TabIndex = 16;
+            this.btnNuevo.TabIndex = 11;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
@@ -209,7 +211,7 @@
             this.btnEditar.Location = new System.Drawing.Point(626, 189);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 23);
-            this.btnEditar.TabIndex = 17;
+            this.btnEditar.TabIndex = 9;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -219,10 +221,11 @@
             this.btnEliminar.BackColor = System.Drawing.Color.Red;
             this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.ForeColor = System.Drawing.SystemColors.Control;
             this.btnEliminar.Location = new System.Drawing.Point(707, 189);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 18;
+            this.btnEliminar.TabIndex = 10;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);

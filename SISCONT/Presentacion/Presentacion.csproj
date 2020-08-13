@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -72,6 +72,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSCompras.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DSDetracciones.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSDetracciones.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DSVentas.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -107,6 +112,12 @@
     <Compile Include="FrmProveedor.Designer.cs">
       <DependentUpon>FrmProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRol.Designer.cs">
+      <DependentUpon>FrmRol.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmTipoCambio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +147,9 @@
     <EmbeddedResource Include="FrmProveedor.resx">
       <DependentUpon>FrmProveedor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmRol.resx">
+      <DependentUpon>FrmRol.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmTipoCambio.resx">
       <DependentUpon>FrmTipoCambio.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,6 +176,17 @@
     </None>
     <None Include="DSCompras.xss">
       <DependentUpon>DSCompras.xsd</DependentUpon>
+    </None>
+    <None Include="DSDetracciones.xsc">
+      <DependentUpon>DSDetracciones.xsd</DependentUpon>
+    </None>
+    <None Include="DSDetracciones.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDetracciones.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DSDetracciones.xss">
+      <DependentUpon>DSDetracciones.xsd</DependentUpon>
     </None>
     <None Include="DSVentas.xsc">
       <DependentUpon>DSVentas.xsd</DependentUpon>

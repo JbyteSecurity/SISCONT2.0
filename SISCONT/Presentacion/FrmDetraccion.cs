@@ -89,14 +89,17 @@ namespace Presentacion
         private void Destroy()
         {
             int id = Convert.ToInt32(dgvDetraccion.CurrentRow.Cells["id"].Value);
-            if (detraccion.Destroy(id))
+            DialogResult dialogResultDetraccion = MessageBox.Show("¿Realmente quieres eliminar esta detracción?", "Detracción .::. Info", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (dialogResultDetraccion == DialogResult.Yes)
             {
-                MessageBox.Show("Detracción eliminado", "Detracción .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                ClearTextBox();
-                Index();
+                if (detraccion.Destroy(id))
+                {
+                    ClearTextBox();
+                    Index();
+                }
+                else
+                    MessageBox.Show("Detracción no eliminado", "Detracción .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else
-                MessageBox.Show("Detracción no eliminado", "Detracción .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void GoToTextBox()

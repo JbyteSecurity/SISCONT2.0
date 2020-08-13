@@ -83,14 +83,17 @@ namespace Presentacion
         private void Destroy()
         {
             int id = Convert.ToInt32(dgvSuppliers.CurrentRow.Cells["ID"].Value);
-            if (proveedor.Destroy(id))
-            {
-                MessageBox.Show("Proveedor Eliminado", "Proveedor .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                ClearTextBox();
-                All();
+
+            DialogResult dialogResult = MessageBox.Show("¿Realmente quieres eliminar este proveedor?", "Proveedor .::. Info", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (dialogResult == DialogResult.Yes) {
+                if (proveedor.Destroy(id))
+                {
+                    ClearTextBox();
+                    All();
+                }
+                else
+                    MessageBox.Show("Proveedor NO Eliminado", "Proveedor .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else
-                MessageBox.Show("Proveedor NO Eliminado", "Proveedor .::. Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void GetToTextBox()

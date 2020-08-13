@@ -109,20 +109,21 @@
             // mantenimientoToolStripMenuItem1
             // 
             this.mantenimientoToolStripMenuItem1.Name = "mantenimientoToolStripMenuItem1";
-            this.mantenimientoToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
+            this.mantenimientoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.mantenimientoToolStripMenuItem1.Text = "Usuarios";
             this.mantenimientoToolStripMenuItem1.Click += new System.EventHandler(this.mantenimientoToolStripMenuItem1_Click);
             // 
             // rolesToolStripMenuItem
             // 
             this.rolesToolStripMenuItem.Name = "rolesToolStripMenuItem";
-            this.rolesToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.rolesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.rolesToolStripMenuItem.Text = "Roles";
+            this.rolesToolStripMenuItem.Click += new System.EventHandler(this.rolesToolStripMenuItem_Click);
             // 
             // permisosToolStripMenuItem
             // 
             this.permisosToolStripMenuItem.Name = "permisosToolStripMenuItem";
-            this.permisosToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.permisosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.permisosToolStripMenuItem.Text = "Permisos";
             // 
             // salirToolStripMenuItem
