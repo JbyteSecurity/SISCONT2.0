@@ -22,6 +22,7 @@ namespace Presentacion
         {
             All();
             txtFecha.Text = DateTime.UtcNow.ToString("dd/MM/yyyy");
+            dgvTipoCambio.Columns["ID"].Visible = false;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

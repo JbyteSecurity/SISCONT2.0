@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocios;
 
@@ -25,6 +19,7 @@ namespace Presentacion
             this.Width = 367;
             this.Height = 338;
             txtUsuario.Focus();
+            NetworkState();
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
@@ -93,9 +88,25 @@ namespace Presentacion
             }
         }
 
-        private void btnIngresar_Click_1(object sender, EventArgs e)
+        private void NetworkState()
         {
-
+            string Estado = "";
+            System.Uri Url = new System.Uri("http://198.12.230.10");
+            System.Net.WebRequest WebRequest;
+            WebRequest = System.Net.WebRequest.Create(Url);
+            System.Net.WebResponse objetoResp;
+            try
+            {
+                objetoResp = WebRequest.GetResponse();
+                Estado = "";
+                objetoResp.Close();
+            }
+            catch (Exception e)
+            {
+                Estado = "Verifique la conexión al servidor";
+            }
+            lblServerConnectStatus.Text = Estado;
+            WebRequest = null;
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,7 @@ namespace Presentacion
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
             getDolarTypeChange();
+            NetworkState();
         }
 
         private void menuItemProveedores_Click(object sender, EventArgs e)
@@ -60,6 +62,7 @@ namespace Presentacion
         private void detracciónToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmDetraccion frmDetraccion = new FrmDetraccion();
+            frmDetraccion.MdiParent = this;
             frmDetraccion.Show();
         }
 
@@ -131,6 +134,27 @@ namespace Presentacion
             FrmUsuario frmUsuario = new FrmUsuario();
             frmUsuario.MdiParent = this;
             frmUsuario.Show();
+        }
+
+        private void NetworkState()
+        {
+            string Estado = "";
+            System.Uri Url = new System.Uri("http://198.12.230.10");
+            System.Net.WebRequest WebRequest;
+            WebRequest = System.Net.WebRequest.Create(Url);
+            System.Net.WebResponse objetoResp;
+            try
+            {
+                objetoResp = WebRequest.GetResponse();
+                Estado = "Conectado al Servidor";
+                objetoResp.Close();
+            }
+            catch (Exception e)
+            {
+                Estado = "Verifique la conexión al servidor";
+            }
+            WebRequest = null;
+            tssConexion.Text = Estado;
         }
     }
 }

@@ -20,14 +20,16 @@ namespace Negocios
             return daoDetraccion.Show(codigo);
         }
 
-        public bool Insert(int codigo, double monto, double porcentaje)
+        public DataTable GetForCombo() { return daoDetraccion.GetForCombo(); }
+
+        public bool Insert(int codigo, double monto, double porcentaje, string definicion, int anexo)
         {
-            return daoDetraccion.Insert(codigo, monto, porcentaje);
+            return daoDetraccion.Insert(codigo, monto, porcentaje, definicion, anexo);
         }
 
-        public bool Update(int id, int codigo, double monto, double porcentaje)
+        public bool Update(int id, int codigo, double monto, double porcentaje, string definicion, int anexo)
         {
-            return daoDetraccion.Update(id, codigo, monto, porcentaje);
+            return daoDetraccion.Update(id, codigo, monto, porcentaje, definicion, anexo);
         }
 
         public bool Destroy(int id)

@@ -34,6 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.btnIngresar = new System.Windows.Forms.Button();
+            this.lblServerConnectStatus = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,11 +94,21 @@
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             this.btnIngresar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnterClick);
             // 
+            // lblServerConnectStatus
+            // 
+            this.lblServerConnectStatus.AutoSize = true;
+            this.lblServerConnectStatus.Location = new System.Drawing.Point(163, 235);
+            this.lblServerConnectStatus.Name = "lblServerConnectStatus";
+            this.lblServerConnectStatus.Size = new System.Drawing.Size(0, 13);
+            this.lblServerConnectStatus.TabIndex = 12;
+            this.lblServerConnectStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(353, 240);
+            this.ClientSize = new System.Drawing.Size(353, 282);
+            this.Controls.Add(this.lblServerConnectStatus);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtContrasenia);
             this.Controls.Add(this.pictureBox1);
@@ -124,5 +135,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Button btnIngresar;
+        private System.Windows.Forms.Label lblServerConnectStatus;
     }
 }

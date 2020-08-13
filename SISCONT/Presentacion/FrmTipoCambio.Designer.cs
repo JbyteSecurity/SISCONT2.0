@@ -44,11 +44,12 @@
             // 
             // btnNuevo
             // 
-            this.btnNuevo.BackColor = System.Drawing.Color.Gray;
-            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnNuevo.Location = new System.Drawing.Point(13, 93);
+            this.btnNuevo.BackColor = System.Drawing.Color.White;
+            this.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevo.Location = new System.Drawing.Point(5, 93);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(58, 23);
+            this.btnNuevo.Size = new System.Drawing.Size(51, 23);
             this.btnNuevo.TabIndex = 22;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
@@ -72,9 +73,10 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnEditar.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Location = new System.Drawing.Point(429, 179);
+            this.btnEditar.Location = new System.Drawing.Point(348, 122);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 23);
             this.btnEditar.TabIndex = 25;
@@ -85,9 +87,10 @@
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.Red;
+            this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnEliminar.Location = new System.Drawing.Point(510, 179);
+            this.btnEliminar.Location = new System.Drawing.Point(429, 122);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 24;
@@ -98,10 +101,11 @@
             // btnGuardar
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.Lime;
+            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Green;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Location = new System.Drawing.Point(77, 93);
+            this.btnGuardar.Location = new System.Drawing.Point(62, 93);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(89, 23);
+            this.btnGuardar.Size = new System.Drawing.Size(104, 23);
             this.btnGuardar.TabIndex = 23;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -125,10 +129,13 @@
             // 
             // dgvTipoCambio
             // 
+            this.dgvTipoCambio.AllowUserToAddRows = false;
+            this.dgvTipoCambio.AllowUserToDeleteRows = false;
             this.dgvTipoCambio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTipoCambio.Location = new System.Drawing.Point(172, 12);
             this.dgvTipoCambio.Name = "dgvTipoCambio";
-            this.dgvTipoCambio.Size = new System.Drawing.Size(413, 161);
+            this.dgvTipoCambio.ReadOnly = true;
+            this.dgvTipoCambio.Size = new System.Drawing.Size(332, 104);
             this.dgvTipoCambio.TabIndex = 26;
             // 
             // txtFecha
@@ -151,7 +158,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 215);
+            this.ClientSize = new System.Drawing.Size(517, 158);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.txtVenta);
             this.Controls.Add(this.label3);

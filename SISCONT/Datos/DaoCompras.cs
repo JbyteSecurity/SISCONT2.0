@@ -115,7 +115,7 @@ namespace Datos
             string descripcionDestino, string cuentaDestino, /*string pago,*/ string codigo, string constanciaNumero, string constanciaFechapago,
             double constanciaMonto, string constanciaReferencia, string bancarizacionFecha, string bancarizacionBco, int bancarizacionOperacion, string referenciaFecha,
             string referenciaTipo, string referenciaSerie, string referenciaNumero, string usuario,
-            double conversionDolares
+            double conversionDolares, string observacion
             )
         {
             sqlCommand.Connection = conexion.OpenConnection();
@@ -166,6 +166,7 @@ namespace Datos
             sqlCommand.Parameters.AddWithValue("@ReferenciaTipo", referenciaTipo);
             sqlCommand.Parameters.AddWithValue("@ReferenciaSerie", referenciaSerie);
             sqlCommand.Parameters.AddWithValue("@ReferenciaNumero", referenciaNumero);
+            sqlCommand.Parameters.AddWithValue("@Observacion", observacion);
 
             if (sqlCommand.ExecuteNonQuery() > 0)
             {
@@ -183,7 +184,7 @@ namespace Datos
             string descripcionDestino, string cuentaDestino,/* string pago,*/ string codigo, string constanciaNumero, string constanciaFechapago,
             double constanciaMonto, string constanciaReferencia, string bancarizacionFecha, string bancarizacionBco, int bancarizacionOperacion, string referenciaFecha,
             string referenciaTipo, string referenciaSerie, string referenciaNumero, string usuario,
-            double conversionDolares
+            double conversionDolares, string observacion
             )
         {
             sqlCommand.Connection = conexion.OpenConnection();
@@ -235,6 +236,7 @@ namespace Datos
             sqlCommand.Parameters.AddWithValue("@ReferenciaTipo", referenciaTipo);
             sqlCommand.Parameters.AddWithValue("@ReferenciaSerie", referenciaSerie);
             sqlCommand.Parameters.AddWithValue("@ReferenciaNumero", referenciaNumero);
+            sqlCommand.Parameters.AddWithValue("@Observacion", observacion);
 
             if (sqlCommand.ExecuteNonQuery() > 0)
             {

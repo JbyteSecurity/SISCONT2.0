@@ -27,6 +27,19 @@ namespace Datos
             return dataTableDetraccion;
         }
 
+        public DataTable GetForCombo()
+        {
+            SqlDataReader sqlDataReader;
+            DataTable dataTableDetraccion = new DataTable();
+            sqlCommand.Connection = conexion.OpenConnection();
+            sqlCommand.CommandText = "sp_all_combo_detracciones";
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlDataReader = sqlCommand.ExecuteReader();
+            dataTableDetraccion.Load(sqlDataReader);
+            conexion.CloseConnection();
+            return dataTableDetraccion;
+        }
+
         public DataTable Show(int codigo)
         {
             SqlDataReader sqlDataReader;
@@ -48,7 +61,7 @@ namespace Datos
         }
 
 
-        public bool Insert(int codigo, double monto, double porcentaje)
+        public bool Insert(int codigo, double monto, double porcentaje, string definicion, int anexo)
         {
             sqlCommand.Connection = conexion.OpenConnection();
             sqlCommand.CommandText = "sp_insert_detracciones";
@@ -57,6 +70,8 @@ namespace Datos
             sqlCommand.Parameters.AddWithValue("@codigo", codigo);
             sqlCommand.Parameters.AddWithValue("@monto", monto);
             sqlCommand.Parameters.AddWithValue("@porcentaje", porcentaje);
+            sqlCommand.Parameters.AddWithValue("@Definicion", definicion);
+            sqlCommand.Parameters.AddWithValue("@Anexo", anexo);
 
             if (sqlCommand.ExecuteNonQuery() > 0)
             {
@@ -69,7 +84,7 @@ namespace Datos
 
         }
 
-        public bool Update(int id, int codigo, double monto, double porcentaje)
+        public bool Update(int id, int codigo, double monto, double porcentaje, string definicion, int anexo)
         {
             sqlCommand.Connection = conexion.OpenConnection();
             sqlCommand.CommandText = "sp_update_detracciones";
@@ -78,7 +93,9 @@ namespace Datos
             sqlCommand.Parameters.AddWithValue("@id", id);
             sqlCommand.Parameters.AddWithValue("@codigo", codigo);
             sqlCommand.Parameters.AddWithValue("@monto", monto);
-            sqlCommand.Parameters.AddWithValue("@procentaje", porcentaje);
+            sqlCommand.Parameters.AddWithValue("@porcentaje", porcentaje);
+            sqlCommand.Parameters.AddWithValue("@Definicion", definicion);
+            sqlCommand.Parameters.AddWithValue("@Anexo", anexo);
 
             if (sqlCommand.ExecuteNonQuery() > 0)
             {

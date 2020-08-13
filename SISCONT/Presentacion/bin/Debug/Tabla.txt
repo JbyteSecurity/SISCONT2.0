@@ -134,6 +134,24 @@
 		  3.563
         </td>
         
+      			
+        
+          </tr>
+          <tr>
+          
+        
+        <td width='4%' align='center' class="h3">
+		  <strong>13</strong>
+        </td>
+          
+        <td width='8%' align='center' class="tne10">
+          3.565
+        </td>
+          
+        <td width='8%' align='center' class="tne10">
+		  3.568
+        </td>
+        
       
     
     

@@ -22,7 +22,7 @@ namespace Negocios
             double igv, double noGravada, double descuento, double importeTotal, double dolares, double tipoCambio, double percepcion, string destino,
             string descripcionDestino, string cuentaDestino, /*string pago,*/ string codigo, string constanciaNumero, string constanciaFechapago,
             double constanciaMonto, string constanciaReferencia, string bancarizacionFecha, string bancarizacionBco, int bancarizacionOperacion, string referenciaFecha,
-            string referenciaTipo, string referenciaSerie, string referenciaNumero, string usuario, double comprasConversionDolares
+            string referenciaTipo, string referenciaSerie, string referenciaNumero, string usuario, double comprasConversionDolares, string observacion
             )
         {
             return daoCompras.Insert(
@@ -31,7 +31,7 @@ namespace Negocios
                 igv, noGravada, descuento, importeTotal, dolares, tipoCambio, percepcion, destino,
                 descripcionDestino, cuentaDestino, /*pago,*/ codigo, constanciaNumero, constanciaFechapago,
                 constanciaMonto, constanciaReferencia, bancarizacionFecha, bancarizacionBco, bancarizacionOperacion, referenciaFecha,
-                referenciaTipo, referenciaSerie, referenciaNumero, usuario, comprasConversionDolares
+                referenciaTipo, referenciaSerie, referenciaNumero, usuario, comprasConversionDolares, observacion
                 );
         }
 
@@ -41,7 +41,7 @@ namespace Negocios
             double igv, double noGravada, double descuento, double importeTotal, double dolares, double tipoCambio, double percepcion, string destino,
             string descripcionDestino, string cuentaDestino, /*string pago,*/ string codigo, string constanciaNumero, string constanciaFechapago,
             double constanciaMonto, string constanciaReferencia, string bancarizacionFecha, string bancarizacionBco, int bancarizacionOperacion, string referenciaFecha,
-            string referenciaTipo, string referenciaSerie, string referenciaNumero, string usuario, double comprasConversionDolares
+            string referenciaTipo, string referenciaSerie, string referenciaNumero, string usuario, double comprasConversionDolares, string observacion
             )
         {
             return daoCompras.Update(
@@ -50,7 +50,7 @@ namespace Negocios
                 igv, noGravada, descuento, importeTotal, dolares, tipoCambio, percepcion, destino,
                 descripcionDestino, cuentaDestino, /*pago,*/ codigo, constanciaNumero, constanciaFechapago,
                 constanciaMonto, constanciaReferencia, bancarizacionFecha, bancarizacionBco, bancarizacionOperacion, referenciaFecha,
-                referenciaTipo, referenciaSerie, referenciaNumero, usuario, comprasConversionDolares
+                referenciaTipo, referenciaSerie, referenciaNumero, usuario, comprasConversionDolares, observacion
                 );
         }
 

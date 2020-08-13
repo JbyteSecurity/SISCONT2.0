@@ -269,11 +269,48 @@ SELECT idLibroCompras, Mes, NReg, FechaEmision, FechaPago, CTipo, CSerie, CNDocu
               </DbSource>
               <DbSource ConnectionRef="SISCONTConnectionString (Settings)" DbObjectName="SISCONT.dbo.tblRegistroCompras" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillCurrentMonth" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillCurrentMonth" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillCurrentMonth">
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT
-		*
-	FROM tblRegistroCompras
-	WHERE Mes = MONTH(GETDATE())</CommandText>
+	idLibroCompras,
+	Mes,
+	NReg,
+	FechaEmision,
+	FechaPago,
+	CTipo,
+	CSerie,
+	CNDocumento,
+	PTipo,
+	PNumero,
+	PDocumento,
+	PNombreRazonSocial,
+	Cuenta,
+	Descripcion,
+	BaseImponible,
+	IGV,
+	NoGravada,
+	Descuentos,
+	ImporteTotal, 
+    IIF(Dolares = 0.00, NULL, Dolares) AS Dolares,
+	IIF(ConversionDolar = 0.00, NULL, ConversionDolar) AS ConversionDolar,
+	TipoCambio, IIF(Percepcion = 0.00, NULL, Percepcion) AS Percepcion,
+	Destino, DescripcionDestino, CuentaDestino, Pgo, Codigo,
+	ConstanciaNumero,
+	IIF(ConstanciaFechaPago = '1900-01-01', NULL, ConstanciaFechaPago) AS ConstanciaFechaPago,
+	ConstanciaMonto,
+	ConstanciaReferencia,
+	IIF(BancarizacionFecha = '1900-01-01', NULL, BancarizacionFecha) AS BancarizacionFecha, 
+    BancarizacionBco,
+	IIF(BancarizacionOperacion = 0, NULL, BancarizacionOperacion) AS BancarizacionOperacion,
+	IIF(ReferenciaFecha = '1900-01-01', NULL, ReferenciaFecha) AS ReferenciaFecha,
+	ReferenciaTipo,
+	ReferenciaSerie,
+	ReferenciaNumero,
+	Usuario,
+	FechaRegistro,
+	FechaModificacion,
+	Observacion
+FROM tblRegistroCompras
+WHERE (Mes = MONTH(GETDATE()))</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -288,7 +325,7 @@ SELECT idLibroCompras, Mes, NReg, FechaEmision, FechaPago, CTipo, CSerie, CNDocu
   <xs:element name="DSCompras" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DSCompras" msprop:Generator_UserDSName="DSCompras">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="tblRegistroCompras" msprop:Generator_TableClassName="tblRegistroComprasDataTable" msprop:Generator_TableVarName="tabletblRegistroCompras" msprop:Generator_RowChangedName="tblRegistroComprasRowChanged" msprop:Generator_TablePropName="tblRegistroCompras" msprop:Generator_RowDeletingName="tblRegistroComprasRowDeleting" msprop:Generator_RowChangingName="tblRegistroComprasRowChanging" msprop:Generator_RowEvHandlerName="tblRegistroComprasRowChangeEventHandler" msprop:Generator_RowDeletedName="tblRegistroComprasRowDeleted" msprop:Generator_RowClassName="tblRegistroComprasRow" msprop:Generator_UserTableName="tblRegistroCompras" msprop:Generator_RowEvArgName="tblRegistroComprasRowChangeEvent">
+        <xs:element name="tblRegistroCompras" msprop:Generator_TableClassName="tblRegistroComprasDataTable" msprop:Generator_TableVarName="tabletblRegistroCompras" msprop:Generator_TablePropName="tblRegistroCompras" msprop:Generator_RowDeletingName="tblRegistroComprasRowDeleting" msprop:Generator_RowChangingName="tblRegistroComprasRowChanging" msprop:Generator_RowEvHandlerName="tblRegistroComprasRowChangeEventHandler" msprop:Generator_RowDeletedName="tblRegistroComprasRowDeleted" msprop:Generator_UserTableName="tblRegistroCompras" msprop:Generator_RowChangedName="tblRegistroComprasRowChanged" msprop:Generator_RowEvArgName="tblRegistroComprasRowChangeEvent" msprop:Generator_RowClassName="tblRegistroComprasRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idLibroCompras" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidLibroCompras" msprop:Generator_ColumnPropNameInRow="idLibroCompras" msprop:Generator_ColumnPropNameInTable="idLibroComprasColumn" msprop:Generator_UserColumnName="idLibroCompras" type="xs:int" />

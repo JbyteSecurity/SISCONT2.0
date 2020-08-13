@@ -2877,7 +2877,47 @@ namespace Presentacion.DSComprasTableAdapters {
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Anio", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT\r\n\t\t*\r\n\tFROM tblRegistroCompras\r\n\tWHERE Mes = MONTH(GETDATE())";
+            this._commandCollection[2].CommandText = @"SELECT
+	idLibroCompras,
+	Mes,
+	NReg,
+	FechaEmision,
+	FechaPago,
+	CTipo,
+	CSerie,
+	CNDocumento,
+	PTipo,
+	PNumero,
+	PDocumento,
+	PNombreRazonSocial,
+	Cuenta,
+	Descripcion,
+	BaseImponible,
+	IGV,
+	NoGravada,
+	Descuentos,
+	ImporteTotal, 
+    IIF(Dolares = 0.00, NULL, Dolares) AS Dolares,
+	IIF(ConversionDolar = 0.00, NULL, ConversionDolar) AS ConversionDolar,
+	TipoCambio, IIF(Percepcion = 0.00, NULL, Percepcion) AS Percepcion,
+	Destino, DescripcionDestino, CuentaDestino, Pgo, Codigo,
+	ConstanciaNumero,
+	IIF(ConstanciaFechaPago = '1900-01-01', NULL, ConstanciaFechaPago) AS ConstanciaFechaPago,
+	ConstanciaMonto,
+	ConstanciaReferencia,
+	IIF(BancarizacionFecha = '1900-01-01', NULL, BancarizacionFecha) AS BancarizacionFecha, 
+    BancarizacionBco,
+	IIF(BancarizacionOperacion = 0, NULL, BancarizacionOperacion) AS BancarizacionOperacion,
+	IIF(ReferenciaFecha = '1900-01-01', NULL, ReferenciaFecha) AS ReferenciaFecha,
+	ReferenciaTipo,
+	ReferenciaSerie,
+	ReferenciaNumero,
+	Usuario,
+	FechaRegistro,
+	FechaModificacion,
+	Observacion
+FROM tblRegistroCompras
+WHERE (Mes = MONTH(GETDATE()))";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
         }
         

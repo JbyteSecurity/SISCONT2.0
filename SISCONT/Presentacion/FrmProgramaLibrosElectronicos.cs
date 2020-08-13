@@ -2,6 +2,7 @@
 using System.Data;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using Negocios;
 
@@ -35,6 +36,8 @@ namespace Presentacion
             FillComboTipoComprobante();
             FillComboCuentaDestino();
 
+            FillComboCodigo();
+
             removeColumnsCompras();
             removeColumnsVentas();
 
@@ -44,8 +47,12 @@ namespace Presentacion
             txtNombreMes.Text = DateTime.UtcNow.ToString("MM");
 
             dgvRegistroCompras.RowHeadersVisible = false;
-            dgvRegistroCompras.DefaultCellStyle.Font = new Font("Calibri", 10, FontStyle.Regular);
-            dgvRegistroCompras.ColumnHeadersDefaultCellStyle.Font = new Font("Calibri", 10, FontStyle.Regular);
+            dgvRegistroCompras.DefaultCellStyle.Font = new Font("Tahoma", 8, FontStyle.Regular);
+            dgvRegistroCompras.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 8, FontStyle.Regular);
+
+            dgvRegistroVentas.RowHeadersVisible = false;
+            dgvRegistroVentas.DefaultCellStyle.Font = new Font("Tahoma", 8, FontStyle.Regular);
+            dgvRegistroVentas.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 8, FontStyle.Regular);
         }
 
         private void cellContentClickEvent(object sender, DataGridViewCellEventArgs e)
@@ -252,7 +259,8 @@ namespace Presentacion
                         string ReferenciaTipo = row.Cells["comprasReferenciaTipo"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasReferenciaTipo"].Value) : "";
                         string ReferenciaSerie = row.Cells["comprasReferenciaSerie"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasReferenciaSerie"].Value) : "";
                         string ReferenciaNumero = row.Cells["comprasReferenciaNumero"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasReferenciaNumero"].Value) : "";
-                        
+                        string comprasObservacion = row.Cells["comprasObservacion"].Value != DBNull.Value ? Convert.ToString(row.Cells["comprasObservacion"].Value) : "";
+
 
                         string Usuario = "user02";
 
@@ -266,7 +274,7 @@ namespace Presentacion
                                 comprasTipoCambio, comprasPercepcion, comprasDestino, comprasDescripcionDestino, comprasCuentaDestino, /*comprasPago,*/
                                 comprasCodigo, comprasConstanciaNumero, comprasConstanciaFechaPago, comprasConstanciaMonto, comprasConstanciaReferencia,
                                 BancarizacionFecha, BancarizacionBco, BancarizacionOperacion, ReferenciaFecha, ReferenciaTipo, ReferenciaSerie, ReferenciaNumero,
-                                Usuario, comprasConversionDolares
+                                Usuario, comprasConversionDolares, comprasObservacion
                             );
                         }
                         else
@@ -278,7 +286,8 @@ namespace Presentacion
                                 comprasBaseImponible, comprasIgv, comprasNoGravada, comprasDescuento, comprasImporteTotal, comprasDolares,
                                 comprasTipoCambio, comprasPercepcion, comprasDestino, comprasDescripcionDestino, comprasCuentaDestino, /*comprasPago,*/
                                 comprasCodigo, comprasConstanciaNumero, comprasConstanciaFechaPago, comprasConstanciaMonto, comprasConstanciaReferencia,
-                                BancarizacionFecha, BancarizacionBco, BancarizacionOperacion, ReferenciaFecha, ReferenciaTipo, ReferenciaSerie, ReferenciaNumero, Usuario, comprasConversionDolares
+                                BancarizacionFecha, BancarizacionBco, BancarizacionOperacion, ReferenciaFecha, ReferenciaTipo, ReferenciaSerie, ReferenciaNumero, Usuario,
+                                comprasConversionDolares, comprasObservacion
                                 );
                         }
                     }
@@ -394,6 +403,17 @@ namespace Presentacion
 
         }
 
+        private void FillComboCodigo()
+        {
+            comprasCodigo.DisplayMember = "Combo";
+            comprasCodigo.ValueMember = "codigo";
+            comprasCodigo.DataSource = detraccion.GetForCombo();
+
+            ventasCodigo.DisplayMember = "Combo";
+            ventasCodigo.ValueMember = "codigo";
+            ventasCodigo.DataSource = detraccion.GetForCombo();
+        }
+
 
         private void btnGuardarVentas_Click(object sender, EventArgs e)
         {
@@ -420,6 +440,7 @@ namespace Presentacion
 
         private void dgvRegistroCompras_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
+            dgvRegistroCompras.EditingControlShowing += dgvRegistroCompras_EditingControlShowing;
             switch (e.ColumnIndex)
             {
                 case 2:
@@ -441,7 +462,6 @@ namespace Presentacion
                                     {
                                         compra = dataTableTipoCambio.Rows[0]["Compra"].ToString();
                                         venta = dataTableTipoCambio.Rows[0]["Venta"].ToString();
-
 
                                         dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasTipoCambio"].Value = venta;
                                         dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasFechaPago"].Value = fecha;
@@ -526,12 +546,18 @@ namespace Presentacion
                         {
                             if (String.IsNullOrEmpty(dgvRegistroCompras.Rows[e.RowIndex].Cells["BancarizacionFecha"].Value as String) || String.IsNullOrEmpty(dgvRegistroCompras.Rows[e.RowIndex].Cells["BancarizacionBco"].Value as String) || String.IsNullOrEmpty(dgvRegistroCompras.Rows[e.RowIndex].Cells["BancarizacionOperacion"].Value as String))
                             {
-                                MessageBox.Show("Ingrese Bancarización");
-                                dgvRegistroCompras.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Teal;
+                                //MessageBox.Show("Ingrese Bancarización");
+                                //dgvRegistroCompras.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Teal;
+                                dgvRegistroCompras.Rows[e.RowIndex].Cells["BancarizacionFecha"].Style.BackColor = Color.Red;
+                                dgvRegistroCompras.Rows[e.RowIndex].Cells["BancarizacionBco"].Style.BackColor = Color.Red;
+                                dgvRegistroCompras.Rows[e.RowIndex].Cells["BancarizacionOperacion"].Style.BackColor = Color.Red;
                             }
                             else
                             {
-                                dgvRegistroCompras.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
+                                //dgvRegistroCompras.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
+                                dgvRegistroCompras.Rows[e.RowIndex].Cells["BancarizacionFecha"].Style.BackColor = Color.White;
+                                dgvRegistroCompras.Rows[e.RowIndex].Cells["BancarizacionBco"].Style.BackColor = Color.White;
+                                dgvRegistroCompras.Rows[e.RowIndex].Cells["BancarizacionOperacion"].Style.BackColor = Color.White;
                             }
 
                         }
@@ -585,22 +611,28 @@ namespace Presentacion
                         }
                     }
                     break;
-                case 25:
+                case 25: // Codigo
+
+
                     if (dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasCodigo"].Value != DBNull.Value)
                     {
                         if (!String.IsNullOrEmpty(dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasCodigo"].Value.ToString() as String))
                         {
                             double comprasImporteTotal = 0;
-                            int comprasCodigo = 0;
+                            int compraCodigo = 0;
+                            string codComp = null;
 
                             if (String.IsNullOrEmpty(dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasImporteTotal"].Value.ToString() as String))
                                 MessageBox.Show("Ingrese un Importe Total");
                             else comprasImporteTotal = Convert.ToDouble(dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasImporteTotal"].Value.ToString());
 
-                            comprasCodigo = Convert.ToInt32(dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasCodigo"].Value.ToString());
+
+                            codComp = string.Join(" ", dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasCodigo"].Value.ToString().Split(' ').Skip(0).Take(1).ToArray());
+
+                            compraCodigo = Convert.ToInt32(codComp);
 
                             DataTable dataTableDetraccion = new DataTable();
-                            dataTableDetraccion = detraccion.Show(comprasCodigo);
+                            dataTableDetraccion = detraccion.Show(compraCodigo);
                             if (dataTableDetraccion.Rows.Count > 0)
                             {
                                 double detraccionProcentaje = Convert.ToDouble(dataTableDetraccion.Rows[0]["porcentaje"].ToString());
@@ -612,7 +644,7 @@ namespace Presentacion
                             }
                             else
                             {
-                                MessageBox.Show("Ingrese un número entero (1 - 5)");
+                                //MessageBox.Show("Ingrese un número entero (1 - 5)");
                                 dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasConstanciaReferencia"].Value = "";
                             }
                         }
@@ -750,6 +782,7 @@ namespace Presentacion
                             {
                                 double detraccionProcentaje = Convert.ToDouble(dataTableDetraccion.Rows[0]["porcentaje"].ToString());
                                 double detraccionMonto = Convert.ToDouble(dataTableDetraccion.Rows[0]["monto"].ToString());
+
                                 if (ventasImporteTotal > detraccionMonto)
                                     dgvRegistroVentas.Rows[e.RowIndex].Cells["ventasReferencia"].Value = Math.Round(ventasImporteTotal * detraccionProcentaje, 2);
                                 else
@@ -1290,6 +1323,12 @@ namespace Presentacion
 
         private void dgvRegistroCompras_KeyDown(object sender, KeyEventArgs e)
         {
+            ZoomCompras(e);
+            ZoomVentas(e);
+        }
+
+        private void ZoomCompras(KeyEventArgs e)
+        {
             float fontSize = dgvRegistroCompras.DefaultCellStyle.Font.Size;
             float fontHeaderSize = dgvRegistroCompras.ColumnHeadersDefaultCellStyle.Font.Size;
 
@@ -1297,18 +1336,98 @@ namespace Presentacion
             {
                 dgvRegistroCompras.DefaultCellStyle.Font = new Font("Tahoma", fontSize + 1, FontStyle.Regular);
                 dgvRegistroCompras.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", fontHeaderSize + 1, FontStyle.Bold);
+                foreach (DataGridViewColumn column in dgvRegistroCompras.Columns)
+                {
+                    column.Width = column.Width + 3;
+                }
+
+                foreach (DataGridViewRow row in dgvRegistroCompras.Rows)
+                {
+                    row.Height = row.Height + 1;
+                }
             }
             else if (e.KeyCode == Keys.Subtract)//Control con '-'
             {
                 dgvRegistroCompras.DefaultCellStyle.Font = new Font("Tahoma", fontSize - 1, FontStyle.Regular);
                 dgvRegistroCompras.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", fontHeaderSize - 1, FontStyle.Bold);
+                foreach (DataGridViewColumn column in dgvRegistroCompras.Columns)
+                {
+                    column.Width = column.Width - 3;
+                }
+
+                foreach (DataGridViewRow row in dgvRegistroCompras.Rows)
+                {
+                    row.Height = row.Height - 1;
+                }
             }
         }
 
-        private void btnAgregarFila_Click(object sender, EventArgs e)
+        private void ZoomVentas(KeyEventArgs e)
         {
-            dgvRegistroCompras.Rows[dgvRegistroCompras.Rows.Count - 1].Cells[0].Value = dgvRegistroCompras.Rows.Count;
-            dgvRegistroCompras.Rows.Add();
+            float fontSize = dgvRegistroVentas.DefaultCellStyle.Font.Size;
+            float fontHeaderSize = dgvRegistroVentas.ColumnHeadersDefaultCellStyle.Font.Size;
+
+            if (e.KeyCode == Keys.Add)//Control con '+'
+            {
+                dgvRegistroVentas.DefaultCellStyle.Font = new Font("Tahoma", fontSize + 1, FontStyle.Regular);
+                dgvRegistroVentas.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", fontHeaderSize + 1, FontStyle.Bold);
+                foreach (DataGridViewColumn column in dgvRegistroVentas.Columns)
+                {
+                    column.Width = column.Width + 3;
+                }
+
+                foreach (DataGridViewRow row in dgvRegistroVentas.Rows)
+                {
+                    row.Height = row.Height + 1;
+                }
+            }
+            else if (e.KeyCode == Keys.Subtract)//Control con '-'
+            {
+                dgvRegistroVentas.DefaultCellStyle.Font = new Font("Tahoma", fontSize - 1, FontStyle.Regular);
+                dgvRegistroVentas.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", fontHeaderSize - 1, FontStyle.Bold);
+                foreach (DataGridViewColumn column in dgvRegistroVentas.Columns)
+                {
+                    column.Width = column.Width - 3;
+                }
+
+                foreach (DataGridViewRow row in dgvRegistroVentas.Rows)
+                {
+                    row.Height = row.Height - 1;
+                }
+            }
+        }
+
+        ComboBox cboCodigoCompras = null;
+        private void dgvRegistroCompras_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs ev)
+        {
+            
+            //cboCodigoCompras = ev.Control as ComboBox;
+
+            //int compraCodigo = -1;
+
+            //if (cboCodigoCompras != null)
+            //{
+            //    compraCodigo = cboCodigoCompras.SelectedIndex;
+            //    double comprasImporteTotal = 0;
+
+            //    if (String.IsNullOrEmpty(dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasImporteTotal"].Value.ToString() as String))
+            //        MessageBox.Show("Ingrese un Importe Total");
+            //    else comprasImporteTotal = Convert.ToDouble(dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasImporteTotal"].Value.ToString());
+
+            //    //compraCodigo = Convert.ToInt32(dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasCodigo"].Value.ToString());
+
+            //    DataTable dataTableDetraccion = new DataTable();
+            //    dataTableDetraccion = detraccion.Show(compraCodigo);
+            //    if (dataTableDetraccion.Rows.Count > 0)
+            //    {
+            //        double detraccionProcentaje = Convert.ToDouble(dataTableDetraccion.Rows[0]["porcentaje"].ToString());
+            //        double detraccionMonto = Convert.ToDouble(dataTableDetraccion.Rows[0]["monto"].ToString());
+            //        if (comprasImporteTotal > detraccionMonto)
+            //            dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasConstanciaReferencia"].Value = Math.Round(comprasImporteTotal * detraccionProcentaje, 2);
+            //        else
+            //            dgvRegistroCompras.Rows[e.RowIndex].Cells["comprasConstanciaReferencia"].Value = "";
+            //    }
+            //}
         }
     }
 }
